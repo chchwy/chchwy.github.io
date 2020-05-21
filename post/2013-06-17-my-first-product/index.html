@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <base href="//chchwy.github.io/">
+  <title>第一支 iOS App 作品上架 Matt - 調和的靈感</title>
+  <link rel="canonical" href="//chchwy.github.io/post/2013-06-17-my-first-product/">
+  <link href="./index.xml" rel="alternate" type="application/rss+xml" title="Matt - 調和的靈感" />
+
+  <link rel="stylesheet" href="/css/mobi.min.css" />
+<style>
+body {
+    background: linear-gradient(120deg, #f0efee, #efeee6, #edeceb, #ebded7);
+    color: #484842;
+}
+a { color: #934715; }
+hr { border-top: solid 1px #adadab; }
+code { background-color: #e7e6e0; }
+pre { background-color: #e7e5de; border-left: solid 5px #595959; }
+pre code { font-size: 15px; }
+p { margin-top: 25px; }
+h1 { color: #000; font-family: 'Microsoft Jhenghei'; }
+h2 { color: #111; border-bottom: solid 1px #ccc; padding-bottom: 8px; }
+h3 { color: #111;}
+h2, h3 {font-family:-apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, 'Open Sans', 'Helvetica Neue', 'Microsoft Jhenghei', sans-serif }
+
+blockquote { border-left-color: #666; }
+#header { margin-top: 0.6em; }
+#the-article { font-size: 16px; line-height: 1.6em; color:#4b4b4b; }
+.site-name {float: left;}
+.site-name a:hover {text-decoration:none;}
+.site-name h1 { font-weight:normal; font-size: 20px; color: #444; margin-top:15px }
+#header nav { float:right; margin: 12px 0 0; }
+#header nav ul {margin:5px 0 0; padding:0;}
+#header nav li {
+    list-style:none;
+    display:inline-block;
+    padding: 0 2px;
+}
+.post-list {margin-top: 0px; padding-left: 0;}
+.post-list li {list-style:none; margin-bottom: 0.7rem;}
+.post-list time {color: #777; font-family: Menlo, Monaco, Consolas, monospace; display:block; margin-right: 1rem;}
+@media screen and (min-width: 800px) {
+.post-list-entry {display:flex}
+}
+.post-title {font-weight: normal;}
+.left {float:left; margin-right: 20px;}
+
+  .chroma { color: #d0d0d0; background-color: #202020 }
+  .chroma .err { color: #a61717; background-color: #e3d2d2 }
+  .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+  .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; width: auto; overflow: auto; display: block; }
+  .chroma .hl { display: block; width: 100%;background-color: #ffffcc }
+  .chroma .lnt { margin-right: 0.4em; padding: 0 0.4em 0 0.4em; display: block; }
+  .chroma .ln { margin-right: 0.4em; padding: 0 0.4em 0 0.4em; }
+  .chroma .k { color: #6ab825; font-weight: bold }
+  .chroma .kc { color: #6ab825; font-weight: bold }
+  .chroma .kd { color: #6ab825; font-weight: bold }
+  .chroma .kn { color: #6ab825; font-weight: bold }
+  .chroma .kp { color: #6ab825 }
+  .chroma .kr { color: #6ab825; font-weight: bold }
+  .chroma .kt { color: #6ab825; font-weight: bold }
+  .chroma .na { color: #bbbbbb }
+  .chroma .nb { color: #24909d }
+  .chroma .nc { color: #447fcf }
+  .chroma .no { color: #40ffff }
+  .chroma .nd { color: #ffa500 }
+  .chroma .ne { color: #bbbbbb }
+  .chroma .nf { color: #447fcf }
+  .chroma .nn { color: #447fcf }
+  .chroma .nt { color: #6ab825; font-weight: bold }
+  .chroma .nv { color: #40ffff }
+  .chroma .s { color: #ed9d13 }
+  .chroma .sa { color: #ed9d13 }
+  .chroma .sb { color: #ed9d13 }
+  .chroma .sc { color: #ed9d13 }
+  .chroma .dl { color: #ed9d13 }
+  .chroma .sd { color: #ed9d13 }
+  .chroma .s2 { color: #ed9d13 }
+  .chroma .se { color: #ed9d13 }
+  .chroma .sh { color: #ed9d13 }
+  .chroma .si { color: #ed9d13 }
+  .chroma .sx { color: #ffa500 }
+  .chroma .sr { color: #ed9d13 }
+  .chroma .s1 { color: #ed9d13 }
+  .chroma .ss { color: #ed9d13 }
+  .chroma .m { color: #3677a9 }
+  .chroma .mb { color: #3677a9 }
+  .chroma .mf { color: #3677a9 }
+  .chroma .mh { color: #3677a9 }
+  .chroma .mi { color: #3677a9 }
+  .chroma .il { color: #3677a9 }
+  .chroma .mo { color: #3677a9 }
+  .chroma .ow { color: #6ab825; font-weight: bold }
+  .chroma .c { color: #999999; }
+  .chroma .ch { color: #999999; }
+  .chroma .cm { color: #999999;}
+  .chroma .c1 { color: #999999;}
+  .chroma .cs { color: #e50808; background-color: #520000; font-weight: bold }
+  .chroma .cp { color: #cd2828; font-weight: bold }
+  .chroma .cpf { color: #cd2828; font-weight: bold }
+  .chroma .gd { color: #d22323 }
+  .chroma .ge { font-style: italic }
+  .chroma .gr { color: #d22323 }
+  .chroma .gh { color: #ffffff; font-weight: bold }
+  .chroma .gi { color: #589819 }
+  .chroma .go { color: #cccccc }
+  .chroma .gp { color: #aaaaaa }
+  .chroma .gs { font-weight: bold }
+  .chroma .gu { color: #ffffff }
+  .chroma .gt { color: #d22323 }
+  .chroma .w { color: #666666 }
+
+</style>
+
+</head>
+<body>
+
+<div class="flex-center">
+  <div class="container">
+    <section id="header">
+      <div class="site-name">
+        <a href="//chchwy.github.io/">
+          <h1>Matt - 調和的靈感</h1>
+        </a>
+      </div>
+      <nav style="color:#bab891;">
+        <ul>
+          <li><a href="//chchwy.github.io/">Home</a></li>
+          <li>|</li>
+          <li><a href="/">Archive</a></li>
+          <li>|</li>
+          <li><a href="/about">About</a></li>
+          </ul>
+      </nav>
+      <div style="clear:both"></div>
+    </section>
+    <hr>
+  </div>
+</div>
+
+
+<main id="main">
+<div class="flex-center">
+  <div class="container">
+
+    <article id="the-article">
+      <h1 class="post-title">第一支 iOS App 作品上架</h1>
+      <section style="color:#988F9B; font-family: Menlo, Consolas, Courier, monospace; margin-top: 18px;">
+        By <a href="/about">Matt</a> |
+        2013-06-17 |
+
+        
+          <a class="post-tag" href="/tags/%E9%96%8B%E7%99%BC%E6%97%A5%E5%B8%B8">開發日常</a>
+        
+
+      </section>
+      <sction style="margin-top: 30px;">
+      <p>上個月有件值得慶賀的事，就是我進職場後開發的第一個作品上架了，是個小小的、娛樂取向的 2D 臉部動畫 iOS App。</p>
+
+<p>上架後回頭來看，我的第一個感想是「軟體好貴阿」。用極度簡化的「人數 x 薪資」來估算成本，假設每人每月薪水是新台幣四萬元，平均五員參與，一個月就必須花費 20 萬，而開發期總共是六個月，算下來成本至少一百萬元跑不掉了，還沒算上其他開支像辦公室租金、水電冷氣、電腦等等。</p>
+
+<p>一個單純娛樂用的小app，背後竟然耗資百萬，這數字讓我確確實實地重新思考了軟體的價值。從成本面來看，團隊的人力配置已經非常精簡了，少了任何一個人 app 就沒有辦法在為期半年的時間內推出。而收益僅僅來自於解鎖進階功能的 0.99 美元， app 本身是免費下載的。我心裡琢磨著，別說賺大錢了，要賣幾個才能回本呢?</p>
+
+<p>另外一件事就是關於軟體品質，這是我第一次跟 QA 團隊合作。以前在學校寫程式，頂多自己花點時間測試一下，這是第一次有人認認真真的把我寫的程式，從頭到尾好好的測試過一遍。結果就是，四五個操作畫面而已就被掃出一百多隻蟲，說實話有點灰心。但是一旦通過了強力 QA 團隊的檢驗，真的會由心底萌生對軟體品質的安定感覺。說真的，和 QA 合作過後才知道，要做出穩定成熟的程式產品，需要付出許多額外努力，或許等經驗增加之後可以節省走一些彎路的時間吧。這讓我想起了「人月神話」中的軟體成本定律:「將軟體產品化需要三倍的工作量」，此話的確有幾分可信。</p>
+
+      </section>
+    </article>
+
+    
+<br>
+<h3>相關文章</h3>
+<ul>
+
+  <li class="relatedPost">
+    <a href="/post/2019-08-14-chocolatey/">Chocolatey 套件管理，重灌 Windows 後的好幫手</a><br />
+    
+  </li>
+
+</ul>
+
+
+    <div style="padding-top: 3em;">
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "chchwy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+  </div>
+</div>
+</main>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-5266256-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body>
+</html>

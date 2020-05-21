@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <base href="//chchwy.github.io/">
+  <title>Boost 極簡編譯法 Matt - 調和的靈感</title>
+  <link rel="canonical" href="//chchwy.github.io/post/2017-09-22-boost-compile-guide/">
+  <link href="./index.xml" rel="alternate" type="application/rss+xml" title="Matt - 調和的靈感" />
+
+  <link rel="stylesheet" href="/css/mobi.min.css" />
+<style>
+body {
+    background: linear-gradient(120deg, #f0efee, #efeee6, #edeceb, #ebded7);
+    color: #484842;
+}
+a { color: #934715; }
+hr { border-top: solid 1px #adadab; }
+code { background-color: #e7e6e0; }
+pre { background-color: #e7e5de; border-left: solid 5px #595959; }
+pre code { font-size: 15px; }
+p { margin-top: 25px; }
+h1 { color: #000; font-family: 'Microsoft Jhenghei'; }
+h2 { color: #111; border-bottom: solid 1px #ccc; padding-bottom: 8px; }
+h3 { color: #111;}
+h2, h3 {font-family:-apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, 'Open Sans', 'Helvetica Neue', 'Microsoft Jhenghei', sans-serif }
+
+blockquote { border-left-color: #666; }
+#header { margin-top: 0.6em; }
+#the-article { font-size: 16px; line-height: 1.6em; color:#4b4b4b; }
+.site-name {float: left;}
+.site-name a:hover {text-decoration:none;}
+.site-name h1 { font-weight:normal; font-size: 20px; color: #444; margin-top:15px }
+#header nav { float:right; margin: 12px 0 0; }
+#header nav ul {margin:5px 0 0; padding:0;}
+#header nav li {
+    list-style:none;
+    display:inline-block;
+    padding: 0 2px;
+}
+.post-list {margin-top: 0px; padding-left: 0;}
+.post-list li {list-style:none; margin-bottom: 0.7rem;}
+.post-list time {color: #777; font-family: Menlo, Monaco, Consolas, monospace; display:block; margin-right: 1rem;}
+@media screen and (min-width: 800px) {
+.post-list-entry {display:flex}
+}
+.post-title {font-weight: normal;}
+.left {float:left; margin-right: 20px;}
+
+  .chroma { color: #d0d0d0; background-color: #202020 }
+  .chroma .err { color: #a61717; background-color: #e3d2d2 }
+  .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+  .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; width: auto; overflow: auto; display: block; }
+  .chroma .hl { display: block; width: 100%;background-color: #ffffcc }
+  .chroma .lnt { margin-right: 0.4em; padding: 0 0.4em 0 0.4em; display: block; }
+  .chroma .ln { margin-right: 0.4em; padding: 0 0.4em 0 0.4em; }
+  .chroma .k { color: #6ab825; font-weight: bold }
+  .chroma .kc { color: #6ab825; font-weight: bold }
+  .chroma .kd { color: #6ab825; font-weight: bold }
+  .chroma .kn { color: #6ab825; font-weight: bold }
+  .chroma .kp { color: #6ab825 }
+  .chroma .kr { color: #6ab825; font-weight: bold }
+  .chroma .kt { color: #6ab825; font-weight: bold }
+  .chroma .na { color: #bbbbbb }
+  .chroma .nb { color: #24909d }
+  .chroma .nc { color: #447fcf }
+  .chroma .no { color: #40ffff }
+  .chroma .nd { color: #ffa500 }
+  .chroma .ne { color: #bbbbbb }
+  .chroma .nf { color: #447fcf }
+  .chroma .nn { color: #447fcf }
+  .chroma .nt { color: #6ab825; font-weight: bold }
+  .chroma .nv { color: #40ffff }
+  .chroma .s { color: #ed9d13 }
+  .chroma .sa { color: #ed9d13 }
+  .chroma .sb { color: #ed9d13 }
+  .chroma .sc { color: #ed9d13 }
+  .chroma .dl { color: #ed9d13 }
+  .chroma .sd { color: #ed9d13 }
+  .chroma .s2 { color: #ed9d13 }
+  .chroma .se { color: #ed9d13 }
+  .chroma .sh { color: #ed9d13 }
+  .chroma .si { color: #ed9d13 }
+  .chroma .sx { color: #ffa500 }
+  .chroma .sr { color: #ed9d13 }
+  .chroma .s1 { color: #ed9d13 }
+  .chroma .ss { color: #ed9d13 }
+  .chroma .m { color: #3677a9 }
+  .chroma .mb { color: #3677a9 }
+  .chroma .mf { color: #3677a9 }
+  .chroma .mh { color: #3677a9 }
+  .chroma .mi { color: #3677a9 }
+  .chroma .il { color: #3677a9 }
+  .chroma .mo { color: #3677a9 }
+  .chroma .ow { color: #6ab825; font-weight: bold }
+  .chroma .c { color: #999999; }
+  .chroma .ch { color: #999999; }
+  .chroma .cm { color: #999999;}
+  .chroma .c1 { color: #999999;}
+  .chroma .cs { color: #e50808; background-color: #520000; font-weight: bold }
+  .chroma .cp { color: #cd2828; font-weight: bold }
+  .chroma .cpf { color: #cd2828; font-weight: bold }
+  .chroma .gd { color: #d22323 }
+  .chroma .ge { font-style: italic }
+  .chroma .gr { color: #d22323 }
+  .chroma .gh { color: #ffffff; font-weight: bold }
+  .chroma .gi { color: #589819 }
+  .chroma .go { color: #cccccc }
+  .chroma .gp { color: #aaaaaa }
+  .chroma .gs { font-weight: bold }
+  .chroma .gu { color: #ffffff }
+  .chroma .gt { color: #d22323 }
+  .chroma .w { color: #666666 }
+
+</style>
+
+</head>
+<body>
+
+<div class="flex-center">
+  <div class="container">
+    <section id="header">
+      <div class="site-name">
+        <a href="//chchwy.github.io/">
+          <h1>Matt - 調和的靈感</h1>
+        </a>
+      </div>
+      <nav style="color:#bab891;">
+        <ul>
+          <li><a href="//chchwy.github.io/">Home</a></li>
+          <li>|</li>
+          <li><a href="/">Archive</a></li>
+          <li>|</li>
+          <li><a href="/about">About</a></li>
+          </ul>
+      </nav>
+      <div style="clear:both"></div>
+    </section>
+    <hr>
+  </div>
+</div>
+
+
+<main id="main">
+<div class="flex-center">
+  <div class="container">
+
+    <article id="the-article">
+      <h1 class="post-title">Boost 極簡編譯法</h1>
+      <section style="color:#988F9B; font-family: Menlo, Consolas, Courier, monospace; margin-top: 18px;">
+        By <a href="/about">Matt</a> |
+        2017-09-22 |
+
+        
+          <a class="post-tag" href="/tags/boost">Boost</a>
+        
+          <a class="post-tag" href="/tags/c&#43;&#43;">C&#43;&#43;</a>
+        
+
+      </section>
+      <sction style="margin-top: 30px;">
+      <p>最近因為工作的緣故需要編譯 <code>Boost</code>。Boost 這套大名鼎鼎的 C++ Library 中，大多數的模組都是 header-only，意思是模組裡只有標頭檔(<code>*.hpp</code>) 沒有實現檔(<code>*.cpp</code>)，所以不需要編譯，引入(#include)標頭檔就可以直接用了。只有少部份模組需要先編譯，這裡紀錄一下編譯 Boost 的方法。</p>
+
+<p>環境: Windows 10 編譯器: Visual Studio 2015</p>
+
+<ul>
+<li>第一步，雙擊 Boost 根目錄下的 bootstrap.bat，產生 Boost 自帶的編譯工具 b2.exe 和 bjam.exe</li>
+
+<li><p>第二步，用 b2 來編譯 boost，指令如下：</p>
+
+<pre><code>b2 toolset=msvc-14.0 address-model=64 --with-system
+</code></pre></li>
+
+<li><p>我並沒有深究 b2 和 bjam 到底有什麼差異，我用 b2</p></li>
+
+<li><p>編譯的參數中，<code>toolset</code> 指編譯器，msvc-14.0 就是 VS2015，msvc-11.0 就是 VS2012，gcc 就是 gcc。</p></li>
+
+<li><p><code>address-model</code> 指定 32 / 64 bit</p></li>
+
+<li><p><code>--with-xxx</code> 指定要編譯的模組名稱，例如要編譯 system 就打 <code>--with-system</code>，編譯 chrono 就是 <code>--with-chrono</code></p></li>
+
+<li><p>或者用 <code>-a</code> 要求編譯全部模組。編譯全部模組需要不少時間，我編了 15 分鐘發現還沒完成就放棄了。</p></li>
+
+<li><p>產出的 lib 檔默認放在 <strong>stage/lib</strong> 目錄下，瞄一眼裡面的檔案，如果看見 <code>libboost_chrono-vc140-mt-1_61.lib</code> 之類的檔案冒出來就是編譯成功了。以該檔名為例，可以得知我們成功編譯了 chrono 模組，適用編譯器 vc140，boost 版本 1.61。</p></li>
+</ul>
+
+<p>接著把把 boost 的根目錄加進 Include Path，把 /stage/lib 加進 Library Search Path，應該就可以順利使用我們自己編譯的 boost 了。不需要一一指名每個用到的 lib 檔，挺方便的。</p>
+
+      </section>
+    </article>
+
+    
+<br>
+<h3>相關文章</h3>
+<ul>
+
+  <li class="relatedPost">
+    <a href="/post/2019-08-05-ogre-v2-model-viewer/">Ogre3D v2.1 模型預覽器</a><br />
+    
+  </li>
+
+  <li class="relatedPost">
+    <a href="/post/2016-03-08-acm-io-redirection/">避免 UVa 解題時手動輸入測資</a><br />
+    
+  </li>
+
+  <li class="relatedPost">
+    <a href="/post/2015-06-20-customize-vs2013-clean-project/">客製化 Visual C++ clean project 的行為</a><br />
+    
+  </li>
+
+</ul>
+
+
+    <div style="padding-top: 3em;">
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "chchwy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+  </div>
+</div>
+</main>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-5266256-5', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+</body>
+</html>
