@@ -8,8 +8,7 @@ tags: [Ogre3D]
 
 ![Ogre3D](/img/ogre3d-logo.svg)
 
-Ogre 2.1 不管在效能還是視覺方面都有明顯提昇。
-Ogre 1.x 跟 2.x 的比較可以參考[這個連結](https://www.ogre3d.org/about/what-version-to-choose)。
+Ogre 1.x 跟 2.x 的比較可以參考[這個連結](https://www.ogre3d.org/about/what-version-to-choose)。不管在效能還是視覺方面都有明顯提昇。
 
 我的開發環境如下：
 
@@ -36,10 +35,10 @@ C:/OgreSDK/ogredeps
 
 ## CMake
 
-Ogre 用的專案建構工具是 [CMake][cmake]。這是一套跨平台的建構工具。這是我第一次用 CMake，花了一些時間才搞懂用法。
+Ogre 用的建構系統是 [CMake][cmake]，一套跨平台的建構系統。這是我第一次用 CMake，花了一些時間才搞懂用法。
 
-CMake 本身不直接編譯 Ogre。它有一個全平台通用的 CMake 腳本 (通常叫 `CMakeLists.txt`) ，需要先轉成本機專案才能編譯。
-比如在 Windows 上， CMake 生成 Visual Studio 專案，然後用 Visual Studio 開發。在 Mac 上產生 Xcode 專案檔，用 Xcode 來開發。
+CMake 本身不能直接編譯程式。相對的，它要求使用者先寫一個全平台通用的 CMake 腳本 (通常叫 `CMakeLists.txt`)，然後 CMake 會把這個腳本轉換成對應平台的專案。
+比如 Windows 上跑 CMake 就是生成 Visual Studio 專案。Mac 就是上產生 Xcode 專案。
 
 [cmake]: https://cmake.org/  "CMake official site"
 
