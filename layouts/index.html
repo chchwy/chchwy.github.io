@@ -9,7 +9,9 @@
   <title>{{ .Site.Title }}</title>
   <link rel="canonical" href="{{ .Permalink }}">
   <link href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-  {{ partial "head_includes.html" . }}
+
+  {{ $css := resources.Get "css/main.css" | resources.Minify }}
+  <link rel="stylesheet" href="{{ $css.Permalink }}">
 </head>
 <body>
 

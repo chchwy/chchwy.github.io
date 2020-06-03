@@ -1,0 +1,21 @@
+body {
+  background: linear-gradient(120deg, #f0efee, #efeee6, #edeceb, #ebded7);
+  color: #484842;
+}
+
+.container {
+  margin: 0 auto;
+  width: 600px;
+}
+
+#header { background-color: #b4b4a1; }
+.site-name {display: inline-block;}
+#nav { float: right; }
+#nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#nav li {
+  display: inline-block;
+}

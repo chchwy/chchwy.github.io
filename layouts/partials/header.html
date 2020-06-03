@@ -1,22 +1,12 @@
-<div class="flex-center">
+<section id="header">
   <div class="container">
-    <section id="header">
-      <div class="site-name">
-        <a href="{{ .Site.BaseURL }}">
-          <h1>{{ .Site.Title }}</h1>
-        </a>
-      </div>
-      <nav style="color:#bab891;">
-        <ul>
-          <li><a href="{{ .Site.BaseURL }}">Home</a></li>
-          <li>|</li>
-          <li><a href="/">Archive</a></li>
-          <li>|</li>
-          <li><a href="/about">About</a></li>
-          </ul>
-      </nav>
-      <div style="clear:both"></div>
-    </section>
-    <hr>
+    <div class="site-name">
+      <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
+    </div>
+    <ul id="nav">
+      <li><a href="{{ .Site.BaseURL }}">Home</a></li>
+      <li><a href="/">Archive</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
   </div>
-</div>
+</section>
