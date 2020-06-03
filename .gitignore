@@ -1,0 +1,4 @@
+*.data
+.Archive
+.vscode
+public
