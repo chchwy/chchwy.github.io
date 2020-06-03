@@ -2,8 +2,7 @@
 
 name: "Deploy blog"
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
+# Controls when the action will run. Triggers the workflow on push or pull request events 
 on:
   push:
     branches: [ blog ]
@@ -24,7 +23,7 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Run a one-line script
-      run: echo Hello, world!
+      run: echo Hello, Hugo!
     # Hugo to Github Pages
     - name: "Publish Hugo Site"
       uses: chabad360/hugo-gh-pages@master
