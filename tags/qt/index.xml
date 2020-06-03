@@ -169,73 +169,73 @@ jekyll server --livereload
 &lt;li>或者用 &lt;code>-a&lt;/code> 要求編譯全部模組。編譯全部模組需要不少時間，我編了 15 分鐘發現還沒完成就放棄了。&lt;/li>
 &lt;li>產出的 lib 檔默認放在 &lt;strong>stage/lib&lt;/strong> 目錄下，瞄一眼裡面的檔案，如果看見 &lt;code>libboost_chrono-vc140-mt-1_61.lib&lt;/code> 之類的檔案冒出來就是編譯成功了。以該檔名為例，可以得知我們成功編譯了 chrono 模組，適用編譯器 vc140，boost 版本 1.61。&lt;/li>
 &lt;/ul>
-&lt;p>接著把把 boost 的根目錄加進 Include Path，把 /stage/lib 加進 Library Search Path，應該就可以順利使用我們自己編譯的 boost 了。不需要一一指名每個用到的 lib 檔，挺方便的。&lt;/p></description></item><item><title>在 Windows 上編譯 Ogre 2.1</title><link>//chchwy.github.io/post/2017-05-07-how-to-compile-ogre-windows/</link><pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate><guid>//chchwy.github.io/post/2017-05-07-how-to-compile-ogre-windows/</guid><description>&lt;p>本文紀錄我在 Windows 10 上編譯 Ogre 2.1 的方法跟步驟。&lt;/p>
+&lt;p>接著把把 boost 的根目錄加進 Include Path，把 /stage/lib 加進 Library Search Path，應該就可以順利使用我們自己編譯的 boost 了。不需要一一指名每個用到的 lib 檔，挺方便的。&lt;/p></description></item><item><title>Windows 編譯 Ogre v2.1</title><link>//chchwy.github.io/post/2017-05-07-how-to-compile-ogre-windows/</link><pubDate>Sun, 07 May 2017 00:00:00 +0000</pubDate><guid>//chchwy.github.io/post/2017-05-07-how-to-compile-ogre-windows/</guid><description>&lt;p>本文紀錄我在 Windows 10 上編譯 Ogre 2.1 的方法跟步驟。&lt;/p>
 &lt;p>&lt;img src="//chchwy.github.io/img/ogre3d-logo.svg" alt="Ogre3D">&lt;/p>
-&lt;p>Ogre 1.x 跟 2.x 的比較可以參考&lt;a href="https://www.ogre3d.org/about/what-version-to-choose">這個連結&lt;/a>。不管在效能還是視覺方面都有明顯提昇。&lt;/p>
-&lt;p>我的開發環境如下：&lt;/p>
+&lt;p>Ogre 1.x 跟 2.x 的比較可以參考&lt;a href="https://www.ogre3d.org/about/what-version-to-choose">這個連結&lt;/a>。2.x 版現在已經改名叫 Ogre-Next 來跟原本的 Ogre3D 做出區隔，新版不管在效能還是視覺方面都有明顯提昇。&lt;/p>
+&lt;p>我的開發環境如下:&lt;/p>
 &lt;ul>
 &lt;li>作業系統 Windows 10 Home&lt;/li>
 &lt;li>編譯器 Visual Studio 2019 Community&lt;/li>
 &lt;li>版本控制系統 git&lt;/li>
 &lt;li>建構系統 CMake 3.17&lt;/li>
 &lt;/ul>
-&lt;h2 id="下載-source-code">下載 Source code&lt;/h2>
-&lt;p>目前 Ogre3D 放在 Github 上，共需要下載兩份 source code:&lt;/p>
+&lt;h2 id="下載原始碼">下載原始碼&lt;/h2>
+&lt;p>目前 Ogre3D 原始碼放在 Github 上，一共需要下載兩份 source code:&lt;/p>
 &lt;ol>
 &lt;li>Ogre3D 引擎本體 &lt;a href="https://github.com/OGRECave/ogre-next">https://github.com/OGRECave/ogre-next&lt;/a>&lt;/li>
 &lt;li>第三方依賴函式庫 &lt;a href="https://github.com/OGRECave/ogre-next-deps">https://github.com/OGRECave/ogre-next-deps&lt;/a>&lt;/li>
 &lt;/ol>
-&lt;p>下載後把這兩個 repo 丟進同一個目錄下。例如：&lt;/p>
+&lt;p>把兩個 repo 放在同一個目錄下：&lt;/p>
 &lt;pre>&lt;code>C:/OgreSDK/ogre
 C:/OgreSDK/ogredeps
-&lt;/code>&lt;/pre>&lt;h2 id="cmake">CMake&lt;/h2>
+&lt;/code>&lt;/pre>&lt;h2 id="cmake-建構系統">CMake 建構系統&lt;/h2>
 &lt;p>Ogre 用的建構系統是 &lt;a href="https://cmake.org/" title="CMake official site">CMake&lt;/a>，一套跨平台的建構系統。這是我第一次用 CMake，花了一些時間才搞懂用法。&lt;/p>
-&lt;p>CMake 本身不能直接編譯程式。相對的，它要求使用者先寫一個全平台通用的 CMake 腳本 (通常叫 &lt;code>CMakeLists.txt&lt;/code>)，然後 CMake 會把這個腳本轉換成對應平台的專案。
-比如 Windows 上跑 CMake 就是生成 Visual Studio 專案。Mac 就是上產生 Xcode 專案。&lt;/p>
-&lt;h2 id="編譯依賴函式庫--ogredeps">編譯依賴函式庫 ogredeps&lt;/h2>
-&lt;p>依賴函式庫裡面包含 Ogre3D 採用的所有第三方函式庫。&lt;/p>
+&lt;p>CMake 本身不能直接編譯程式。相對的，它要求使用者先寫一個全平台通用的 CMake 腳本 (通常叫 &lt;code>CMakeLists.txt&lt;/code>)，CMake 再把這個腳本轉換成實際的專案。
+比如 Windows 上跑 CMake 就產出 Visual Studio 專案。Mac 就是上產生 Xcode 專案。&lt;/p>
+&lt;h2 id="編譯依賴函式庫">編譯依賴函式庫&lt;/h2>
+&lt;p>&lt;code>ogre-next-deps&lt;/code> 裡面包含了 Ogre3D 採用的第三方函式庫。&lt;/p>
 &lt;p>先打開 &lt;strong>CMake-GUI&lt;/strong>。&lt;/p>
 &lt;p>&lt;img src="//chchwy.github.io/img/cmake-ogredeps.png" alt="ogredeps">&lt;/p>
 &lt;ul>
-&lt;li>&lt;strong>Where is the source code:&lt;/strong> 填 ogredeps 的源碼位置&lt;/li>
-&lt;li>&lt;strong>Where to build the binaries:&lt;/strong> 按照慣例，源碼下加一層 build 子目錄&lt;/li>
+&lt;li>&lt;strong>Where is the source code:&lt;/strong> 填寫 Repo 的目錄位置&lt;/li>
+&lt;li>&lt;strong>Where to build the binaries:&lt;/strong> 按照慣例，源始碼目錄下加一層 build 子目錄&lt;/li>
 &lt;/ul>
 &lt;p>接著以下步驟&lt;/p>
 &lt;ul>
-&lt;li>按下 &lt;strong>Configure&lt;/strong>，選擇編譯器版本 &lt;code>Visual Studio 16 2019 Win64&lt;/code>&lt;/li>
-&lt;li>再按下 &lt;strong>Generate&lt;/strong> ，產生 VS 專案檔&lt;/li>
-&lt;li>最後按 &lt;strong>Open Project&lt;/strong> 就會打開產生好的 Visual Studio solution&lt;/li>
-&lt;li>打開 Visual Studio 之後，編譯 &lt;code>ALL_BUILD&lt;/code> 專案，Debug/Release 都要編譯&lt;/li>
-&lt;li>接著要單獨編譯 &lt;code>INSTALL&lt;/code> 專案，在 INSTALL 上按右鍵 Build，同樣 Debug/Release 都要編譯&lt;/li>
-&lt;li>這樣子依賴庫的編譯就算完成了。&lt;/li>
+&lt;li>按 &lt;strong>Configure&lt;/strong>，選擇編譯器版本 &lt;code>Visual Studio 16 2019 Win64&lt;/code>&lt;/li>
+&lt;li>再按 &lt;strong>Generate&lt;/strong> ，產生 VS 專案檔&lt;/li>
+&lt;li>最後按 &lt;strong>Open Project&lt;/strong> 打開 Visual Studio solution&lt;/li>
+&lt;li>開啟 Visual Studio 之後，編譯 &lt;code>ALL_BUILD&lt;/code> 專案，Debug/Release 都要&lt;/li>
+&lt;li>接著單獨編譯 &lt;code>INSTALL&lt;/code> 專案，在 INSTALL 上按右鍵 Build，同樣 Debug/Release 都要&lt;/li>
+&lt;li>這樣子第三方函式庫的編譯就算完成了&lt;/li>
 &lt;/ul>
-&lt;h2 id="編譯-ogre3d-引擎">編譯 Ogre3D 引擎&lt;/h2>
-&lt;p>接著來編譯 Ogre 引擎本體。記得要切換到 &lt;code>v2-1&lt;/code> 的分支上&lt;/p>
-&lt;p>跟編譯依賴庫一樣，打開 CMake GUI&lt;/p>
+&lt;h2 id="編譯引擎">編譯引擎&lt;/h2>
+&lt;p>接著編譯 Ogre 引擎本體。記得要切換到 &lt;code>v2-1&lt;/code> 的分支上&lt;/p>
+&lt;p>跟前一步一樣，打開 CMake GUI&lt;/p>
 &lt;ul>
-&lt;li>&lt;strong>Where is the source code:&lt;/strong> 填 ogre 的源碼位置&lt;/li>
-&lt;li>&lt;strong>Where to build the binaries:&lt;/strong> 同樣往下加一層子目錄 build&lt;/li>
+&lt;li>&lt;strong>Where is the source code:&lt;/strong> 填 ogre 的源始碼目錄&lt;/li>
+&lt;li>&lt;strong>Where to build the binaries:&lt;/strong> 往下加一層子目錄 build&lt;/li>
 &lt;/ul>
 &lt;p>&lt;img src="//chchwy.github.io/img/cmake-ogre3d.png" alt="">&lt;/p>
-&lt;p>按下 Configure 按鈕之後呢，應該會跳出一些錯誤訊息，別擔心，這是因為 CMake 無法定位依賴庫的位置，藉由設定 &lt;strong>OGRE_DEPENDENCIES_DIR&lt;/strong> 這個欄位，我們可以告訴 CMake 依賴庫的位置：&lt;/p>
+&lt;p>按下 Configure 按鈕之後呢，應該會跳出一些錯誤，別擔心，這是因為 CMake 無法定位依賴庫的位置，藉由設定 &lt;strong>OGRE_DEPENDENCIES_DIR&lt;/strong> 這個欄位告訴 CMake 依賴庫的位置：&lt;/p>
 &lt;ul>
-&lt;li>&lt;strong>OGRE_DEPENDENCIES_DIR&lt;/strong> 填入 &lt;code>C:/OgreSDK/ogredeps/build/ogredeps&lt;/code>，或者你自己設定的路徑。&lt;/li>
-&lt;li>Windows 下可以選用 DirectX 或者 OpenGL3+ 來渲染，兩者都勾也行。&lt;/li>
-&lt;li>Paging、RTShaderSystem、Terrain 這三個模組目前跟 2.1 不相容，&lt;strong>不要勾&lt;/strong>。&lt;/li>
-&lt;li>OGRE_BUILD_SAMPLES2 是 Ogre 2.1 版的官方範例集，勾起來。&lt;/li>
-&lt;li>勾選 SSE2 硬體指令集，加速數學運算。&lt;/li>
-&lt;li>&lt;code>OGRE_UNITY_BUILD&lt;/code> 可以大大縮短編譯的時間，建議勾選。&lt;/li>
+&lt;li>&lt;strong>OGRE_DEPENDENCIES_DIR&lt;/strong> 填入 &lt;code>C:/OgreSDK/ogredeps/build/ogredeps&lt;/code> 或者你的路徑&lt;/li>
+&lt;li>Windows 下可以選用 DirectX 或者 OpenGL3+ 來渲染，兩者都勾也行&lt;/li>
+&lt;li>Paging、RTShaderSystem、Terrain 這三個模組目前跟 2.1 不相容，&lt;strong>不要勾&lt;/strong>&lt;/li>
+&lt;li>OGRE_BUILD_SAMPLES2 是 Ogre 2.1 版的官方範例集，勾起來&lt;/li>
+&lt;li>勾選 SSE2 硬體指令集，加速數學運算&lt;/li>
+&lt;li>&lt;code>OGRE_UNITY_BUILD&lt;/code> 可以大大縮短編譯的時間，建議勾選&lt;/li>
 &lt;/ul>
 &lt;p>&lt;img src="//chchwy.github.io/img/cmake-ogre3d-config.png" alt="">&lt;/p>
 &lt;ul>
 &lt;li>再 Congifure 一次，應該就沒有錯誤訊息了&lt;/li>
 &lt;li>按下 Generate 產生 Ogre.sln&lt;/li>
-&lt;li>Open Project 打開 Visual studio 專案檔&lt;/li>
+&lt;li>Open Project 打開 Visual Studio&lt;/li>
 &lt;li>編譯 &lt;strong>ALL_BUILD&lt;/strong> 專案，Debug/Release都要&lt;/li>
 &lt;li>編譯 &lt;strong>INSTALL&lt;/strong> 專案，同樣 Debug/Release都要&lt;/li>
 &lt;li>到此為止全部完成，挑選任一 Sample 執行即可&lt;/li>
 &lt;/ul>
-&lt;p>下圖是 Ogre3D 的其中一個範例 Forwrad3D 畫面：&lt;/p>
+&lt;p>下圖是 Ogre3D 的官方範例 Forwrad3D 的畫面：&lt;/p>
 &lt;p>&lt;img src="//chchwy.github.io/img/ogre3d-forward.jpg" alt="">&lt;/p></description></item><item><title>避免 UVa 解題時手動輸入測資</title><link>//chchwy.github.io/post/2016-03-08-acm-io-redirection/</link><pubDate>Tue, 08 Mar 2016 00:00:00 +0000</pubDate><guid>//chchwy.github.io/post/2016-03-08-acm-io-redirection/</guid><description>&lt;p>解 ACM 題目的時候，通常測試資料都是走標準輸入 (stdin) 如 &lt;code>cin/scanf()/gets()&lt;/code>，需要手動鍵入。測試資料量大的時候，手動鍵入測試資料非常浪費時間。我後來發現了一個技巧叫做 I/O 轉向 (I/O redirection) ，可以重新定義標準輸入流，省去手動鍵入測資的步驟。&lt;/p>
 &lt;p>先上例子：&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="kt">int&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
