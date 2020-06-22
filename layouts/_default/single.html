@@ -6,47 +6,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
   <base href="{{ .Site.BaseURL }}">
-  <title>{{ .Page.Title }} {{ .Site.Title }}</title>
+  <title>{{ .Site.Title }}</title>
   <link rel="canonical" href="{{ .Permalink }}">
-  <link href="./index.xml" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+  <link href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 
-  {{ partial "head_includes.html" . }}
+  {{ $css := resources.Get "css/main.css" | resources.Minify }}
+  <link rel="stylesheet" href="{{ $css.Permalink }}">
 </head>
 <body>
 
 {{ partial "header.html" . }}
 
 <main id="main">
-<div class="flex-center">
   <div class="container">
-
-    <article id="the-article">
+    <article>
       <h1 class="post-title">{{ .Title }}</h1>
-      <section style="color:#988F9B; font-family: Menlo, Consolas, Courier, monospace; margin-top: 18px;">
+      <div style="color:#988F9B; font-family: Menlo, 'Courier New', Consolas, monospace; margin-top: 18px;">
         By <a href="/about">Matt</a> |
         {{ .Page.Date.Format "2006-01-02" }} |
 
         {{ range .Page.Params.tags }}
-          <a class="post-tag" href="/tags/{{ . | urlize }}">{{ . }}</a>
+          <a class="post-tag" href="/tags/{{ . | urlize }}">#{{ . }}</a>
         {{ end }}
 
-      </section>
-      <sction style="margin-top: 30px;">
+      </div>
+      <div style="margin-top: 3em;">
       {{ .Content }}
-      </section>
+      </div>
     </article>
-
+    <!--
     {{ partial "related.html" . }}
-
+    -->
     <div style="padding-top: 3em;">
       {{ template "_internal/disqus.html" . }}
     </div>
   </div>
-</div>
 </main>
-
 {{ partial "footer.html" . }}
-
 {{ template "_internal/google_analytics.html" . }}
 </body>
 </html>

@@ -18,7 +18,6 @@
 {{ partial "header.html" . }}
 
 <section id="main">
-<div class="flex-center">
   <div class="container">
     <ul class="post-list">
     {{ range where site.RegularPages "Section" "post" }}
@@ -29,7 +28,6 @@
     {{ end }}
     </ul>
   </div>
-</div>
 </section>
 
 {{ partial "footer.html" . }}
