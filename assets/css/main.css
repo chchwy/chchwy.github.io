@@ -53,7 +53,7 @@ body {
 .site-name a:hover {color: #62320C;}
 
 header { background-color: #f9f9f9; border-top: 5px solid rgb(41, 22, 8); border-bottom: 1px solid #ddd; margin-bottom: 2em; }
-footer { background-color: #f9f9f9; border-top: 0px solid #ddd; }
+footer { background-color: #f9f9f9; border-top: 1px solid #ddd; }
 
 #nav { float: right; }
 #nav {
@@ -121,6 +121,8 @@ article ol {
   list-style-type: decimal;
   line-height: 1.5em;
 }
+
+img[src$='#cover'] { float:left; margin-right: 1em; margin-bottom: 1em;}
 
 /* Background */ .chroma { color: #d0d0d0; background-color: #202020 }
 /* Error */ .chroma .err { color: #a61717; background-color: #e3d2d2 }
