@@ -109,22 +109,24 @@ article a { color:#a61717}
 article img {max-width: 100%; }
 
 article ul {
-  margin-top: 1em;
-  padding-left: 1.5em;
+  margin: 1em 0 1em 0;
+  padding-left: 2em;
   list-style-type: disc;
   line-height: 1.5em;
 }
 
 article ol {
-  margin-top: 1em;
-  padding-left: 1.5em;
+  margin: 1em 0 1em 0;
+  padding-left: 2em;
   list-style-type: decimal;
   line-height: 1.5em;
 }
 
-img[src$='#cover'] { float:left; margin-right: 1em; margin-bottom: 1em;}
+img[src$='#left'] { float:left; margin-right: 1em; margin-bottom: 1em;}
+img[src$='#right'] { float:right; margin-left: 1em; margin-bottom: 1em;}
 blockquote p {margin: 0;}
 blockquote { margin-top: 1em; padding: 0.5em; background-color:#e9e8e4; border-left: solid 5px #c9c7c2;}
+strong {font-weight: bold;}
 
 /* Background */ .chroma { color: #d0d0d0; background-color: #202020 }
 /* Error */ .chroma .err { color: #a61717; background-color: #e3d2d2 }

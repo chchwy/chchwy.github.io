@@ -5,14 +5,15 @@ tags: [Linux,讀書]
 isCJKLanguage: true
 slug: "2010-12-21-just-for-fun-linux-review"
 ---
-<img alt="More about Just for Fun" src="http://image.anobii.com/anobi/image_book.php?type=5&amp;item_id=0163a0d1f1ef6809f2&amp;time=0" title="More about Just for Fun" class="left" />
 
 ## 不平凡的平凡人
 
+![Just for Fun](/img/book/justforfun.jpg#left)
+
 我想對此書有興趣的人，大多想瞭解兩個問題
 
-- Linus Torvalds此公到底是何等人物?
-- Linux為什麼會成功?
+一、Linux為什麼會成功 ?
+二、Linus Torvalds此公到底是何等人物 ?
 
 針對這兩個問題，如果你對 Linux 的歷史背景跟開發過程沒那麼熟悉，那我會推薦大家先去看[「Rebel Code」][0](中譯: Linux傳奇)。為什麼這樣說呢？ 因為我自己讀 Just for Fun 這本書時，很多時候因為不瞭解當時開發 Linux 的時空背景，所以無法體會 Linus 對事件做出的評論。第二個是 Linus 本人實在很謙虛，往往輕描淡寫的帶過自己的事蹟。
 

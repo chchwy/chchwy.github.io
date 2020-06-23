@@ -7,7 +7,7 @@ tags: [Kindle]
 
 Amazon 網路書店出的電子書閱讀器 Kindle DX，當初我看著機子猶豫了很久，一直無法決定要不要買。直到下定決心買下手後，到現在使用超過半年了，我的感想是「真的很不錯」， 雖然有些小缺點，但是瑕不掩瑜。
 
-<img class="left" src="/img/kindle-dx-1.jpg">
+![Kindle01](/img/kindle-dx-1.jpg#left)
 
 ## Kindle DX vs. iPad
 
@@ -23,7 +23,7 @@ Kindle 的閱讀感覺則已經 90% 像紙面印刷品，這感覺很奇妙，�
 
 說起買 Kindle DX 的原因，因為小弟我的本業需要閱讀很多的原文文件，而且沒意外的話今年是我最後一年學生生涯，也是有閒暇可以大量閱讀的最後機會，於是心一橫就買下去了。買到現在，原本打算讀的專業書籍沒讀幾本，小說倒是一本接一本看了不少。orz
 
-<img src="/img/kindle-dx-2.jpg">
+![Kindle02](/img/kindle-dx-2.jpg)
 
 ### 接下來，就幾個方面來討論一下
 

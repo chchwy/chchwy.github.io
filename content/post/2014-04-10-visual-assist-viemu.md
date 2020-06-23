@@ -1,6 +1,6 @@
 ---
-date: "2014-02-14"
-title: "解決 ViEmu 與 Visual Assist X 共存的衝突"
+date: 2014-02-14
+title: "解決 ViEmu 與 Visual Assist X 共存衝突"
 tags: ["Visual Studio"]
 isCJKLanguage: true
 ---
