@@ -97,7 +97,7 @@ footer { background-color: #f9f9f9; border-top: 1px solid #ddd; }
 #main {
   margin-bottom: 2em;
 }
-code { font-family: Menlo, Consolas, 'Courier New', Courier, monospace;; }
+code { font-family: Menlo, Consolas, 'Courier New', Courier, monospace; }
 pre { border-left: solid 5px #595959; background-color: #eee; padding: 0.5em 1em; margin-top: 1em;}
 pre code { font-size: 0.9em; }
 
@@ -123,6 +123,8 @@ article ol {
 }
 
 img[src$='#cover'] { float:left; margin-right: 1em; margin-bottom: 1em;}
+blockquote p {margin: 0;}
+blockquote { margin-top: 1em; padding: 0.5em; background-color:#e9e8e4; border-left: solid 5px #c9c7c2;}
 
 /* Background */ .chroma { color: #d0d0d0; background-color: #202020 }
 /* Error */ .chroma .err { color: #a61717; background-color: #e3d2d2 }
