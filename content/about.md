@@ -1,6 +1,6 @@
 ---
 date: "1984-01-01"
-title: About me
+title: About Me 關於我
 showtags: "good"
 type: "static_page"
 ---
@@ -18,9 +18,10 @@ Hi, 我是 Matt (chchwy)，軟體工程師。
 我從 2013 年開始成為開源軟體 [Pencil2D][0] 的主要維護者。
 
 Pencil2D 是一款非常容易上手的 2D 動畫軟體。
-不知道你小時候是否曾經在在筆記本的角落上畫過簡單的翻頁動畫? 在每張紙的角落塗上逐格變化的圖樣，隨著紙頁快速翻過，人物就會好像真的動起來一樣。或者你喜歡宮騎駿卡通風格的手繪動畫，想要自己動手，那麼你也許會喜歡 Pencil2D。
 
-Pencil2D 的設計初衷是簡單，不需要太多學習，5分鐘之內就可以上手並享受畫畫的樂趣。Pencil2D 是跨平台軟體，支持 Windows, Mac 和 Linux。
+你小時候是否曾經在在筆記本的角落上畫過簡單的翻頁動畫? 在紙張角落塗上逐格變化的圖樣，隨著紙頁快速翻過，人物就會好像真的動起來一樣。或者你喜歡宮騎駿卡通風格的手繪動畫，想要自己動手，那麼你也許會喜歡 Pencil2D。
+
+Pencil2D 的設計初衷是簡單，不需要太多學習，5分鐘之內就可以上手並享受畫動畫的樂趣。Pencil2D 是跨平台軟體，支持 Windows, Mac 和 Linux。
 
 - Pencil2D 官方網站: <http://pencil2d.github.io>
 - Github 倉庫: <http://github.com/pencil2d/pencil>
