@@ -50,6 +50,21 @@ body {
   max-width: 800px;
 }
 
+ /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) { .container { width: 96%; } }
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) { .container { width: 95%; } }
+ 
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) { .container { width: 95%; } }
+ 
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {.container { max-width: 800px; }}
+ 
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {.container { max-width: 850px; }} 
+
 #main {
   margin-bottom: 2em;
 }
@@ -102,7 +117,6 @@ footer { background-color: #f9f9f9; border-top: 1px solid #ddd; }
   font-size: 0.9em;
 }
 
-
 code { font-family: Menlo, Consolas, 'Courier New', Courier, monospace; }
 pre { border-left: solid 5px #595959; background-color: #eee; padding: 0.5em 1em; margin-top: 1em;}
 pre code { font-size: 0.9em; }
@@ -111,7 +125,7 @@ article h1 { font-size: 2em; font-family: -apple-system, BlinkMacSystemFont, Rob
 article h2 { font-size: 1.3em; font-weight: bold; margin-top: 2em; }
 article h3 { font-size: 1.1em; font-weight: bold; margin-top: 2em; }
 article p { margin-top: 1.2em; line-height: 1.6em; }
-article a { color:#a61717}
+article a { color:#a61717; }
 article img {max-width: 100%; }
 
 article ul {
