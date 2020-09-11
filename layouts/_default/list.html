@@ -8,8 +8,10 @@
   <base href="{{ .Site.BaseURL }}">
   <title>{{ .Site.Title }}</title>
   <link rel="canonical" href="{{ .Permalink }}">
-  <link href="./index.xml" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-  {{ partial "head_includes.html" . }}
+  <link href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+
+  {{ $css := resources.Get "css/main.css" | resources.Minify }}
+  <link rel="stylesheet" href="{{ $css.Permalink }}">
 </head>
 <body>
 
@@ -19,7 +21,7 @@
 <div class="flex-center">
   <div class="container">
     <br>
-    <h3>Tags: [{{ .Title }}]</h3>
+    <h1>Tags: [{{ .Title }}]</h1>
     <ul class="post-list">
 		{{ range $name, $page := .Data.Pages }}
       <li class="post-list-entry">
