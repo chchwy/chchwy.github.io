@@ -2,7 +2,7 @@
 date: 2019-08-14
 isCJKLanguage: true
 title: "Chocolatey 套件管理，重灌 Windows 後的好幫手"
-tags: [開發日常]
+tags: [開發日常, 生產力]
 ---
 
 上個月又重灌了 Windows。重灌之後，我試著挑戰一件事：不從網路上手動下載任何安裝檔，就把電腦設置回可工作狀態。
