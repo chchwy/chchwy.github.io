@@ -1,4 +1,32 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Games on Matt - 調和的靈感</title><link>//chchwy.github.io/tags/games/</link><description>Recent content in Games on Matt - 調和的靈感</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Wed, 18 Mar 2015 00:00:00 +0000</lastBuildDate><atom:link href="//chchwy.github.io/tags/games/index.xml" rel="self" type="application/rss+xml"/><item><title>用 Github Actions 更新部落格</title><link>//chchwy.github.io/post/2020-09-01-github-actions-hugo-blog/</link><pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate><guid>//chchwy.github.io/post/2020-09-01-github-actions-hugo-blog/</guid><description>&lt;p>現在我的部落格是 Hugo + Github Pages 的組合。&lt;/p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Games on Matt - 調和的靈感</title><link>//chchwy.github.io/tags/games/</link><description>Recent content in Games on Matt - 調和的靈感</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Wed, 18 Mar 2015 00:00:00 +0000</lastBuildDate><atom:link href="//chchwy.github.io/tags/games/index.xml" rel="self" type="application/rss+xml"/><item><title>分析閱讀的十五條規則</title><link>//chchwy.github.io/post/2020-09-11-analytical-reading/</link><pubDate>Fri, 11 Sep 2020 00:00:00 +0000</pubDate><guid>//chchwy.github.io/post/2020-09-11-analytical-reading/</guid><description>&lt;p>以前我曾經寫過一篇「如何閱讀一本書」的&lt;a href="//chchwy.github.io/post/book/2011-05-23-%E8%AE%80%E6%9B%B8%E5%BF%83%E5%BE%97-%E5%A6%82%E4%BD%95%E9%96%B1%E8%AE%80%E4%B8%80%E6%9C%AC%E6%9B%B8/">讀書心得&lt;/a>，但是多年過去我已經逐漸淡忘書本裡面的規則。今天把這十五條分析閱讀的規則列出來，溫故知新。我用我自己的話重寫部份規則，字句不一定跟原書完全相符。&lt;/p>
+&lt;h2 id="分析閱讀的第一階段-抓住書本的骨架">分析閱讀的第一階段： 抓住書本的骨架&lt;/h2>
+&lt;ul>
+&lt;li>規則一：知道正在讀的書的類型，因為不同類型的書有不同閱讀技巧。&lt;/li>
+&lt;li>規則二：用幾個簡單的句子，最多一小段話簡述整本書的內容。&lt;/li>
+&lt;li>規則三：列舉書中的主要部份，寫出全書的大綱、也列出各部份的大綱。&lt;/li>
+&lt;li>規則四：確定作者想要解決的問題。作者在開始寫作前都有一個(或一串)問題，而書的內容就是答案。&lt;/li>
+&lt;/ul>
+&lt;h2 id="分析閱讀第二階段-詮釋書本的論點">分析閱讀第二階段： 詮釋書本的論點&lt;/h2>
+&lt;ul>
+&lt;li>規則五：詮釋書中的關鍵字，並與作者達成共識。(比如九二共識就是反例)&lt;/li>
+&lt;li>規則六：圈出書中最重要的句子，找出作者的主旨。&lt;/li>
+&lt;li>規則七：解讀規則七的句子，推理出關聯，並設法重建整本書的基本論述。&lt;/li>
+&lt;li>規則八：找出作者的解答。回答了哪些部份、沒有回答哪些部份。&lt;/li>
+&lt;/ul>
+&lt;h2 id="分析閱讀第三階段-公正的評斷">分析閱讀第三階段： 公正的評斷&lt;/h2>
+&lt;p>當個理性的批評者&lt;/p>
+&lt;ul>
+&lt;li>規則九：當你說出「我同意」、「我反對」或「我暫緩評論」之前，你必須能肯定「我瞭解了」。&lt;/li>
+&lt;li>規則十：當你不同意作者的觀點時，有理有據的表達自己的意見，不要流於情緒爭論。&lt;/li>
+&lt;li>規則十一：清楚區分客觀知識與個人觀點的不同。&lt;/li>
+&lt;/ul>
+&lt;p>批評的標準&lt;/p>
+&lt;ul>
+&lt;li>規則十二：證明作者的知識不足。&lt;/li>
+&lt;li>規則十三：證明作者的知識錯誤。&lt;/li>
+&lt;li>規則十四：證明作者的推論不合邏輯。&lt;/li>
+&lt;li>規則十五：證明作者的分析不夠完整。&lt;/li>
+&lt;/ul></description></item><item><title>用 Github Actions 更新部落格</title><link>//chchwy.github.io/post/2020-09-01-github-actions-hugo-blog/</link><pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate><guid>//chchwy.github.io/post/2020-09-01-github-actions-hugo-blog/</guid><description>&lt;p>現在我的部落格是 Hugo + Github Pages 的組合。&lt;/p>
 &lt;p>跟一般的部落格平台不一樣，用 Hugo 這類靜態網站產生器，內容更新了需要全站重新編譯。所以更新部落格就變得稍微有點麻煩。&lt;/p>
 &lt;p>我怎麼處理部落格更新，總分成三個時期：&lt;/p>
 &lt;ol>
@@ -289,7 +317,7 @@ C:/OgreSDK/ogredeps
 &lt;li>到此為止全部完成，挑選任一 Sample 執行即可&lt;/li>
 &lt;/ul>
 &lt;p>下圖是 Ogre3D 的官方範例 Forwrad3D 的畫面：&lt;/p>
-&lt;p>&lt;img src="//chchwy.github.io/img/ogre3d-forward.jpg" alt="">&lt;/p></description></item><item><title>避免 UVa 解題時手動輸入測資</title><link>//chchwy.github.io/post/2016-03-08-acm-io-redirection/</link><pubDate>Tue, 08 Mar 2016 00:00:00 +0000</pubDate><guid>//chchwy.github.io/post/2016-03-08-acm-io-redirection/</guid><description>&lt;p>解 ACM 題目的時候，通常測試資料都是走標準輸入 (stdin) 如 &lt;code>cin/scanf()/gets()&lt;/code>，需要手動鍵入。測試資料量大的時候，手動鍵入測試資料非常浪費時間。我後來發現了一個技巧叫做 I/O 轉向 (I/O redirection) ，可以重新定義標準輸入流，省去手動鍵入測資的步驟。&lt;/p>
+&lt;p>&lt;img src="//chchwy.github.io/img/ogre3d-forward.jpg" alt="">&lt;/p></description></item><item><title>UVa 解題自動輸入測資</title><link>//chchwy.github.io/post/2016-03-08-acm-io-redirection/</link><pubDate>Tue, 08 Mar 2016 00:00:00 +0000</pubDate><guid>//chchwy.github.io/post/2016-03-08-acm-io-redirection/</guid><description>&lt;p>解 ACM 題目的時候，走標準輸入 &lt;code>cin/scanf()/gets()&lt;/code> 手動鍵入大量測試資料量不只煩人，還非常緩慢。後來我發現了一個技巧叫做 I/O 轉向 (I/O redirection) ，可以重新定義標準輸入流，省下大量手動鍵入測資的時間。&lt;/p>
 &lt;p>先上例子：&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="kt">int&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="p">{&lt;/span>
 &lt;span class="cp">#ifndef ONLINE_JUDGE
@@ -304,10 +332,10 @@ C:/OgreSDK/ogredeps
 &lt;span class="p">}&lt;/span>
 &lt;/code>&lt;/pre>&lt;/div>&lt;p>關鍵是 &lt;code>freopen()&lt;/code> 這個函數。&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="n">freopen&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;input.txt&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;r&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">stdin&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>這一行的作用就是把 input.txt 當作 stdin 的資料來源。一旦呼叫過 &lt;code>freopen()&lt;/code>，接下來所有的標準輸入函數 &lt;code>cin/scanf()/getline()&lt;/code> 就變成從 input.txt 讀取資料。&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>透過 &lt;code>freopen()&lt;/code> 可以把 &lt;code>stdin&lt;/code> 的輸入源從鍵盤改成檔案。所以預先把測資寫在檔案 input.txt 裡，接下來的標準輸入函數 &lt;code>cin/scanf()/getline()&lt;/code> 就會變成從 input.txt 讀取資料，非常方便。&lt;/p>
 &lt;div class="highlight">&lt;pre class="chroma">&lt;code class="language-cpp" data-lang="cpp">&lt;span class="n">freopen&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;output.txt&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;w&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">stdout&lt;/span>&lt;span class="p">);&lt;/span>
-&lt;/code>&lt;/pre>&lt;/div>&lt;p>同樣的也可以把標準輸出導向檔案寫出，這樣所有的 &lt;code>cout/printf()/puts()&lt;/code> 都會寫入 output.txt 這個檔案。&lt;/p>
-&lt;p>因為 UVa online judge 在編譯的時候會下 &lt;code>-DONLINE_JUDGE&lt;/code> 的編譯參數。所以我們把freopen() 用 &lt;code>#ifndef&lt;/code> (if Not defined) 夾起來，這樣只有在本機測試的時候才做 I/O 轉向，上傳程式碼的時候走回正常的標準輸入。&lt;/p></description></item><item><title>客製化 Visual C++ clean project 的行為</title><link>//chchwy.github.io/post/2015-06-20-customize-vs2013-clean-project/</link><pubDate>Sat, 20 Jun 2015 00:00:00 +0000</pubDate><guid>//chchwy.github.io/post/2015-06-20-customize-vs2013-clean-project/</guid><description>&lt;p>昨天花了一點時間研究一下，Visual C++ 該怎麼客製 Clean 的行為。&lt;/p>
+&lt;/code>&lt;/pre>&lt;/div>&lt;p>同樣的也可以把標準輸出導向檔案，這樣所有的標準輸出 &lt;code>cout/printf()/puts()&lt;/code> 都會寫入 output.txt 這個檔案。&lt;/p>
+&lt;p>接著把這兩個 &lt;code>freopen()&lt;/code> 轉向程式碼用 &lt;code>#ifndef ONLINE_JUDGE ... #endif&lt;/code> 包起來。因為 UVa online judge 編譯程式碼的時候有下編譯參數 &lt;code>-DONLINE_JUDGE&lt;/code>。這樣子I/O 轉向在本機測試的時候才有作用，提交程式碼的時候依然走正常的標準輸入。&lt;/p></description></item><item><title>客製化 Visual C++ clean project 的行為</title><link>//chchwy.github.io/post/2015-06-20-customize-vs2013-clean-project/</link><pubDate>Sat, 20 Jun 2015 00:00:00 +0000</pubDate><guid>//chchwy.github.io/post/2015-06-20-customize-vs2013-clean-project/</guid><description>&lt;p>昨天花了一點時間研究一下，Visual C++ 該怎麼客製 Clean 的行為。&lt;/p>
 &lt;p>簡單講，我想要在按下 Clean Project 的時候，請 Visual Studio 「順便」幫我刪掉幾個目錄。說是順便但是其實不太容易，因為像 Build Project 這個動作，在專案設定頁有 Pre-build Event 和 Post-build Event 可以掛上額外的工作，但是 Clean 在專案設定裡就沒有相關的掛勾。至少 Visual Studio 並沒有 UI 可以直接操作。&lt;/p>
 &lt;h2 id="研究-vcxproj">研究 .vcxproj&lt;/h2>
 &lt;p>我簡單研究了一下 vcxproj 的文件格式，我發現整個 C++ 專案的編譯流程，都是由 &lt;code>Microsoft.Cpp.targets&lt;/code> 這個設定檔定義的。每個 .vcxproj 透過 &lt;code>&amp;lt;Import&amp;gt;&lt;/code> 將 &lt;code>Microsoft.Cpp.targets&lt;/code> 這個檔案引入，確立整個 C++ 專案的建構流程。&lt;/p>
@@ -588,6 +616,7 @@ Jekyll 一開始就將整個網站編譯成靜態HTML頁面，所以不用資料
 &lt;p>古龍很喜歡寫廢話，例如這樣:『只有一種人不會說話。』『那就是死人!』，一句話硬要分好成幾句來講的廢話，有時候反而會有一種曲折的效果。但是古龍的文風，發展到某個偏執的方向，大概就會變得像邊城浪子一樣。又臭又長，太多陰謀，太多廢話，讀得很累。&lt;/p>
 &lt;p>邊城浪子，說的是傅紅雪的復仇之旅，但是看完整本書之後，我卻對這個腳色哭笑不得，因為傅紅雪怎麼看都像一個笨蛋。傅紅雪只是魁儡，被周圍的眾人耍著團團轉，傻傻的追著他心中以為的仇人。而且劇情也是一直不停重複，傅紅雪陷入危機，葉開跳出來出來救他，傅紅雪快要殺錯人了，葉開跳出來點醒他，如此無窮迴圈，所以我覺得傅紅雪是笨蛋。但是另一位主角葉開，我就更搞不懂他了，他好像什麼都知道，但偏偏又什麼都不講，放任事情發展，表現很平面，從頭到尾就是「出一張嘴」葉開，真是愧對小李飛刀傳人的名號。&lt;/p>
 &lt;p>說到劇情，前半段的萬馬堂內鬥風雲，我覺得不錯，根本可以獨立成一個緊湊的故事。而走入傅紅雪的主線劇情後拖泥帶水，可能我對於復仇這檔事沒什麼共鳴吧，打得又不精彩。直到最後一一揭開真相時，我已經沒有看到真相的興奮，只覺得很疲倦，陰謀跟懸疑是古龍的長項，但是邊城浪子陰謀實在太多了，我猜傅紅雪應該比我還疲倦，終於可以結束這堆亂七八糟的事情了。讀到結局時葉開鬆了一口氣，我也鬆了一口氣。&lt;/p></description></item><item><title>讀書心得: 如何閱讀一本書</title><link>//chchwy.github.io/post/book/2011-05-23-%E8%AE%80%E6%9B%B8%E5%BF%83%E5%BE%97-%E5%A6%82%E4%BD%95%E9%96%B1%E8%AE%80%E4%B8%80%E6%9C%AC%E6%9B%B8/</link><pubDate>Mon, 23 May 2011 00:00:00 +0000</pubDate><guid>//chchwy.github.io/post/book/2011-05-23-%E8%AE%80%E6%9B%B8%E5%BF%83%E5%BE%97-%E5%A6%82%E4%BD%95%E9%96%B1%E8%AE%80%E4%B8%80%E6%9C%AC%E6%9B%B8/</guid><description>&lt;p>&lt;img src="//chchwy.github.io/img/book/how-to-read-a-book.jpg#left" alt="如何閱讀一本書">&lt;/p>
+&lt;p>&lt;a href="https://affiliate.api.rakuten.com.tw/redirect?nw=tw&amp;amp;site=afl&amp;amp;a=71032b702639407836d6c880d8e6a095ddade3284b95a891fbd7a1ebff75248826ad0cd9cb4a293a&amp;amp;ar=a747b10f014cf18584f9ee2ca5516854cb91d9c5d6849f5c93000e3163fa586b69315791463a07d2&amp;amp;cs=83316e801792f920f23aa93348ce66dc&amp;amp;pr=5fb9e3b6b880aa41&amp;amp;ap=pr%3D5fb9e3b6b880aa41&amp;amp;e=1&amp;amp;url=https%3A%2F%2Fwww.rakuten.com.tw%2Fshop%2Frbook%2Fproduct%2F2010190045635%3Fscid%3Drafp-">KOBO 購書連結&lt;/a>&lt;/p>
 &lt;p>「如何閱讀一本書」就像書名一樣，一本關於讀書技巧的書，不過這兒「閱讀」兩個字有特別的意義。&lt;/p>
 &lt;p>我打個譬喻，在台灣爬山是不錯的運動，全家大小一起去風景區走上一個早晨，呼吸呼吸新鮮空氣，是爬山。但是一位專業的登山者，經過周密規畫後，全副武裝的的去挑戰台灣百岳，也是爬山，兩個爬山名詞一樣，但是意思顯然不一樣呀。&lt;/p>
 &lt;p>這兒也是，閒暇時看看雜誌打發時間是閱讀，挑戰大部頭又難懂的磚頭書也是閱讀。作者開宗明義就寫『這本書是為了把讀書當作是增進理解能力的人而寫的』，用我的話來理解，就是一本讀書界的喜馬拉雅山登山技術指南吧。&lt;/p>
