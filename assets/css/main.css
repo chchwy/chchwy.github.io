@@ -23,7 +23,7 @@ time, mark, audio, video {
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+footer, header, hgroup, menu, nav, section, div {
   display: block;
   box-sizing: border-box;
 }
@@ -47,23 +47,33 @@ body {
 }
 .container {
   margin: 0 auto;
-  max-width: 800px;
+  /*max-width: 800px;*/
 }
 
  /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) { .container { width: 96%; } }
+@media only screen and (max-width: 600px) { 
+  .container { width: 96%; }
+}
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) { .container { width: 95%; } }
+@media only screen and (min-width: 600px) {
+  .container { width: 95%; }
+}
  
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) { .container { width: 95%; } }
+@media only screen and (min-width: 768px) {
+  .container { width: 95%; }
+}
  
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {.container { max-width: 800px; }}
+@media only screen and (min-width: 992px) {
+  .container { max-width: 800px; }
+}
  
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {.container { max-width: 850px; }} 
+@media only screen and (min-width: 1200px) {
+  .container { max-width: 850px; }
+} 
 
 #main {
   margin-bottom: 2em;
