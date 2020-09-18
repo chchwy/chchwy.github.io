@@ -1,7 +1,7 @@
 ---
 date: 2015-03-18
 title: "翻譯: Nvidia 打算成為遊戲界的 Netflix"
-Tags: [Games, 翻譯]
+tags: [Games, 翻譯]
 isCJKLanguage: true
 ---
 
