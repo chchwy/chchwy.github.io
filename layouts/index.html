@@ -20,7 +20,7 @@
 <section id="main">
   <div class="container">
     <ul class="post-list">
-    {{ range where site.RegularPages "Section" "post" }}
+    {{ range where site.RegularPages "Section" "posts" }}
       <li class="post-list-entry">
         <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
         <a href="{{ .Permalink }}">{{ .Title }}</a>
