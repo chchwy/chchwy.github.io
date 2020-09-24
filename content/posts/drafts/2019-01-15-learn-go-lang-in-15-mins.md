@@ -8,8 +8,7 @@ draft: true
 
 <https://devhints.io/go>
 
-本 Go 語言快速入門是針對已經有其他語言經驗的開發者。
-本文不會重新解釋程式語言的基本概念像是變數迴圈，物件導向等等，而是專注於協助讀者快速掌握 Go 語言的大方向與潛規則。
+目標讀者：已有程式設計經驗。想要快速了解 Go 語法與潛規則。不想從頭了解程式語言基本概念如變數、迴圈等等。
 
 https://yami.io/php-to-golang/
 
@@ -30,118 +29,120 @@ go run
 
 ## 1. Variables
 
-Go 語言是靜態類型語言，宣告變數的同時必須決定類型。
+Go 語言是靜態型別語言，宣告變數的同時必須決定型別。
 
 ```go
-var x int       // var 關鍵字定義新變數，類型在變數名後面
-var y int = 42  // 同上 並指定初值 42
-var z = 42      // 同上 讓編譯器推斷變數類型(int)
+var x int       // 關鍵字 var 宣告新變數，型別放在變數名後面
+var y int = 42  // 同上 指定初值 42
+var z = 42      // 同上 編譯器推斷變數類型(int)
 w := 52         // [冒號等號] (省略var)定義新變數 並推斷類型
 
-var s = "blueberry"   // 雙引號定義字串
-var b = false         // 定義布林
-var f float32 = 1.2   // 單精度浮點數
-var d float64 = 0.000000125 // 雙精度浮點數
-var c byte = 'c'      // unsigned 8-bit integer
+var s = "blueberry"        // 雙引號定義字串
+var b = false              // 布林值
+var f float32 = 1.2        // 單精度浮點數
+var d float64 = 0.00000125 // 雙精度浮點數
+var c byte = 'c'           // unsigned 8-bit integer
 
-const Pi = 3.1415926  // 定義常數
+const Pi = 3.1415926 // 常數
 ```
-!! 如果沒有給變數初值，預設值將會是 0, false 或者 "" 空字串三者之一。
+
+!! 如果沒有明寫初值，初值會是 0, false 或者 "" 空字串三者之一。
 
 ## 2. Hello Golang
 
-照慣例要 Hello World 一下。
-注意 Go 語言的語句結尾不加分號(;)
+依照歷史慣例要 Hello World 一下。語句結尾不加分號(;)
 
 ```go
 // 首先要定義套件名
-// package "main" 意味這個檔案包含程式進入點 main
+// 套件名 "main" 說明這個檔案有程式進入點 main
 package main
 
-// 接著引入其他 package: fmt 用於格式化輸出 (類似C printf)
-import "fmt"
+import "fmt" // 引入其他 package: fmt 用於格式化輸出 (類似C printf)
 
 // main 函數，程式進入點
 func main() {
-  y := 2007
-  fmt.Printf("Hello, Golang was born in %d\n", y)
+    y := 2007
+    fmt.Printf("Hello, Golang was born in %d\n", y)
 }
 ```
 
-## 3. 控制結構
+## 3. 條件控制語法
 
-記住，花括號必須在同一行，這是 golang 的奇耙規定
-
-For 迴圈
+for 迴圈是 Go 語言中唯一的迴圈關鍵字 (沒有while)
 ```go
-// for 迴圈是 Go 語言中唯一的迴圈結構 (沒有while)
 sum := 0
 for i := 0; i < 10; i++ {
-  sum += i
+    sum += i
 }
 fmt.Println(sum)
+```
+注意：golang 統一規定大括號必須在行尾 (別再吵架啦！)
 
-// 但是 for 可省略起始條件跟遞增語句 (這樣 for 就偽裝成 while 了)
-for i < 10 {
+for 可省略起始條件跟遞增語句 (for 成功偽裝成 while 了！)
+
+```go
+for i < 10 { // 跟 while loop 意思一樣
 }
 ```
 
-Switch-case 結構
+Switch-Case 結構
+
 ```go
 // switch 的對象可以是整數或者字串
-// 預設沒有 fallthrough 規則 (跟C++/Java不同)，所以不用寫 break
+// 沒有 fallthrough 規則 (跟C++/Java不同)，所以不用寫 break
 var OS = "win"
 switch OS {
-  case "win":
-    return "It's windows"
-  case "mac", "linux":  // case 下可以有多個值
-    return "It's not windows"
+    case "win":
+        return "It's windows"
+    case "mac", "linux":  // case 下可以有多個值
+        return "It's not windows"
 }
 ```
 
 If-else 結構
 ```go
-if num % 2 == 1 {  // 
-  fmt.Printf("%d 是奇數\n", num)
+if num % 2 == 1 {  // 不需要小括號
+    fmt.Printf("%d 是奇數\n", num)
 } else {
-  fmt.Printf("%d 是偶數\n", num)
+    fmt.Printf("%d 是偶數\n", num)
 }
 ```
 
 ## 4. Functions
 
+和其他語言相比，Go 的函數並沒有太特別。
+
 ```go
-// Go 的函數和其他語言相比，並沒有太特別
-// 唯一需要注意的地方是回傳值類型放在最後
+// 唯一需要注意的點是回傳型別放在函數名字後面
 func suqre(n float64) float64 {
-  return n * n
+    return n * n
 }
 
-// 可回傳多個變數 (比如回傳兩個字串來實現swap)
+// 多回傳值 
 func swap(s1 string, s2 string) (string, string) {
-  return s2, s1
+    return s2, s1 // 回傳兩個字串輕鬆實現swap
 }
 
-// 回傳值還可以直接寫變數名稱
+// 回傳值還可以直接指名變數
 func add(x int, y int) (sum int) { // 我要回傳 sum 這個變數
-  sum := x + y
-  return // 因為已經知道回傳 sum 了，return 後可省略
+    sum := x + y
+    return // 已經知道 sum 是回傳值了，return 後可省略
 }
 ```
 
 函數是一級物件，可保存在變數裡，或作為參數傳遞。
 ```go
 add := func(x, y int) int {
-  return x + y
+    return x + y
 }
 
 mul := func(x, y int) int {
-  return x * y
+    return x * y
 }
 
 // 這個函數的第三個參數，就是另一個函數
 func do_math(a int, b int, op func(int, int) int) int {
-  return op(a, b)
+    return op(a, b)
 }
 
 fmt.Println(do_math(1, 5, add)) // 印出 6 (從 1 + 5 計算出來)
