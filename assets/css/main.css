@@ -104,7 +104,7 @@ footer { background-color: #f9f9f9; border-top: 1px solid #ddd; }
 #nav a:visited { color: #62320C; }
 
 .post-list li {
-  line-height: 1.7em;
+  line-height: 1.8em;
 }
 .post-list a {
   text-decoration: none;
@@ -142,14 +142,14 @@ article ul {
   margin: 1em 0 1em 0;
   padding-left: 2em;
   list-style-type: disc;
-  line-height: 1.5em;
+  line-height: 1.8em;
 }
 
 article ol {
   margin: 1em 0 1em 0;
   padding-left: 2em;
   list-style-type: decimal;
-  line-height: 1.5em;
+  line-height: 1.8em;
 }
 
 img[src$='#left'] { float:left; margin-right: 1em; margin-bottom: 1em;}
