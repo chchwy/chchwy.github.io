@@ -6,7 +6,9 @@ isCJKLanguage: true
 draft: true
 ---
 
-CMake 是一個跨平台的建構系統，廣泛使用在 C++ 領域裡。
+CMake 是一個跨平台的編譯工具，很多 C++ 領域裡。
+
+我已經用 CMake 編譯過很多個開源專案了，但是還沒有自己寫過 CMake 腳本。這裡紀錄我自己寫 CMake 學到的東西。
 
 ## 為什麼需要 CMake?
 
@@ -16,8 +18,13 @@ CMake 是一個跨平台的建構系統，廣泛使用在 C++ 領域裡。
 
 而 CMake 的跨平台特性，剛好可以解決這個問題。
 
-CMake 跨平台的方法，就是透過轉換，把 CMake 腳本轉換成特定平台的專案格式。簡單講，CMake 是一個間接工具，只要寫一份 CMake 腳本，當我想在 Windows 平台上編譯時，CMake 就幫我把腳本轉換成 Visual Studio 專案。同理，當我想在 macOS 上編譯時，就轉換成 Xcode 專案。 
+CMake 跨平台的方法，就是透過轉換，把 CMake 腳本轉換成特定平台的專案格式。簡單講，CMake 是一個間接工具，只要寫一份 CMake 腳本，當我想在 Windows 平台上編譯時，CMake 就幫我把腳本轉換成 Visual Studio 專案。同理，當我想在 macOS 上編譯時，就轉換成 Xcode 專案。
+
+即使不需要跨平台的特性，CMake 也是一個好工具，因為 CMake 腳本比較容易編寫，純文字檔也方便版本管理。
 
 ## Hello CMake!
 
-我已經用 CMake 編譯過好多開源專案了，但是從來沒有自己寫過
+按照 CMake 的慣例，只要看到目錄下有 `CMakeLists.txt` 就可以合理假設這是個 CMake 專案。所以第一步就是在目錄下建立 `CMakeLists.txt` 檔案。
+
+
+[0]: https://gist.github.com/Rod-Persky/e6b93e9ee31f9516261b
