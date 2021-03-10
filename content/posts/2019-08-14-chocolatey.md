@@ -5,11 +5,13 @@ title: "Chocolatey 套件管理，重灌 Windows 後的好幫手"
 tags: [開發日常, 生產力]
 ---
 
-上個月又重灌了 Windows。重灌之後，我試著挑戰一件事：不從網路上手動下載任何安裝檔，就把電腦設置回可工作狀態。
+上個月又重灌了 Windows。
 
-每次重灌電腦後，就是惡夢般的漫長的軟體安裝之旅。去每個軟體的官方網站下載，安裝，有時候還要重新開機。這個過程可能比安裝 Windows 本身還要漫長。
+重灌後，我試著挑戰一件事：不手動從網頁下載任何安裝檔，就把電腦設置回可工作狀態。
 
-事後證明還沒辦法百分之百達成。但是除了少數例外，我已經可以安裝八成以上的常用軟體，不需要去一個一個下載安裝檔了。主要的來源有兩個：Chocolatey 和 Microsoft Store。
+每次重灌電腦後，就是惡夢般的漫長的軟體安裝之旅。去每個軟體的官方網站，下載，安裝，有時候要重新開機。過程比安裝 Windows 本身還要漫長。
+
+事後證明還沒辦法百分之百達成。但是除了少數例外，我已經可以安裝八成以上的常用軟體，不需要去一個一個下載安裝檔了。這次主要的軟體來源有兩個：Chocolatey 和 Microsoft Store。
 
 ## Chocolatey 教學
 
@@ -58,7 +60,7 @@ choco install -y firefox             # 我的慣用瀏覽器
 choco install -y googlechrome        # 有時候需要另一個瀏覽器
 choco install -y everything          # 最強大的檔案搜尋工具
 choco install -y dropbox             # Dropbox 客戶端
-choco install -y k-litecodecpackfull # K-lite 萬用影音播放 codec
+choco install -y k-litecodecpack-standard # K-lite 萬用影音播放 codec
 choco install -y nodejs-lts          # Node.js 穩定版
 choco install -y python2             # Python 2.x
 choco install -y golang              # Go lang
@@ -67,7 +69,6 @@ choco install -y vscode              # VS Code
 choco install -y notepadplusplus     # 老牌文字編輯器 Notepad++
 choco install -y tortoisegit         # 小烏龜 Git
 choco install -y git-fork            # 另一款輕巧的 git 圖形化工具
-choco install -y fluent-terminal     # 好看的 Windows 命令列
 choco install -y beyondcompare       # 超級好用的 diff/merge 工具
 choco install -y filezilla           # FTP 客戶端
 choco install -y foxitreader         # 我慣用的 PDF viewer
