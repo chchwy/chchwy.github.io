@@ -1,6 +1,6 @@
 ---
 date: 2020-09-01
-title: "[D3D12] Descriptors"
+title: "D3D12: Descriptors"
 tags: [DirectX, D3D12]
 isCJKLanguage: true
 draft: true

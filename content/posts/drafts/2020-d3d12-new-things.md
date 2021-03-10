@@ -1,6 +1,6 @@
 ---
 date: 2020-09-01
-title: " D3D12 新觀念"
+title: "D3D12 新觀念"
 tags: [DirectX, D3D12]
 isCJKLanguage: true
 draft: true
