@@ -88,15 +88,15 @@ choco install -y foobar2000          # 聽歌軟體
 choco install -y steam               # 娛樂軟體
 ```
 
-只要跑一個 Powershell 腳本，就可以把這個清單上的軟體裝好了，升級版本也只要一個命令，異常方便。
+只要一個 Powershell 腳本就可以把清單上的軟體全裝好了，升級版本也只要一個命令，異常方便。
 
 ### Microsoft Store
 
-另外有幾款軟體，雖然也可以用 Chocolatey，但是我發現 Microsoft Store 上的版本比較穩定。像是 Evernote 和 Line 的桌面客戶端。用 Microsoft Store 安裝軟體的體驗也很好，一鍵安裝，無縫升級。
+另外有幾款軟體，雖然也可以用 Chocolatey，但是我發現 Microsoft Store 上的版本比較穩定。像是 Evernote 和 Line 的桌面版。用 Microsoft Store 安裝軟體的體驗也很好，一鍵安裝，無縫升級。
 
 ### 其他沒辦法自動安裝的軟體
 
-因為某些特定原因，以下軟體我還是必須手動安裝：
+因為某些原因，以下軟體我還是必須手動安裝：
 
 - Visual Studio (沒有其他安裝方法)
 - Qt (沒有其他安裝方法)
