@@ -56,6 +56,7 @@ choco upgrade all
 這是我的 Chocolatey 安裝清單：
 ```powershell
 choco install -y 7zip                # 萬用壓縮軟體
+choco install -y geekuninstaller     # 強大的反安裝工具
 choco install -y firefox             # 我的慣用瀏覽器
 choco install -y googlechrome        # 有時候需要另一個瀏覽器
 choco install -y everything          # 最強大的檔案搜尋工具
