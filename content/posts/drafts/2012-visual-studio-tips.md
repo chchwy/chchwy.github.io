@@ -16,4 +16,10 @@ Visual Studio 編譯完成時發出音效提醒
 - Microsoft Visual Studio
   - Build Succeeded
   - Build Failed
+- Reboot PC
+
+
+特定副檔名程式碼上色
+
+Tools -> Options -> Text Editor -> File Extension
 

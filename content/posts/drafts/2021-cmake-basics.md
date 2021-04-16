@@ -66,3 +66,4 @@ CMake 的慣例是切割源碼目錄和建構目錄。所有編譯產生的中�
 
 
 [0]: https://gist.github.com/Rod-Persky/e6b93e9ee31f9516261b
+[1]: https://minecraftxwinp.github.io/2017/11/27/%E7%94%A8CMake%E5%9C%A8%E5%BB%BA%E7%BD%AE%E6%99%82%E8%A4%87%E8%A3%BD%E6%AA%94%E6%A1%88%E5%88%B0%E8%BC%B8%E5%87%BA%E5%9F%B7%E8%A1%8C%E6%AA%94%E7%9A%84%E7%9B%AE%E9%8C%84/
