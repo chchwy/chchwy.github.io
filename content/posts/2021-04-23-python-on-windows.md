@@ -50,3 +50,7 @@ py myScript.py # 使用檔案裡指定的版本
 >>> print(sys.version_info)
 sys.version_info(major=2, minor=7, micro=18, releaselevel='final', serial=0)
 ```
+參考連結 [1][1], [2][2]
+
+[1]: https://docs.python.org/3/installing/index.html#install-scientific-python-packages
+[2]: https://www.zhihu.com/question/22846291/answer/22928449
