@@ -1,0 +1,52 @@
+---
+isCJKLanguage: true
+date: 2021-04-23
+title: "在 Windows 電腦上切換 Python 2/3 版本"
+tags: [python]
+---
+
+目前 Python 2 和 3 應該還會共存相當一段時間，所以免不了電腦上要同時安裝兩個版本。以下是我找到 Windows 作業系統下可以輕鬆的切換版本的方法。
+
+## py Launcher
+
+Python 3.3 開始內建 `py` 啟動器，可用參數選擇 Python 版本。
+
+py 指令使用方法如下:
+```shell
+py -2 myscript2.py # 指定 Python 2
+py -3 myscript3.py # 指定 Python 3
+```
+
+列出已安裝的所有 Python 版本
+```shell
+py --list
+```
+
+安裝模組
+```shell
+py -2 -m pip install SomePackage  # 指定 Python 2
+py -3 -m pip install SomePackage  # 指定 Python 3
+```
+
+## 在檔案中指定版本
+
+使用 py 啟動器的話，也可以在 Python 腳本檔案的第一行加入以下語句來指定版本
+```py
+#! python2.7
+#! python3
+```
+
+這樣 py 啟動器就不用下版本參數，會根據檔案第一行啟動對應的版本
+```shell
+py myScript.py # 使用檔案裡指定的版本
+```
+
+## 原始碼偵測語言版本
+
+在 Python 腳本裡面偵測目前語言版本的方法: 
+
+```py
+>>> import sys
+>>> print(sys.version_info)
+sys.version_info(major=2, minor=7, micro=18, releaselevel='final', serial=0)
+```
