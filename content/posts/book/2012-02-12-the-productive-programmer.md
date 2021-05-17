@@ -1,7 +1,7 @@
 ---
 isCJKLanguage: true
 date: 2012-02-12
-title: "讀書心得: 程式設計師提昇生產力秘笈 (上)"
+title: "讀書: 程式設計師提昇生產力秘笈 (上)"
 tags: [讀書, 生產力]
 slug: 'productive-programmer'
 ---
