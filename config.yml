@@ -8,3 +8,8 @@ googleAnalytics: "UA-5266256-5"
 pygmentsOptions: []
 pygmentsUseClasses: true
 pygmentsCodefences: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
