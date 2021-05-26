@@ -1,8 +1,8 @@
 ---
 isCJKLanguage: true
 date: 2021-05-17
-title: "TortoiseGit 圖示消失"
-tags: [Windows]
+title: "Powershell 解決 TortoiseGit 圖示消失"
+tags: [Windows, PowerShell]
 draft: false
 ---
 
