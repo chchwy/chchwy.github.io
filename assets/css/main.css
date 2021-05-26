@@ -131,9 +131,9 @@ footer { background-color: #f2f0e4; border-top: 1px solid #d8d7cc; }
 .post-title { margin-top: 1em; }
 .post-tagline { color:#988F9B; font-family: Menlo, 'Courier New', Consolas, monospace; margin-top: 1em; }
 
-code { font-family: Menlo, Consolas, 'Courier New', Courier, monospace; }
+code { font-family: Menlo, Consolas, 'Courier New', Courier, monospace; background-color: #fff; }
 pre { border-left: solid 5px #595959; background-color: #eee; padding: 0.5em 1em; margin-top: 1em;}
-pre code { font-size: 0.9em; }
+pre code { font-size: 0.9em; background-color: #202020; }
 
 article h1 { font-size: 2em; font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, 'Open Sans', 'Helvetica Neue', 'Microsoft Jhenghei';}
 article h2 { font-size: 1.3em; font-weight: bold; margin-top: 2em; }

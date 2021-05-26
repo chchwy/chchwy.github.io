@@ -5,7 +5,7 @@ tags: [C++, UVa Oneline Judge]
 isCJKLanguage: true
 ---
 
-解 ACM 題目的時候，測試資料都是走標準輸入流如 `cin/scanf()/gets()`。測試資料量大的時候，手動鍵入測試資料非常浪費時間。我後來發現了一個技巧叫做 I/O 轉向 (I/O redirection) ，可以重新定義標準輸入流，省去手動鍵入測資的步驟。
+解 ACM 題目的時候，測試資料都是走標準輸入流 `cin/scanf()/gets()`。當測試資料量很大的時候，手動鍵入測試資料很慢又浪費時間。我後來發現了一個技巧叫做 I/O 轉向 (I/O redirection) ，可以重新定義標準輸入流，省去手動鍵入測資的步驟。
 
 先上例子：
 ```cpp
