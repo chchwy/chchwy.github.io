@@ -33,12 +33,12 @@ ol, ul {
 }
 
 body {
-  background-color: #f9f9f9;
-  color: #484842;
+  background-color: #f2f0e4;
+  color: #312e2c;
 }
 
 body {
-  /*font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Roboto, Arial, "PingFang TC", "Microsoft JhengHei", "微軟正黑體", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";*/
+  font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Roboto, Arial, "PingFang TC", "Microsoft JhengHei", "微軟正黑體", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 .wrapper {
@@ -53,6 +53,7 @@ body {
  /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) { 
   .container { width: 96%; }
+  .post-list-entry time { display: block }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -79,19 +80,19 @@ body {
   margin-bottom: 2em;
 }
 
-.site-name {display: inline-block;}
+.site-name {display: inline-block; vertical-align: middle;}
 .site-name h1 { font-size: 1.4rem; margin: 0.5em 0; }
 .site-name a {color: #62320C; text-decoration: none;}
 .site-name a:visited {color: #62320C;}
 .site-name a:hover {color: #62320C;}
 
-header { background-color: #f9f9f9; border-top: 5px solid rgb(41, 22, 8); border-bottom: 1px solid #ddd; margin-bottom: 2em; }
-footer { background-color: #f9f9f9; border-top: 1px solid #ddd; }
+header { background-color: #f2f0e4; border-top: 5px solid rgb(41, 22, 8); border-bottom: 1px solid #d8d7cc; margin-bottom: 2em; }
+footer { background-color: #f2f0e4; border-top: 1px solid #d8d7cc; }
 
-#nav { float: right; }
+#nav { display: inline-block; vertical-align: middle;}
 #nav {
   list-style: none;
-  margin: 0;
+  margin: 0 1em;
   padding: 0;
 }
 #nav li {
@@ -99,9 +100,9 @@ footer { background-color: #f9f9f9; border-top: 1px solid #ddd; }
   margin: 17px 15px;
   font-size: 0.9em;
 }
-#nav a { color: #62320C; text-decoration: none; }
-#nav a:hover { color: #62320C; text-decoration: underline; }
-#nav a:visited { color: #62320C; }
+#nav a { color: #777; text-decoration: none;  }
+#nav a:hover { color: #444; text-decoration: underline; }
+#nav a:visited { color: #777; }
 
 .post-list li {
   line-height: 1.8em;
@@ -115,14 +116,14 @@ footer { background-color: #f9f9f9; border-top: 1px solid #ddd; }
   color: #B7521E;
   transition: 0.5s;
 }
-.post-list time {
+.post-list-entry time {
   color: #777;
   font-family: 'Courier New', Monaco, Courier, Consolas, monospace;
   margin-right: 1em;
 }
 
 .copyright {
-  color: #999;
+  color: #979690;
   margin: 1em 0;
   font-size: 0.9em;
 }
