@@ -50,7 +50,11 @@ py myScript.py # 使用檔案裡指定的版本
 >>> print(sys.version_info)
 sys.version_info(major=2, minor=7, micro=18, releaselevel='final', serial=0)
 ```
-參考連結 [1][1], [2][2]
+
+## 參考連結
+
+- [Python 官方文件][1],
+- [知乎：在同一台电脑下如何进行 Python 2 与 3 的切换？][2]
 
 [1]: https://docs.python.org/3/installing/index.html#install-scientific-python-packages
 [2]: https://www.zhihu.com/question/22846291/answer/22928449
