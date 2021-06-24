@@ -1,7 +1,7 @@
 ---
 isCJKLanguage: true
 date: 2021-05-17
-title: "Powershell 解決 TortoiseGit 圖示消失"
+title: "寫 Powershell 解決 TortoiseGit 圖示消失問題"
 tags: [Windows, PowerShell]
 draft: false
 ---
@@ -10,7 +10,7 @@ draft: false
 
 ![icon-overlay](/img/icon-overlay.png)
 
-發生的原因，簡單講，就是顯示綠色勾勾的那個機制: Windows Icon Overlay 有數量限制 16 個。這 16 個位置是所有應用程式包括 Dropbox、TortoiseGit、OneDrive 等等共享的。
+發生的原因，簡單講，就是顯示綠色勾勾的那個機制: Windows Icon Overlay 有最大數量限制 16 個。這 16 個位置是所有應用程式包括 Dropbox、TortoiseGit、OneDrive 等等共享的。
 
 如果超過 16 個呢？就用名字排序，顯示前 16 個。
 
