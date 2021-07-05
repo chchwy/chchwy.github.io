@@ -61,7 +61,6 @@ choco install -y firefox             # 我的慣用瀏覽器
 choco install -y googlechrome        # 有時候需要另一個瀏覽器
 choco install -y everything          # 最強大的檔案搜尋工具
 choco install -y dropbox             # Dropbox 客戶端
-choco install -y k-litecodecpack-standard # K-lite 萬用影音播放 codec
 choco install -y nodejs-lts          # Node.js 穩定版
 choco install -y python2             # Python 2.x
 choco install -y golang              # Go lang
@@ -85,8 +84,11 @@ choco install -y ccleaner            # 清理垃圾檔案
 choco install -y teamviewer          # Teamviewer 遠端桌面
 choco install -y 4k-video-downloader # 影片/音樂抓取
 choco install -y xnviewmp            # 看圖軟體
+choco install -y nomacs              # 輕巧的開源看圖軟體            # 
 choco install -y foobar2000          # 聽歌軟體
 choco install -y steam               # 娛樂軟體
+choco install -y vlc                 # 開源影片播放軟體
+choco install -y k-litecodecpack-standard # k-lite 萬用影音播放 codec
 ```
 
 只要一個 Powershell 腳本就可以把清單上的軟體全裝好了，升級版本也只要一個命令，異常方便。
