@@ -3,6 +3,7 @@ date: 2021-07-05
 isCJKLanguage: true
 title: "OpenSSH vs PuTTY: 兩種設定 SSH 的方法"
 tags: [開發日常]
+draft: true
 ---
 
 用過類似 Github 平台管理程式碼的人，或多或少都設定過 SSH 這個東西。
