@@ -6,26 +6,9 @@ tags: [開發日常]
 draft: true
 ---
 
-> 本篇文章是專門為了 Windows 系統而寫的
-
-## Git 身份認證
-
-Git 提供了帳號密碼以外的另一種驗證身份的方式，叫做 SSH。
-
-從 git 網址可以看出這兩種身份驗證方法：
-
-```bash
-https://github.com/pencil2d/pencil.git   # https:// 開頭的網址就是用密碼驗證
-git@github.com:pencil2d/pencil.git       # git@ 開頭的網址就是走 SSH 驗證
-```
-
-作為另一種身份驗證工具，SSH 連線有相當多優點：不需要每次 push 時重打密碼 (或者把密碼存在電腦某處)。還有私鑰不容易被破解的特性。即使私鑰被偷了，還有一層驗證密碼，傷害往往比帳號密碼被偷來的小。
-
-缺點呢，就是 SSH 用起來不像普通密碼那樣直觀，需要一些額外設定步驟。這也是我以前不喜歡用 SSH 的原因。
-
 ## 為什麼我搞不清楚 SSH
 
-後來發現，我之前有很長時間搞不懂 SSH，是因為 Windows 作業系統上有兩套設定 SSH 的方法，一個叫做 PuTTY，一個叫 OpenSSH。這兩個方法雖然底層原理相同，但是工具名稱不一樣，私鑰的儲存格式也不一樣，互不相通。我在網路上搜尋教學，總是看的迷迷糊糊，一下這個一下那個，前後兜不起來。直到我自己親手把這兩種 SSH 設定方式各跑過一遍，才搞明白是怎麼回事。
+後來發現，我之前有很長時間搞不懂 SSH，是因為 Windows 上有兩套設定 SSH 的方法，一個叫做 PuTTY，一個叫 OpenSSH。這兩個方法雖然底層原理相同，但是工具名稱不一樣，私鑰的儲存格式也不一樣，互不相通。我在網路上搜尋教學，總是看的迷迷糊糊，一下這個一下那個，前後兜不起來。直到我自己親手把這兩種 SSH 設定方式各跑過一遍，才搞明白是怎麼回事。
 
 ## 兩套 SSH 工具簡介
 
@@ -38,6 +21,23 @@ git@github.com:pencil2d/pencil.git       # git@ 開頭的網址就是走 SSH 驗
 
 [0]: https://www.putty.org/ "Putty website"
 [1]: https://www.openssh.com/ "OpenSSH website"
+
+## 啟始設定 SSH
+
+How to Install SSH in Windows 10 (Quick)
+
+Installing SSH functionality to the Windows 10 PowerShell is straightforward enough, but the menu options for it are somewhat hidden. Here's what you'll need to do:
+
+    Open Settings.
+    View Apps > Apps & features
+    Go to Optional features
+    Click Add a feature
+    Select OpenSSH Client
+    Wait, then reboot
+
+Putty tools download:
+https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+
 
 ## 產生金鑰
 
@@ -66,7 +66,15 @@ ssh-add ~/.ssh/id_key
 寫一支 .bat 檔
 
 寫 PowerShell 
+https://richardballard.co.uk/ssh-keys-on-windows-10/
 
 ## 連線
 
 GIT_SSH
+
+git config --global core.sshCommand C:/Windows/System32/OpenSSH/ssh.exe
+
+
+Reference:
+https://blog.alantsai.net/posts/2018/11/faq-start-sshagent-error-1058-on-windows-1803-cannot-use-ssh-agent
+https://docs.microsoft.com/zh-tw/windows-server/administration/openssh/openssh_keymanagement
