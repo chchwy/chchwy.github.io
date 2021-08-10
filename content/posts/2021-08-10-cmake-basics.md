@@ -58,7 +58,7 @@ cmake ..      # 讀取 CMakeLists.txt 並生成本機專案
 
 我們給 `cmake` 的第一個參數是 `..`，也就是`CMakeLists.txt` 所在的路徑位置，經 CMake 解析腳本，便會在當前目錄產生本機專案檔。以本例來說，CMakeLists.txt 和原始碼位於 build 的上層目錄 (`..`)，而自動產生的 VS2019 檔案就在子目錄 `build` 內。
 
-這是 CMake 的慣例，將產生的檔案和原始專案區分開來，不污染原始專案。一旦該子目錄放進版控忽略清單後 (如 `.gitignore`) 就不會影響版控，相當方便。
+這是 CMake 的慣例，將產生的檔案和原始專案區分開來，不污染原始專案。一旦該子目錄放進版控忽略清單後 (如 `.gitignore`)，這些轉換產生的檔案就不會影響版控，相當方便。
 
 最後打指令 `cmake --build .` 編譯程式。(別忘了最後有個 `.`)
 
@@ -66,7 +66,7 @@ cmake ..      # 讀取 CMakeLists.txt 並生成本機專案
 
 ## CMakeLists.txt 範例
 
-接著是一個比較完整的 C++ 專案範例。包含標頭檔，原始檔，指定 C++11/14 版本標準，引用第三方程式庫的 include 路徑和 link 路徑，等等 C++ 常見的標準備配。應該足以應付大多數的簡單需求。
+接著是一個比較完整的 C++ 專案範例。包含標頭檔、原始檔、指定 C++11/14/17 版本標準、引用第三方程式庫的 include 路徑和 link 路徑、等等 C++ 專案常見的標準備配。應該足以應付大多數的簡單需求。
 ```cmake
 cmake_minimum_required(VERSION 3.16)
 
@@ -93,7 +93,7 @@ cmake --build . --config Release
 cmake --build . --config Debug
 ```
 
-共有四種預設組態： `Debug`、`Release`、`RelWithDebInfo`、`MinSizeRel`。
+共有四種組態： `Debug`、`Release`、`RelWithDebInfo`、`MinSizeRel`。
 
 ## 指定編譯器
 
