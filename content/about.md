@@ -11,7 +11,7 @@ type: "static_page"
 - 心目中的經典遊戲是世紀帝國二 (Age of Empire II) 以及《X-COM: 深海出擊》
 - 多年馬刺迷，Tim Duncan 的忠實粉絲
 - 喜愛的漫畫： 神劍闖江湖、純情房東俏房客、棋靈王、交響情人夢
-- 幾本深度影響我的人生的書:《創意工廠MIT》、《問對問題找答案》、《與成功有約》
+- 深度影響我的人生的書:《創意工廠MIT》、《問對問題找答案》、《與成功有約》
 
 ## 開源專案 Open Source project 
 
@@ -21,7 +21,7 @@ type: "static_page"
 
 Pencil2D 是一款非常容易上手的 2D 動畫軟體。設計初衷是簡單，不用花太多時間學習，5分鐘內就可以開始享受畫動畫的樂趣。
 
-Pencil2D 支持 Windows/Mac/Linux 三個平台，有繁體中文以及其他十數種語言介面。
+Pencil2D 支援 Windows/Mac/Linux 三個平台，有繁體中文以及其他十數種語言介面。
 
 - Pencil2D 官方網站: <http://pencil2d.github.io>
 - Github 倉庫: <http://github.com/pencil2d/pencil>

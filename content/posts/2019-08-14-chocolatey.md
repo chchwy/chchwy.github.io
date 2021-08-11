@@ -7,9 +7,9 @@ tags: [開發日常, 生產力]
 
 上個月，我又重灌了 Windows。
 
-重灌後，我試著挑戰一件事：不手動從網頁下載任何安裝檔，就把電腦設置回可工作狀態。
+重灌後，我試著挑戰一件事：不手動去網頁下載任何安裝檔，就把電腦設置回可工作狀態。
 
-每次重灌電腦後，就是惡夢般的漫長的軟體安裝之旅。去每個軟體的官方網站，下載，安裝，有時候要重新開機。過程比安裝 Windows 本身還要漫長。
+每次重灌電腦後，就是惡夢般的漫長的軟體安裝之旅。去每個軟體的官方網站，下載，等待，安裝，有時候要重新開機。過程比安裝 Windows 本身還要漫長。
 
 事後證明還沒辦法百分之百達成。但是除了少數例外，我已經可以安裝八成以上的常用軟體，不需要去一個一個抓安裝檔了。這次主要的軟體來源有兩個：Chocolatey 和 Microsoft Store。
 
@@ -54,7 +54,7 @@ choco upgrade all
 ```
 
 這是我的 Chocolatey 安裝清單：
-```powershell
+```bash
 choco install -y 7zip                # 萬用壓縮軟體
 choco install -y geekuninstaller     # 強大的反安裝工具
 choco install -y firefox             # 我的慣用瀏覽器
@@ -84,7 +84,7 @@ choco install -y ccleaner            # 清理垃圾檔案
 choco install -y teamviewer          # Teamviewer 遠端桌面
 choco install -y 4k-video-downloader # 影片/音樂抓取
 choco install -y xnviewmp            # 看圖軟體
-choco install -y nomacs              # 輕巧的開源看圖軟體            # 
+choco install -y nomacs              # 輕巧的開源看圖軟體
 choco install -y foobar2000          # 聽歌軟體
 choco install -y steam               # 娛樂軟體
 choco install -y vlc                 # 開源影片播放軟體
@@ -95,7 +95,7 @@ choco install -y k-litecodecpack-standard # k-lite 萬用影音播放 codec
 
 ### Microsoft Store
 
-另外有幾款軟體，雖然也可以用 Chocolatey，但是我發現 Microsoft Store 上的版本比較穩定。像是 Evernote 和 Line 的桌面版。用 Microsoft Store 安裝軟體的體驗也很好，一鍵安裝，無縫升級。
+另外有幾款軟體，雖然也可以用 Chocolatey，但是我發現 Microsoft Store 上的版本更穩定。像是 Evernote 和 Line 的桌面版。用 Microsoft Store 安裝軟體的體驗也很好，一鍵安裝，無縫升級。
 
 ### 其他沒辦法自動安裝的軟體
 

@@ -1,11 +1,11 @@
 ---
 isCJKLanguage: true
 date: 2021-04-23
-title: "在 Windows 電腦上切換 Python 2/3 版本"
+title: "Windows 電腦切換 Python 2/3 版本"
 tags: [python]
 ---
 
-目前 Python 2 和 3 應該還會共存相當一段時間，所以免不了電腦上要同時安裝兩個版本。以下是我找到 Windows 作業系統下可以輕鬆的切換版本的方法。
+目前看來，Python 2 和 3 應該還會共存相當長一段時間，所以電腦上免不了要同時安裝兩個版本。以下是我找到 Windows 作業系統下可以輕鬆切換版本的方法。
 
 ## py Launcher
 
@@ -17,7 +17,7 @@ py -2 myscript2.py # 指定 Python 2
 py -3 myscript3.py # 指定 Python 3
 ```
 
-列出已安裝的所有 Python 版本
+列出所有已安裝的 Python 版本
 ```shell
 py --list
 ```
