@@ -42,9 +42,9 @@ draft: false
 - `Rename-Item`：重新命名
 - `Split-Path -leaf $path`：從完整路徑快速取出檔名 
 
-注意的路徑要用 `HKLM:\` 或 `HKCU:\` 作為磁碟機代號起頭。`HKLM:\` 表示 Local Machine， `HKCU:\` 表示 Current User。
+注意的路徑要以 `HKLM:\` 或 `HKCU:\` 為磁碟機代號。`HKLM:\` 表示 Local Machine， `HKCU:\` 表示 Current User。
 
-所以比如說這個註冊表路徑
+比如這個註冊表路徑
 ```
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers
 ```
