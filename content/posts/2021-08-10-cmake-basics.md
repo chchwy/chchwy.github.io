@@ -36,7 +36,7 @@ add_executable(MyHomework main.cpp)  # 執行檔名叫 MyApp，原始碼 main.cp
 ```
 三行即可完成一個最簡單的 CMake 專案。目標是編譯原始碼 main.cpp 並產出可執行檔 MyHomework.exe。
 
-CMake 有自己的腳本語法，`cmake_minimum_required()` 等等這些是內建的功能函數。
+CMake 用的是自家的腳本語法，本文不會著墨太多在腳本語法上，一開始只要知道 `cmake_minimum_required()`、`project()`、`add_executable()` 這些是內建函數就行了。
 
 ## 實際編譯專案
 
@@ -56,7 +56,7 @@ cmake ..      # 讀取 CMakeLists.txt 並生成本機專案
 
 ![CMake VS2019](/img/cmake-vs.png)
 
-我們給 `cmake` 的第一個參數是 `..`，也就是`CMakeLists.txt` 所在的路徑位置，經 CMake 解析腳本，便會在當前目錄產生本機專案檔。以本例來說，CMakeLists.txt 和原始碼位於 build 的上層目錄 (`..`)，而自動產生的 VS2019 檔案就在子目錄 `build` 內。
+我們給 `cmake` 的第一個參數是 `..`，也就是`CMakeLists.txt` 所在的路徑位置。經 CMake 解析腳本，便會在**當前目錄**產生本機專案檔。以本例來說，CMakeLists.txt 和原始碼位於 build 的上層目錄 (`..`)，而自動產生的 VS2019 檔案就在子目錄 `build` 內。
 
 這是 CMake 的慣例，將產生的檔案和原始專案區分開來，不污染原始專案。一旦該子目錄放進版控忽略清單後 (如 `.gitignore`)，這些轉換產生的檔案就不會影響版控，相當方便。
 
@@ -150,9 +150,7 @@ add_dependencies(Target1 copy_shader_files)
 
 ## 參考連結
 
-本篇文章的目的是以最少的步驟，快速開始第一個跨平台 C++ 專案編譯，並刻意忽略不必要的高級功能。
-
-進階請參考以下連結：
+本篇文章的目的，是希望以最少的廢話和步驟，快速開始編譯第一個跨平台 C++ 專案，並刻意跳過非必要的高級功能，這也是我個人學 CMake 的目的。進階學習請參考以下連結：
 
 - [CMake 官方教學](https://cmake.org/cmake/help/latest/guide/tutorial/)
 - [CLion Quick CMake tutorial](https://www.jetbrains.com/help/clion/quick-cmake-tutorial.html)
