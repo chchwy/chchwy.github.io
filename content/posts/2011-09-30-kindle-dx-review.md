@@ -1,7 +1,7 @@
 ---
 date: 2011-09-30
-title: "遲到的 Amazon Kindle DX 電子閱讀器開箱文 "
 isCJKLanguage: true
+title: "遲到的 Amazon Kindle DX 電子閱讀器開箱文 "
 tags: [Kindle]
 ---
 

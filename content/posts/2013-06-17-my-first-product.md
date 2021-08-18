@@ -1,8 +1,8 @@
 ---
 date: 2013-06-17
+isCJKLanguage: true
 title: 第一支 iOS App 作品上架
 tags: [開發日常]
-isCJKLanguage: true
 ---
 
 上個月有件值得慶賀的事，就是我進職場後的第一個作品上架了，是個小小的、娛樂取向的 2D 臉部動畫 iOS App。

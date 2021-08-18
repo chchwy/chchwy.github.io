@@ -1,8 +1,8 @@
 ---
 date: 2014-02-14
+isCJKLanguage: true
 title: "解決 ViEmu 與 Visual Assist X 共存衝突"
 tags: ["Visual Studio"]
-isCJKLanguage: true
 ---
 
 在 Visual Studio 2013 上同時安裝兩大神器: ViEmu 以及 Visual Assist X 時會導致自動補完的功能癱瘓。只安裝其中任一個都沒事，兩個同時裝時才會出事。

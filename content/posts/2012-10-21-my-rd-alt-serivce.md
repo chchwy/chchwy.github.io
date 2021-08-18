@@ -1,8 +1,8 @@
 ---
 date: 2012-10-21
+isCJKLanguage: true
 title: 研發替代役面試
 tags: [職場]
-isCJKLanguage: true
 draft: true
 ---
 
