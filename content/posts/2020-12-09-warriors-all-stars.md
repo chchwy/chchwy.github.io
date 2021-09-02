@@ -1,6 +1,6 @@
 ---
 date: 2020-12-07
-title: "無雙群星白金遊戲心得"
+title: "《無雙☆群星大會串》白金遊戲心得"
 tags: [Game]
 isCJKLanguage: true
 draft: false
