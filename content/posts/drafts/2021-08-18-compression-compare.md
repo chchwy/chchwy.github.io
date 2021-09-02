@@ -33,7 +33,7 @@ time zip -r -s 10G test.zip ./trunk/        # ZIP
 
 測試的機子是 Vultr VPS 640G 方案，作業系統 Ubuntu 21.04。
 
-![Vultr](/img/vultr-640.png/)
+![Vultr](/img/vultr-640.png)
 
 ## 測試結果
 
