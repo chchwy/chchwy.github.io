@@ -1,7 +1,7 @@
 ---
 date: 2021-08-18
 isCJKLanguage: true
-title: "幾個壓縮演算法比較：7zip/GZIP/LZ4 "
+title: "隨手比較幾個壓縮演算法：7zip/GZIP/LZ4 "
 tags: [開發日常]
 draft: false
 ---
