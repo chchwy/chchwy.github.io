@@ -1,14 +1,15 @@
 ---
+isCJKLanguage: true
 date: 2010-12-21
 title: "讀書: Just for Fun, Linux 創始人托瓦茲自傳"
 tags: [Linux,讀書]
-isCJKLanguage: true
 slug: "just-for-fun-linux"
+imgClass: book-cover
 ---
 
 ## 不平凡的平凡人
 
-![Just for Fun](/img/book/justforfun.jpg#left)
+![Just for Fun](/img/book/justforfun.jpg)
 
 我想對此書有興趣的人，大多想瞭解兩個問題
 

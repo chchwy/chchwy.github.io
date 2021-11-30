@@ -3,6 +3,7 @@ date: 2018-10-25
 title: 實現了一個快糙猛的個人知識庫
 isCJKLanguage: true
 tags: [Jekyll]
+draft: true
 ---
 
 用兩天的空閒時間實現了個人知識管理頁面。位址在:

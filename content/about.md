@@ -2,7 +2,6 @@
 date: "1984-01-01"
 title: 關於我
 showtags: "good"
-type: "static_page"
 ---
 
 歡迎來到我部落格，我是 Matt (aka chchwy)，軟體工程師。這裡記錄著我的思考、讀書心得和技術筆記。

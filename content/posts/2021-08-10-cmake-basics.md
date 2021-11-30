@@ -6,13 +6,11 @@ isCJKLanguage: true
 draft: false
 ---
 
-本篇文章是我學習 CMake 的心得。
-
 ## 為什麼需要 CMake?
 
 簡單講，C++ 語言本身雖然跨平台。但是編譯 C++ 的工具鏈卻不跨平台。
 
-像 Linux Makefile 和 Windows Visual Studio 互不相通，即使撰寫了完全平台獨立的 C++ 程式碼，想在 Linux 上編譯 Windows 專案往往相當困難。
+Linux Makefile 和 Windows Visual Studio 互不相通，即使撰寫了完全平台獨立的 C++ 程式碼，想在 Linux 上編譯 Windows 專案往往相當困難。
 
 針對這個問題，除了同時維護兩個專案之外，還可以考慮 CMake 這類跨平台工具。
 

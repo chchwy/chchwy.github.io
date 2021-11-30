@@ -25,7 +25,7 @@ isCJKLanguage: true
 
 一、先到你的 Git Repo 點選 Action 分頁，然後點 `New workflow`
 
-![](img/github-action-01.png)
+![](/img/github-action-01.png)
 
 二、接著點選 `set up a workflow yourself`
 
@@ -68,7 +68,7 @@ jobs:
 
 推送修改到你的 Git 倉庫，到 Actions 分頁看看有沒有觸發 Workflow
 
-![](img/github-action-03.png)
+![](/img/github-action-03.png)
 
 看見 workflow 開始執行就表示大功告成，Github Action 設定完畢，可以射後不理盡情寫部落格了。
 

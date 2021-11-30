@@ -1,12 +1,13 @@
 ---
+isCJKLanguage: true
 date: 2010-12-21
 title: "讀書: Linux 傳奇 (Rebel Code)"
 tags: [Linux,讀書]
-isCJKLanguage: true
 slug: "rebel-code"
+imgClass: book-cover
 ---
 
-![Linux 傳奇](/img/book/linux-rebel-code.jpg#left)
+![Linux 傳奇](/img/book/linux-rebel-code.jpg)
 
 ## Rebel Code 開源革命史
 

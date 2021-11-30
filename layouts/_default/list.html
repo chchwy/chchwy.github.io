@@ -1,43 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-  <base href="{{ .Site.BaseURL }}">
-  <title>{{ .Site.Title }}</title>
-  <link rel="canonical" href="{{ .Permalink }}">
-  <link href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-
-  {{ $css := resources.Get "css/main.css" | resources.Minify }}
-  <link rel="stylesheet" href="{{ $css.Permalink }}">
-</head>
+<!doctype html>
+<html lang="en">
+  {{ partial "head.html" . }}
 <body>
-
-<div class="wrapper">
-{{ partial "header.html" . }}
-
-<section id="main">
-<div class="flex-center">
-  <div class="container">
-    <br>
-    <h1>Tags: [{{ .Title }}]</h1>
-    <ul class="post-list">
-		{{ range $name, $page := .Data.Pages }}
-      <li class="post-list-entry">
-        <time datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date.Format "2006-01-02" }}</time>
-        <a href="{{ .Permalink }}">{{ $page.Title }}</a>
-      </li>
-    {{ end }}
-    </ul>
+  <a class="skip-link" href="#main">Skip to main</a>
+  <main id="main">
+  <div class="content">
+    {{ partial "header.html" . }}
+    <section>
+      <ul reversed class="list">
+        {{ range (.Paginate ( where .Site.RegularPages "Section" "posts" ).ByDate.Reverse).Pages }}
+          {{ if ne .Kind "section" }}
+          <li><span sylte="color:#fff;">⊞ &nbsp;</span>
+            <a class="link" href="{{ .Permalink }}" title="{{ .Title }}"> {{ .Title }}
+            </a>
+            <hr class="hr-list">
+            <time class="g time" datetime="{{ dateFormat "2006-01-02" .Date }}">{{ dateFormat "2006-01-02" .Date }}</time>
+          </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+    </section>
   </div>
-</div>
-</section>
-
-{{ partial "footer.html" . }}
-</div>
-
-{{ template "_internal/google_analytics.html" . }}
+</main>
 </body>
 </html>

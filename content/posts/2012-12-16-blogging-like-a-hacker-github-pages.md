@@ -5,7 +5,7 @@ title: "博客當如駭客 - Github Pages & Jekyll"
 tags: [Blog]
 ---
 
-## 為什麼要用 Github Pages?
+## 為什麼用 Github Pages?
 
 遇見 Github Page 之前我定居在 [Blogger][1] ，斷斷續續不是很認真的寫了四年左右的博客，除了一些小缺點，像貼程式碼時老是跟我抱怨`<iostream>`不是合法的 HTML 標籤外，還算滿意 Blogger 的服務。畢竟要找到比 Blogger 更好的平台也不容易。
 

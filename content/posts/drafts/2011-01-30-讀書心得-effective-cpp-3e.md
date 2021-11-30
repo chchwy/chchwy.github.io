@@ -7,7 +7,7 @@ isCJKLanguage: true
 slug: "2011-01-30-effective-c-plusplus-3e"
 ---
 
-![Effective C++ 3/e中文版](/img/book/effective-cpp-3e.jpg#left)
+![Effective C++ 3/e中文版](/img/book/effective-cpp-3e.jpg)
 
 Effective C++ 開頭就清楚地說明了這本書的目的：『學習語言的根本大法是一回事，學習如何以某種語言設計並實現高效程序則是另外一回事』，這本書就是把初學者在 C++ 裡容易碰到的問題，還有容易犯錯的地方，整理成55個條款列出來。
 

@@ -4,9 +4,10 @@ date: 2012-02-12
 title: "讀書: 程式設計師提昇生產力秘笈 (上)"
 tags: [讀書, 生產力]
 slug: 'productive-programmer'
+imgClass: book-cover
 ---
 
-![](/img/book/the-productive-programmer.jpg#left)
+![](/img/book/the-productive-programmer.jpg)
 
 原文書名：Productive Programmer
 <br>(對岸譯『卓有成效的程序員』，我比較喜歡這個名字，更精鍊。)

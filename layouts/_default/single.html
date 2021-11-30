@@ -1,52 +1,59 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-  <base href="{{ .Site.BaseURL }}">
-  <title>{{ .Title }}</title>
-  <link rel="canonical" href="{{ .Permalink }}">
-  <link href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-
-  {{ $css := resources.Get "css/main.css" | resources.Minify }}
-  <link rel="stylesheet" href="{{ $css.Permalink }}">
-</head>
+<!doctype html>
+<html lang="en">
+  {{ partial "head.html" . }}
 <body>
-
-<div class="wrapper">
-{{ partial "header.html" . }}
-
+  <a class="skip-link" href="#main">Skip to main</a>
 <main id="main">
-  <div class="container">
-    <article>
-      <h1 class="post-title">{{ .Title }}</h1>
-      <div class="post-tagline">
-        By <a href="/about">Matt</a> |
-        {{ .Page.Date.Format "2006-01-02" }} |
-
+  <div class="content">
+    {{ partial "header.html" . }}
+      {{ if eq .Type "photos" }}
+      <h2>{{ .Title }}</h2>
+      {{ end }}
+      
+      {{ if eq .Type "photos" }}
+        {{ with .Params.image }}
+        <img src="{{ . }}"></img>
+      {{ end }}
+      {{ end }}
+  
+      <h2 class="post">{{ .Title }}</h2>
+      {{ if eq .Type "posts" }}
+        <time>{{ .Page.Date.Format "2006-01-02" }}</time> <div style="float:right;">
         {{ range .Page.Params.tags }}
-          <a class="post-tag" href="/tags/{{ . | urlize }}">#{{ . }}</a>
+        <a class="post-tag" href="/tags/{{ . | urlize }}">#{{ . }} </a>  
         {{ end }}
+      </div>
+      {{ end }}
 
-      </div>
-      <div style="margin-top: 3em;">
       {{ .Content }}
-      </div>
-    </article>
-    <!--
-    {{ partial "related.html" . }}
-    
-    <div style="padding-top: 3em;">
-      {{ template "_internal/disqus.html" . }}
-    </div>
-    -->
+     
+
+      {{ if eq .Title "Projects" }}
+      <ul class="list">
+        {{ range where .Site.Pages.ByDate.Reverse "Section" "projects" }}
+          {{ if ne .Kind "section" }}
+          <li>
+            <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
+          </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+      {{ end }}
+      {{ if eq .Title "Photos" }}
+      <ul class="list photos">
+        {{ range where .Site.Pages.ByDate.Reverse "Section" "photos" }}
+          {{ if ne .Kind "section" }}
+          <li>
+            <a href="{{ .Permalink }}" title="{{ .Title }}">
+            {{ with .Params.image }}
+            <img src="{{ . }}"></img>
+            {{ end }}</a>
+          </li>
+          {{ end }}
+        {{ end }}
+      </ul>
+      {{ end }}
   </div>
 </main>
-{{ partial "footer.html" . }}
-</div>
-
-{{ template "_internal/google_analytics.html" . }}
 </body>
 </html>
