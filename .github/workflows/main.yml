@@ -15,6 +15,6 @@ jobs:
           # Target branch
           PAGES_BRANCH: master
           # Provide personal access token
-          TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+          #TOKEN: ${{ secrets.PERSONAL_TOKEN }}
           # Or if publishing to the same repo, use the automatic token
-          #TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
