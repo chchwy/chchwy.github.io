@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Objective-C 好用的 nil 和變數類型的思考 &middot; 調和的靈感</title>
+    <title>調和的靈感</title>
+
+    <link rel="stylesheet" type="text/css" href="/neat.css">
+    <link rel="stylesheet" type="text/css" href="/custom.css">
+    <link rel="alternate" type="application/atom+xml" title="RSS" href="https://chchwy.github.io/atom.xml">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+    <a class="home" href="/">&nwarr;</a>
+    <nav>
+        <h1>調和的靈感</h1>
+        <div style="margin-left: auto;">
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/blog">Archive</a></li>
+            </ul>
+        </div>
+        
+    </nav>
+    <hr>
+    <!--
+    <ol class="twocol">
+        <li><a href="#about">About</a></li>
+        <li><a href="#start">Archive</a></li>
+    </ol>
+    -->
+    
+<br>
+<article>
+<p class="subtitle">2013-12-23</p>
+<h1 class="title">
+  Objective-C 好用的 nil 和變數類型的思考
+</h1>
+<p>Objective-C 裡有個我非常喜愛的特性，就是對空物件 nil 調用方法不會出錯。
+類似這樣：</p>
+<pre data-lang="cpp" style="background-color:#2e3440;color:#d8dee9;" class="language-cpp "><code class="language-cpp" data-lang="cpp"><span>NSArray</span><span style="color:#81a1c1;">*</span><span> myArray </span><span style="color:#81a1c1;">=</span><span> nil</span><span style="color:#eceff4;">;
+</span><span>[myArray count]</span><span style="color:#eceff4;">; </span><span style="color:#616e88;">// It&#39;s ok.
+</span></code></pre>
+<p>在許多主流語言裡，像是 C++，對 NULL 指標調用方法都是非常嚴重的錯誤，程式很可能會馬上崩潰。但是在 Objective-C 裡不同，對 nil 調用方法被視為稀鬆平常的事情，這個方法調用不會使程式崩潰，也不會拋出異常，程式單純的不做任何反應，船過水無痕地默默繼續運行。如果該方法有回傳值，就回傳 nil 或零。</p>
+<p>空指標就不做事的原則，大多數時候也的確符合我們的期望，所以 Objective-C 程式裡不再需要處處塞滿 <code>if ( ptr != NULL ) { ... }</code> ，提心吊膽的提防遺漏的空指標造成程序崩潰，這個小差異大大提高了程序的穩定性。代碼也更簡短清晰了。</p>
+<p>後來我發覺這個 NULL / nil 的小差異，其實沒那麼簡單，真正的問題是 NULL 指標本身的存在，就破壞了程式語言的類型保護網。</p>
+<p>類型(Type)是編譯器給我們的一張保護網，string 類型的變數就只能呼叫 string 的方法，所有操作都由編譯器掛保證，不合法的方法調用，都在編譯期會被擋下來。</p>
+<p>但是超越這張保護網的唯一例外就是 NULL 。當我們聲明一個 <code>string*</code> 類型的變數，其實真正的意思是該變數既可以存放 string 指標， <strong>也可以</strong> 存放 NULL，對吧，兩者都合法，即使 NULL 完全不符合 string 類型的規範，一運行就會出錯，但是編譯器就是認可這個賦值，一聲不吭。</p>
+<p>為了處理 NULL 特例，我們程式設計師只能辛勤的手動防範，每個引用到該變數的地方都區分有效變數或 NULL 兩種行為，最終導致程式碼裡頭無止盡的 NULL check ，因為我們不知道指標何時是有效的變數，何時是 NULL。也因此才有人提出 Null Object Pattern ，用團隊的編程規範去禁止 NULL 的使用，改以一個自己撰寫的不做事的空物件取代之。</p>
+<p>所以 Objective-C 的 nil 並不單單只是一個不會程序崩潰的 NULL 指標而已，nil 滿足所有類型的規範，不再需要有特例需要防範，它其實等同了語言內建了所有類型的 NullObject 機制。</p>
+<p>這篇文章大部分來自<a href="http://www.yinwang.org/">王垠博客</a>的啟發。</p>
+
+
+<hr class="post-end">
+<footer class="post-info">
+
+  <p>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+  
+    
+      <span class="tag"><a href="https://chchwy.github.io/tags/objective-c/">Objective-C</a></span>
+    
+  
+  </p>
+
+<p>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+  668 Words
+</p>
+
+  <p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+    2013-12-23
+  </p>
+
+</footer>
+</article>
+
+
+    <footer id="site-footer">© 2023 Matt Chang · CC BY-NC 4.0</footer>
+</body>
+</html>

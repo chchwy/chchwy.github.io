@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>「因為這個系統上已停用指令碼執行，所以無法載入」 &middot; 調和的靈感</title>
+    <title>調和的靈感</title>
+
+    <link rel="stylesheet" type="text/css" href="/neat.css">
+    <link rel="stylesheet" type="text/css" href="/custom.css">
+    <link rel="alternate" type="application/atom+xml" title="RSS" href="https://chchwy.github.io/atom.xml">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+    <a class="home" href="/">&nwarr;</a>
+    <nav>
+        <h1>調和的靈感</h1>
+        <div style="margin-left: auto;">
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/blog">Archive</a></li>
+            </ul>
+        </div>
+        
+    </nav>
+    <hr>
+    <!--
+    <ol class="twocol">
+        <li><a href="#about">About</a></li>
+        <li><a href="#start">Archive</a></li>
+    </ol>
+    -->
+    
+<br>
+<article>
+<p class="subtitle">2015-06-14</p>
+<h1 class="title">
+  「因為這個系統上已停用指令碼執行，所以無法載入」
+</h1>
+<p>每個學 PowerShell 的人必然碰到的錯誤。</p>
+<p>Windows 因為安全性考量，PowerShell 腳本(副檔名.ps1)預設是禁止執行的。所以同樣的命令，命令視窗直接打可以跑，但是存成檔案就會出現這個讓人摸不著頭腦的錯誤。</p>
+<p>手動打開權限的作法如下：</p>
+<p>用「系統管理員」身份打開 PowerShell，再輸入以下命令：</p>
+<pre data-lang="ps1" style="background-color:#2e3440;color:#d8dee9;" class="language-ps1 "><code class="language-ps1" data-lang="ps1"><span style="color:#88c0d0;">Set-ExecutionPolicy</span><span> RemoteSigned
+</span></code></pre>
+<p>就可以解鎖 PowerShell Script 了。</p>
+<p><code>Execution Policy</code> 是 PowerShell 的安全機制。<code>Remote Signed</code> 的意思是從網路上抓下來的 .ps1 要檢查數位簽章，但是本地的 PowerShell 檔案直接放行。</p>
+<p>更多 Execution Policy 等級可以參考<a href="http://gelis-dotnet.blogspot.tw/2010/10/win72008-server-powershell.html">這裡</a>。</p>
+
+
+<hr class="post-end">
+<footer class="post-info">
+
+  <p>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+  
+    
+      <span class="tag"><a href="https://chchwy.github.io/tags/powershell/">PowerShell</a></span>
+    
+  
+  </p>
+
+<p>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+  181 Words
+</p>
+
+  <p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+    2015-06-14
+  </p>
+
+</footer>
+</article>
+
+
+    <footer id="site-footer">© 2023 Matt Chang · CC BY-NC 4.0</footer>
+</body>
+</html>

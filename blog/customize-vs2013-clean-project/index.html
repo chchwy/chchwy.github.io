@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>客製化 Visual C++ clean project 的行為 &middot; 調和的靈感</title>
+    <title>調和的靈感</title>
+
+    <link rel="stylesheet" type="text/css" href="/neat.css">
+    <link rel="stylesheet" type="text/css" href="/custom.css">
+    <link rel="alternate" type="application/atom+xml" title="RSS" href="https://chchwy.github.io/atom.xml">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+    <a class="home" href="/">&nwarr;</a>
+    <nav>
+        <h1>調和的靈感</h1>
+        <div style="margin-left: auto;">
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/blog">Archive</a></li>
+            </ul>
+        </div>
+        
+    </nav>
+    <hr>
+    <!--
+    <ol class="twocol">
+        <li><a href="#about">About</a></li>
+        <li><a href="#start">Archive</a></li>
+    </ol>
+    -->
+    
+<br>
+<article>
+<p class="subtitle">2015-06-20</p>
+<h1 class="title">
+  客製化 Visual C++ clean project 的行為
+</h1>
+<p>昨天花了一點時間研究一下，Visual C++ 該怎麼客製 Clean 的行為。</p>
+<p>簡單講，我想要在按下 Clean Project 的時候，請 Visual Studio 「順便」幫我刪掉幾個目錄。說是順便但是其實不太容易，因為像 Build Project 這個動作，在專案設定頁有 Pre-build Event 和 Post-build Event 可以掛上額外的工作，但是 Clean 在專案設定裡就沒有相關的掛勾。至少 Visual Studio 並沒有 UI 可以直接操作。</p>
+<h2 id="yan-jiu-vcxproj">研究 .vcxproj</h2>
+<p>我簡單研究了一下 vcxproj 的文件格式，我發現整個 C++ 專案的編譯流程，都是由 <code>Microsoft.Cpp.targets</code> 這個設定檔定義的。每個 .vcxproj 透過 <code>&lt;Import&gt;</code> 將 <code>Microsoft.Cpp.targets</code> 這個檔案引入，確立整個 C++ 專案的建構流程。</p>
+<pre data-lang="xml" style="background-color:#2e3440;color:#d8dee9;" class="language-xml "><code class="language-xml" data-lang="xml"><span style="color:#81a1c1;">&lt;Import </span><span style="color:#8fbcbb;">Project</span><span style="color:#eceff4;">=</span><span style="color:#a3be8c;">&quot;$(VCTargetsPath)\Microsoft.Cpp.targets&quot; </span><span style="color:#81a1c1;">/&gt;
+</span></code></pre>
+<p>所以我打開 Microsoft.Cpp.target 文件，發現裡面又透過另一個檔案 <code>Microsoft.CppClean.targets</code> 來定義 Clean 的行為：</p>
+<pre data-lang="xml" style="background-color:#2e3440;color:#d8dee9;" class="language-xml "><code class="language-xml" data-lang="xml"><span style="color:#81a1c1;">&lt;Import </span><span style="color:#8fbcbb;">Project</span><span style="color:#eceff4;">=</span><span style="color:#a3be8c;">&quot;$(VCTargetsPath)\Microsoft.CppClean.targets&quot; </span><span style="color:#81a1c1;">/&gt;
+</span></code></pre>
+<p>感覺我離目標越來越近了，再打開 Microsoft.CppClean.targets 文件，我馬上看見了兩個空的 Target tag:</p>
+<pre data-lang="xml" style="background-color:#2e3440;color:#d8dee9;" class="language-xml "><code class="language-xml" data-lang="xml"><span style="color:#616e88;">&lt;!-- BeforeCppClean: Redefine this target in your project in order to run tasks just before Clean. --&gt;
+</span><span style="color:#81a1c1;">&lt;Target </span><span style="color:#8fbcbb;">Name</span><span style="color:#eceff4;">=</span><span style="color:#a3be8c;">&quot;BeforeCppClean&quot;</span><span style="color:#81a1c1;">&gt;
+</span><span style="color:#81a1c1;">&lt;/Target&gt;
+</span><span style="color:#eceff4;">
+</span><span style="color:#616e88;">&lt;!-- AfterCppClean: Redefine this target in your project in order to run tasks just after Clean. --&gt;
+</span><span style="color:#81a1c1;">&lt;Target </span><span style="color:#8fbcbb;">Name</span><span style="color:#eceff4;">=</span><span style="color:#a3be8c;">&quot;AfterCppClean&quot;</span><span style="color:#81a1c1;">&gt;
+</span><span style="color:#81a1c1;">&lt;/Target&gt;
+</span></code></pre>
+<p>OK，所以其實 Visual C++ 在 Clean 的流程中已經保留了 BeforeCppClean 和 AfterCppClean 兩個事件，分別會在 Clean 之前和之後觸發，我只要複寫這兩個事件就行了。</p>
+<h2 id="fu-xie-beforecppclean">複寫 BeforeCppClean</h2>
+<p>現在我需要把「刪除目錄」這件事掛上 BeforeCppClean 這個 Target。作法是寫一個自己的 .target 文件，然後再透過 <code>&lt;Import&gt;</code> 標籤引入 vcxproj。實際上要做的工作就寫在 Target 標籤裡。</p>
+<pre data-lang="xml" style="background-color:#2e3440;color:#d8dee9;" class="language-xml "><code class="language-xml" data-lang="xml"><span style="color:#eceff4;">// 我自己定義的 MyCppClean.target
+</span><span style="color:#81a1c1;">&lt;Project </span><span style="color:#8fbcbb;">ToolsVersion</span><span style="color:#eceff4;">=</span><span style="color:#a3be8c;">&quot;12.0&quot; </span><span style="color:#8fbcbb;">xmlns</span><span style="color:#eceff4;">=</span><span style="color:#a3be8c;">&quot;http://schemas.microsoft.com/developer/msbuild/2003&quot;</span><span style="color:#81a1c1;">&gt;
+</span><span style="color:#eceff4;">  </span><span style="color:#81a1c1;">&lt;Target </span><span style="color:#8fbcbb;">Name</span><span style="color:#eceff4;">=</span><span style="color:#a3be8c;">&quot;BeforeCppClean&quot;</span><span style="color:#81a1c1;">&gt;</span><span style="color:#eceff4;">            // 複寫 BeforeCppClean
+</span><span style="color:#eceff4;">    </span><span style="color:#81a1c1;">&lt;Message </span><span style="color:#8fbcbb;">Text</span><span style="color:#eceff4;">=</span><span style="color:#a3be8c;">&quot;Delete XXXX Folder!&quot; </span><span style="color:#81a1c1;">/&gt;</span><span style="color:#eceff4;">  // 印出訊息
+</span><span style="color:#eceff4;">    </span><span style="color:#81a1c1;">&lt;RemoveDir </span><span style="color:#8fbcbb;">Directories</span><span style="color:#eceff4;">=</span><span style="color:#a3be8c;">&quot;XXXX&quot; </span><span style="color:#81a1c1;">/&gt;</span><span style="color:#eceff4;">        // 刪除 XXXX 這個目錄
+</span><span style="color:#eceff4;">  </span><span style="color:#81a1c1;">&lt;/Target&gt;
+</span><span style="color:#81a1c1;">&lt;/Project&gt;
+</span></code></pre>
+<p>最後我們把自定義的 target 引入專案，在 .vcxproj 中加入一行：</p>
+<pre data-lang="xml" style="background-color:#2e3440;color:#d8dee9;" class="language-xml "><code class="language-xml" data-lang="xml"><span style="color:#81a1c1;">&lt;Project&gt;
+</span><span style="color:#eceff4;">  ...
+</span><span style="color:#eceff4;">  </span><span style="color:#81a1c1;">&lt;Import </span><span style="color:#8fbcbb;">Project</span><span style="color:#eceff4;">=</span><span style="color:#a3be8c;">&quot;MyCppClean.target&quot; </span><span style="color:#81a1c1;">/&gt;
+</span><span style="color:#81a1c1;">&lt;/Project&gt;
+</span></code></pre>
+<p>這樣子 Clean 專案時，就會刪除我指定的目錄了，可喜可賀。</p>
+<h3 id="can-kao-lian-jie">參考連結</h3>
+<ul>
+<li><a href="https://msdn.microsoft.com/zh-tw/library/dd393574.aspx">MSBuild 基本觀念</a></li>
+<li><a href="https://msdn.microsoft.com/zh-tw/library/ms171466.aspx">MSBuild工作</a></li>
+<li><a href="https://msdn.microsoft.com/zh-tw/library/xyfz6ddb.aspx">RemoveDir標籤</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/6yy0yx8d.aspx">Message標籤</a></li>
+<li><a href="https://msdn.microsoft.com/en-us/library/5dy88c2e.aspx">MSBuild Project File Schema</a></li>
+</ul>
+
+
+<hr class="post-end">
+<footer class="post-info">
+
+  <p>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+  
+    
+      <span class="tag"><a href="https://chchwy.github.io/tags/visual-studio/">Visual Studio</a></span>
+    
+      <span class="tag"><a href="https://chchwy.github.io/tags/c/">C++</a></span>
+    
+  
+  </p>
+
+<p>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+  556 Words
+</p>
+
+  <p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+    2015-06-20
+  </p>
+
+</footer>
+</article>
+
+
+    <footer id="site-footer">© 2023 Matt Chang · CC BY-NC 4.0</footer>
+</body>
+</html>

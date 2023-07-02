@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>CMake：快速上手跨平台 C++ 專案建置 &middot; 調和的靈感</title>
+    <title>調和的靈感</title>
+
+    <link rel="stylesheet" type="text/css" href="/neat.css">
+    <link rel="stylesheet" type="text/css" href="/custom.css">
+    <link rel="alternate" type="application/atom+xml" title="RSS" href="https://chchwy.github.io/atom.xml">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+    <a class="home" href="/">&nwarr;</a>
+    <nav>
+        <h1>調和的靈感</h1>
+        <div style="margin-left: auto;">
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/blog">Archive</a></li>
+            </ul>
+        </div>
+        
+    </nav>
+    <hr>
+    <!--
+    <ol class="twocol">
+        <li><a href="#about">About</a></li>
+        <li><a href="#start">Archive</a></li>
+    </ol>
+    -->
+    
+<br>
+<article>
+<p class="subtitle">2021-08-10</p>
+<h1 class="title">
+  CMake：快速上手跨平台 C++ 專案建置
+</h1>
+<h3 id="wei-shi-mo-xu-yao-cmake">為什麼需要 CMake?</h3>
+<p>簡單講，C++ 語言本身雖然跨平台。但是編譯 C++ 的工具鏈卻不跨平台。</p>
+<p>Linux Makefile 和 Windows Visual Studio 互不相通，即使撰寫了完全平台獨立的 C++ 程式碼，想在 Linux 上編譯 Windows 專案往往相當困難。</p>
+<p>針對這個問題，除了同時維護兩個專案之外，還可以考慮 CMake 這類跨平台工具。</p>
+<p>藉由 CMake ，我們可以寫一份完全中立、跟平台無關的專案腳本，編譯時才轉換成當前平台的工具鏈。比如當我想在 Windows 平台上編譯時，CMake 就為我產生一個 Visual Studio 專案。同理，當我需要在 macOS 上編譯時，就產生 Xcode 專案。接著就能用本機工具鏈編譯專案了。</p>
+<p>我個人的主力工作平台是 Win10+VS2017，副平台是 iOS+Xcode，偶爾需要跑一下 Linux。CMake 可以節省我的時間精力，避開每個平台都需再學習一次建構系統的成本。</p>
+<h2 id="hello-cmake">Hello CMake!</h2>
+<p>馬上開始第一個 CMake 專案。</p>
+<p>首先在專案目錄下添加兩個檔案：<code>CMakeLists.txt</code>、<code>main.cpp</code>。</p>
+<p>CMake 規定，專案腳本的入口一定叫做 <code>CMakeLists.txt</code>，是個純文字檔。不用說 <code>main.cpp</code> 就是 C++ 原始碼。</p>
+<p>給 <code>CMakeLists.txt</code> 添加內容：</p>
+<pre data-lang="cmake" style="background-color:#2e3440;color:#d8dee9;" class="language-cmake "><code class="language-cmake" data-lang="cmake"><span style="color:#88c0d0;">cmake_minimum_required</span><span>(VERSION 3.10) </span><span style="color:#616e88;"># 設定最低版本要求
+</span><span style="color:#88c0d0;">project</span><span>(HelloCMake)                  </span><span style="color:#616e88;"># 專案名稱
+</span><span style="color:#88c0d0;">add_executable</span><span>(MyHomework main.cpp)  </span><span style="color:#616e88;"># 執行檔名叫 MyApp，原始碼 main.cpp
+</span></code></pre>
+<p>三行即可完成一個最簡單的 CMake 專案。目標是編譯原始碼 main.cpp 並產出可執行檔 MyHomework.exe。</p>
+<p>CMake 用的是自家的腳本語法，本文不會著墨太多在腳本語法上，一開始只要知道 <code>cmake_minimum_required()</code>、<code>project()</code>、<code>add_executable()</code> 這些是內建函數就行了。</p>
+<h2 id="shi-ji-bian-yi-zhuan-an">實際編譯專案</h2>
+<p>再來，該怎麼編譯專案呢?</p>
+<p>我們剛剛提過 CMake 的轉換超能力，請用以下指令，把 CMake 腳本轉換成真正可編譯的專案：</p>
+<pre data-lang="bash" style="background-color:#2e3440;color:#d8dee9;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#88c0d0;">mkdir</span><span> build   </span><span style="color:#616e88;"># 建立名為 build 子目錄
+</span><span style="color:#88c0d0;">cd</span><span> build      </span><span style="color:#616e88;"># 進入子目錄
+</span><span style="color:#88c0d0;">cmake</span><span> ..      </span><span style="color:#616e88;"># 讀取 CMakeLists.txt 並生成本機專案
+</span></code></pre>
+<p>我的開發環境是 Windows 10 + Visual Studio 2019 的組合，所以 CMake 產生了 VS2019 專案。</p>
+<p>看一眼 build 子目錄裡的 VS2019 專案：</p>
+<p><img src="/img/cmake-vs.png" alt="CMake VS2019" /></p>
+<p>我們給 <code>cmake</code> 的第一個參數是 <code>..</code>，也就是<code>CMakeLists.txt</code> 所在的路徑位置。經 CMake 解析腳本，便會在<strong>當前目錄</strong>產生本機專案檔。以本例來說，CMakeLists.txt 和原始碼位於 build 的上層目錄 (<code>..</code>)，而自動產生的 VS2019 檔案就在子目錄 <code>build</code> 內。</p>
+<p>這是 CMake 的慣例，將產生的檔案和原始專案區分開來，不污染原始專案。一旦該子目錄放進版控忽略清單後 (如 <code>.gitignore</code>)，這些轉換產生的檔案就不會影響版控，相當方便。</p>
+<p>最後打指令 <code>cmake --build .</code> 編譯程式。(別忘了最後有個 <code>.</code>)</p>
+<p>當然，徑直打開 Visual Studio 或者任何對應的 IDE 也可以，不一定要透過 CMake 編譯。</p>
+<h2 id="cmakelists-txt-fan-li">CMakeLists.txt 範例</h2>
+<p>接著是一個比較完整的 C++ 專案範例。包含標頭檔、原始檔、指定 C++11/14/17 版本標準、引用第三方程式庫的 include 路徑和 link 路徑、等等 C++ 專案常見的標準備配。應該足以應付大多數的簡單需求。</p>
+<pre data-lang="cmake" style="background-color:#2e3440;color:#d8dee9;" class="language-cmake "><code class="language-cmake" data-lang="cmake"><span style="color:#88c0d0;">cmake_minimum_required</span><span>(VERSION 3.16)
+</span><span>
+</span><span style="color:#88c0d0;">project</span><span>(MyProject)          </span><span style="color:#616e88;"># 專案名稱
+</span><span style="color:#88c0d0;">set</span><span>(CMAKE_CXX_STANDARD 11)  </span><span style="color:#616e88;"># 要求 C++11 標準
+</span><span>
+</span><span style="color:#88c0d0;">add_executable</span><span>(MyApp main.cpp work.cpp header.h pch.h)    </span><span style="color:#616e88;"># 執行檔和原始碼
+</span><span style="color:#88c0d0;">include_directories</span><span>(</span><span style="color:#a3be8c;">&quot;C:/path/to/include&quot;</span><span>)                 </span><span style="color:#616e88;"># 設定 include 目錄
+</span><span style="color:#88c0d0;">target_link_libraries</span><span>(MyApp </span><span style="color:#a3be8c;">&quot;C:/path/to/lib&quot;</span><span>)             </span><span style="color:#616e88;"># 設定 lib 連結
+</span></code></pre>
+<p>注意 <code>include_directories()</code> 和 <code>target_link_libraries()</code> 要給絕對路徑，例子：</p>
+<pre data-lang="cmake" style="background-color:#2e3440;color:#d8dee9;" class="language-cmake "><code class="language-cmake" data-lang="cmake"><span style="color:#88c0d0;">include_directories</span><span>(</span><span style="color:#a3be8c;">&quot;D:</span><span style="background-color:#bf616a;color:#d8dee9;">\f</span><span style="color:#a3be8c;">reeglut</span><span style="background-color:#bf616a;color:#d8dee9;">\i</span><span style="color:#a3be8c;">nclude&quot;</span><span>)
+</span><span style="color:#88c0d0;">target_link_libraries</span><span>(Target1 </span><span style="color:#a3be8c;">&quot;D:</span><span style="background-color:#bf616a;color:#d8dee9;">\f</span><span style="color:#a3be8c;">reeglut</span><span style="background-color:#bf616a;color:#d8dee9;">\l</span><span style="color:#a3be8c;">ib</span><span style="background-color:#bf616a;color:#d8dee9;">\f</span><span style="color:#a3be8c;">reeglut.lib)
+</span></code></pre>
+<h2 id="zhi-ding-debug-release-bian-yi-zu-tai">指定 Debug/Release 編譯組態</h2>
+<p>呼叫 <code>cmake --build</code> 編譯時，可搭配 <code>--config</code> 指定編譯組態</p>
+<pre data-lang="cmd" style="background-color:#2e3440;color:#d8dee9;" class="language-cmd "><code class="language-cmd" data-lang="cmd"><span>cmake --build . --config Release
+</span><span>cmake --build . --config Debug
+</span></code></pre>
+<p>共有四種組態： <code>Debug</code>、<code>Release</code>、<code>RelWithDebInfo</code>、<code>MinSizeRel</code>。</p>
+<h2 id="zhi-ding-bian-yi-qi">指定編譯器</h2>
+<p>本機上有多個編譯器可選的話，可在轉換步驟加 <code>-G</code> 指定工具鏈</p>
+<pre data-lang="cmd" style="background-color:#2e3440;color:#d8dee9;" class="language-cmd "><code class="language-cmd" data-lang="cmd"><span>cmake -G </span><span style="color:#a3be8c;">&quot;Visual Studio 16 2019&quot;</span><span> /path/to/source
+</span><span>cmake -G </span><span style="color:#a3be8c;">&quot;Visual Studio 15 2017&quot;</span><span> /path/to/source
+</span><span>cmake -G </span><span style="color:#a3be8c;">&quot;MinGW Makefiles&quot;</span><span>       /path/to/source
+</span><span>cmake -G </span><span style="color:#a3be8c;">&quot;Xcode&quot;</span><span>                 /path/to/source
+</span></code></pre>
+<p>參考連結：<a href="https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html#manual:cmake-generators(7)">編譯器列表</a></p>
+<h2 id="zhi-ding-32-64-bits">指定 32/64-bits</h2>
+<p>用 <code>-A</code> 指定架構</p>
+<pre data-lang="cmd" style="background-color:#2e3440;color:#d8dee9;" class="language-cmd "><code class="language-cmd" data-lang="cmd"><span>cmake -G </span><span style="color:#a3be8c;">&quot;Visual Studio 16 2019&quot;</span><span> -A Win32 /path/to/source
+</span><span>cmake -G </span><span style="color:#a3be8c;">&quot;Visual Studio 16 2019&quot;</span><span> -A x64   /path/to/source
+</span><span>cmake -G </span><span style="color:#a3be8c;">&quot;Visual Studio 16 2019&quot;</span><span> -A ARM   /path/to/source
+</span></code></pre>
+<h2 id="shi-chuang-cheng-shi">視窗程式</h2>
+<p>這是個簡單的 Win32 視窗程式範例：</p>
+<pre data-lang="cmake" style="background-color:#2e3440;color:#d8dee9;" class="language-cmake "><code class="language-cmake" data-lang="cmake"><span style="color:#88c0d0;">cmake_minimum_required</span><span>(VERSION 3.16)
+</span><span>
+</span><span style="color:#88c0d0;">project</span><span>(MyWindowProject)    </span><span style="color:#616e88;"># 專案名字
+</span><span style="color:#88c0d0;">set</span><span>(CMAKE_CXX_STANDARD 11)  </span><span style="color:#616e88;"># 指定 C++11 標準
+</span><span>
+</span><span style="color:#88c0d0;">add_compile_definitions</span><span>(UNICOD _UNICODE)  </span><span style="color:#616e88;"># 寬字元設定
+</span><span style="color:#88c0d0;">add_executable</span><span>(MyWin32App WIN32 main.cpp work.cpp header.h pch.h) </span><span style="color:#616e88;"># 關鍵字 WIN32
+</span><span>
+</span><span style="color:#88c0d0;">target_precompile_headers</span><span>(MyWin32App PRIVATE pch.h) </span><span style="color:#616e88;"># 預編譯標頭檔
+</span></code></pre>
+<p>有些特別注意事項：</p>
+<ul>
+<li>用 <code>WIN32</code> 關鍵字指明是 win32 視窗程式，程式入口會從 <code>main()</code> 變成 <code>WinMain()</code></li>
+<li>定義 <code>UNICODE</code> 和 <code>_UNICODE</code> 告訴 VC++ 怎麼處理寬字元</li>
+<li><code>target_precompile_headers()</code> 預編譯標頭檔 (可放 <code>#include&lt;windows.h&gt;</code> ) </li>
+</ul>
+<h2 id="bian-yi-hou-fu-zhi-zi-yuan-ru-shader">編譯後複製資源 (如 shader)</h2>
+<p>我自己寫 Diret3D 程式時，預期每次編譯後都複製 shaders 到執行檔目錄。以下 CMake 指令可以達成：</p>
+<pre data-lang="cmake" style="background-color:#2e3440;color:#d8dee9;" class="language-cmake "><code class="language-cmake" data-lang="cmake"><span style="color:#88c0d0;">add_custom_target</span><span>(
+</span><span>    copy_shader_files
+</span><span>    </span><span style="color:#81a1c1;">$</span><span>{CMAKE_COMMAND} -E copy </span><span style="color:#81a1c1;">$</span><span>{CMAKE_SOURCE_DIR}/shaders.hlsl </span><span style="color:#81a1c1;">$</span><span>{CMAKE_BINARY_DIR}
+</span><span>)
+</span><span style="color:#88c0d0;">add_dependencies</span><span>(Target1 copy_shader_files)
+</span></code></pre>
+<h2 id="can-kao-lian-jie">參考連結</h2>
+<p>本篇文章的目的，是希望以最少的廢話和步驟，快速開始編譯第一個跨平台 C++ 專案，並刻意跳過非必要的高級功能，這也是我個人學 CMake 的目的。進階學習請參考以下連結：</p>
+<ul>
+<li><a href="https://cmake.org/cmake/help/latest/guide/tutorial/">CMake 官方教學</a></li>
+<li><a href="https://www.jetbrains.com/help/clion/quick-cmake-tutorial.html">CLion Quick CMake tutorial</a></li>
+<li><a href="https://cliutils.gitlab.io/modern-cmake/">An introduction to Modern CMake</a></li>
+<li><a href="https://gist.github.com/Rod-Persky/e6b93e9ee31f9516261b">Qt5 Projects with CMake</a></li>
+<li><a href="https://minecraftxwinp.github.io/2017/11/27/%E7%94%A8CMake%E5%9C%A8%E5%BB%BA%E7%BD%AE%E6%99%82%E8%A4%87%E8%A3%BD%E6%AA%94%E6%A1%88%E5%88%B0%E8%BC%B8%E5%87%BA%E5%9F%B7%E8%A1%8C%E6%AA%94%E7%9A%84%E7%9B%AE%E9%8C%84/">用CMake在建置時複製檔案到輸出執行檔的目錄 </a></li>
+</ul>
+
+
+<hr class="post-end">
+<footer class="post-info">
+
+  <p>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+  
+    
+      <span class="tag"><a href="https://chchwy.github.io/tags/cmake/">CMake</a></span>
+    
+      <span class="tag"><a href="https://chchwy.github.io/tags/c/">C++</a></span>
+    
+  
+  </p>
+
+<p>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+  1440 Words
+</p>
+
+  <p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+    2021-08-10
+  </p>
+
+</footer>
+</article>
+
+
+    <footer id="site-footer">© 2023 Matt Chang · CC BY-NC 4.0</footer>
+</body>
+</html>

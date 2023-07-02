@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Ogre3D v2.1 模型預覽器 &middot; 調和的靈感</title>
+    <title>調和的靈感</title>
+
+    <link rel="stylesheet" type="text/css" href="/neat.css">
+    <link rel="stylesheet" type="text/css" href="/custom.css">
+    <link rel="alternate" type="application/atom+xml" title="RSS" href="https://chchwy.github.io/atom.xml">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+    <a class="home" href="/">&nwarr;</a>
+    <nav>
+        <h1>調和的靈感</h1>
+        <div style="margin-left: auto;">
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/blog">Archive</a></li>
+            </ul>
+        </div>
+        
+    </nav>
+    <hr>
+    <!--
+    <ol class="twocol">
+        <li><a href="#about">About</a></li>
+        <li><a href="#start">Archive</a></li>
+    </ol>
+    -->
+    
+<br>
+<article>
+<p class="subtitle">2019-08-05</p>
+<h1 class="title">
+  Ogre3D v2.1 模型預覽器
+</h1>
+<p>我寫了一個 Ogre v2.1 的 3D 模型預覽器。</p>
+<p><img src="/img/ogre-v2-mesh-viewer-screenshot.png" alt="Ogre V2 Mesh Viewer Screenshot" /></p>
+<p><a href="https://github.com/chchwy/ogre-v2-mesh-viewer">這是 Github Repo 連結</a> ，所有的程式碼都是開源的。</p>
+<p><a href="https://github.com/chchwy/ogre-v2-mesh-viewer/releases">下載頁面</a>：zip 解壓之後直接執行 <code>ogre-v2-mesh-viewer.exe</code> 就行。</p>
+<h2 id="gong-neng-jian-jie">功能簡介</h2>
+<p>就是個簡單的 3D 模型預覽器，加上一些簡單的編輯功能：</p>
+<ul>
+<li>讀取 Ogre3D 原生 3D 模型格式 (包括 v1, v2, xml 三種形式)</li>
+<li>匯入 Wavefront obj 模型</li>
+<li>匯入 glTF 2.0 模型</li>
+<li>顯示場景樹狀結構</li>
+<li>基本的 HLMS 材質編輯
+<ul>
+<li>貼圖通道: diffuse, background diffuse, normal, roughness, metalness</li>
+<li>半透明</li>
+<li>網格 (wireframe)</li>
+<li>雙面材質 (Two-sided)</li>
+</ul>
+</li>
+<li>調整場景節點位置，包括位置、旋轉、縮放等等</li>
+<li>顯示 Bounding box</li>
+<li>obj =&gt; .mesh 批次轉換工具</li>
+</ul>
+<h2 id="kai-fa-yuan-you">開發緣由</h2>
+<p>目前網路上大多數的既有資源都是針對 Ogre 第一版引擎。Ogre3D 第二版，包括 2.1 和 2.2 的文章及資源都像對較少，也找不到一個可靠的模型預覽器，所以我就自己寫了一個。</p>
+<p>開發環境是 Visual Studio 2019。UI 界面是我的老朋友 Qt。Ogre3D 後端採用 OpenGL3+ 渲染 (用 DirectX 11 渲染也可以，只是有些貼圖的縮圖會沒辦法正確顯示)。</p>
+
+
+<hr class="post-end">
+<footer class="post-info">
+
+  <p>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+  
+    
+      <span class="tag"><a href="https://chchwy.github.io/tags/ogre3d/">Ogre3D</a></span>
+    
+      <span class="tag"><a href="https://chchwy.github.io/tags/qt/">Qt</a></span>
+    
+      <span class="tag"><a href="https://chchwy.github.io/tags/c/">C++</a></span>
+    
+      <span class="tag"><a href="https://chchwy.github.io/tags/open-source/">Open Source</a></span>
+    
+  
+  </p>
+
+<p>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+  328 Words
+</p>
+
+  <p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+    2019-08-05
+  </p>
+
+</footer>
+</article>
+
+
+    <footer id="site-footer">© 2023 Matt Chang · CC BY-NC 4.0</footer>
+</body>
+</html>

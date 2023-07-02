@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>UVa 解題自動輸入測資 &middot; 調和的靈感</title>
+    <title>調和的靈感</title>
+
+    <link rel="stylesheet" type="text/css" href="/neat.css">
+    <link rel="stylesheet" type="text/css" href="/custom.css">
+    <link rel="alternate" type="application/atom+xml" title="RSS" href="https://chchwy.github.io/atom.xml">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+    <a class="home" href="/">&nwarr;</a>
+    <nav>
+        <h1>調和的靈感</h1>
+        <div style="margin-left: auto;">
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/blog">Archive</a></li>
+            </ul>
+        </div>
+        
+    </nav>
+    <hr>
+    <!--
+    <ol class="twocol">
+        <li><a href="#about">About</a></li>
+        <li><a href="#start">Archive</a></li>
+    </ol>
+    -->
+    
+<br>
+<article>
+<p class="subtitle">2016-03-08</p>
+<h1 class="title">
+  UVa 解題自動輸入測資
+</h1>
+<p>解 ACM 題目的時候，測試資料都是走標準輸入流 <code>cin/scanf()/gets()</code>。當測試資料量很大的時候，手動鍵入測試資料很慢又浪費時間。我後來發現了一個技巧叫做 I/O 轉向 (I/O redirection) ，可以重新定義標準輸入流，省去手動鍵入測資的步驟。</p>
+<p>先上例子：</p>
+<pre data-lang="cpp" style="background-color:#2e3440;color:#d8dee9;" class="language-cpp "><code class="language-cpp" data-lang="cpp"><span style="color:#81a1c1;">int </span><span style="color:#88c0d0;">main</span><span>() {
+</span><span>
+</span><span style="color:#5e81ac;">#ifndef</span><span> ONLINE_JUDGE
+</span><span>  </span><span style="color:#88c0d0;">freopen</span><span>(</span><span style="color:#a3be8c;">&quot;input.txt&quot;</span><span style="color:#eceff4;">, </span><span style="color:#a3be8c;">&quot;r&quot;</span><span style="color:#eceff4;">,</span><span> stdin)</span><span style="color:#eceff4;">;
+</span><span>  </span><span style="color:#88c0d0;">freopen</span><span>(</span><span style="color:#a3be8c;">&quot;output.txt&quot;</span><span style="color:#eceff4;">, </span><span style="color:#a3be8c;">&quot;w&quot;</span><span style="color:#eceff4;">,</span><span> stdout)</span><span style="color:#eceff4;">;
+</span><span style="color:#5e81ac;">#endif
+</span><span>
+</span><span>  </span><span style="color:#616e88;">// do whatever you need to do
+</span><span>  </span><span style="color:#616e88;">// cin/cout/scanf/printf as usual
+</span><span>
+</span><span>  </span><span style="color:#81a1c1;">return </span><span style="color:#b48ead;">0</span><span style="color:#eceff4;">;
+</span><span>}
+</span></code></pre>
+<p>關鍵是 <code>freopen()</code> 函數</p>
+<pre data-lang="cpp" style="background-color:#2e3440;color:#d8dee9;" class="language-cpp "><code class="language-cpp" data-lang="cpp"><span style="color:#88c0d0;">freopen</span><span>(</span><span style="color:#a3be8c;">&quot;input.txt&quot;</span><span style="color:#eceff4;">, </span><span style="color:#a3be8c;">&quot;r&quot;</span><span style="color:#eceff4;">,</span><span> stdin)</span><span style="color:#eceff4;">;
+</span></code></pre>
+<p>這一行的作用就是把 input.txt 當作 stdin 的來源。一旦呼叫過 <code>freopen()</code>，接下來所有的標準輸入函數 <code>cin/scanf()/getline()</code> 就變成從 input.txt 讀取資料。</p>
+<pre data-lang="cpp" style="background-color:#2e3440;color:#d8dee9;" class="language-cpp "><code class="language-cpp" data-lang="cpp"><span style="color:#88c0d0;">freopen</span><span>(</span><span style="color:#a3be8c;">&quot;output.txt&quot;</span><span style="color:#eceff4;">, </span><span style="color:#a3be8c;">&quot;w&quot;</span><span style="color:#eceff4;">,</span><span> stdout)</span><span style="color:#eceff4;">;
+</span></code></pre>
+<p>同樣的也可以把標準輸出導向檔案寫出，這樣所有的 <code>cout/printf()/puts()</code> 都會寫入 output.txt 這個檔案。</p>
+<p>因為 UVa online judge 在編譯的時候會下 <code>-DONLINE_JUDGE</code> 的編譯參數。所以我們把freopen() 用 <code>#ifndef</code> (if Not defined) 夾起來，這樣只有在本機測試的時候才做 I/O 轉向，上傳程式碼的時候走回正常的標準輸入。</p>
+
+
+<hr class="post-end">
+<footer class="post-info">
+
+  <p>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+  
+    
+      <span class="tag"><a href="https://chchwy.github.io/tags/c/">C++</a></span>
+    
+      <span class="tag"><a href="https://chchwy.github.io/tags/uva-oneline-judge/">UVa Oneline Judge</a></span>
+    
+  
+  </p>
+
+<p>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+  285 Words
+</p>
+
+  <p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+    2016-03-08
+  </p>
+
+</footer>
+</article>
+
+
+    <footer id="site-footer">© 2023 Matt Chang · CC BY-NC 4.0</footer>
+</body>
+</html>

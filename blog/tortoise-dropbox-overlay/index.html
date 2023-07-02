@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>寫 Powershell 解決 TortoiseGit 圖示消失問題 &middot; 調和的靈感</title>
+    <title>調和的靈感</title>
+
+    <link rel="stylesheet" type="text/css" href="/neat.css">
+    <link rel="stylesheet" type="text/css" href="/custom.css">
+    <link rel="alternate" type="application/atom+xml" title="RSS" href="https://chchwy.github.io/atom.xml">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+    <a class="home" href="/">&nwarr;</a>
+    <nav>
+        <h1>調和的靈感</h1>
+        <div style="margin-left: auto;">
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/blog">Archive</a></li>
+            </ul>
+        </div>
+        
+    </nav>
+    <hr>
+    <!--
+    <ol class="twocol">
+        <li><a href="#about">About</a></li>
+        <li><a href="#start">Archive</a></li>
+    </ol>
+    -->
+    
+<br>
+<article>
+<p class="subtitle">2021-05-17</p>
+<h1 class="title">
+  寫 Powershell 解決 TortoiseGit 圖示消失問題
+</h1>
+<p>幾天前，小烏龜 TortoiseGit 圖示消失的問題又發生了，我在檔案總管上看不見 git 狀態，很不方便。</p>
+<p><img src="/img/icon-overlay.png" alt="icon-overlay" /> </p>
+<p>上圖是正常狀態，有綠色小勾勾顯示 git 狀態。</p>
+<p>發生的原因，就是顯示綠色勾勾的那個機制: Windows Icon Overlay 有數量限制 16 個。這 16 個位置是所有應用程式共享的，包括 Dropbox、TortoiseGit、OneDrive 等等。</p>
+<p>如果超過了 16 個怎麼辦？名字排序，顯示前 16 個。</p>
+<p>問題是 Dropbox 一支程式就不可置信的佔用了<strong>10 個位置</strong>，而且<strong>非常無恥</strong>的在名字前面插進三個空格，確保他家的圖示在名字排序後也會佔住最前面的位置。一旦電腦上同時裝了 Dropbox + TortoiseGit ，那小烏龜的圖示有很大的機會被擠到 16 個有效位置以外，無法正確顯示。</p>
+<p>網路上已經很多人貼解法了，改註冊表，調整順序，都很詳細，我就不贅述了：</p>
+<ul>
+<li><a href="https://dotblogs.com.tw/kevinya/2017/07/24/180237" title="TorsoieGit 跟 Dropbox 相衝">Dropbox與小烏龜Tortorise的圖示icon相衝問題解決</a></li>
+<li><a href="https://www.garethjmsaunders.co.uk/2015/03/22/managing-overlay-icons-for-dropbox-and-tortoisesvn-and-tortoisegit/">Managing overlay icons for Dropbox and TortoiseSVN and TortoiseGit</a></li>
+</ul>
+<p>但是註冊表改好後，這個問題仍然可能不定時出現。</p>
+<p>為什麼？因為 Dropbox 每次更新版本後就會把註冊表改回去！很麻煩。</p>
+<p>我在想能不能把解法自動化，寫成程式? </p>
+<p>研究了一下，發現 Powershell 可以修改註冊表。花了一點時間，把解法寫成了以下的 Powershell script:</p>
+<script src="https://gist.github.com/chchwy/5418022d47fa49481f71ba481f54c02a.js"></script>
+<p>這個腳本會砍掉少見的 Dropbox 圖示，留下必要的四個，再把無恥的三空格改成一個空格。確保他們的順序在 TortoiseGit 後面。</p>
+<p>經過這支腳本，我學到的怎麼用 PowerShell 操作註冊表，跟操作檔案非常相似。</p>
+<ul>
+<li><code>Get-ChildItem</code>：列出註冊表子項目</li>
+<li><code>Remove-Item</code>：刪除註冊表</li>
+<li><code>Rename-Item</code>：重新命名</li>
+<li><code>Split-Path -leaf $path</code>：從完整路徑快速取出檔名 </li>
+</ul>
+<p>注意的路徑要以 <code>HKLM:\</code> 或 <code>HKCU:\</code> 為磁碟機代號。<code>HKLM:\</code> 表示 Local Machine， <code>HKCU:\</code> 表示 Current User。</p>
+<p>比如這個註冊表路徑</p>
+<pre style="background-color:#2e3440;color:#d8dee9;"><code><span>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers
+</span></code></pre>
+<p>要寫成</p>
+<pre style="background-color:#2e3440;color:#d8dee9;"><code><span>HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers
+</span></code></pre>
+<h2 id="can-kao-wang-ye">參考網頁</h2>
+<ul>
+<li><a href="https://dotblogs.com.tw/kevinya/2017/07/24/180237" title="TorsoieGit 跟 Dropbox 相衝">Dropbox與小烏龜Tortorise的圖示icon相衝問題解決</a></li>
+<li><a href="https://www.garethjmsaunders.co.uk/2015/03/22/managing-overlay-icons-for-dropbox-and-tortoisesvn-and-tortoisegit/">Managing overlay icons for Dropbox and TortoiseSVN and TortoiseGit</a></li>
+<li><a href="https://blog.netwrix.com/2018/09/11/how-to-get-edit-create-and-delete-registry-keys-with-powershell/">How to Get, Edit, Create and Delete Registry Keys with PowerShell</a></li>
+<li><a href="https://docs.microsoft.com/zh-tw/powershell/scripting/samples/working-with-registry-keys?view=powershell-7.1">PowerShell: 使用登錄機碼</a></li>
+</ul>
+
+
+<hr class="post-end">
+<footer class="post-info">
+
+  <p>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+  
+    
+      <span class="tag"><a href="https://chchwy.github.io/tags/powershell/">PowerShell</a></span>
+    
+  
+  </p>
+
+<p>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+  662 Words
+</p>
+
+  <p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+    2021-05-17
+  </p>
+
+</footer>
+</article>
+
+
+    <footer id="site-footer">© 2023 Matt Chang · CC BY-NC 4.0</footer>
+</body>
+</html>

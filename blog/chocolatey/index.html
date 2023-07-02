@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Chocolatey 套件管理，重灌 Windows 後的好幫手 &middot; 調和的靈感</title>
+    <title>調和的靈感</title>
+
+    <link rel="stylesheet" type="text/css" href="/neat.css">
+    <link rel="stylesheet" type="text/css" href="/custom.css">
+    <link rel="alternate" type="application/atom+xml" title="RSS" href="https://chchwy.github.io/atom.xml">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+    <a class="home" href="/">&nwarr;</a>
+    <nav>
+        <h1>調和的靈感</h1>
+        <div style="margin-left: auto;">
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/blog">Archive</a></li>
+            </ul>
+        </div>
+        
+    </nav>
+    <hr>
+    <!--
+    <ol class="twocol">
+        <li><a href="#about">About</a></li>
+        <li><a href="#start">Archive</a></li>
+    </ol>
+    -->
+    
+<br>
+<article>
+<p class="subtitle">2019-08-14</p>
+<h1 class="title">
+  Chocolatey 套件管理，重灌 Windows 後的好幫手
+</h1>
+<p>上個月，我又重灌了 Windows。</p>
+<p>重灌後，我試著挑戰一件事：不手動去網頁下載任何安裝檔，就把電腦設置回可工作狀態。</p>
+<p>每次重灌電腦後，就是惡夢般的漫長的軟體安裝之旅。去每個軟體的官方網站，下載，等待，安裝，有時候要重新開機。過程比安裝 Windows 本身還要漫長。</p>
+<p>事後證明還沒辦法百分之百達成。但是除了少數例外，我已經可以安裝八成以上的常用軟體，不需要去一個一個抓安裝檔了。這次主要的軟體來源有兩個：Chocolatey 和 Microsoft Store。</p>
+<h2 id="chocolatey-jiao-xue">Chocolatey 教學</h2>
+<p><a href="https://chocolatey.org/" title="Chocolatey Official Website">Chocolatey</a> 是一個命令列的套件管理工具。類似 Ubuntu 的 <code>apt-get</code> 一個命令搞定軟體安裝，同樣的概念在 Windows 上就是 Chocolatey。許多常見的 Windows 軟體都已經在 Chocolatey 上架。</p>
+<h3 id="an-zhuang-chocolatey">安裝 Chocolatey</h3>
+<p>用有管理員權限的 Powershell，複製貼上官網的命令 :<br/>
+<a href="https://chocolatey.org/install#install-with-powershellexe">https://chocolatey.org/install#install-with-powershellexe</a></p>
+<h3 id="chang-yong-ming-ling">常用命令</h3>
+<p>Chocolatey 的命令名稱是 <code>choco</code>，大多數操作需要管理員權限。</p>
+<p>安裝套件 (以 7-zip 為例)</p>
+<pre style="background-color:#2e3440;color:#d8dee9;"><code><span>choco install 7zip
+</span></code></pre>
+<p>反安裝套件</p>
+<pre style="background-color:#2e3440;color:#d8dee9;"><code><span>choco uninstall 7zip
+</span></code></pre>
+<p>列出已安裝套件</p>
+<pre style="background-color:#2e3440;color:#d8dee9;"><code><span>choco list --local
+</span></code></pre>
+<p>檢查套件是否有新版本</p>
+<pre style="background-color:#2e3440;color:#d8dee9;"><code><span>choco outdated
+</span></code></pre>
+<p>更新所有套件到最新版</p>
+<pre style="background-color:#2e3440;color:#d8dee9;"><code><span>choco upgrade all
+</span></code></pre>
+<p>這是我的 Chocolatey 安裝清單：</p>
+<pre data-lang="bash" style="background-color:#2e3440;color:#d8dee9;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#88c0d0;">choco</span><span> install -y 7zip                </span><span style="color:#616e88;"># 萬用壓縮軟體
+</span><span style="color:#88c0d0;">choco</span><span> install -y geekuninstaller     </span><span style="color:#616e88;"># 強大的反安裝工具
+</span><span style="color:#88c0d0;">choco</span><span> install -y firefox             </span><span style="color:#616e88;"># 我的慣用瀏覽器
+</span><span style="color:#88c0d0;">choco</span><span> install -y googlechrome        </span><span style="color:#616e88;"># 有時候需要另一個瀏覽器
+</span><span style="color:#88c0d0;">choco</span><span> install -y everything          </span><span style="color:#616e88;"># 最強大的檔案搜尋工具
+</span><span style="color:#88c0d0;">choco</span><span> install -y dropbox             </span><span style="color:#616e88;"># Dropbox 客戶端
+</span><span style="color:#88c0d0;">choco</span><span> install -y nodejs-lts          </span><span style="color:#616e88;"># Node.js 穩定版
+</span><span style="color:#88c0d0;">choco</span><span> install -y python2             </span><span style="color:#616e88;"># Python 2.x
+</span><span style="color:#88c0d0;">choco</span><span> install -y golang              </span><span style="color:#616e88;"># Go lang
+</span><span style="color:#88c0d0;">choco</span><span> install -y cmake               </span><span style="color:#616e88;"># CMake
+</span><span style="color:#88c0d0;">choco</span><span> install -y vscode              </span><span style="color:#616e88;"># VS Code
+</span><span style="color:#88c0d0;">choco</span><span> install -y notepadplusplus     </span><span style="color:#616e88;"># 老牌文字編輯器 Notepad++
+</span><span style="color:#88c0d0;">choco</span><span> install -y tortoisegit         </span><span style="color:#616e88;"># 小烏龜 Git
+</span><span style="color:#88c0d0;">choco</span><span> install -y git-fork            </span><span style="color:#616e88;"># 另一款輕巧的 git 圖形化工具
+</span><span style="color:#88c0d0;">choco</span><span> install -y beyondcompare       </span><span style="color:#616e88;"># 超級好用的 diff/merge 工具
+</span><span style="color:#88c0d0;">choco</span><span> install -y filezilla           </span><span style="color:#616e88;"># FTP 客戶端
+</span><span style="color:#88c0d0;">choco</span><span> install -y foxitreader         </span><span style="color:#616e88;"># 我慣用的 PDF viewer
+</span><span style="color:#88c0d0;">choco</span><span> install -y hugo                </span><span style="color:#616e88;"># 靜態博客產生器
+</span><span style="color:#88c0d0;">choco</span><span> install -y pandoc              </span><span style="color:#616e88;"># 強大的文件轉換工具
+</span><span style="color:#88c0d0;">choco</span><span> install -y paint.net           </span><span style="color:#616e88;"># 免費的小畫家強化版
+</span><span style="color:#88c0d0;">choco</span><span> install -y workflowy           </span><span style="color:#616e88;"># 條列式筆記工具
+</span><span style="color:#88c0d0;">choco</span><span> install -y typora              </span><span style="color:#616e88;"># Markdown 寫作軟體
+</span><span style="color:#88c0d0;">choco</span><span> install -y libreoffice-fresh   </span><span style="color:#616e88;"># 沒辦法，有時候還是要處理.docx
+</span><span style="color:#88c0d0;">choco</span><span> install -y mp3tag              </span><span style="color:#616e88;"># MP3 標籤編輯
+</span><span style="color:#88c0d0;">choco</span><span> install -y treesizefree        </span><span style="color:#616e88;"># 追蹤硬碟空間使用
+</span><span style="color:#88c0d0;">choco</span><span> install -y ccleaner            </span><span style="color:#616e88;"># 清理垃圾檔案
+</span><span style="color:#88c0d0;">choco</span><span> install -y teamviewer          </span><span style="color:#616e88;"># Teamviewer 遠端桌面
+</span><span style="color:#88c0d0;">choco</span><span> install -y 4k-video-downloader </span><span style="color:#616e88;"># 影片/音樂抓取
+</span><span style="color:#88c0d0;">choco</span><span> install -y xnviewmp            </span><span style="color:#616e88;"># 看圖軟體
+</span><span style="color:#88c0d0;">choco</span><span> install -y nomacs              </span><span style="color:#616e88;"># 輕巧的開源看圖軟體
+</span><span style="color:#88c0d0;">choco</span><span> install -y foobar2000          </span><span style="color:#616e88;"># 聽歌軟體
+</span><span style="color:#88c0d0;">choco</span><span> install -y steam               </span><span style="color:#616e88;"># 娛樂軟體
+</span><span style="color:#88c0d0;">choco</span><span> install -y vlc                 </span><span style="color:#616e88;"># 開源影片播放軟體
+</span><span style="color:#88c0d0;">choco</span><span> install -y k-litecodecpack-standard </span><span style="color:#616e88;"># k-lite 萬用影音播放 codec
+</span></code></pre>
+<p>只要一個 Powershell 腳本就可以把清單上的軟體全裝好了，升級版本也只要一個命令，異常方便。</p>
+<h3 id="microsoft-store">Microsoft Store</h3>
+<p>另外有幾款軟體，雖然也可以用 Chocolatey，但是我發現 Microsoft Store 上的版本更穩定。像是 Evernote 和 Line 的桌面版。用 Microsoft Store 安裝軟體的體驗也很好，一鍵安裝，無縫升級。</p>
+<h3 id="qi-ta-mei-ban-fa-zi-dong-an-zhuang-de-ruan-ti">其他沒辦法自動安裝的軟體</h3>
+<p>因為某些原因，以下軟體我還是必須手動安裝：</p>
+<ul>
+<li>Visual Studio (沒有其他安裝方法)</li>
+<li>Qt (沒有其他安裝方法)</li>
+<li>git (安裝過程中我需要修改選項)</li>
+<li>Slack (我刻意安裝 32-bit 的版本，希望能限制記憶體用量，但是還沒驗證過有沒有效XD)</li>
+</ul>
+
+
+<hr class="post-end">
+<footer class="post-info">
+
+  <p>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+  
+    
+      <span class="tag"><a href="https://chchwy.github.io/tags/kai-fa-ri-chang/">開發日常</a></span>
+    
+      <span class="tag"><a href="https://chchwy.github.io/tags/sheng-chan-li/">生產力</a></span>
+    
+  
+  </p>
+
+<p>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+  906 Words
+</p>
+
+  <p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+    2019-08-14
+  </p>
+
+</footer>
+</article>
+
+
+    <footer id="site-footer">© 2023 Matt Chang · CC BY-NC 4.0</footer>
+</body>
+</html>

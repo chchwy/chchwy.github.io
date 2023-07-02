@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>隨手比較壓縮演算法：7zip&#x2F;GZIP&#x2F;LZ4  &middot; 調和的靈感</title>
+    <title>調和的靈感</title>
+
+    <link rel="stylesheet" type="text/css" href="/neat.css">
+    <link rel="stylesheet" type="text/css" href="/custom.css">
+    <link rel="alternate" type="application/atom+xml" title="RSS" href="https://chchwy.github.io/atom.xml">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+    <a class="home" href="/">&nwarr;</a>
+    <nav>
+        <h1>調和的靈感</h1>
+        <div style="margin-left: auto;">
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/blog">Archive</a></li>
+            </ul>
+        </div>
+        
+    </nav>
+    <hr>
+    <!--
+    <ol class="twocol">
+        <li><a href="#about">About</a></li>
+        <li><a href="#start">Archive</a></li>
+    </ol>
+    -->
+    
+<br>
+<article>
+<p class="subtitle">2021-08-18</p>
+<h1 class="title">
+  隨手比較壓縮演算法：7zip&#x2F;GZIP&#x2F;LZ4 
+</h1>
+<p>最近有定期從遠端 Linux 主機上拉檔案下來的需求，內容是遊戲開發的資源檔，每次數百GB。因為檔案實在太大，不得不找一些壓縮檔案的方法，希望縮短下載時間。</p>
+<p>我隨手估狗了五種壓縮方法如下：</p>
+<ol>
+<li>7zip 最快速壓縮 (壓縮演算法是LZMA2)</li>
+<li>7zip 一般壓縮 (同上，只有參數不同)</li>
+<li>Gzip</li>
+<li>LZ4</li>
+<li>Zip</li>
+</ol>
+<p>實際跑的指令如下：</p>
+<pre data-lang="shell" style="background-color:#2e3440;color:#d8dee9;" class="language-shell "><code class="language-shell" data-lang="shell"><span>time 7z -mx1 a test.7z ./trunk/             # 7zip 最快速壓縮
+</span><span>time 7z -mx3 a test.zip ./trunk/            # 7zip 一般壓縮      
+</span><span>time tar -czvf test.tar.gz ./trunk/         # GZIP
+</span><span>time tar -I lz4 -cvf test.tar.lz4 ./trunk/  # LZ4
+</span><span>time zip -r -s 10G test.zip ./trunk/        # ZIP
+</span></code></pre>
+<p>挑選的標準很簡單，不要太冷門，壓縮/解壓縮工具在 Windows/Linux 上可以方便操作。如果有人知道什麼特別優秀的壓縮演算法麻煩告訴我。</p>
+<h2 id="ce-shi-huan-jing">測試環境</h2>
+<p>測試樣本總共 129GB，內容物大約為 45% FBX模型、45% TGA貼圖、10% 其他有的沒的。129GB 只是全部檔案的一部份，但我認為已經足夠有代表性來推斷出整體時間。</p>
+<p>測試的機子是 Vultr VPS 640G 方案，作業系統 Ubuntu 21.04。</p>
+<p><img src="/img/vultr-640.png" alt="Vultr" /></p>
+<h2 id="ce-shi-jie-guo">測試結果</h2>
+<p>表格內是五種方法的測試結果，包括壓縮後的檔案大小，壓縮比，以及壓縮時間</p>
+<style>
+table { border:solid 0px #cccccc; }
+th, td {border:1px solid #aaa; padding: 5px;}
+</style>
+<table><thead><tr><th>方法</th><th>壓縮時間</th><th>壓縮前大小</th><th>壓縮後大小</th><th>壓縮比</th></tr></thead><tbody>
+<tr><td>7zip 最快速壓縮</td><td>22m55s</td><td>129 GB</td><td>38 GB</td><td>29.5%</td></tr>
+<tr><td>7Zip 一般壓縮</td><td>43m3s</td><td>129 GB</td><td>36.8 GB</td><td>28.5%</td></tr>
+<tr><td>Gzip</td><td>75m33s</td><td>129 GB</td><td>57.2 GB</td><td>33.1%</td></tr>
+<tr><td>LZ4</td><td>8m21s</td><td>129 GB</td><td>42.7 GB</td><td>44.3%</td></tr>
+<tr><td>Zip</td><td>79m28s</td><td>129 GB</td><td>43 GB</td><td>33.3%</td></tr>
+</tbody></table>
+<p>從表格來看，7zip (也就是LZMA2演算法) 的壓縮率全場最佳，GZIP/ZIP 次之，LZ4 的壓縮率最差。壓縮速度則是 LZ4 最快，7zip 次之，Zip/Gzip 最慢。</p>
+<p>接著根據我家的平均網速 4.5MB/sec，計算出下載檔案需要的時間，再加總起來</p>
+<table><thead><tr><th>方法</th><th>壓縮時間 (秒)</th><th>下載時間 (秒)</th><th>總時間</th></tr></thead><tbody>
+<tr><td>7zip 最快速壓縮</td><td>1375</td><td>8647</td><td>167分鐘</td></tr>
+<tr><td>7zip 一般壓縮</td><td>2583</td><td>8374</td><td>182分鐘</td></tr>
+<tr><td>Gzip</td><td>4533</td><td>9716</td><td>237分鐘</td></tr>
+<tr><td>LZ4</td><td>501</td><td>13016</td><td>225分鐘</td></tr>
+<tr><td>Zip</td><td>4768</td><td>9784</td><td>242分鐘</td></tr>
+</tbody></table>
+<p>結果出來了，從總時間來看，<strong>7zip 最快速壓縮</strong>是最佳方案，只要167分鐘就可以把整包129GB檔案下載到我的本機。</p>
+<h2 id="fang-an-bi-jiao">方案比較</h2>
+<p>CPU 使用量，依我的粗略觀察，LZ4 CPU 使用量最低，Gzip/Zip 單核使用量 100%，7zip 則是八核全部用滿，八核心全部 100%。所以雖然 7zip 總時間最短，但是代價是吃光全部主機資源。</p>
+<p>7zip 從最快速壓縮 <code>-mx1</code> 換成一般壓縮 <code>-mx3</code> 只增加了 1% 壓縮率，但是壓縮時間長了快一倍，不太值得。</p>
+<p>LZ4 演算法標榜超快速壓縮，名符其實，只用了八分多鐘壓完全部檔案，海放其他演算法。但是因為檔案總體積太大，所以壓縮率普通的缺點就被突顯出來，如果下次壓比較小的檔案，我可能會考慮LZ4。</p>
+<p>Zip/Gzip 骨子裡是同一套壓縮演算法，所以不意外表現非常接近。壓縮比不差，但是真的壓太久了。</p>
+<p>另外 7zip 和 Zip 壓縮時可以指定輸出成多個固定尺寸的檔案，減少一次性傳輸超大檔案的失敗機會。</p>
+
+
+<hr class="post-end">
+<footer class="post-info">
+
+  <p>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+  
+    
+      <span class="tag"><a href="https://chchwy.github.io/tags/kai-fa-ri-chang/">開發日常</a></span>
+    
+  
+  </p>
+
+<p>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+  858 Words
+</p>
+
+  <p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+    2021-08-18
+  </p>
+
+</footer>
+</article>
+
+
+    <footer id="site-footer">© 2023 Matt Chang · CC BY-NC 4.0</footer>
+</body>
+</html>
