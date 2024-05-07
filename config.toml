@@ -1,94 +1,26 @@
-baseURL = ""
-languageCode = "zh-tw"
+# The URL the site will be built for
+base_url = "https://chchwy.github.io"
+
+# Used in RSS by default
 title = "調和的靈感"
-disableKinds = ["section", "categories"]
-disqusShortname = ""
-pygmentsCodeFences = true
-pygmentsUseClasses = true
-paginate = 9999
-minify = true
-disableHugoGeneratorInject = true
+description = "My blog"
+#default_language = "zh-tw"
 
+compile_sass = false
+build_search_index = true
 
-[taxonomies]
-  tag = "tags"
-  category = "categories"
+generate_feed = true
+feed_filename = "rss.xml"
 
-[privacy]
-  [privacy.disqus]
-    disable = true
-  [privacy.googleAnalytics]
-    disable = true
-  [privacy.instagram]
-    disable = true
-  [privacy.twitter]
-    disable = true
-  [privacy.vimeo]
-    disable = true
-  [privacy.youtube]
-    disable = true
+taxonomies = [
+    {name = "tags", rss = true}
+]
 
-[Author]
-  name = "chchwy"
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+highlight_theme = "nord"
 
-[params]
-  description = "Minimalistic Hugo blogging theme"
-  author = "chchwy"
-  copyright = "Copyright © 2021 Matthew Chang"
-  logo = ""
-
-[frontmatter]
-  date  = [":filename", ":default"]
-  author = "chchwy"
-  github = "chchwy"
-  facebook = ""
-  og_image = ""
-  sitename = "調和的靈感"
-  twitter = ""
-
-[permalinks]
-  posts = "/:year/:month/:slug"
-  pages = "/:slug"
-  photos = "/:year/:month/:day/:filename"
-
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
-  section = ["HTML"]
-
-[outputFormats.RSS]
-  mediatype = "application/rss"
-  baseName = "atom"
-
-[outputFormats.JSON]
-  mediatype = "application/json"
-  baseName = "feed"
-
-[sitemap]
-  changefreq = "monthly"
-  filename = "sitemap.xml"
-  priority = 0.5
-
-[menu]
-  [[menu.main]]
-    identifier = "index"
-    name       = "Index"
-    url        = "/"
-    weight     = -111
-
-  [[menu.main]]
-    identifier = "projects"
-    name       = "Projects"
-    url        = "/projects/"
-    weight     = -30
-
-  [[menu.main]]
-    identifier = "about"
-    name       = "About"
-    url        = "/about/"
-    weight     = -20
-
-  [[menu.main]]
-    identifier = "tag"
-    name       = "Tags"
-    url        = "/tagcloud/"
-    weight     = -10
+[extra]
+# Put all your custom variables here

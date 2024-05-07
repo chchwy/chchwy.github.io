@@ -1,0 +1,112 @@
+body {
+  font-family:"trebuchet ms",Verdana,"verdana ref","segoe ui",Candara,"lucida grande","lucida sans unicode","lucida sans",Tahoma,sans-serif;
+}
+a {
+    color: #000;
+    text-decoration: none;
+}
+a:hover {
+    color: #000;
+    text-decoration: underline;
+}
+
+nav {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+nav li {
+  display: inline-block;
+  margin: 0 .3rem;
+}
+nav a {
+  text-decoration: none;
+}
+nav h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+.posts-group {
+  display: flex;
+  margin-bottom: 1.9em;
+  line-height: normal;
+}
+.post-year {
+  padding-top: 6px;
+  margin-right: 1.8em;
+  font-size: 1.6em;
+}
+.posts-list {
+    flex-grow: 1;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.post-item {
+    border-bottom: 1px #888 dashed;
+}
+.post-item a {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 12px 0;
+    text-decoration: none;
+}
+.post-day {
+    flex-shrink: 0;
+    margin-left: 1em;
+}
+#site-footer {
+    text-align: center;
+    font-size: .9em;
+    margin-bottom: 96px;
+    margin-top: 64px;
+}
+
+hr.post-end {
+    margin-top: 2em;
+    margin-bottom: 0.8em;
+    margin-left: 0;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.post-info {
+    font-size: 0.8rem;
+    line-height: normal;
+}  
+.post-info p {
+    margin: 0.8em 0;
+} 
+.post-info a:hover {
+    border-bottom: 1px solid;
+} 
+.post-info svg {
+    margin-right: 0.8em;
+    display: inline-block;
+    vertical-align: -0.125em;
+    width: 1em;
+    height: 1em;
+}
+.post-info .tag {
+    margin-right: 0.5em;
+}
+.post-info .tag::before {
+    content: "#";
+}
+.homepage-list {
+	list-style: none;
+	padding: 1rem 0;
+}
+.homepage-list li {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
+blockquote {
+    border-left: 5px solid #ccc;
+    padding-left: 1rem;
+    margin: 1rem 0;
+}

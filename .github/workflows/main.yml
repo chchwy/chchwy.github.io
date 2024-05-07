@@ -1,18 +1,20 @@
-name: "Deploy my blog"
-on:
+on: 
   push:
-    branches: [ blog ] # 哪些 branch 會觸發 Action
-
+    branches:
+      - blog
+name: Build and deploy GH Pages
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-
-    # Hugo to Github Pages
-    - name: "Publish Hugo Site"
-      uses: chabad360/hugo-gh-pages@master
-      with:
-        branch: "master"
-        githubToken: ${{ secrets.PERSONAL_TOKEN }}
+      - name: checkout
+        uses: actions/checkout@v3.0.0
+      - name: build_and_deploy
+        uses: shalzz/zola-deploy-action@v0.17.2
+        env:
+          # Target branch
+          PAGES_BRANCH: master
+          # Provide personal access token
+          #TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+          # Or if publishing to the same repo, use the automatic token
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
