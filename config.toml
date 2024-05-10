@@ -27,16 +27,16 @@ comment = false
 
 [extra.style]
 # The custom background color.
-# bg_color = ""
+bg_color = "#f0e7dd"
 
 # The custom background color in dark mode.
 # bg_dark_color = ""
 
 # Enable header blur.
-# header_blur = true
+header_blur = true
 
 # The custom header color, only available when `header_blur` is false.
-# header_color = ""
+header_color = "#e4dbd2"
 
 # The custom header color in dark mode, only available when `header_blur` is false.
 # header_dark_color = ""
