@@ -1,6 +1,6 @@
 base_url = "https://chchwy.github.io"
 title = "調和的靈感"
-description = ""
+description = "紀錄我的思考、讀書筆記和程式設計紀錄"
 author = "chchwy"
 default_language = "zh-tw"
 
@@ -44,8 +44,8 @@ header_color = "#e4dbd2"
 # The profile on home page.
 [extra.profile]
 name = "調和的靈感"
-bio = "我的思考、讀書、還有程式設計筆記"
-avatar_url = "icons/github.svg"
+bio = "我的思考、讀書心得、還有程式設計筆記"
+avatar_url = "icons/Musqito.jpg"
 avatar_invert = true # Invert color in dark mode.
 
 # The social icons below the profile on the home page.
