@@ -7,7 +7,7 @@ taxonomies:
 slug: "rebel-code"
 ---
 
-![Linux 傳奇](/img/book/linux-rebel-code.jpg)
+![Linux 傳奇](/img/book/linux-rebel-code.jpg#book)
 
 ## Rebel Code 開源革命史
 

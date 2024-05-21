@@ -6,7 +6,7 @@ taxonomies:
 slug: 'productive-programmer'
 ---
 
-![](/img/book/the-productive-programmer.jpg)
+![](/img/book/the-productive-programmer.jpg#book)
 
 原文書名：Productive Programmer
 <br>(對岸譯『卓有成效的程序員』，我比較喜歡這個名字，更精鍊。)

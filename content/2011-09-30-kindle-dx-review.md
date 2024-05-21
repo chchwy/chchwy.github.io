@@ -7,7 +7,7 @@ taxonomies:
 
 Amazon 網路書店出的電子書閱讀器 Kindle DX，當初我看著機子猶豫了很久，一直無法決定要不要買。直到下定決心買下手後，到現在使用超過半年了，我的感想是「真的很不錯」， 雖然有些小缺點，但是瑕不掩瑜。
 
-![Kindle02](/img/kindle-dx-2.jpg)
+![Kindle02](/img/kindle-dx-2.jpg#book)
 
 ## Kindle DX vs. iPad
 

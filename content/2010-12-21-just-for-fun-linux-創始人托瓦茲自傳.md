@@ -10,7 +10,7 @@ imgClass: book-cover
 
 ## 不平凡的平凡人
 
-![Just for Fun](/img/book/justforfun.jpg)
+![Just for Fun](/img/book/justforfun.jpg#book)
 
 我想對此書有興趣的人，大多想瞭解兩個問題
 
