@@ -29,6 +29,9 @@
       --header: {{ config.extra.style.header_color | default(value="#e4e4e7") }};
       --header-dark: {{ config.extra.style.header_dark_color | default(value="#27272a") }};
     }
+    img[src*='#book'] { float: left; margin-right: 1em; }
+    img[src*='#right'] { float: right; margin-left: 1em; }
+    img[src*='#center'] { display: block; margin: auto; }
   </style>
 
   {% if section.path is defined and section.path == "/" %}
