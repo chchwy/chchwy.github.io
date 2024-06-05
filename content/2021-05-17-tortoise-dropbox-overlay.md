@@ -2,7 +2,7 @@
 date: 2021-05-17
 title: "寫 Powershell 解決 TortoiseGit 圖示消失問題"
 taxonomies:
-  tags: [PowerShell]
+  tags: [PowerShell, Troubleshooting ]
 ---
 
 幾天前，小烏龜 TortoiseGit 圖示消失的問題又發生了，我在檔案總管上看不見 git 狀態，很不方便。
@@ -24,31 +24,30 @@ taxonomies:
 
 但是註冊表改好後，這個問題仍然會不定時出現。因為 Dropbox 每次更新版本後會把註冊表改回去！
 
-我在想能不能把解法自動化，寫成程式? 
+所以我就在想能不能把解法自動化，寫成程式? 
 
-研究了一下，發現 Powershell 可以修改註冊表。花了一點時間，把解法寫成了以下的 Powershell script:
+研究了一下，發現 Powershell 可以修改註冊表。就花了一點時間寫 Powershell:
 
-<script src="https://gist.github.com/chchwy/5418022d47fa49481f71ba481f54c02a.js"></script>
-
-這個腳本會砍掉少見的 Dropbox 圖示，留下必要的四個，再把無恥的三空格改成一個空格。確保他們的順序在 TortoiseGit 後面。
-
-經過這支腳本，我學到的怎麼用 PowerShell 操作註冊表，跟操作檔案非常相似。
+我發現 PowerShell 操作註冊表，跟操作檔案非常相似。
 
 - `Get-ChildItem`：列出註冊表子項目
 - `Remove-Item`：刪除註冊表
 - `Rename-Item`：重新命名
-- `Split-Path -leaf $path`：從完整路徑快速取出檔名 
+- `Split-Path -leaf $path`：從完整路徑快速取出檔名
 
-注意的路徑要以 `HKLM:\` 或 `HKCU:\` 為磁碟機代號。`HKLM:\` 表示 Local Machine， `HKCU:\` 表示 Current User。
+註冊表路徑以 `HKLM:\` 或 `HKCU:\` 起頭。`HKLM:\` 表示 Local Machine， `HKCU:\` 表示 Current User。
 
 比如這個註冊表路徑
 ```
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers
 ```
-要寫成
+在 powershell 裡面就要寫成這樣：
 ```
 HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers
 ```
+
+以下是我的 PowerShell 腳本。砍掉比較少見的 Dropbox 圖示，留下必要的四個，再把無恥的三空格改成一個空格。確保他們的順序在 TortoiseGit 後面。
+<script src="https://gist.github.com/chchwy/5418022d47fa49481f71ba481f54c02a.js"></script>
 
 ## 參考網頁
 

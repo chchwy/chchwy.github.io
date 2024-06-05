@@ -1,153 +1,133 @@
 +++
 date=2021-08-10
-title="CMake：快速上手跨平台 C++ 專案建置"
+title="CMake 快速上手：跨平台 C++ 專案建置"
 [taxonomies]
 tags = ["CMake", "C++"]
 +++
 
+這篇文章紀錄我入門學習 CMake 的心得  
+
 ### 為什麼需要 CMake?
 
-簡單講，C++ 語言本身雖然跨平台。但是編譯 C++ 的工具鏈卻不跨平台。
+簡單講，因為 C++ 語言跨平台很麻煩。
 
-Linux Makefile 和 Windows Visual Studio 互不相通，即使撰寫了完全平台獨立的 C++ 程式碼，想在 Linux 上編譯 Windows 專案往往相當困難。
+C++ 程式碼本身是跨平台的，主流平台都可以編譯 C++，但是每個平台編譯程式碼用的工具鍊不同，差異很大。Linux 用 Makefile，Windows 用 Visual Studio Project， macOS 上可以用 Xcode Project 也可以用 Makefile，這些格式都互不相通。所以即使我寫了通用的程式碼，跨平台編譯專案依然然困難重重。
 
-針對這個問題，除了同時維護兩個專案之外，還可以考慮 CMake 這類跨平台工具。
+針對這個問題，除了同時維護多個個專案之外，還可以考慮 CMake 這類工具。
 
-藉由 CMake ，我們可以寫一份完全中立、跟平台無關的專案腳本，編譯時才轉換成當前平台的工具鏈。比如當我想在 Windows 平台上編譯時，CMake 就為我產生一個 Visual Studio 專案。同理，當我需要在 macOS 上編譯時，就產生 Xcode 專案。接著就能用本機工具鏈編譯專案了。
+CMake 的賣點就是代我們處理編譯工具鍊問題。我們可以寫一份完全中立、跟平台無關的 CMake 腳本，然後讓 CMake 作為中間人，代為操作當前平台的編譯工具鏈。當我想在 Windows 上編譯專案時，CMake 就產生一個 Visual Studio 專案。同理，當我要在 macOS 上編譯專案時，就產生 Xcode 專案。
 
-我個人的主力工作平台是 Win10+VS2017，副平台是 iOS+Xcode，偶爾需要跑一下 Linux。CMake 可以節省我的時間精力，避開每個平台都需再學習一次建構系統的成本。
+我個人時常在 Windows 和 macOS 之間切換，偶爾需要跑一下 Linux。使用 CMake 可以節省我的時間精力，避開每個平台都再學習一次建構系統的成本。
 
 ## Hello CMake!
 
-馬上開始第一個 CMake 專案。
+馬上開始寫第一個 CMake 專案。
 
-首先在專案目錄下添加兩個檔案：`CMakeLists.txt`、`main.cpp`。
+CMake 規定，專案腳本的入口一定是個叫做 `CMakeLists.txt` 的純文字檔。所以我們先在專案目錄下創建兩個檔案：`CMakeLists.txt` 和 `main.cpp`。
 
-CMake 規定，專案腳本的入口一定叫做 `CMakeLists.txt`，是個純文字檔。不用說 `main.cpp` 就是 C++ 原始碼。
-
-給 `CMakeLists.txt` 添加內容：
+這是 `CMakeLists.txt` 的內容：
 ```cmake
 cmake_minimum_required(VERSION 3.10) # 設定最低版本要求
-project(HelloCMake)                  # 專案名稱
-add_executable(MyHomework main.cpp)  # 執行檔名叫 MyApp，原始碼 main.cpp
+project(HelloCMake)                  # 設定專案名稱
+add_executable(MyHomework main.cpp)  # 指定執行檔和原始碼
 ```
-三行即可完成一個最簡單的 CMake 專案。目標是編譯原始碼 main.cpp 並產出可執行檔 MyHomework.exe。
+這就是最簡單的 CMake 專案，只需要三行。這三行滿足了專案最基本的需求，編譯 main.cpp 並產出執行檔 MyHomework.exe。
 
-CMake 用的是自家的腳本語法，本文不會著墨太多在腳本語法上，一開始只要知道 `cmake_minimum_required()`、`project()`、`add_executable()` 這些是內建函數就行了。
+CMake 用的是自家腳本的語法，本文不會著墨太多在腳本語法上，一開始只要知道 `cmake_minimum_required()`、`project()`、`add_executable()` 這些是內建函數就行了，參數用空白分隔。
 
-## 實際編譯專案
+`add_executable()` 函數的用途是指定執行檔和原始碼。在這個例子中，`MyHomework` 是執行檔名稱，`main.cpp` 是原始碼。如果有多個原始碼，可以用空白分隔。
 
-再來，該怎麼編譯專案呢?
+`main.cpp`的內容就不多說了：
+```cpp
+#include <iostream>
 
-我們剛剛提過 CMake 的轉換超能力，請用以下指令，把 CMake 腳本轉換成真正可編譯的專案：
+int main() { std::cout << "Hello CMake!" << std::endl; return 0; }
+```
+
+## 編譯專案
+
+接著，用以下命令指示 CMake 來編譯專案：
 
 ```bash
-mkdir build   # 建立名為 build 子目錄
-cd build      # 進入子目錄
-cmake ..      # 讀取 CMakeLists.txt 並生成本機專案
+cmake -S . -B build # 產生當前平台專案檔
+cmake --build build # 編譯專案
 ```
 
-我的開發環境是 Windows 10 + Visual Studio 2019 的組合，所以 CMake 產生了 VS2019 專案。
+我們剛剛提過，CMake 不會自己編譯專案，而是產生當前平台的專案檔，然後再呼叫對應的編譯工具編譯。這兩行命令就是這個過程的兩個步驟。
 
-看一眼 build 子目錄裡的 VS2019 專案：
+`-S` 和 `-B` 是 CMake 的兩個參數，`-S` 參數指定專案的來源目錄，`-B` 參數指定編譯目錄。這樣 CMake 會在 build 目錄下產生對應的專案檔，然後用 `--build` 編譯專案。
 
+這裡我們引入了一個新的概念，就是「來源目錄」和「編譯目錄」的區分。
+
+來源目錄是指程式專案的所在(也就是 `CMakeLists.txt` 所在的目錄)。而編譯目錄則是用來放編譯過程中的副產品的目錄，這些檔案是 CMake 和編譯器產生的，不是原始專案的一部分，包括 CMake 替我們產生的當前平台專案，編譯暫存檔，以及最終編譯完成的執行檔。
+
+這樣做的好處是，編譯目錄和來源目錄是分開的，不會污染原始專案。另外，也方便清理和管理副產品。
+
+依照 CMake 的慣例，編譯目錄通常是名為 build 的子目錄。在本例中，我們看一眼 build 子目錄，可以看見 CMake 為我產生的 VS2019 專案:
 ![CMake VS2019](/img/cmake-vs.png)
 
-我們給 `cmake` 的第一個參數是 `..`，也就是`CMakeLists.txt` 所在的路徑位置。經 CMake 解析腳本，便會在**當前目錄**產生本機專案檔。以本例來說，CMakeLists.txt 和原始碼位於 build 的上層目錄 (`..`)，而自動產生的 VS2019 檔案就在子目錄 `build` 內。
+最後 `cmake --build build` 命令，就會驅動當前平台的工具練，然後實際編譯專案。在本例中，這個命令會呼叫 MSBuild 編譯專案。
 
-這是 CMake 的慣例，將產生的檔案和原始專案區分開來，不污染原始專案。一旦該子目錄放進版控忽略清單後 (如 `.gitignore`)，這些轉換產生的檔案就不會影響版控，相當方便。
+當然，徑直打開 Visual Studio 來建構專案也可以，不一定要假手 CMake。
 
-最後打指令 `cmake --build .` 編譯程式。(別忘了最後有個 `.`)
+### 指定建構系統
 
-當然，徑直打開 Visual Studio 或者任何對應的 IDE 也可以，不一定要透過 CMake 編譯。
+`cmake -G` 可以指定建構系統，例如 Visual Studio 2019、Makefiles、Xcode 等等。`-G` 參數後面接的是建構系統的名稱，例如 `Visual Studio 17 2022` 就是 Visual Studio 2022，`Unix Makefiles` 就是 Makefiles，`Xcode` 就是 Xcode。 當然，你的電腦上要有對應的建構系統才行。
 
-## CMakeLists.txt 範例
-
-接著是一個比較完整的 C++ 專案範例。包含標頭檔、原始檔、指定 C++11/14/17 版本標準、引用第三方程式庫的 include 路徑和 link 路徑、等等 C++ 專案常見的標準備配。應該足以應付大多數的簡單需求。
-```cmake
-cmake_minimum_required(VERSION 3.16)
-
-project(MyProject)          # 專案名稱
-set(CMAKE_CXX_STANDARD 11)  # 要求 C++11 標準
-
-add_executable(MyApp main.cpp work.cpp header.h pch.h)    # 執行檔和原始碼
-include_directories("C:/path/to/include")                 # 設定 include 目錄
-target_link_libraries(MyApp "C:/path/to/lib")             # 設定 lib 連結
+```cmd
+cmake -G "Visual Studio 16 2019" -S /source -B build
+cmake -G "Visual Studio 15 2017" -S /source -B build
+cmake -G "Unix Makefiles"        -S /source -B build
+cmake -G "Xcode"                 -S /source -B build
 ```
 
-注意 `include_directories()` 和 `target_link_libraries()` 要給絕對路徑，例子：
+完整的建構系統支援清單，請參考[這個CMake官方文件連結](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html#manual:cmake-generators(7))
 
-```cmake
-include_directories("D:\freeglut\include")
-target_link_libraries(Target1 "D:\freeglut\lib\freeglut.lib)
-```
+### 指定 Debug/Release 編譯組態
 
-## 指定 Debug/Release 編譯組態
+開發時我們常常需要 Debug 和 Release 兩種編譯組態。
 
-呼叫 `cmake --build` 編譯時，可搭配 `--config` 指定編譯組態
+可用 `--config` 指定編譯組態
 ```cmd
 cmake --build . --config Release
 cmake --build . --config Debug
 ```
 
-共有四種組態： `Debug`、`Release`、`RelWithDebInfo`、`MinSizeRel`。
+注意，這個參數只對 Visual Studio 和 Xcode 這類可以切換 Debug/Release 的專案有用，對 Makefiles 無效。
 
-## 指定編譯器
+## 比較完整的 C++ 專案範例
 
-本機上有多個編譯器可選的話，可在轉換步驟加 `-G` 指定工具鏈
-```cmd
-cmake -G "Visual Studio 16 2019" /path/to/source
-cmake -G "Visual Studio 15 2017" /path/to/source
-cmake -G "MinGW Makefiles"       /path/to/source
-cmake -G "Xcode"                 /path/to/source
-```
+接著是一個比較完整的 C++ 專案範例。在剛剛的基礎上，加入標頭檔、多個原始檔、指定 C++11/14/17 版本標準、設定第三方程式庫的 include 路徑和 linker 路徑等等 C++ 專案常見的標準備配。有了這些，應該足以應付大多數開發需求。
 
-參考連結：[編譯器列表](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html#manual:cmake-generators(7))
-
-## 指定 32/64-bits
-
-用 `-A` 指定架構
-```cmd
-cmake -G "Visual Studio 16 2019" -A Win32 /path/to/source
-cmake -G "Visual Studio 16 2019" -A x64   /path/to/source
-cmake -G "Visual Studio 16 2019" -A ARM   /path/to/source
-```
-
-## 視窗程式
-
-這是個簡單的 Win32 視窗程式範例：
 ```cmake
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.21)
+project(MyProject)
 
-project(MyWindowProject)    # 專案名字
-set(CMAKE_CXX_STANDARD 11)  # 指定 C++11 標準
-
-add_compile_definitions(UNICOD _UNICODE)  # 寬字元設定
-add_executable(MyWin32App WIN32 main.cpp work.cpp header.h pch.h) # 關鍵字 WIN32
-
-target_precompile_headers(MyWin32App PRIVATE pch.h) # 預編譯標頭檔
+# 要求 C++17 標準
+set(CMAKE_CXX_STANDARD 17)
+# 多個原始碼檔案和標頭檔
+add_executable(MyApp main.cpp work.cpp header1.h header2.h)
+# 設定 include 目錄
+target_include_directories(MyApp PRIVATE "C:/path/to/include")
+# 設定 lib 目錄
+target_link_libraries(MyApp PRIVATE "C:/path/to/lib")
 ```
 
-有些特別注意事項：
-- 用 `WIN32` 關鍵字指明是 win32 視窗程式，程式入口會從 `main()` 變成 `WinMain()`
+藉由 `target_include_directories()` 和 `target_link_libraries()` 函數，我們可以告訴編譯器，要去哪裡找第三方標頭檔和函式庫，記得要給絕對路徑。
+
+## Win32 視窗程式
+
+如果要開發 Win32 視窗程式，可以添加以下 CMake 設定：
+```cmake
+# 關鍵字 WIN32 指明是 win32 視窗程式
+add_executable(MyWin32App WIN32 main.cpp work.cpp header.h pch.h)
+# 設定寬字元
+target_compile_definitions(MyWin32App PRIVATE UNICOD _UNICODE)
+``` 
+- 用 `WIN32` 關鍵字指明是 win32 視窗程式，這樣程式入口會從 `main()` 變成 `WinMain()`
 - 定義 `UNICODE` 和 `_UNICODE` 告訴 VC++ 怎麼處理寬字元
-- `target_precompile_headers()` 預編譯標頭檔 (可放 `#include<windows.h>` ) 
-
-## 編譯後複製資源 (如 shader)
-
-我自己寫 Diret3D 程式時，預期每次編譯後都複製 shaders 到執行檔目錄。以下 CMake 指令可以達成：
-
-```cmake
-add_custom_target(
-    copy_shader_files
-    ${CMAKE_COMMAND} -E copy ${CMAKE_SOURCE_DIR}/shaders.hlsl ${CMAKE_BINARY_DIR}
-)
-add_dependencies(Target1 copy_shader_files)
-```
 
 ## 參考連結
-
-本篇文章的目的，是希望以最少的廢話和步驟，快速開始編譯第一個跨平台 C++ 專案，並刻意跳過非必要的高級功能，這也是我個人學 CMake 的目的。進階學習請參考以下連結：
 
 - [CMake 官方教學](https://cmake.org/cmake/help/latest/guide/tutorial/)
 - [CLion Quick CMake tutorial](https://www.jetbrains.com/help/clion/quick-cmake-tutorial.html)
