@@ -2,7 +2,7 @@
 date: 2021-05-17
 title: "寫 Powershell 解決 TortoiseGit 圖示消失問題"
 taxonomies:
-  tags: [PowerShell, Troubleshooting ]
+  tags: [PowerShell, Troubleshooting]
 ---
 
 幾天前，小烏龜 TortoiseGit 圖示消失的問題又發生了，我在檔案總管上看不見 git 狀態，很不方便。
