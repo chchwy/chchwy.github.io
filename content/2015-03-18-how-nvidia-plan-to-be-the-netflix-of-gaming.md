@@ -2,7 +2,7 @@
 date: 2015-03-18
 title: "翻譯: Nvidia 打算成為遊戲界的 Netflix"
 taxonomies:
-  tags: [Games, 翻譯]
+  tags: [Game, 翻譯]
 ---
 
 ### 副標: Nvidia shield 遊戲主機採取一系列手段降低遊戲延遲
