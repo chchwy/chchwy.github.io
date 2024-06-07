@@ -5,7 +5,7 @@ title: "讀書: Just for Fun, Linux 創始人托瓦茲自傳"
 taxonomies:
   tags: [Linux,讀書]
 slug: "just-for-fun-linux"
-imgClass: book-cover
+
 ---
 
 ## 不平凡的平凡人

@@ -11,7 +11,7 @@ tags = ["CMake", "C++"]
 
 簡單講，因為 C++ 語言跨平台很麻煩。
 
-C++ 程式碼本身是跨平台的，主流平台都可以編譯 C++，但是每個平台編譯程式碼用的工具鍊不同，差異很大。Linux 用 Makefile，Windows 用 Visual Studio Project， macOS 上可以用 Xcode Project 也可以用 Makefile，這些格式都互不相通。所以即使我寫了通用的程式碼，跨平台編譯專案依然然困難重重。
+C++ 程式碼本身是可以跨平台的，主流平台也都可以編譯 C++，但是每個平台編譯程式碼用的工具鍊不同，差別很大。Linux 用 Makefile，Windows 用 Visual Studio Project， macOS 上可以用 Xcode Project 也可以用 Makefile，這些格式都互不相通。所以即使我寫了通用的程式碼，跨平台編譯專案依然然困難重重。
 
 針對這個問題，除了同時維護多個個專案之外，還可以考慮 CMake 這類工具。
 
@@ -23,19 +23,21 @@ CMake 的賣點就是代我們處理編譯工具鍊問題。我們可以寫一�
 
 馬上開始寫第一個 CMake 專案。
 
-CMake 規定，專案腳本的入口一定是個叫做 `CMakeLists.txt` 的純文字檔。所以我們先在專案目錄下創建兩個檔案：`CMakeLists.txt` 和 `main.cpp`。
+CMake 規定，專案腳本的入口一定是個叫做 `CMakeLists.txt` 的純文字檔。所以我們在專案目錄下創建兩個檔案：`CMakeLists.txt` 和 `main.cpp`。
 
 這是 `CMakeLists.txt` 的內容：
 ```cmake
-cmake_minimum_required(VERSION 3.10) # 設定最低版本要求
+cmake_minimum_required(VERSION 3.21) # 設定最低版本要求
 project(HelloCMake)                  # 設定專案名稱
 add_executable(MyHomework main.cpp)  # 指定執行檔和原始碼
 ```
-這就是最簡單的 CMake 專案，只需要三行。這三行滿足了專案最基本的需求，編譯 main.cpp 並產出執行檔 MyHomework.exe。
+這就是最簡單的 CMake 專案，只需要三行。這三行滿足了專案最基本的需求: 編譯 main.cpp 並產出執行檔 MyHomework.exe。
 
-CMake 用的是自家腳本的語法，本文不會著墨太多在腳本語法上，一開始只要知道 `cmake_minimum_required()`、`project()`、`add_executable()` 這些是內建函數就行了，參數用空白分隔。
+CMake 用的是自家的腳本語法，本文不會著墨太多在腳本語法上，一開始只要知道 `cmake_minimum_required()`、`project()`、`add_executable()` 這些是內建函數就行了，參數用空白分隔。
 
-`add_executable()` 函數的用途是指定執行檔和原始碼。在這個例子中，`MyHomework` 是執行檔名稱，`main.cpp` 是原始碼。如果有多個原始碼，可以用空白分隔。
+`add_executable()` 函數指定了執行檔和原始碼。在這個例子中，`MyHomework` 是執行檔名稱，`main.cpp` 是原始碼。可以有多個原始碼，檔名間用空白分隔。
+
+井字號可以寫註解，讓腳本更容易閱讀。
 
 `main.cpp`的內容就不多說了：
 ```cpp
@@ -59,9 +61,9 @@ cmake --build build # 編譯專案
 
 這裡我們引入了一個新的概念，就是「來源目錄」和「編譯目錄」的區分。
 
-來源目錄是指程式專案的所在(也就是 `CMakeLists.txt` 所在的目錄)。而編譯目錄則是用來放編譯過程中的副產品的目錄，這些檔案是 CMake 和編譯器產生的，不是原始專案的一部分，包括 CMake 替我們產生的當前平台專案，編譯暫存檔，以及最終編譯完成的執行檔。
+來源目錄是指程式源碼的所在(也是 `CMakeLists.txt` 所在的目錄)。而編譯目錄則是用來放編譯產生的副產品的目錄，包括 CMake 替我們產生的當前平台專案，編譯暫存檔，以及最終編譯完成的執行檔。這些檔案是 CMake 和編譯器產生的，不是原始專案的一部分。
 
-這樣做的好處是，編譯目錄和來源目錄是分開的，不會污染原始專案。另外，也方便清理和管理副產品。
+這樣做的好處是，分開編譯目錄和來源目錄，不會污染原始專案，比較好做版本控制。另外，也方便清理副產品。
 
 依照 CMake 的慣例，編譯目錄通常是名為 build 的子目錄。在本例中，我們看一眼 build 子目錄，可以看見 CMake 為我產生的 VS2019 專案:
 ![CMake VS2019](/img/cmake-vs.png)
@@ -72,23 +74,25 @@ cmake --build build # 編譯專案
 
 ### 指定建構系統
 
-`cmake -G` 可以指定建構系統，例如 Visual Studio 2019、Makefiles、Xcode 等等。`-G` 參數後面接的是建構系統的名稱，例如 `Visual Studio 17 2022` 就是 Visual Studio 2022，`Unix Makefiles` 就是 Makefiles，`Xcode` 就是 Xcode。 當然，你的電腦上要有對應的建構系統才行。
+除了完全交由 CMake 決定之外，也可以用 `cmake -G` 直接指定建構系統，例如 Visual Studio 2019、Makefiles、Xcode 等等。
 
-```cmd
+`-G` 參數後面接的是建構系統的名稱，例如 `Visual Studio 17 2022` 就是 Visual Studio 2022，`Unix Makefiles` 就是 Makefiles，`Xcode` 就是 Xcode。 當然，你的電腦上要有對應的建構系統才行。完整的建構系統支援清單，請參考[這個CMake官方文件連結](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html#manual:cmake-generators(7))
+
+```bash
+# 產生不同平台的專案的例子
 cmake -G "Visual Studio 16 2019" -S /source -B build
 cmake -G "Visual Studio 15 2017" -S /source -B build
-cmake -G "Unix Makefiles"        -S /source -B build
-cmake -G "Xcode"                 -S /source -B build
+cmake -G "Unix Makefiles"   -S /source -B build
+cmake -G Xcode              -S /source -B build
+cmake -G Ninja              -S /source -B build
 ```
-
-完整的建構系統支援清單，請參考[這個CMake官方文件連結](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html#manual:cmake-generators(7))
 
 ### 指定 Debug/Release 編譯組態
 
 開發時我們常常需要 Debug 和 Release 兩種編譯組態。
 
 可用 `--config` 指定編譯組態
-```cmd
+```bash
 cmake --build . --config Release
 cmake --build . --config Debug
 ```
@@ -97,7 +101,7 @@ cmake --build . --config Debug
 
 ## 比較完整的 C++ 專案範例
 
-接著是一個比較完整的 C++ 專案範例。在剛剛的基礎上，加入標頭檔、多個原始檔、指定 C++11/14/17 版本標準、設定第三方程式庫的 include 路徑和 linker 路徑等等 C++ 專案常見的標準備配。有了這些，應該足以應付大多數開發需求。
+看完了上面的極簡三行，接著是一個比較完整的 CMake C++ 專案範例。在剛剛的基礎上，加入 C++ 專案常見的標準備配置：標頭檔、多個原碼檔案、指定 C++11/14/17 版本標準、第三方程式庫的 include 路徑和 linker 路徑等等。有了這些，應該足以應付大多數開發需求。
 
 ```cmake
 cmake_minimum_required(VERSION 3.21)
