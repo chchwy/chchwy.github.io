@@ -1,0 +1,308 @@
+<!doctype html>
+<html class="not-ready lg:text-base" lang="zh-tw">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title -->
+  <title>
+    讀書: 多情劍客無情劍 - 調和的靈感
+  </title>
+
+  <!-- Meta -->
+  <meta name="theme-color" />
+
+  <!-- Author -->
+  
+  <meta name="description" content="讀書: 多情劍客無情劍" />
+  <meta name="author" content="讀書: 多情劍客無情劍" />
+  
+
+  <!-- CSS & JS -->
+  <link rel="preload stylesheet" as="style" href="https://chchwy.github.io/main.css" />
+  <style>
+    :root {
+      --bg: #f0e7dd;
+      --bg-dark: #18181b;
+      --header: #e4dbd2;
+      --header-dark: #27272a;
+    }
+    img[src*='#book'] { float: left; margin-right: 1em; }
+    img[src*='#right'] { float: right; margin-left: 1em; }
+    img[src*='#center'] { display: block; margin: auto; }
+  </style>
+
+  
+
+  <!-- Dark Icon -->
+  <link rel="preload" as="image" href="https://chchwy.github.io/icons/theme.svg" />
+
+  <!-- Math -->
+  
+  <!---->
+
+  <!-- Mermaid -->
+  
+  <!---->
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://chchwy.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://chchwy.github.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://chchwy.github.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://chchwy.github.io/favicon-16x16.png" />
+  <link rel="manifest" href="https://chchwy.github.io/site.webmanifest" />
+
+  <!-- Feeds -->
+  
+  <!---->
+  
+  <link
+    rel="alternate"
+    type="application/atom+xml"
+    title="Atom"
+    href="https://chchwy.github.io/atom.xml"
+  />
+  
+  <!---->
+  
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;little-lee-swardman&#x2F;" />
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header
+  class="blur-header fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
+>
+  <div class="mx-auto w-full max-w-4xl p-3 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center">
+        <a class="text-2xl font-semibold" href="https://chchwy.github.io">調和的靈感</a>
+        <div
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0] [background:url(./icons/theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+          role="button"
+          aria-label="Dark"
+        ></div>
+      </div>
+      
+      <div
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+        role="button"
+        aria-label="Menu"
+      ></div>
+      
+    </div>
+    <script>
+      // base
+      const htmlClass = document.documentElement.classList;
+      setTimeout(() => {
+        htmlClass.remove("not-ready");
+      }, 10);
+
+      // mobile menu
+      const btnMenu = document.querySelector(".btn-menu");
+      btnMenu?.addEventListener("click", () => {
+        htmlClass.toggle("open");
+      });
+
+      // dark theme
+      const setDark = (isDark) => {
+        if (isDark) {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+          htmlClass.add("dark");
+        } else {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+          htmlClass.remove("dark");
+        }
+        localStorage.setItem("dark", isDark);
+      };
+
+      // init
+      const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      if (htmlClass.contains("dark")) {
+        setDark(true);
+      } else {
+        const darkVal = localStorage.getItem("dark");
+        setDark(darkVal ? darkVal === "true" : darkScheme.matches);
+      }
+
+      // listen system
+      darkScheme.addEventListener("change", (event) => {
+        setDark(event.matches);
+      });
+
+      // manual switch
+      const btnDark = document.querySelector(".btn-dark");
+      btnDark.addEventListener("click", () => {
+        setDark(localStorage.getItem("dark") !== "true");
+      });
+    </script>
+    
+    <nav class="flex w-full items-center lg:w-auto">
+      <ul
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0"
+      >
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/archive"
+            >Archive</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/tags"
+            >Tags</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/about"
+            >About</a
+          >
+        </li>
+        
+      </ul>
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl break-words px-4 pb-16 pt-32 dark:prose-invert"
+    >
+      
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">讀書: 多情劍客無情劍</h1>
+    <div class="text-sm antialiased opacity-60">
+  
+  <time>2011-07-25</time>
+  <span class="mx-1">&middot;</span>
+  <span>5min</span>
+  <!---->
+  
+  <!---->
+  
+  <span class="mx-1">&middot;</span>
+  <span>chchwy</span>
+  
+</div>
+
+  </header>
+
+  
+
+  <!-- TOC -->
+  
+<!---->
+
+  <!-- Content -->
+  <section><p><img src="/img/book/little-lee.jpg#book" alt="多情劍客無情劍" /></p>
+<p>最近突然開始瘋狂地看古龍，一本接著一本的看。</p>
+<p>講到古龍難免要跟金庸比較一下。我自己感覺，如果用食物來比喻這兩位名家的話，讀金庸的作品就像吃一桌豐盛的大餐，書裡滿滿的人物流派、武功招式、歷史題材，有各樣不同的味道可供品嘗。但是古龍不一樣，古龍的作品味道沒那麼多元，讀起來感覺總是澀澀的又有點苦味，講的是氣氛，大概就像喝酒的感覺吧，雖然我自己還不太明白喝酒的趣味。</p>
+<p>有時候一本小說寫得太好看，感想反而難以下筆，因為佳作天成，各方面都是不多不少剛剛好，只好隨便亂聊。看完了小李飛刀四部曲「多情劍客無情劍」、「邊城浪子」、「九月鷹飛」、和「天涯明月刀」，還是覺得第一部，以李尋歡為主角的多情劍客無情劍最好看。</p>
+<p>在多情劍客無情劍裡面，所謂江湖上的名門正派幾乎無一例外都被描寫成道貌岸然的偽君子，古龍很喜歡使用這種背景設定。如第七章「誤傷故人子」裡，秦重秦大俠為了救自己的兒子縱人行兇，被李尋歡酸了兩句：「秦大俠倒也不必太謙，只不過，若在下殺了人，便是冷酷毒辣，閣下殺了人，便是替天行道了。」「今日這孩子若殺了在下，日後傳說出去，必然不會說他是為了要搶大夫而殺人的，必定要說他和秦大俠又為江湖除了一害，是麼？」 剛剛好把這些表裡不一的醜態揭的一清二楚。一片灰暗中襯托出李尋歡的真誠率性。而例不虛發的小李飛刀，就儼然化為劃破黑暗的正義化身，出手一刀，必大快人心。</p>
+<p>但是另一方面，李尋歡這個腳色本身卻有著矛盾，與林詩音、龍嘯雲理不清的三角關係，這一切的悲劇的起因，都是李尋歡年輕時自己犯下的錯，他做了這個決定後，一定馬上就後悔了，但是卻拼命的騙自己沒有後悔，這也註定李尋歡這人個性有點彆扭，又成了酒鬼跟浪子。第五十三章「騙局」 道盡了龍嘯雲的無奈心情 「人生本就充滿了矛盾，任何人都無可奈何」</p>
+<p>另外書中表面上李尋歡平起平坐的對頭是上官金虹，但背後興風作浪，造成無數風波的卻是「她看來如仙子，卻專門帶男人下地獄」的林仙兒。書中發生的各種事件插曲，有一大半是因林仙兒而起，而林仙兒的「傾國傾城」差不多要把整本書裡的男性英雄豪傑都要傾光了。據說古龍嗜酒嗜色，讀完小說後我完全相信這是事實。如果真有女人這樣對待我，我保證一定自己乖乖跳進她的網子裡。古龍的確很了解什麼樣的女人最能令男人拜倒石榴裙下。</p>
+<p>古龍寫短片段寫得很好，就我認為比長篇架構要亮眼得多。像是「多情劍客」開頭的阿飛的出場橋段，前後呼應，讓我拍案叫絕。孫小紅與孫老頭說書一搭一唱，還有孫小紅跟李尋歡的文比拚酒，都是讓我回味再三的橋段，餘韻不絕。</p>
+</section>
+
+  <hr />
+
+  <!-- Post Taxonomies -->
+  
+<footer class="mt-12 flex flex-col">
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  
+  <div class="mb-2 flex flex-wrap">
+    <span class="block-bg mb-1.5 mr-1.5 rounded-lg px-5 py-1.5">Tags </span>
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://chchwy.github.io/tags/wu-xia/"
+      >武俠</a
+    >
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://chchwy.github.io/tags/du-shu/"
+      >讀書</a
+    >
+    
+  </div>
+  
+</footer>
+
+<!---->
+
+  <!-- Post Nav -->
+  
+<nav class="block-bg mt-12 flex rounded-lg text-lg">
+  
+  <a
+    class="block-hover-mask flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;how-to-read-a-book&#x2F;"
+    ><span class="mr-1.5">←</span><span>讀書: 如何閱讀一本書</span></a
+  >
+  <!---->
+  
+  <a
+    class="block-hover-mask ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;bian-cheng-lang-zi&#x2F;"
+    ><span>讀書: 邊城浪子</span><span class="ml-1.5">→</span></a
+  >
+  
+</nav>
+
+<!---->
+
+  <!-- Comment -->
+  
+</article>
+
+    </main>
+
+    <footer class="mx-auto flex max-w-3xl flex-wrap items-center px-8 py-4 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+    &copy; 2024 -  2024
+    <a class="link" href="https://chchwy.github.io"
+      >chchwy</a
+    >
+     |<!---->
+    <!---->
+    <a class="link" href="https:&#x2F;&#x2F;creativecommons.org&#x2F;licenses&#x2F;by-sa&#x2F;4.0&#x2F;deed" rel="noopener" target="_blank">
+      CC BY-SA 4.0
+    </a>
+    <!---->
+    
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <a class="link mr-6 lg:ml-6" href="https://www.getzola.org/" rel="noopener" target="_blank"
+      >Powered by Zola</a
+    >
+    <a class="link" href="https://github.com/st1020/kita" rel="noopener" target="_blank">✎ Kita</a>
+  </div>
+</footer>
+<div class="mx-auto flex items-center max-w-3xl px-8 py-4">
+  <!-- Inizio Codice ShinyStat -->
+  <script src="//codice.shinystat.com/cgi-bin/getcod.cgi?USER=chchwy"></script>
+  <noscript>
+  <a href="https://www.shinystat.com/it/" target="_top">
+  <img src="//www.shinystat.com/cgi-bin/shinystat.cgi?USER=chchwy" alt="Statistiche web" style="border:0px"/></a>
+  </noscript>
+  <!-- Fine Codice ShinyStat -->
+</div>
+
+  </body>
+</html>
