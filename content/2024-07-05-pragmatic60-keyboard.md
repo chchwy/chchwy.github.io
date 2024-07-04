@@ -1,7 +1,7 @@
 +++
 date=2024-07-05
 title="務實60分離式鍵盤 四個月使用心得"
-draft = true
+draft = false
 [taxonomies]
 tags = ["開箱"]
 +++
