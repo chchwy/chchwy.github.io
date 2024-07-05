@@ -1,0 +1,442 @@
+<!doctype html>
+<html class="not-ready lg:text-base" lang="zh-tw">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title -->
+  <title>
+    Chocolatey 套件管理，重灌 Windows 後的好幫手 - 調和的靈感
+  </title>
+
+  <!-- Meta -->
+  <meta name="theme-color" />
+
+  <!-- Author -->
+  
+  <meta name="description" content="Chocolatey 套件管理，重灌 Windows 後的好幫手" />
+  <meta name="author" content="Chocolatey 套件管理，重灌 Windows 後的好幫手" />
+  
+
+  <!-- CSS & JS -->
+  <link rel="preload stylesheet" as="style" href="https://chchwy.github.io/main.css" />
+  <style>
+    :root {
+      --bg: #f0e7dd;
+      --bg-dark: #18181b;
+      --header: #e4dbd2;
+      --header-dark: #27272a;
+    }
+    img[src*='#book'] { float: left; margin-right: 1em; }
+    img[src*='#right'] { float: right; margin-left: 1em; }
+    img[src*='#center'] { display: block; margin: auto; }
+  </style>
+
+  
+
+  <!-- Dark Icon -->
+  <link rel="preload" as="image" href="https://chchwy.github.io/icons/theme.svg" />
+
+  <!-- Math -->
+  
+  <!---->
+
+  <!-- Mermaid -->
+  
+  <!---->
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://chchwy.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://chchwy.github.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://chchwy.github.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://chchwy.github.io/favicon-16x16.png" />
+  <link rel="manifest" href="https://chchwy.github.io/site.webmanifest" />
+
+  <!-- Feeds -->
+  
+  <!---->
+  
+  <link
+    rel="alternate"
+    type="application/atom+xml"
+    title="Atom"
+    href="https://chchwy.github.io/atom.xml"
+  />
+  
+  <!---->
+  
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;chocolatey&#x2F;" />
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header
+  class="header fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
+>
+  <div class="mx-auto w-full max-w-4xl p-3 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center">
+        <a class="text-2xl font-semibold" href="https://chchwy.github.io">調和的靈感</a>
+        <div
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0] [background:url(./icons/theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+          role="button"
+          aria-label="Dark"
+        ></div>
+      </div>
+      
+      <div
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+        role="button"
+        aria-label="Menu"
+      ></div>
+      
+    </div>
+    <script>
+      // base
+      const htmlClass = document.documentElement.classList;
+      setTimeout(() => {
+        htmlClass.remove("not-ready");
+      }, 10);
+
+      // mobile menu
+      const btnMenu = document.querySelector(".btn-menu");
+      btnMenu?.addEventListener("click", () => {
+        htmlClass.toggle("open");
+      });
+
+      // dark theme
+      const setDark = (isDark) => {
+        if (isDark) {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+          htmlClass.add("dark");
+        } else {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+          htmlClass.remove("dark");
+        }
+        localStorage.setItem("dark", isDark);
+      };
+
+      // init
+      const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      if (htmlClass.contains("dark")) {
+        setDark(true);
+      } else {
+        const darkVal = localStorage.getItem("dark");
+        setDark(darkVal ? darkVal === "true" : darkScheme.matches);
+      }
+
+      // listen system
+      darkScheme.addEventListener("change", (event) => {
+        setDark(event.matches);
+      });
+
+      // manual switch
+      const btnDark = document.querySelector(".btn-dark");
+      btnDark.addEventListener("click", () => {
+        setDark(localStorage.getItem("dark") !== "true");
+      });
+    </script>
+    
+    <nav class="flex w-full items-center lg:w-auto">
+      <ul
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0"
+      >
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/archive"
+            >Archive</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/tags"
+            >Tags</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/about"
+            >About</a
+          >
+        </li>
+        
+      </ul>
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl break-words px-4 pb-16 pt-32 dark:prose-invert"
+    >
+      
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">Chocolatey 套件管理，重灌 Windows 後的好幫手</h1>
+    <div class="text-sm antialiased opacity-60">
+  
+  <time>2019-08-14</time>
+  <span class="mx-1">&middot;</span>
+  <span>5min</span>
+  <!---->
+  
+  <!---->
+  
+  <span class="mx-1">&middot;</span>
+  <span>chchwy</span>
+  
+</div>
+
+  </header>
+
+  
+
+  <!-- TOC -->
+  <!---->
+<div class="block-bg mb-12 flex rounded-lg p-2 text-lg">
+  <details>
+    <summary class="cursor-pointer py-1 pl-4">
+      <span>Table of Contents</span>
+    </summary>
+    <div class="px-2">
+      <ul>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://chchwy.github.io/chocolatey/#chocolatey-jiao-xue"
+            >Chocolatey 教學</a
+          >
+          
+          <ul>
+            
+            <li>
+              <a class="no-underline hover:underline" href="https://chchwy.github.io/chocolatey/#an-zhuang-chocolatey"
+                >安裝 Chocolatey</a
+              >
+            </li>
+            
+            <li>
+              <a class="no-underline hover:underline" href="https://chchwy.github.io/chocolatey/#chang-yong-ming-ling"
+                >常用命令</a
+              >
+            </li>
+            
+            <li>
+              <a class="no-underline hover:underline" href="https://chchwy.github.io/chocolatey/#microsoft-store"
+                >Microsoft Store</a
+              >
+            </li>
+            
+            <li>
+              <a class="no-underline hover:underline" href="https://chchwy.github.io/chocolatey/#qi-ta-mei-ban-fa-zi-dong-an-zhuang-de-ruan-ti"
+                >其他沒辦法自動安裝的軟體</a
+              >
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </details>
+</div>
+
+<!---->
+
+  <!-- Content -->
+  <section><p>上個月，我又重灌了 Windows。</p>
+<p>重灌後，我試著挑戰一件事：不手動去網頁下載任何安裝檔，就把電腦設置回可工作狀態。</p>
+<p>每次重灌電腦後，就是惡夢般的漫長的軟體安裝之旅。去每個軟體的官方網站，下載，等待，安裝，有時候要重新開機。過程比安裝 Windows 本身還要漫長。</p>
+<p>事後證明還沒辦法百分之百達成。但是除了少數例外，我已經可以安裝八成以上的常用軟體，不需要去一個一個抓安裝檔了。這次主要的軟體來源有兩個：Chocolatey 和 Microsoft Store。</p>
+<h2 id="chocolatey-jiao-xue">Chocolatey 教學</h2>
+<p><a href="https://chocolatey.org/" title="Chocolatey Official Website">Chocolatey</a> 是一個命令列的套件管理工具。類似 Ubuntu 的 <code>apt-get</code> 一個命令搞定軟體安裝，同樣的概念在 Windows 上就是 Chocolatey。許多常見的 Windows 軟體都已經在 Chocolatey 上架。</p>
+<h3 id="an-zhuang-chocolatey">安裝 Chocolatey</h3>
+<p>用有管理員權限的 Powershell，複製貼上官網的命令 :<br/>
+<a href="https://chocolatey.org/install#install-with-powershellexe">https://chocolatey.org/install#install-with-powershellexe</a></p>
+<h3 id="chang-yong-ming-ling">常用命令</h3>
+<p>Chocolatey 的命令名稱是 <code>choco</code>，大多數操作需要管理員權限。</p>
+<p>安裝套件 (以 7-zip 為例)</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>choco install 7zip
+</span></code></pre>
+<p>反安裝套件</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>choco uninstall 7zip
+</span></code></pre>
+<p>列出已安裝套件</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>choco list --local
+</span></code></pre>
+<p>檢查套件是否有新版本</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>choco outdated
+</span></code></pre>
+<p>更新所有套件到最新版</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>choco upgrade all
+</span></code></pre>
+<p>這是我的 Chocolatey 安裝清單：</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> 7zip                </span><span style="color:#65737e;"># 萬用壓縮軟體
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> geekuninstaller     </span><span style="color:#65737e;"># 強大的反安裝工具
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> firefox             </span><span style="color:#65737e;"># 我的慣用瀏覽器
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> googlechrome        </span><span style="color:#65737e;"># 有時候需要另一個瀏覽器
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> everything          </span><span style="color:#65737e;"># 最強大的檔案搜尋工具
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> dropbox             </span><span style="color:#65737e;"># Dropbox 客戶端
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> nodejs-lts          </span><span style="color:#65737e;"># Node.js 穩定版
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> python2             </span><span style="color:#65737e;"># Python 2.x
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> golang              </span><span style="color:#65737e;"># Go lang
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> cmake               </span><span style="color:#65737e;"># CMake
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> vscode              </span><span style="color:#65737e;"># VS Code
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> notepadplusplus     </span><span style="color:#65737e;"># 老牌文字編輯器 Notepad++
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> tortoisegit         </span><span style="color:#65737e;"># 小烏龜 Git
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> git-fork            </span><span style="color:#65737e;"># 另一款輕巧的 git 圖形化工具
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> beyondcompare       </span><span style="color:#65737e;"># 超級好用的 diff/merge 工具
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> filezilla           </span><span style="color:#65737e;"># FTP 客戶端
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> foxitreader         </span><span style="color:#65737e;"># 我慣用的 PDF viewer
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> hugo                </span><span style="color:#65737e;"># 靜態博客產生器
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> pandoc              </span><span style="color:#65737e;"># 強大的文件轉換工具
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> paint.net           </span><span style="color:#65737e;"># 免費的小畫家強化版
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> workflowy           </span><span style="color:#65737e;"># 條列式筆記工具
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> typora              </span><span style="color:#65737e;"># Markdown 寫作軟體
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> libreoffice-fresh   </span><span style="color:#65737e;"># 沒辦法，有時候還是要處理.docx
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> mp3tag              </span><span style="color:#65737e;"># MP3 標籤編輯
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> treesizefree        </span><span style="color:#65737e;"># 追蹤硬碟空間使用
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> ccleaner            </span><span style="color:#65737e;"># 清理垃圾檔案
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> teamviewer          </span><span style="color:#65737e;"># Teamviewer 遠端桌面
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> 4k-video-downloader </span><span style="color:#65737e;"># 影片/音樂抓取
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> xnviewmp            </span><span style="color:#65737e;"># 看圖軟體
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> nomacs              </span><span style="color:#65737e;"># 輕巧的開源看圖軟體
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> foobar2000          </span><span style="color:#65737e;"># 聽歌軟體
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> steam               </span><span style="color:#65737e;"># 娛樂軟體
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> vlc                 </span><span style="color:#65737e;"># 開源影片播放軟體
+</span><span style="color:#bf616a;">choco</span><span> install</span><span style="color:#bf616a;"> -y</span><span> k-litecodecpack-standard </span><span style="color:#65737e;"># k-lite 萬用影音播放 codec
+</span></code></pre>
+<p>只要一個 Powershell 腳本就可以把清單上的軟體全裝好了，升級版本也只要一個命令，異常方便。</p>
+<h3 id="microsoft-store">Microsoft Store</h3>
+<p>另外有幾款軟體，雖然也可以用 Chocolatey，但是我發現 Microsoft Store 上的版本更穩定。像是 Evernote 和 Line 的桌面版。用 Microsoft Store 安裝軟體的體驗也很好，一鍵安裝，無縫升級。</p>
+<h3 id="qi-ta-mei-ban-fa-zi-dong-an-zhuang-de-ruan-ti">其他沒辦法自動安裝的軟體</h3>
+<p>因為某些原因，以下軟體我還是必須手動安裝：</p>
+<ul>
+<li>Visual Studio (沒有其他安裝方法)</li>
+<li>Qt (沒有其他安裝方法)</li>
+<li>git (安裝過程中我需要修改選項)</li>
+<li>Slack (我刻意安裝 32-bit 的版本，希望能限制記憶體用量，但是還沒驗證過有沒有效XD)</li>
+</ul>
+</section>
+
+  <hr />
+
+  <!-- Post Taxonomies -->
+  
+<footer class="mt-12 flex flex-col">
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  
+  <div class="mb-2 flex flex-wrap">
+    <span class="block-bg mb-1.5 mr-1.5 rounded-lg px-5 py-1.5">Tags </span>
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://chchwy.github.io/tags/kai-fa-ri-chang/"
+      >開發日常</a
+    >
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://chchwy.github.io/tags/sheng-chan-li/"
+      >生產力</a
+    >
+    
+  </div>
+  
+</footer>
+
+<!---->
+
+  <!-- Post Nav -->
+  
+<nav class="block-bg mt-12 flex rounded-lg text-lg">
+  
+  <a
+    class="block-hover-mask flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;ogre-v2-model-viewer&#x2F;"
+    ><span class="mr-1.5">←</span><span>Ogre3D v2.1 模型預覽器</span></a
+  >
+  <!---->
+  
+  <a
+    class="block-hover-mask ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;github-actions-hugo-blog&#x2F;"
+    ><span>用 Github Actions 更新部落格</span><span class="ml-1.5">→</span></a
+  >
+  
+</nav>
+
+<!---->
+
+  <!-- Comment -->
+  <!---->
+  
+<div class="giscus mt-12"></div>
+<script src="https://giscus.app/client.js"
+  data-repo="chchwy/chchwy.github.io"
+  data-repo-id="MDEwOlJlcG9zaXRvcnk1MjQ0MDkzNg=="
+  data-category="Announcements"
+  data-category-id="DIC_kwDOAyAvaM4Cglg7"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="top"
+  data-theme="preferred_color_scheme"
+  data-lang="zh-TW"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async>
+</script>
+<!---->
+<!---->
+  
+</article>
+
+    </main>
+
+    <footer class="mx-auto flex max-w-3xl flex-wrap items-center px-8 py-4 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+    &copy; 2024 -  2024
+    <a class="link" href="https://chchwy.github.io"
+      >chchwy</a
+    >
+     |<!---->
+    <!---->
+    <a class="link" href="https:&#x2F;&#x2F;creativecommons.org&#x2F;licenses&#x2F;by-sa&#x2F;4.0&#x2F;deed" rel="noopener" target="_blank">
+      CC BY-SA 4.0
+    </a>
+    <!---->
+    
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <a class="link mr-6 lg:ml-6" href="https://www.getzola.org/" rel="noopener" target="_blank"
+      >Powered by Zola</a
+    >
+    <a class="link" href="https://github.com/st1020/kita" rel="noopener" target="_blank">✎ Kita</a>
+  </div>
+</footer>
+<div class="mx-auto flex items-center max-w-3xl px-8 py-4">
+  <!-- Inizio Codice ShinyStat -->
+  <script src="//codice.shinystat.com/cgi-bin/getcod.cgi?USER=chchwy"></script>
+  <noscript>
+  <a href="https://www.shinystat.com/it/" target="_top">
+  <img src="//www.shinystat.com/cgi-bin/shinystat.cgi?USER=chchwy" alt="Statistiche web" style="border:0px"/></a>
+  </noscript>
+  <!-- Fine Codice ShinyStat -->
+</div>
+
+  </body>
+</html>
