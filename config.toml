@@ -23,7 +23,7 @@ highlight_theme = "base16-ocean-dark"
 [extra]
 math = false
 mermaid = false
-comment = false
+comment = true
 
 [extra.style]
 # The custom background color.
@@ -33,7 +33,7 @@ bg_color = "#f0e7dd"
 # bg_dark_color = ""
 
 # Enable header blur.
-header_blur = true
+header_blur = false
 
 # The custom header color, only available when `header_blur` is false.
 header_color = "#e4dbd2"
@@ -83,4 +83,7 @@ url = "$BASE_URL/about"
 since = 2024
 license = "CC BY-SA 4.0"
 license_url = "https://creativecommons.org/licenses/by-sa/4.0/deed"
+
+[extra.giscus]
+repo = "chchwy/chchwy.github.io"
 
