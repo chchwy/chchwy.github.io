@@ -2,7 +2,7 @@
 date: 2011-09-30
 title: "遲到的 Amazon Kindle DX 電子閱讀器開箱文"
 taxonomies:
-  tags: [Kindle]
+  tags: ["開箱"]
 ---
 
 Amazon 網路書店出的電子書閱讀器 Kindle DX，當初我看著機子猶豫了很久，一直無法決定要不要買。直到下定決心買下手後，到現在使用超過半年了，我的感想是「真的很不錯」， 雖然有些小缺點，但是瑕不掩瑜。
