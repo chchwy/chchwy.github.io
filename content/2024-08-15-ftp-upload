@@ -1,0 +1,65 @@
++++
+date=2024-08-15
+title="命令列操作FTP上傳檔案"
+draft = true
+[taxonomies]
+tags = ["開發日常", "code"]
++++
+
+最近開發上碰到一個需求，就是在CI系統的最後一步，要把檔案上傳到FTP伺服器上。
+
+這是我以前沒碰過得需求，研究了一下發現有好幾種作法。就順手紀錄一下如何使用命令列操作FTP上傳檔案。
+
+## 使用 `ftp` 指令
+
+我最近才知道原來 Windows 作業系統本身內建了 `ftp` 指令可以用來操作FTP伺服器上傳、下載、刪除檔案等等。
+
+然後這ftp指令可以接收一個指令檔，裡面寫好要執行的動作，非常適合在CI系統上使用。
+
+以下是範例：
+```bat
+echo open 192.168.99.99> ftp_commands.txt
+echo %FTP_USER%>> ftp_commands.txt
+echo %FTP_PASSWORD%>> ftp_commands.txt
+echo binary>> ftp_commands.txt
+echo cd /Your/Server/Directory>> ftp_commands.txt
+echo send YOUR_FILE>> ftp_commands.txt
+echo bye>> ftp_commands.txt
+
+ftp -d -s:ftp_commands.txt
+del ftp_commands.txt
+```
+
+首先 ftp 指令的參數 `-s:ftp_commands.txt` 的意思就是讀取指令檔 `ftp_commands.txt`。
+
+然後用echo指令把要執行的指令寫進去`ftp_commands.txt`，每一行一個指令。
+
+所以上面的範例就是
+
+- `open IP` 連線到 FTP 伺服器，
+- 然後接下來兩行用帳號密碼登入
+- 設定傳輸模式為 binary 二進位模式
+- cd 切換到指定目錄
+- send 然後上傳檔案
+- 最後 bye 關閉連線。
+
+## 使用 `curl` 指令
+
+另外一個方法是使用 `curl` 指令，這個方法比較簡單，不需要寫指令檔，而且可以跨平台。
+
+```bat
+curl -T "YOUR_LOCAL_FILE" --user "FTP_USER:FTP_PASSWORD" "ftp://192.168.99.99/Your/Directory/UPLOADED_FILE" --ftp-create-dirs
+```
+
+這個指令的意思是把本地端的檔案 `YOUR_LOCAL_FILE` 上傳到 FTP 伺服器的 `Your/Directory/UPLOADED_FILE` 位置。
+
+`--user` 參數是用來指定帳號密碼，`--ftp-create-dirs` 參數是用來自動建立目錄。
+
+## 結論
+
+這兩個方法都可以用來操作FTP上傳檔案，不過 `ftp` 指令只能在 Windows 上使用，而 `curl` 指令則可以跨平台。
+我最終是採用 curl，這樣子 Win/Mac 都可以用同一招上傳。
+
+
+
+
