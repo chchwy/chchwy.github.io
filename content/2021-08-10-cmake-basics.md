@@ -9,15 +9,17 @@ tags = ["CMake", "C++"]
 
 ### 為什麼需要 CMake?
 
-簡單講，因為 C++ 語言跨平台很麻煩。
+簡單來說，因為 C++ 的跨平台編譯很麻煩。
 
-C++ 程式碼本身是可以跨平台的，主流平台也都可以編譯 C++，但是每個平台編譯程式碼用的工具鍊不同，差別很大。Linux 用 Makefile，Windows 用 Visual Studio Project， macOS 上可以用 Xcode Project 也可以用 Makefile，這些格式都互不相通。所以即使我寫了通用的程式碼，跨平台編譯專案依然然困難重重。
+雖然 C++ 程式碼本身是可以跨平台的，但每個平台使用的編譯工具鏈卻大不相同。
 
-針對這個問題，除了同時維護多個個專案之外，還可以考慮 CMake 這類工具。
+Linux 使用 Makefile，Windows 使用 Visual Studio 專案，而 macOS 則可以使用 Xcode 專案或 Makefile，這些格式彼此不兼容。因此，即使程式碼是通用的，跨平台編譯專案仍然困難重重。。
 
-CMake 的賣點就是代我們處理編譯工具鍊問題。我們可以寫一份完全中立、跟平台無關的 CMake 腳本，然後讓 CMake 作為中間人，代為操作當前平台的編譯工具鏈。當我想在 Windows 上編譯專案時，CMake 就產生一個 Visual Studio 專案。同理，當我要在 macOS 上編譯專案時，就產生 Xcode 專案。
+針對這個問題，除了同時維護多個個專案之外，還可以考慮像 CMake 這類的工具。
 
-我個人時常在 Windows 和 macOS 之間切換，偶爾需要跑一下 Linux。使用 CMake 可以節省我的時間精力，避開每個平台都再學習一次建構系統的成本。
+CMake 的賣點就是幫助我們處理不同平台的編譯工具鏈。我們只需撰寫一份與平台無關的 CMake 腳本，然後讓 CMake 充當中介，負責操作當前平台的編譯工具鏈。這樣，我們在 Windows 上編譯專案時，CMake 會生成 Visual Studio 專案；在 macOS 上編譯時，則會生成 Xcode 專案。
+
+我個人時常在 Windows 和 macOS 之間切換，偶爾需要在 Linux 上工作。使用 CMake 可以節省我的時間和精力，避免在每個平台都要再學習一次建構系統的成本。
 
 ## Hello CMake!
 
