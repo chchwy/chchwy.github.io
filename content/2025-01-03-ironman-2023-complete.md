@@ -4,7 +4,7 @@ date=2025-01-03
 title="2023鐵人賽完賽心得: Qt6跨平台開發系列"
 draft = false
 [taxonomies]
-tags = ["開箱"]
+tags = ["寫作", "Qt"]
 +++
 
 系列文傳送門：[Qt 6 跨平台應用程式開發](https://ithelp.ithome.com.tw/users/20084263/ironman/6778)
