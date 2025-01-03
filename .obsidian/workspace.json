@@ -1,0 +1,187 @@
+{
+  "main": {
+    "id": "1ac03892aca98981",
+    "type": "split",
+    "children": [
+      {
+        "id": "3e2c06be1a263dbb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "345ff7f566861eff",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/pages/about.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "about"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "76c6de2d309fbca9",
+    "type": "split",
+    "children": [
+      {
+        "id": "b1af36388863fdc1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4e3ee3f2393b8fa6",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "004ea04412797b62",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "cb55d9863104a03f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "132437c427a607e1",
+    "type": "split",
+    "children": [
+      {
+        "id": "81cf8f1c1f170850",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "660ef9e4c1f855cb",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "content/2021-08-10-cmake-basics.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 2021-08-10-cmake-basics"
+            }
+          },
+          {
+            "id": "96bec5be72cab2c2",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "content/2021-08-10-cmake-basics.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 2021-08-10-cmake-basics"
+            }
+          },
+          {
+            "id": "5877ba4b85d1f1da",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "0824cbc7f7846423",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "content/2021-08-10-cmake-basics.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 2021-08-10-cmake-basics"
+            }
+          },
+          {
+            "id": "4eaf43b5c448c899",
+            "type": "leaf",
+            "state": {
+              "type": "copilot-chat-view",
+              "state": {},
+              "icon": "message-square",
+              "title": "Copilot"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 382.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "copilot:Copilot Chat": false
+    }
+  },
+  "active": "345ff7f566861eff",
+  "lastOpenFiles": [
+    "content/pages/archive.md",
+    "content/pages/about.md",
+    "content/2010-12-21-linux傳奇-rebel-code.md",
+    "content/2010-09-04-專業php-5程式設計.md",
+    "content/2021-08-10-cmake-basics.md",
+    "content/2010-11-29-精通-objectivec-20-程式設計.md",
+    "content/2010-02-11-線性代數的世界.md",
+    "content/2007-11-24-decimal-to-binary.md"
+  ]
+}
