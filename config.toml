@@ -1,11 +1,11 @@
 base_url = "https://chchwy.github.io"
 title = "調和的靈感"
-description = "紀錄我的思考、讀書筆記和程式設計紀錄"
+description = "思考在這裡短暫停留"
 author = "chchwy"
 default_language = "zh-tw"
 
-generate_feed = true
-feed_filename = "atom.xml"
+generate_feeds = true
+feed_filenames = ["atom.xml"]
 taxonomies = [{ name = "tags", rss = true, paginate_by = 5 }]
 theme = "kita"
 

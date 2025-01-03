@@ -78,16 +78,16 @@
   <link rel="manifest" href="{{ get_url(path=`/site.webmanifest`) }}" />
 
   <!-- Feeds -->
-  {% if config.generate_feed %}
+  {% if config.generate_feeds %}
   <!---->
-  {% if config.feed_filename == "atom.xml" %}
+  {% if config.feed_filenames == "atom.xml" %}
   <link
     rel="alternate"
     type="application/atom+xml"
     title="Atom"
     href="{{ get_url(path=`atom.xml`) }}"
   />
-  {% elif config.feed_filename == "rss.xml" %}
+  {% elif config.feed_filenames == "rss.xml" %}
   <link
     rel="alternate"
     type="application/rss+xml"
