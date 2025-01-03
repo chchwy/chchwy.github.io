@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/2021-08-18-compression-compare.md",
+                "file": "content/2024-07-05-pragmatic60-keyboard.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2021-08-18-compression-compare"
+              "title": "2024-07-05-pragmatic60-keyboard"
             }
           }
         ]
@@ -176,9 +176,9 @@
   },
   "active": "345ff7f566861eff",
   "lastOpenFiles": [
+    "content/2021-08-18-compression-compare.md",
     "content/2024-08-15-ftp-upload-command-line.md",
     "content/2024-08-15-ftp-upload",
-    "content/2021-08-18-compression-compare.md",
     "content/2024-07-05-pragmatic60-keyboard.md",
     "public/main.css",
     "public/img/pragmatic/switch.jpg",
