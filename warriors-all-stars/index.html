@@ -1,0 +1,347 @@
+<!doctype html>
+<html class="not-ready lg:text-base" lang="zh-tw">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title -->
+  <title>
+    《無雙☆群星大會串》白金遊戲心得 - 調和的靈感
+  </title>
+
+  <!-- Meta -->
+  <meta name="theme-color" />
+
+  <!-- Author -->
+  
+  <meta name="description" content="《無雙☆群星大會串》白金遊戲心得" />
+  <meta name="author" content="《無雙☆群星大會串》白金遊戲心得" />
+  
+
+  <!-- CSS & JS -->
+  <link rel="preload stylesheet" as="style" href="https://chchwy.github.io/main.css" />
+  <style>
+    :root {
+      --bg: #f0e7dd;
+      --bg-dark: #18181b;
+      --header: #e4dbd2;
+      --header-dark: #27272a;
+    }
+    img[src*='#book'] { float: left; margin-right: 1em; }
+    img[src*='#right'] { float: right; margin-left: 1em; }
+    img[src*='#center'] { display: block; margin: auto; }
+  </style>
+
+  
+
+  <!-- Dark Icon -->
+  <link rel="preload" as="image" href="https://chchwy.github.io/icons/theme.svg" />
+
+  <!-- Math -->
+  
+  <!---->
+
+  <!-- Mermaid -->
+  
+  <!---->
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://chchwy.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://chchwy.github.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://chchwy.github.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://chchwy.github.io/favicon-16x16.png" />
+  <link rel="manifest" href="https://chchwy.github.io/site.webmanifest" />
+
+  <!-- Feeds -->
+  
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;warriors-all-stars&#x2F;" />
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header
+  class="header fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
+>
+  <div class="mx-auto w-full max-w-4xl p-3 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center">
+        <a class="text-2xl font-semibold" href="https://chchwy.github.io">調和的靈感</a>
+        <div
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0] [background:url(./icons/theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+          role="button"
+          aria-label="Dark"
+        ></div>
+      </div>
+      
+      <div
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+        role="button"
+        aria-label="Menu"
+      ></div>
+      
+    </div>
+    <script>
+      // base
+      const htmlClass = document.documentElement.classList;
+      setTimeout(() => {
+        htmlClass.remove("not-ready");
+      }, 10);
+
+      // mobile menu
+      const btnMenu = document.querySelector(".btn-menu");
+      btnMenu?.addEventListener("click", () => {
+        htmlClass.toggle("open");
+      });
+
+      // dark theme
+      const setDark = (isDark) => {
+        if (isDark) {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+          htmlClass.add("dark");
+        } else {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+          htmlClass.remove("dark");
+        }
+        localStorage.setItem("dark", isDark);
+      };
+
+      // init
+      const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      if (htmlClass.contains("dark")) {
+        setDark(true);
+      } else {
+        const darkVal = localStorage.getItem("dark");
+        setDark(darkVal ? darkVal === "true" : darkScheme.matches);
+      }
+
+      // listen system
+      darkScheme.addEventListener("change", (event) => {
+        setDark(event.matches);
+      });
+
+      // manual switch
+      const btnDark = document.querySelector(".btn-dark");
+      btnDark.addEventListener("click", () => {
+        setDark(localStorage.getItem("dark") !== "true");
+      });
+    </script>
+    
+    <nav class="flex w-full items-center lg:w-auto">
+      <ul
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0"
+      >
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/archive"
+            >Archive</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/tags"
+            >Tags</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/about"
+            >About</a
+          >
+        </li>
+        
+      </ul>
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl break-words px-4 pb-16 pt-32 dark:prose-invert"
+    >
+      
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">《無雙☆群星大會串》白金遊戲心得</h1>
+    <div class="text-sm antialiased opacity-60">
+  
+  <time>2020-12-07</time>
+  <span class="mx-1">&middot;</span>
+  <span>6min</span>
+  <!---->
+  
+  <!---->
+  
+  <span class="mx-1">&middot;</span>
+  <span>chchwy</span>
+  
+</div>
+
+  </header>
+
+  
+
+  <!-- TOC -->
+  
+<!---->
+
+  <!-- Content -->
+  <section><p>最近剛打完一輪《無雙☆群星大會串》。</p>
+<p>作為一個一歲小孩的老爸，能玩的遊戲類型非常受限，第一：關卡長度不能太長，最好在 10-15 分鐘內，因為我的閒暇空檔只有這麼長。第二：單人遊戲，小孩哭了隨時按下暫停去哄小孩。第三：簡單輕鬆不燒腦，完成一天的工作和家務後已經非常疲累了。無雙群星剛好符合這三點，睡覺前來一場無腦割草，非常抒壓。</p>
+<p>(織田信喵在這個遊戲裡面根本就是梗王)</p>
+<p><img src="/img/allstar-cat.jpg" alt="Oda-Kasumi" /></p>
+<p>以下是一些遊戲心得：</p>
+<ol>
+<li>開場第一要務是衝高「勇氣值」，因為高勇氣角可以痛打低勇氣角，不管等級跟裝備差距，敵我都一樣。</li>
+<li>無雙狂熱是早期衝勇氣值的好方法。</li>
+<li>善用英雄援護技能。英雄技能是本作的精華，帶著四個隊友可不是看戲的。</li>
+<li>個人愛用的英雄援護技能如下 (比無雙還好用啊!) 
+<ul>
+<li>撲克臉雙妹：蜜蕾妮雅+蕾格琳娜。把散落的小兵吸成一團，然後全部集中電死。清據點速度一流。</li>
+<li>蘇菲：飛彈齊射轟炸，全遊戲最強的範圍殲滅技能。</li>
+<li>周倉：趕路，趕路，趕路。</li>
+<li>威廉：刀光，清兵範圍大又遠。</li>
+<li>穗香：火拳，非常痛，高勇氣的時候可以一拳秒掉敵將。</li>
+<li>幻空：沒有蜜蕾妮雅時候的替代品，也可以把小兵群吸成一團集中擊殺。</li>
+<li>霞：給主角超高攻速。</li>
+<li>其他高傷害的英雄：趙雲/時繼/有馬一</li>
+<li>其他範圍清兵英雄：達瑞斯/志貴/剎那</li>
+</ul>
+</li>
+<li>卡片必附「龍神的啟示」，放無雙可以消除 50% 隊友技能冷卻時間。</li>
+<li>理想的戰鬥節奏：小兵團裡開英雄技能 =&gt; 清了一堆兵，集滿無雙槽 =&gt; 開無雙 (消除英雄技能冷卻) =&gt; 繼續用英雄技能清兵 =&gt; 再度集滿無雙槽 (無限循環)</li>
+<li>關卡『覺醒的邪惡』很適合刷卡片，因為英雄幻影會無限復活，所以故意不去打最終 Boss 就可以一直刷英雄拿卡片。</li>
+<li>最終戰『完全的黑暗』和『重生的黑暗』很容易因為刹那、志貴或環其中一人死亡而敗北。解決辦法就是把這三個人加進隊伍，這樣他們就不會死了，關卡難度瞬間大減。</li>
+<li>這遊戲自帶攻略，「世界資訊」 =&gt; 「戰鬥傳聞」就會告訴你各關卡的解鎖條件。</li>
+</ol>
+<p>(大家都想摸信喵)</p>
+<p><img src="/img/allstar-honoka.jpg" alt="Oda-Honoka" /></p>
+<!--
+拿白金最困難的成就應該是「True Devotee 完成所有的故事・英雄・戲劇性戰鬥」。鑑賞室的動畫列表可以檢查哪些序章跟英雄招募關卡還沒打。像我一開始趙雲開場，周倉跟呂布自動變成隊友，所以我從來沒有打過這兩個人的英雄招募關卡。主線劇情部份，志貴線有三個關卡會走向同一個志貴稱王的結局，剎那線有兩個關卡導向稱王結局，環線也有兩個關卡導向稱王結局，這個就很煩，很難追蹤哪些關卡沒打過。夜見線有兩個「追蹤夜見」。
+-->
+<p>《無雙群星》玩下來，我基本上同意某個 steam 評論：這就是一款服務粉絲的遊戲，玩的人大多數都是因為喜歡某個角色或某款作品，就不要太要求強大的世界觀或武器系統了，玩得開心，享受各角色互相吐槽的歡樂氣氛就好了。</p>
+<p>最後秀一下我的破關角色，就是角色風格大亂鬥 (稱讚的意味)。</p>
+<p>霞：我的第一隻角色。後來玩了別隻角色才知道，原來遊戲沒那麼難，只是角色機體性能比較低...。C4 帶炎最大化傷害，可以把敵人踢在空中燒一陣子。優點是無雙啟動的速度很快 (有些角色要先跑好幾秒的角色動畫，無雙才放出去，敵人都不知道跑哪去了)</p>
+<p><img src="/img/allstar-kasumi.jpg" alt="End-Kasumi" /></p>
+<p>織田信喵：遠程安全牌角色，輸出能力中等，可以站得遠遠的一直射射射。</p>
+<p><img src="/img/allstar-oda.jpg" alt="End-Oda" /></p>
+<p>有馬一：最後一輪破關愛角，範圍廣輸出高。C3、C4、C5 都很好用。</p>
+<p><img src="/img/allstar-hajime.jpg" alt="End-Hajime" /></p>
+<p>白金之星成就截圖</p>
+<p><img src="/img/allstar-platinum.png" alt="Platinum Star" /></p>
+</section>
+
+  <hr />
+
+  <!-- Post Taxonomies -->
+  
+<footer class="mt-12 flex flex-col">
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  
+  <div class="mb-2 flex flex-wrap">
+    <span class="block-bg mb-1.5 mr-1.5 rounded-lg px-5 py-1.5">Tags </span>
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://chchwy.github.io/tags/game/"
+      >Game</a
+    >
+    
+  </div>
+  
+</footer>
+
+<!---->
+
+  <!-- Post Nav -->
+  
+<nav class="block-bg mt-12 flex rounded-lg text-lg">
+  
+  <a
+    class="block-hover-mask flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;analytical-reading&#x2F;"
+    ><span class="mr-1.5">←</span><span>分析閱讀的十五條規則</span></a
+  >
+  <!---->
+  
+  <a
+    class="block-hover-mask ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;python-on-windows&#x2F;"
+    ><span>Windows 電腦切換 Python 2&#x2F;3 版本</span><span class="ml-1.5">→</span></a
+  >
+  
+</nav>
+
+<!---->
+
+  <!-- Comment -->
+  <!---->
+  
+<div class="giscus mt-12"></div>
+<script src="https://giscus.app/client.js"
+  data-repo="chchwy/chchwy.github.io"
+  data-repo-id="MDEwOlJlcG9zaXRvcnk1MjQ0MDkzNg=="
+  data-category="Announcements"
+  data-category-id="DIC_kwDOAyAvaM4Cglg7"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="top"
+  data-theme="preferred_color_scheme"
+  data-lang="zh-TW"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async>
+</script>
+<!---->
+<!---->
+  
+</article>
+
+    </main>
+
+    <footer class="mx-auto flex max-w-3xl flex-wrap items-center px-8 py-4 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+    &copy; 2024 -  2025
+    <a class="link" href="https://chchwy.github.io"
+      >chchwy</a
+    >
+     |<!---->
+    <!---->
+    <a class="link" href="https:&#x2F;&#x2F;creativecommons.org&#x2F;licenses&#x2F;by-sa&#x2F;4.0&#x2F;deed" rel="noopener" target="_blank">
+      CC BY-SA 4.0
+    </a>
+    <!---->
+    
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <a class="link mr-6 lg:ml-6" href="https://www.getzola.org/" rel="noopener" target="_blank"
+      >Powered by Zola</a
+    >
+    <a class="link" href="https://github.com/st1020/kita" rel="noopener" target="_blank">✎ Kita</a>
+  </div>
+</footer>
+<div class="mx-auto flex items-center max-w-3xl px-8 py-4">
+  <!-- Inizio Codice ShinyStat -->
+  <script src="//codice.shinystat.com/cgi-bin/getcod.cgi?USER=chchwy"></script>
+  <noscript>
+  <a href="https://www.shinystat.com/it/" target="_top">
+  <img src="//www.shinystat.com/cgi-bin/shinystat.cgi?USER=chchwy" alt="Statistiche web" style="border:0px"/></a>
+  </noscript>
+  <!-- Fine Codice ShinyStat -->
+</div>
+
+  </body>
+</html>

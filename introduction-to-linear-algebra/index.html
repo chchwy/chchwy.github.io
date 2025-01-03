@@ -1,0 +1,368 @@
+<!doctype html>
+<html class="not-ready lg:text-base" lang="zh-tw">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title -->
+  <title>
+    讀書: 線性代數的世界 - 調和的靈感
+  </title>
+
+  <!-- Meta -->
+  <meta name="theme-color" />
+
+  <!-- Author -->
+  
+  <meta name="description" content="讀書: 線性代數的世界" />
+  <meta name="author" content="讀書: 線性代數的世界" />
+  
+
+  <!-- CSS & JS -->
+  <link rel="preload stylesheet" as="style" href="https://chchwy.github.io/main.css" />
+  <style>
+    :root {
+      --bg: #f0e7dd;
+      --bg-dark: #18181b;
+      --header: #e4dbd2;
+      --header-dark: #27272a;
+    }
+    img[src*='#book'] { float: left; margin-right: 1em; }
+    img[src*='#right'] { float: right; margin-left: 1em; }
+    img[src*='#center'] { display: block; margin: auto; }
+  </style>
+
+  
+
+  <!-- Dark Icon -->
+  <link rel="preload" as="image" href="https://chchwy.github.io/icons/theme.svg" />
+
+  <!-- Math -->
+  
+  <!---->
+
+  <!-- Mermaid -->
+  
+  <!---->
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://chchwy.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://chchwy.github.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://chchwy.github.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://chchwy.github.io/favicon-16x16.png" />
+  <link rel="manifest" href="https://chchwy.github.io/site.webmanifest" />
+
+  <!-- Feeds -->
+  
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;introduction-to-linear-algebra&#x2F;" />
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header
+  class="header fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
+>
+  <div class="mx-auto w-full max-w-4xl p-3 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center">
+        <a class="text-2xl font-semibold" href="https://chchwy.github.io">調和的靈感</a>
+        <div
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0] [background:url(./icons/theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+          role="button"
+          aria-label="Dark"
+        ></div>
+      </div>
+      
+      <div
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+        role="button"
+        aria-label="Menu"
+      ></div>
+      
+    </div>
+    <script>
+      // base
+      const htmlClass = document.documentElement.classList;
+      setTimeout(() => {
+        htmlClass.remove("not-ready");
+      }, 10);
+
+      // mobile menu
+      const btnMenu = document.querySelector(".btn-menu");
+      btnMenu?.addEventListener("click", () => {
+        htmlClass.toggle("open");
+      });
+
+      // dark theme
+      const setDark = (isDark) => {
+        if (isDark) {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+          htmlClass.add("dark");
+        } else {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+          htmlClass.remove("dark");
+        }
+        localStorage.setItem("dark", isDark);
+      };
+
+      // init
+      const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      if (htmlClass.contains("dark")) {
+        setDark(true);
+      } else {
+        const darkVal = localStorage.getItem("dark");
+        setDark(darkVal ? darkVal === "true" : darkScheme.matches);
+      }
+
+      // listen system
+      darkScheme.addEventListener("change", (event) => {
+        setDark(event.matches);
+      });
+
+      // manual switch
+      const btnDark = document.querySelector(".btn-dark");
+      btnDark.addEventListener("click", () => {
+        setDark(localStorage.getItem("dark") !== "true");
+      });
+    </script>
+    
+    <nav class="flex w-full items-center lg:w-auto">
+      <ul
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0"
+      >
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/archive"
+            >Archive</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/tags"
+            >Tags</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/about"
+            >About</a
+          >
+        </li>
+        
+      </ul>
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl break-words px-4 pb-16 pt-32 dark:prose-invert"
+    >
+      
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">讀書: 線性代數的世界</h1>
+    <div class="text-sm antialiased opacity-60">
+  
+  <time>2010-02-11</time>
+  <span class="mx-1">&middot;</span>
+  <span>6min</span>
+  <!---->
+  
+  <!---->
+  
+  <span class="mx-1">&middot;</span>
+  <span>chchwy</span>
+  
+</div>
+
+  </header>
+
+  
+
+  <!-- TOC -->
+  <!---->
+<div class="block-bg mb-12 flex rounded-lg p-2 text-lg">
+  <details>
+    <summary class="cursor-pointer py-1 pl-4">
+      <span>Table of Contents</span>
+    </summary>
+    <div class="px-2">
+      <ul>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://chchwy.github.io/introduction-to-linear-algebra/#strang-jiao-shou-miao-yu-ji-jin"
+            >Strang 教授妙語集錦</a
+          >
+          
+        </li>
+        
+      </ul>
+    </div>
+  </details>
+</div>
+
+<!---->
+
+  <!-- Content -->
+  <section><blockquote>
+<p>「你不能把蘋果跟橘子加在一起」
+從某種觀點來說，就是為了想要做這種事，我們才需要向量。</p>
+</blockquote>
+<p><img src="/img/book/linear-algebra.jpg#book" alt="線性代數的世界" /></p>
+<p>這是本書第一章的第一句話，我一翻開書就噗呲笑了出來，心想我準會愛上這本書。Gilbert Strang 教授用幽默卻精準的語言貫穿全書，娓娓述說線性代數這門學科。</p>
+<p>以我個人學習線性代數的經驗，認為學習線性代數必須要從兩方面著手，一是證明，這是前後貫通這們學科的唯一方法，特別是線性代數這座層層相疊，環環相扣的高塔，這讓人學會嚴謹。另一方面則是直覺，你如何從大堆頭的數學式子中看出意義，直搗核心，這讓人思考靈活，學會應用。</p>
+<p>我在研究所補習班所學的線性代數的教學太過於偏重證明，我叫它金字塔教學法，從最底層一塊一塊磚慢慢往上蓋、慢慢往上證明。於是乎有這樣的現象：學生知道證明的東西，證明每一步都懂，但是就是無法在腦中成型，或者看不見這些式子的意義，這是因為數學證明的抽象性、嚴謹性犧牲了直覺性(例如線性獨立的證明)，若沒有良好的引導，學生往往在真正看清定理的意義之前就先被繁雜的證明打敗了。「我認為線性代數的教學已經變得太抽象了。」這是Strang教授在序裡說的另一句話，我舉雙手同意。</p>
+<p>Strang 教授說自己在寫書的時候努力做到：致力於解釋，而不是演繹。我研讀下來的感覺也是這樣，Strang教授會先像箭一樣射穿核心觀念，然後佐以例子慢慢的向旁邊擴張解釋，最後才用證明結尾。我舉個例子，固有向量(Ax=?x)，章節裡是這樣寫：『我們用A去乘時，幾乎所有的的向量都會改變方向，但是有些特殊的非零向量，它的方向仍然跟Ax相同，只是拉長、縮短、翻轉方向或絲毫未動。... 而固有值就是看進矩陣核心的新途徑。』於是乎學習者從一開始就有一個清楚的圖像浮在腦海中，以此作為往下學習的基礎，比抽象的數學式子好太多啦。我認為這是本書的魅力。</p>
+<p>優點同時也是缺點，Strang教授把線性代數處理的滑順可口，無可避免的本書的證明就顯得相對虛弱，偏偏證明是線性代數不可或缺的重要部份。書中大多是以歐式空間為基礎來講解，歐式空間容易學習，容易舉例，但是線性代數可以處理的範圍遠超過歐式空間。這種證明帶來的抽象性，正是線性代數的威力所在，但本書很少提到這部分。</p>
+<p>不管如何，這是一本少見的優秀又有趣的數學教科書，我在裡面找到了數學的樂趣，相信你也可以。:D</p>
+<h2 id="strang-jiao-shou-miao-yu-ji-jin">Strang 教授妙語集錦</h2>
+<p>談為什麼需要向量</p>
+<blockquote>
+<p>&quot;You can't add apples and oranges.&quot; <br>「你不能把蘋果和橘子加在一起」</p>
+</blockquote>
+<p>線性代數的精神</p>
+<blockquote>
+<p>The central porblem of linear algebra is to solve a system of equations.</p>
+<p>線性代數的核心問題就是要解方程組！</p>
+</blockquote>
+<p>談為何AB的反矩陣是 B<sup>-1</sup>A<sup>-1</sup></p>
+<blockquote>
+<p>It is also common sense: If you put on socks and then shoes, the first to be taken off are the _____.<br></p>
+<p>常識也告訴我們：假如你先穿襪子再穿鞋，那麼脫的時候，首先該脫掉_____。</p>
+</blockquote>
+<p>談為何(AB)<sup>T</sup> = B<sup>T</sup>A<sup>T</sup></p>
+<blockquote>
+<p>Ax combines the columns of A while x<sup>T</sup>A<sup>T</sup> combines the rows of A<sup>T</sup><br></p>
+<p>Ax線性組合了A的諸行，而x<sup>T</sup>A<sup>T</sup>線性組合了A<sup>T</sup>的諸列。</p>
+</blockquote>
+<p>不論是趣味的例子，或者是一句話直搗觀念核心，都常讓我拍案叫絕。比起補習班名師的講義，研讀起來樂趣大多了。</p>
+</section>
+
+  <hr />
+
+  <!-- Post Taxonomies -->
+  
+<footer class="mt-12 flex flex-col">
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  
+  <div class="mb-2 flex flex-wrap">
+    <span class="block-bg mb-1.5 mr-1.5 rounded-lg px-5 py-1.5">Tags </span>
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://chchwy.github.io/tags/xian-xing-dai-shu/"
+      >線性代數</a
+    >
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://chchwy.github.io/tags/shu-xue/"
+      >數學</a
+    >
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://chchwy.github.io/tags/du-shu/"
+      >讀書</a
+    >
+    
+  </div>
+  
+</footer>
+
+<!---->
+
+  <!-- Post Nav -->
+  
+<nav class="block-bg mt-12 flex rounded-lg text-lg">
+  
+  <a
+    class="block-hover-mask flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;decimal-to-binary&#x2F;"
+    ><span class="mr-1.5">←</span><span>十進位轉二進位</span></a
+  >
+  <!---->
+  
+  <a
+    class="block-hover-mask ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;art-of-learning&#x2F;"
+    ><span>讀書: 學習的王道</span><span class="ml-1.5">→</span></a
+  >
+  
+</nav>
+
+<!---->
+
+  <!-- Comment -->
+  <!---->
+  
+<div class="giscus mt-12"></div>
+<script src="https://giscus.app/client.js"
+  data-repo="chchwy/chchwy.github.io"
+  data-repo-id="MDEwOlJlcG9zaXRvcnk1MjQ0MDkzNg=="
+  data-category="Announcements"
+  data-category-id="DIC_kwDOAyAvaM4Cglg7"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="top"
+  data-theme="preferred_color_scheme"
+  data-lang="zh-TW"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async>
+</script>
+<!---->
+<!---->
+  
+</article>
+
+    </main>
+
+    <footer class="mx-auto flex max-w-3xl flex-wrap items-center px-8 py-4 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+    &copy; 2024 -  2025
+    <a class="link" href="https://chchwy.github.io"
+      >chchwy</a
+    >
+     |<!---->
+    <!---->
+    <a class="link" href="https:&#x2F;&#x2F;creativecommons.org&#x2F;licenses&#x2F;by-sa&#x2F;4.0&#x2F;deed" rel="noopener" target="_blank">
+      CC BY-SA 4.0
+    </a>
+    <!---->
+    
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <a class="link mr-6 lg:ml-6" href="https://www.getzola.org/" rel="noopener" target="_blank"
+      >Powered by Zola</a
+    >
+    <a class="link" href="https://github.com/st1020/kita" rel="noopener" target="_blank">✎ Kita</a>
+  </div>
+</footer>
+<div class="mx-auto flex items-center max-w-3xl px-8 py-4">
+  <!-- Inizio Codice ShinyStat -->
+  <script src="//codice.shinystat.com/cgi-bin/getcod.cgi?USER=chchwy"></script>
+  <noscript>
+  <a href="https://www.shinystat.com/it/" target="_top">
+  <img src="//www.shinystat.com/cgi-bin/shinystat.cgi?USER=chchwy" alt="Statistiche web" style="border:0px"/></a>
+  </noscript>
+  <!-- Fine Codice ShinyStat -->
+</div>
+
+  </body>
+</html>

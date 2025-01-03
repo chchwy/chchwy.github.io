@@ -1,0 +1,361 @@
+<!doctype html>
+<html class="not-ready lg:text-base" lang="zh-tw">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title -->
+  <title>
+    讀書: 明朝那些事兒 - 調和的靈感
+  </title>
+
+  <!-- Meta -->
+  <meta name="theme-color" />
+
+  <!-- Author -->
+  
+  <meta name="description" content="讀書: 明朝那些事兒" />
+  <meta name="author" content="讀書: 明朝那些事兒" />
+  
+
+  <!-- CSS & JS -->
+  <link rel="preload stylesheet" as="style" href="https://chchwy.github.io/main.css" />
+  <style>
+    :root {
+      --bg: #f0e7dd;
+      --bg-dark: #18181b;
+      --header: #e4dbd2;
+      --header-dark: #27272a;
+    }
+    img[src*='#book'] { float: left; margin-right: 1em; }
+    img[src*='#right'] { float: right; margin-left: 1em; }
+    img[src*='#center'] { display: block; margin: auto; }
+  </style>
+
+  
+
+  <!-- Dark Icon -->
+  <link rel="preload" as="image" href="https://chchwy.github.io/icons/theme.svg" />
+
+  <!-- Math -->
+  
+  <!---->
+
+  <!-- Mermaid -->
+  
+  <!---->
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://chchwy.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://chchwy.github.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://chchwy.github.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://chchwy.github.io/favicon-16x16.png" />
+  <link rel="manifest" href="https://chchwy.github.io/site.webmanifest" />
+
+  <!-- Feeds -->
+  
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;things-about-ming-dynasty&#x2F;" />
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header
+  class="header fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
+>
+  <div class="mx-auto w-full max-w-4xl p-3 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center">
+        <a class="text-2xl font-semibold" href="https://chchwy.github.io">調和的靈感</a>
+        <div
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0] [background:url(./icons/theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+          role="button"
+          aria-label="Dark"
+        ></div>
+      </div>
+      
+      <div
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+        role="button"
+        aria-label="Menu"
+      ></div>
+      
+    </div>
+    <script>
+      // base
+      const htmlClass = document.documentElement.classList;
+      setTimeout(() => {
+        htmlClass.remove("not-ready");
+      }, 10);
+
+      // mobile menu
+      const btnMenu = document.querySelector(".btn-menu");
+      btnMenu?.addEventListener("click", () => {
+        htmlClass.toggle("open");
+      });
+
+      // dark theme
+      const setDark = (isDark) => {
+        if (isDark) {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+          htmlClass.add("dark");
+        } else {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+          htmlClass.remove("dark");
+        }
+        localStorage.setItem("dark", isDark);
+      };
+
+      // init
+      const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      if (htmlClass.contains("dark")) {
+        setDark(true);
+      } else {
+        const darkVal = localStorage.getItem("dark");
+        setDark(darkVal ? darkVal === "true" : darkScheme.matches);
+      }
+
+      // listen system
+      darkScheme.addEventListener("change", (event) => {
+        setDark(event.matches);
+      });
+
+      // manual switch
+      const btnDark = document.querySelector(".btn-dark");
+      btnDark.addEventListener("click", () => {
+        setDark(localStorage.getItem("dark") !== "true");
+      });
+    </script>
+    
+    <nav class="flex w-full items-center lg:w-auto">
+      <ul
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0"
+      >
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/archive"
+            >Archive</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/tags"
+            >Tags</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/about"
+            >About</a
+          >
+        </li>
+        
+      </ul>
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl break-words px-4 pb-16 pt-32 dark:prose-invert"
+    >
+      
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">讀書: 明朝那些事兒</h1>
+    <div class="text-sm antialiased opacity-60">
+  
+  <time>2012-04-29</time>
+  <span class="mx-1">&middot;</span>
+  <span>8min</span>
+  <!---->
+  
+  <!---->
+  
+  <span class="mx-1">&middot;</span>
+  <span>chchwy</span>
+  
+</div>
+
+  </header>
+
+  
+
+  <!-- TOC -->
+  <!---->
+<div class="block-bg mb-12 flex rounded-lg p-2 text-lg">
+  <details>
+    <summary class="cursor-pointer py-1 pl-4">
+      <span>Table of Contents</span>
+    </summary>
+    <div class="px-2">
+      <ul>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://chchwy.github.io/things-about-ming-dynasty/#hao-ren-yao-bi-huai-ren-geng-neng-dou"
+            >好人要比壞人更能鬥</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://chchwy.github.io/things-about-ming-dynasty/#qing-guan-bu-yi-ding-hao"
+            >清官不一定好</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://chchwy.github.io/things-about-ming-dynasty/#qi-ta"
+            >其他</a
+          >
+          
+        </li>
+        
+      </ul>
+    </div>
+  </details>
+</div>
+
+<!---->
+
+  <!-- Content -->
+  <section><p><img src="/img/book/things-of-ming.jpg#book" alt="明朝那些事兒" /></p>
+<p>這套「明朝那些事兒」我並不是讀完的，而是聽完的。我聽的是對岸劉繼同先生的有聲書，恰好這本書的形式也像極了說書的先生，講歷史故事，說傳奇英雄，講啊講的，每天睡覺前聽上一回當床前故事，剛好幫助入眠。但有時候講的太精采，會欲罷不能接連聽上兩三回，弄到三更半夜才睡覺。</p>
+<p>「明朝那些事兒」講的就是明朝的事兒，從開國皇帝朱元璋開始，一直講到末代崇禎皇帝為止。但是作者當年明月先生並不僅僅滿足於講歷史故事，他還試圖要講出社會運作的規律，我讀完這套書後陡然發現，歷史滾滾過了幾百年，科技進步了，但人性仍然沒有改變，我開始有點兒明白為什麼社會上老是有狗屁倒灶的事情，那些事在明朝就發生過了，今天同樣在重演。</p>
+<h2 id="hao-ren-yao-bi-huai-ren-geng-neng-dou">好人要比壞人更能鬥</h2>
+<p>我看完書之後，發現鬥爭其實是正常的社會現象。這個道理也很簡單，因為官場是權力的遊戲場，想要把權，唯一的方法就是把上面的人鬥下來。看了明朝前前後後鬥了幾百年，再看現在所謂藍綠惡鬥竟然是驚人的相似，沒什麼新意。</p>
+<p>鬥爭不單單是壞蛋的權利，我發現好人也要鬥，不只要鬥，還要比壞蛋更能鬥。因為你若鬥不倒壞蛋，就會被壞蛋鬥倒，匡世濟民的夢想也就等於付諸流水，有句話說『清官要比貪官更奸』就是在說這個道理。</p>
+<p>書裏頭最著名的例子莫過於徐階與嚴嵩的戰爭，奸相嚴嵩把持朝政的時候，徐階還只是個憤青，這場戰爭從徐階年輕時期開始，持續鬥了將近二十年，詭詐橫行，智計迭生，最終徐階靠著一記黑狀，用現在話說就是抹黑誣告，終於鬥垮嚴嵩，為接下來的名臣時代鋪下浩浩坦途。我認為這是『明朝那些事兒』的一個高潮，每次看到這裡，我都不禁感嘆，徐階真的很不容易阿。一位名臣要實現濟世的夢想，單靠正直善良的心是不夠的，你得用自己的雙手去把壞蛋拉下來才行，即使這個手段不太光明。好像火鳳燎原中曹操說的:「弄權，只為把權，力壓奸臣。」</p>
+<p>縱看明朝權臣，每個都是萬中選一的鬥爭好手，只是有人掌權了之後，就開始貪汙受賄，嚴嵩魏忠賢是也，有人掌權之後則開始努力幹活兒，張居正高拱是也。鬥完了，是好人抑或是壞人，最終還是存乎一心。</p>
+<h2 id="qing-guan-bu-yi-ding-hao">清官不一定好</h2>
+<p>說到好人壞人，評價一位歷史人物並不容易，這不是道德上貼個賢愚忠奸的標籤就好。比如說，讀過『明朝那些事兒』之後，我才懂得「清官」跟「能臣」是兩碼子事。</p>
+<p>書上有個兩位鮮明對比的人物，一位是海瑞，一位是張居正。</p>
+<p>海瑞為官清廉，直言敢諫，但是死腦子不知變通，俗稱正義魔人。道德標準搬出來，所有看不順眼的人都罵。要知道明朝的官俸極低，官員大多會有些灰色收入，能達到海瑞的完美道德標準者幾希。海瑞面對這樣的官場，除了痛罵，還是痛罵，不惜與整個文官集團為敵，最終落得曲高和寡，勢單力孤。他是個清官，卻沒有什麼用。</p>
+<p>相對的張居正就務實圓滑的多，他是個能臣，卻不是清官。一條鞭法改革，一方面增加了國庫收入，也沒有完全剝去官員們的油水。他很明白不可能要求所有的人都道德完美，想成事就必須有所妥協。張居正自己有生活奢侈的問題，也有專權獨斷的問題，但是張居正才真正扭轉了整個大明王朝的命運。</p>
+<p>關於清廉與能力，還有個例子可以講。高拱擔任首輔時兩廣發生叛亂，我原文摘錄如下，高拱這樣說: 「我撥一百萬兩軍餉給殷正茂，他至少貪污一半，但以他的才能，足以平定叛亂，如果我派一個清廉的人去，或許他一兩也不貪，但是辦不成事，朝廷就要多加軍餉，這麼拖下去，幾百萬兩也解決不了問題。」這席話給我相當大的震撼，無能的官員的確比貪汙還要可怕。</p>
+<h2 id="qi-ta">其他</h2>
+<p>其實『明朝那些事兒』這本書的內容非常豐富，短短一篇心得只能寫出一二。明朝三百年，皇帝、權臣、宦官一個換過一個，無數英雄競折腰，但是要論我最喜歡的內容，卻不是這些呼風喚雨的大人物，而是只佔少數篇幅的明朝的平民生活、科舉考試、李時珍的本草綱目、鄭和下西洋等等與政治無關的事。</p>
+<p>最後一點我比較不喜歡的部分，是本書意外地用了很長的篇幅在講萬曆年間的對日戰爭，而且通篇宣揚大中華主義，講沒三兩句就要酸一下日本，提到日本人就加個鬼子之類的稱號，有失氣度。</p>
+</section>
+
+  <hr />
+
+  <!-- Post Taxonomies -->
+  
+<footer class="mt-12 flex flex-col">
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  
+  <div class="mb-2 flex flex-wrap">
+    <span class="block-bg mb-1.5 mr-1.5 rounded-lg px-5 py-1.5">Tags </span>
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://chchwy.github.io/tags/li-shi/"
+      >歷史</a
+    >
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://chchwy.github.io/tags/du-shu/"
+      >讀書</a
+    >
+    
+  </div>
+  
+</footer>
+
+<!---->
+
+  <!-- Post Nav -->
+  
+<nav class="block-bg mt-12 flex rounded-lg text-lg">
+  
+  <a
+    class="block-hover-mask flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;book-big-say-disign-pattern&#x2F;"
+    ><span class="mr-1.5">←</span><span>讀書: 大話設計模式</span></a
+  >
+  <!---->
+  
+  <a
+    class="block-hover-mask ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;do-you-think-what-you-think-you-think&#x2F;"
+    ><span>讀書: 你以為你以為的就是你以為的嗎?</span><span class="ml-1.5">→</span></a
+  >
+  
+</nav>
+
+<!---->
+
+  <!-- Comment -->
+  <!---->
+  
+<div class="giscus mt-12"></div>
+<script src="https://giscus.app/client.js"
+  data-repo="chchwy/chchwy.github.io"
+  data-repo-id="MDEwOlJlcG9zaXRvcnk1MjQ0MDkzNg=="
+  data-category="Announcements"
+  data-category-id="DIC_kwDOAyAvaM4Cglg7"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="top"
+  data-theme="preferred_color_scheme"
+  data-lang="zh-TW"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async>
+</script>
+<!---->
+<!---->
+  
+</article>
+
+    </main>
+
+    <footer class="mx-auto flex max-w-3xl flex-wrap items-center px-8 py-4 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+    &copy; 2024 -  2025
+    <a class="link" href="https://chchwy.github.io"
+      >chchwy</a
+    >
+     |<!---->
+    <!---->
+    <a class="link" href="https:&#x2F;&#x2F;creativecommons.org&#x2F;licenses&#x2F;by-sa&#x2F;4.0&#x2F;deed" rel="noopener" target="_blank">
+      CC BY-SA 4.0
+    </a>
+    <!---->
+    
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <a class="link mr-6 lg:ml-6" href="https://www.getzola.org/" rel="noopener" target="_blank"
+      >Powered by Zola</a
+    >
+    <a class="link" href="https://github.com/st1020/kita" rel="noopener" target="_blank">✎ Kita</a>
+  </div>
+</footer>
+<div class="mx-auto flex items-center max-w-3xl px-8 py-4">
+  <!-- Inizio Codice ShinyStat -->
+  <script src="//codice.shinystat.com/cgi-bin/getcod.cgi?USER=chchwy"></script>
+  <noscript>
+  <a href="https://www.shinystat.com/it/" target="_top">
+  <img src="//www.shinystat.com/cgi-bin/shinystat.cgi?USER=chchwy" alt="Statistiche web" style="border:0px"/></a>
+  </noscript>
+  <!-- Fine Codice ShinyStat -->
+</div>
+
+  </body>
+</html>

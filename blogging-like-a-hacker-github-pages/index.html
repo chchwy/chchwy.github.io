@@ -1,0 +1,358 @@
+<!doctype html>
+<html class="not-ready lg:text-base" lang="zh-tw">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title -->
+  <title>
+    博客當如駭客 - Github Pages &amp; Jekyll - 調和的靈感
+  </title>
+
+  <!-- Meta -->
+  <meta name="theme-color" />
+
+  <!-- Author -->
+  
+  <meta name="description" content="博客當如駭客 - Github Pages &amp; Jekyll" />
+  <meta name="author" content="博客當如駭客 - Github Pages &amp;amp; Jekyll" />
+  
+
+  <!-- CSS & JS -->
+  <link rel="preload stylesheet" as="style" href="https://chchwy.github.io/main.css" />
+  <style>
+    :root {
+      --bg: #f0e7dd;
+      --bg-dark: #18181b;
+      --header: #e4dbd2;
+      --header-dark: #27272a;
+    }
+    img[src*='#book'] { float: left; margin-right: 1em; }
+    img[src*='#right'] { float: right; margin-left: 1em; }
+    img[src*='#center'] { display: block; margin: auto; }
+  </style>
+
+  
+
+  <!-- Dark Icon -->
+  <link rel="preload" as="image" href="https://chchwy.github.io/icons/theme.svg" />
+
+  <!-- Math -->
+  
+  <!---->
+
+  <!-- Mermaid -->
+  
+  <!---->
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://chchwy.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://chchwy.github.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://chchwy.github.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://chchwy.github.io/favicon-16x16.png" />
+  <link rel="manifest" href="https://chchwy.github.io/site.webmanifest" />
+
+  <!-- Feeds -->
+  
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;blogging-like-a-hacker-github-pages&#x2F;" />
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header
+  class="header fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
+>
+  <div class="mx-auto w-full max-w-4xl p-3 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center">
+        <a class="text-2xl font-semibold" href="https://chchwy.github.io">調和的靈感</a>
+        <div
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0] [background:url(./icons/theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+          role="button"
+          aria-label="Dark"
+        ></div>
+      </div>
+      
+      <div
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+        role="button"
+        aria-label="Menu"
+      ></div>
+      
+    </div>
+    <script>
+      // base
+      const htmlClass = document.documentElement.classList;
+      setTimeout(() => {
+        htmlClass.remove("not-ready");
+      }, 10);
+
+      // mobile menu
+      const btnMenu = document.querySelector(".btn-menu");
+      btnMenu?.addEventListener("click", () => {
+        htmlClass.toggle("open");
+      });
+
+      // dark theme
+      const setDark = (isDark) => {
+        if (isDark) {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+          htmlClass.add("dark");
+        } else {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+          htmlClass.remove("dark");
+        }
+        localStorage.setItem("dark", isDark);
+      };
+
+      // init
+      const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      if (htmlClass.contains("dark")) {
+        setDark(true);
+      } else {
+        const darkVal = localStorage.getItem("dark");
+        setDark(darkVal ? darkVal === "true" : darkScheme.matches);
+      }
+
+      // listen system
+      darkScheme.addEventListener("change", (event) => {
+        setDark(event.matches);
+      });
+
+      // manual switch
+      const btnDark = document.querySelector(".btn-dark");
+      btnDark.addEventListener("click", () => {
+        setDark(localStorage.getItem("dark") !== "true");
+      });
+    </script>
+    
+    <nav class="flex w-full items-center lg:w-auto">
+      <ul
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0"
+      >
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/archive"
+            >Archive</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/tags"
+            >Tags</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/about"
+            >About</a
+          >
+        </li>
+        
+      </ul>
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl break-words px-4 pb-16 pt-32 dark:prose-invert"
+    >
+      
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">博客當如駭客 - Github Pages &amp; Jekyll</h1>
+    <div class="text-sm antialiased opacity-60">
+  
+  <time>2012-12-16</time>
+  <span class="mx-1">&middot;</span>
+  <span>5min</span>
+  <!---->
+  
+  <!---->
+  
+  <span class="mx-1">&middot;</span>
+  <span>chchwy</span>
+  
+</div>
+
+  </header>
+
+  
+
+  <!-- TOC -->
+  <!---->
+<div class="block-bg mb-12 flex rounded-lg p-2 text-lg">
+  <details>
+    <summary class="cursor-pointer py-1 pl-4">
+      <span>Table of Contents</span>
+    </summary>
+    <div class="px-2">
+      <ul>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://chchwy.github.io/blogging-like-a-hacker-github-pages/#wei-shen-mo-yong-github-pages"
+            >為什麼用 Github Pages?</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://chchwy.github.io/blogging-like-a-hacker-github-pages/#markdown"
+            >Markdown</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://chchwy.github.io/blogging-like-a-hacker-github-pages/#ru-he-kai-shi"
+            >如何開始</a
+          >
+          
+        </li>
+        
+      </ul>
+    </div>
+  </details>
+</div>
+
+<!---->
+
+  <!-- Content -->
+  <section><h2 id="wei-shen-mo-yong-github-pages">為什麼用 Github Pages?</h2>
+<p>遇見 Github Page 之前我定居在 <a href="http://chchwy.blogspot.tw/" title="Blogger 調和的靈感">Blogger</a> ，斷斷續續不是很認真的寫了四年左右的博客，除了一些小缺點，像貼程式碼時老是跟我抱怨<code>&lt;iostream&gt;</code>不是合法的 HTML 標籤外，還算滿意 Blogger 的服務。畢竟要找到比 Blogger 更好的平台也不容易。</p>
+<p>但是身為一個程式設計師，總想要對自己的 Blog 有更多、更多的控制權。我曾經試著自己架設伺服器，不過養機器實在太過麻煩，離開學校之後博客該何去何從也沒個底，就不了了之。</p>
+<p>所以當我看見 <a href="http://pages.github.com/" title="Github Pages">Github Pages</a> 時眼睛一亮，馬上就發覺這就是我想要的博客系統:</p>
+<p><img src="/img/kumamoto-542410_1280.jpg" alt="Dawn" /></p>
+<p>首先，Github Pages 給予我完全控制頁面的權力，省卻了管理主機的麻煩。
+Github本身作為全球性的代碼託管服務商，不需要擔心服務品質。</p>
+<p>不同於其他的博客系統，後端總要有一套 PHP+MySQL 之類的運行環境即時運算頁面，
+Github Pages 後端採用了一個叫作 <a href="http://jekyllrb.com/" title="Jekyll">Jekyll</a> 的靜態網站產生器。
+Jekyll 一開始就將整個網站編譯成靜態HTML頁面，所以不用資料庫，也不用後端語言，對於網路空間的要求極低。博客這類好幾天才會更新一篇的網站，靜態編譯再適合不過了。</p>
+<p>但是靜態網站的缺點就是訪客沒辦法回應文章，必須倚賴第三方服務，好在<a href="http://disqus.com" title="Disqus">Disqus</a> 和 <a href="http://developers.facebook.com/docs/reference/plugins/comments/" title="Facebook comments">Facebook</a> 都提供這類網站評論的服務，申請一個很容易，我現在就是用Disqus。</p>
+<h2 id="markdown">Markdown</h2>
+<p>另一個我喜歡的特性就是可以用 Markdown 語法寫文章，不知道什麼是 Markdown 的朋友可以<a href="http://markdown.tw" title="Markdown Syntax">看看語法說明</a> 。用 Markdown 來寫文章太省力了，可讀性也很好，我不再需要為了文章的樣式跟 HTML 標籤瞎攪和，回歸單純寫作的樂趣，而且可以用我最鍾愛的文字編輯器 <a href="http://www.sublimetext.com/" title="Sublime Text">Sublime Text 2</a> 。</p>
+<p>想當然爾，Github Pages 一定是用 git 版本控制系統來管理博客，整個博客就是一個版本庫，因此我不用上網，可以先在本地端寫文章，寫好再推送上 Github 就好了。用了 git ，基本上不必擔心內容遺失，文章都有完整的歷史紀錄，多台電腦同步也很方便。</p>
+<p>還有一點，Jekyll 的標語是 Blogging Like a Hacker，聽起來很帥。XD</p>
+<h2 id="ru-he-kai-shi">如何開始</h2>
+<p>我在網路上搜尋了很多Jekyll/Github Pages教學，大部分不是寫的雜亂無章，就是有所缺漏， 最後總算找到一篇條理清晰的教學
+「<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html">搭建一个免费的，无限流量的Blog----github Pages和Jekyll入门</a>」，只能說阮一峰，不意外。
+裡面有個小錯誤需要更正，就是單純的個人博客不需要特別建立 gh-pages 分支， 直接放在主分支 master裡就可以了。</p>
+<p>只要有基本的 HTML/CSS 知識，和折騰的精神，可以來試試看Jekyll :D</p>
+</section>
+
+  <hr />
+
+  <!-- Post Taxonomies -->
+  
+<footer class="mt-12 flex flex-col">
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  
+  <div class="mb-2 flex flex-wrap">
+    <span class="block-bg mb-1.5 mr-1.5 rounded-lg px-5 py-1.5">Tags </span>
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://chchwy.github.io/tags/blog/"
+      >Blog</a
+    >
+    
+  </div>
+  
+</footer>
+
+<!---->
+
+  <!-- Post Nav -->
+  
+<nav class="block-bg mt-12 flex rounded-lg text-lg">
+  
+  <a
+    class="block-hover-mask flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;my-rd-alt-service&#x2F;"
+    ><span class="mr-1.5">←</span><span>寫在研發替代役面試之後</span></a
+  >
+  <!---->
+  
+  <a
+    class="block-hover-mask ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;xiao-ao-jiang-hu&#x2F;"
+    ><span>讀書: 笑傲江湖</span><span class="ml-1.5">→</span></a
+  >
+  
+</nav>
+
+<!---->
+
+  <!-- Comment -->
+  <!---->
+  
+<div class="giscus mt-12"></div>
+<script src="https://giscus.app/client.js"
+  data-repo="chchwy/chchwy.github.io"
+  data-repo-id="MDEwOlJlcG9zaXRvcnk1MjQ0MDkzNg=="
+  data-category="Announcements"
+  data-category-id="DIC_kwDOAyAvaM4Cglg7"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="top"
+  data-theme="preferred_color_scheme"
+  data-lang="zh-TW"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async>
+</script>
+<!---->
+<!---->
+  
+</article>
+
+    </main>
+
+    <footer class="mx-auto flex max-w-3xl flex-wrap items-center px-8 py-4 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+    &copy; 2024 -  2025
+    <a class="link" href="https://chchwy.github.io"
+      >chchwy</a
+    >
+     |<!---->
+    <!---->
+    <a class="link" href="https:&#x2F;&#x2F;creativecommons.org&#x2F;licenses&#x2F;by-sa&#x2F;4.0&#x2F;deed" rel="noopener" target="_blank">
+      CC BY-SA 4.0
+    </a>
+    <!---->
+    
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <a class="link mr-6 lg:ml-6" href="https://www.getzola.org/" rel="noopener" target="_blank"
+      >Powered by Zola</a
+    >
+    <a class="link" href="https://github.com/st1020/kita" rel="noopener" target="_blank">✎ Kita</a>
+  </div>
+</footer>
+<div class="mx-auto flex items-center max-w-3xl px-8 py-4">
+  <!-- Inizio Codice ShinyStat -->
+  <script src="//codice.shinystat.com/cgi-bin/getcod.cgi?USER=chchwy"></script>
+  <noscript>
+  <a href="https://www.shinystat.com/it/" target="_top">
+  <img src="//www.shinystat.com/cgi-bin/shinystat.cgi?USER=chchwy" alt="Statistiche web" style="border:0px"/></a>
+  </noscript>
+  <!-- Fine Codice ShinyStat -->
+</div>
+
+  </body>
+</html>
