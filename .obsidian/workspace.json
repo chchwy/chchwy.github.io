@@ -13,15 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/2024-07-05-pragmatic60-keyboard.md",
+                "file": "content/2024-08-15-ftp-upload-command-line.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2024-07-05-pragmatic60-keyboard"
+              "title": "2024-08-15-ftp-upload-command-line"
+            }
+          },
+          {
+            "id": "248475090ca79498",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Untitled.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Untitled"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -174,12 +189,13 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "345ff7f566861eff",
+  "active": "248475090ca79498",
   "lastOpenFiles": [
-    "content/2021-08-18-compression-compare.md",
     "content/2024-08-15-ftp-upload-command-line.md",
-    "content/2024-08-15-ftp-upload",
+    "Untitled.md",
     "content/2024-07-05-pragmatic60-keyboard.md",
+    "content/2021-08-18-compression-compare.md",
+    "content/2024-08-15-ftp-upload",
     "public/main.css",
     "public/img/pragmatic/switch.jpg",
     "public/img/pragmatic/keyboard.jpg",
