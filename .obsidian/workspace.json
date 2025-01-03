@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/pages/about.md",
+                "file": "content/2021-08-18-compression-compare.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "about"
+              "title": "2021-08-18-compression-compare"
             }
           }
         ]
@@ -170,16 +170,40 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "copilot:Copilot Chat": false
+      "obsidian-git:Open Git source control": false,
+      "copilot:Open Copilot Chat": false
     }
   },
   "active": "345ff7f566861eff",
   "lastOpenFiles": [
-    "content/pages/archive.md",
+    "content/2024-08-15-ftp-upload-command-line.md",
+    "content/2024-08-15-ftp-upload",
+    "content/2021-08-18-compression-compare.md",
+    "content/2024-07-05-pragmatic60-keyboard.md",
+    "public/main.css",
+    "public/img/pragmatic/switch.jpg",
+    "public/img/pragmatic/keyboard.jpg",
+    "public/img/pragmatic/6key.jpg",
+    "public/img/pragmatic/desk.jpg",
+    "public/img/pragmatic/box.jpg",
+    "public/img/book/what-you-think-is-what-you-think.jpg",
+    "public/img/book/the-productive-programmer.jpg",
+    "public/img/book/things-of-ming.jpg",
+    "public/img/book/the-4.jpg",
+    "public/img/book/story-sahara.jpg",
+    "public/img/pragmatic",
+    "public/img/book",
+    "public/img",
+    "public/icons",
+    "public/favicon.ico",
+    "public/app.css",
+    "public",
+    "public/processed_images",
+    "content/2021-08-10-cmake-basics.md",
     "content/pages/about.md",
+    "content/pages/archive.md",
     "content/2010-12-21-linux傳奇-rebel-code.md",
     "content/2010-09-04-專業php-5程式設計.md",
-    "content/2021-08-10-cmake-basics.md",
     "content/2010-11-29-精通-objectivec-20-程式設計.md",
     "content/2010-02-11-線性代數的世界.md",
     "content/2007-11-24-decimal-to-binary.md"
