@@ -2,7 +2,7 @@
 date: 2017-09-22
 title: Boost 極簡編譯法
 taxonomies:
-  tags: [Boost, C++]
+  tags: [C++]
 ---
 
 最近因為工作的緣故需要編譯 `Boost`。Boost 這套大名鼎鼎的 C++ Library 中，大多數的模組都是 header-only，意思是模組裡只有標頭檔(`*.hpp`) 沒有實現檔(`*.cpp`)，所以不需要編譯，引入(#include)標頭檔就可以直接用了。只有少部份模組需要先編譯，這裡紀錄一下編譯 Boost 的方法。

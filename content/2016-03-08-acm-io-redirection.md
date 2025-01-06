@@ -2,7 +2,7 @@
 date: 2016-03-08
 title: UVa 解題自動輸入測資
 taxonomies:
-  tags: [C++, UVa Oneline Judge]
+  tags: [C++, UVa Oneline Judge, 程式解題]
 ---
 
 解 ACM 題目的時候，測試資料都是走標準輸入流 `cin/scanf()/gets()`。當測試資料量很大的時候，手動鍵入測試資料很慢又浪費時間。我後來發現了一個技巧叫做 I/O 轉向 (I/O redirection) ，可以重新定義標準輸入流，省去手動鍵入測資的步驟。

@@ -3,7 +3,7 @@ date=2024-12-15
 title="用命令列操作FTP上傳檔案"
 draft = false
 [taxonomies]
-tags = ["開發日常", "code"]
+tags = ["開發日常", "code", "Troubleshooting"]
 +++
 
 最近碰到一個需求，要在 CI 流程的最後一步將檔案上傳到 FTP 伺服器上。我研究了一下，發現有好幾種作法，順手紀錄一下我試過可行的兩招。
