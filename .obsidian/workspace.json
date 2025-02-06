@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "3e2c06be1a263dbb",
+        "id": "d988c61f4c638d81",
         "type": "tabs",
         "children": [
           {
-            "id": "345ff7f566861eff",
+            "id": "5964cea28c304cf8",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/2019-08-14-chocolatey.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "2019-08-14-chocolatey"
+              "title": "New tab"
             }
           }
         ]
@@ -40,7 +36,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -52,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "ohtani",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -174,8 +171,12 @@
       "copilot:Open Copilot Chat": false
     }
   },
-  "active": "345ff7f566861eff",
+  "active": "5964cea28c304cf8",
   "lastOpenFiles": [
+    "content/2019-08-14-chocolatey.md",
+    "content/2025-01-06.md",
+    "Untitled.canvas",
+    "ohtani.jpg",
     "public/favicon-16x16.png",
     "content/2024-08-15-ftp-upload-command-line.md",
     "content/2025-01-03-ironman-2023-complete.md",
@@ -195,8 +196,6 @@
     "public/img/pragmatic/keyboard.jpg",
     "public/img/pragmatic/6key.jpg",
     "public/img/pragmatic/desk.jpg",
-    "public/img/pragmatic/box.jpg",
-    "public/img/book/what-you-think-is-what-you-think.jpg",
     "public/img/pragmatic",
     "public/img/book",
     "public/img",
