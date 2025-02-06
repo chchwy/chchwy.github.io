@@ -1,0 +1,371 @@
+<!doctype html>
+<html class="not-ready lg:text-base" lang="zh-tw">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title -->
+  <title>
+    寫 Powershell 解決 TortoiseGit 圖示消失問題 - 調和的靈感
+  </title>
+
+  <!-- Meta -->
+  <meta name="theme-color" />
+
+  <!-- Author -->
+  
+  <meta name="description" content="寫 Powershell 解決 TortoiseGit 圖示消失問題" />
+  <meta name="author" content="寫 Powershell 解決 TortoiseGit 圖示消失問題" />
+  
+
+  <!-- CSS & JS -->
+  <link rel="preload stylesheet" as="style" href="https://chchwy.github.io/main.css" />
+  <style>
+    :root {
+      --bg: #f0e7dd;
+      --bg-dark: #18181b;
+      --header: #e4dbd2;
+      --header-dark: #27272a;
+    }
+    img[src*='#book'] { float: left; margin-right: 1em; }
+    img[src*='#right'] { float: right; margin-left: 1em; }
+    img[src*='#center'] { display: block; margin: auto; }
+  </style>
+
+  
+
+  <!-- Dark Icon -->
+  <link rel="preload" as="image" href="https://chchwy.github.io/icons/theme.svg" />
+
+  <!-- Math -->
+  
+  <!---->
+
+  <!-- Mermaid -->
+  
+  <!---->
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://chchwy.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://chchwy.github.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://chchwy.github.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://chchwy.github.io/favicon-16x16.png" />
+  <link rel="manifest" href="https://chchwy.github.io/site.webmanifest" />
+
+  <!-- Feeds -->
+  
+  <!---->
+  
+  <!---->
+  
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;tortoise-dropbox-overlay&#x2F;" />
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header
+  class="header fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
+>
+  <div class="mx-auto w-full max-w-4xl p-3 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center">
+        <a class="text-2xl font-semibold" href="https://chchwy.github.io">調和的靈感</a>
+        <div
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0] [background:url(./icons/theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+          role="button"
+          aria-label="Dark"
+        ></div>
+      </div>
+      
+      <div
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+        role="button"
+        aria-label="Menu"
+      ></div>
+      
+    </div>
+    <script>
+      // base
+      const htmlClass = document.documentElement.classList;
+      setTimeout(() => {
+        htmlClass.remove("not-ready");
+      }, 10);
+
+      // mobile menu
+      const btnMenu = document.querySelector(".btn-menu");
+      btnMenu?.addEventListener("click", () => {
+        htmlClass.toggle("open");
+      });
+
+      // dark theme
+      const setDark = (isDark) => {
+        if (isDark) {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+          htmlClass.add("dark");
+        } else {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+          htmlClass.remove("dark");
+        }
+        localStorage.setItem("dark", isDark);
+      };
+
+      // init
+      const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      if (htmlClass.contains("dark")) {
+        setDark(true);
+      } else {
+        const darkVal = localStorage.getItem("dark");
+        setDark(darkVal ? darkVal === "true" : darkScheme.matches);
+      }
+
+      // listen system
+      darkScheme.addEventListener("change", (event) => {
+        setDark(event.matches);
+      });
+
+      // manual switch
+      const btnDark = document.querySelector(".btn-dark");
+      btnDark.addEventListener("click", () => {
+        setDark(localStorage.getItem("dark") !== "true");
+      });
+    </script>
+    
+    <nav class="flex w-full items-center lg:w-auto">
+      <ul
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0"
+      >
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/archive"
+            >Archive</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/tags"
+            >Tags</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/about"
+            >About</a
+          >
+        </li>
+        
+      </ul>
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl break-words px-4 pb-16 pt-32 dark:prose-invert"
+    >
+      
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">寫 Powershell 解決 TortoiseGit 圖示消失問題</h1>
+    <div class="text-sm antialiased opacity-60">
+  
+  <time>2021-05-17</time>
+  <span class="mx-1">&middot;</span>
+  <span>4min</span>
+  <!---->
+  
+  <!---->
+  
+  <span class="mx-1">&middot;</span>
+  <span>chchwy</span>
+  
+</div>
+
+  </header>
+
+  
+
+  <!-- TOC -->
+  <!---->
+<div class="block-bg mb-12 flex rounded-lg p-2 text-lg">
+  <details>
+    <summary class="cursor-pointer py-1 pl-4">
+      <span>Table of Contents</span>
+    </summary>
+    <div class="px-2">
+      <ul>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://chchwy.github.io/tortoise-dropbox-overlay/#can-kao-wang-ye"
+            >參考網頁</a
+          >
+          
+        </li>
+        
+      </ul>
+    </div>
+  </details>
+</div>
+
+<!---->
+
+  <!-- Content -->
+  <section><p>幾天前，小烏龜 TortoiseGit 圖示消失的問題又發生了，我在檔案總管上看不見 git 狀態，很不方便。</p>
+<p><img src="/img/icon-overlay.png" alt="icon-overlay" /></p>
+<p>上圖是正常狀態，有綠色小勾勾顯示 git 狀態。</p>
+<p>發生的原因，就是顯示綠色勾勾的那個機制: Windows Icon Overlay 有數量限制 16 個。這 16 個位置是所有應用程式共享的，包括 Dropbox、TortoiseGit、OneDrive 等等。</p>
+<p>如果超過了 16 個怎麼辦？名字排序，顯示前 16 個。</p>
+<p>我去打開 Windows Icon Overlay 的清單，發現 Dropbox 一隻程式就佔用了<strong>10 個位置</strong>，而且<strong>非常無恥</strong>的在名字前面插三個空格，確保他家的圖示一定會佔住最前面的位置。所以一旦電腦上同時裝了 Dropbox + TortoiseGit，小烏龜的圖示就有很大的機會被擠到 16 個有效位置以外，無法正確顯示。</p>
+<p>網路上已經很多人貼解法了，改註冊表，調整順序，都很詳細，我就不贅述了：</p>
+<ul>
+<li><a href="https://dotblogs.com.tw/kevinya/2017/07/24/180237" title="TorsoieGit 跟 Dropbox 相衝">Dropbox與小烏龜Tortorise的圖示icon相衝問題解決</a></li>
+<li><a href="https://www.garethjmsaunders.co.uk/2015/03/22/managing-overlay-icons-for-dropbox-and-tortoisesvn-and-tortoisegit/">Managing overlay icons for Dropbox and TortoiseSVN and TortoiseGit</a></li>
+</ul>
+<p>但是註冊表改好後，這個問題仍然會不定時出現。因為 Dropbox 每次更新版本後會把註冊表改回去！</p>
+<p>所以我就在想能不能把解法自動化，寫成程式?</p>
+<p>研究了一下，發現 Powershell 可以修改註冊表。就花了一點時間寫 Powershell:</p>
+<p>我發現 PowerShell 操作註冊表，跟操作檔案非常相似。</p>
+<ul>
+<li><code>Get-ChildItem</code>：列出註冊表子項目</li>
+<li><code>Remove-Item</code>：刪除註冊表</li>
+<li><code>Rename-Item</code>：重新命名</li>
+<li><code>Split-Path -leaf $path</code>：從完整路徑快速取出檔名</li>
+</ul>
+<p>註冊表路徑以 <code>HKLM:\</code> 或 <code>HKCU:\</code> 起頭。<code>HKLM:\</code> 表示 Local Machine， <code>HKCU:\</code> 表示 Current User。</p>
+<p>比如這個註冊表路徑</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers
+</span></code></pre>
+<p>在 powershell 裡面就要寫成這樣：</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers
+</span></code></pre>
+<p>以下是我的 PowerShell 腳本。砍掉比較少見的 Dropbox 圖示，留下必要的四個，再把無恥的三空格改成一個空格。確保他們的順序在 TortoiseGit 後面。</p>
+<script src="https://gist.github.com/chchwy/5418022d47fa49481f71ba481f54c02a.js"></script>
+<h2 id="can-kao-wang-ye">參考網頁</h2>
+<ul>
+<li><a href="https://dotblogs.com.tw/kevinya/2017/07/24/180237" title="TorsoieGit 跟 Dropbox 相衝">Dropbox與小烏龜Tortorise的圖示icon相衝問題解決</a></li>
+<li><a href="https://www.garethjmsaunders.co.uk/2015/03/22/managing-overlay-icons-for-dropbox-and-tortoisesvn-and-tortoisegit/">Managing overlay icons for Dropbox and TortoiseSVN and TortoiseGit</a></li>
+<li><a href="https://blog.netwrix.com/2018/09/11/how-to-get-edit-create-and-delete-registry-keys-with-powershell/">How to Get, Edit, Create and Delete Registry Keys with PowerShell</a></li>
+<li><a href="https://docs.microsoft.com/zh-tw/powershell/scripting/samples/working-with-registry-keys?view=powershell-7.1">PowerShell: 使用登錄機碼</a></li>
+</ul>
+</section>
+
+  <hr />
+
+  <!-- Post Taxonomies -->
+  
+<footer class="mt-12 flex flex-col">
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  
+  <div class="mb-2 flex flex-wrap">
+    <span class="block-bg mb-1.5 mr-1.5 rounded-lg px-5 py-1.5">Tags </span>
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://chchwy.github.io/tags/powershell/"
+      >PowerShell</a
+    >
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://chchwy.github.io/tags/troubleshooting/"
+      >Troubleshooting</a
+    >
+    
+  </div>
+  
+</footer>
+
+<!---->
+
+  <!-- Post Nav -->
+  
+<nav class="block-bg mt-12 flex rounded-lg text-lg">
+  
+  <a
+    class="block-hover-mask flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;python-on-windows&#x2F;"
+    ><span class="mr-1.5">←</span><span>Windows 電腦切換 Python 2&#x2F;3 版本</span></a
+  >
+  <!---->
+  
+  <a
+    class="block-hover-mask ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;cmake-basics&#x2F;"
+    ><span>CMake 快速上手：跨平台 C++ 專案建置</span><span class="ml-1.5">→</span></a
+  >
+  
+</nav>
+
+<!---->
+
+  <!-- Comment -->
+  <!---->
+  
+<div class="giscus mt-12"></div>
+<script src="https://giscus.app/client.js"
+  data-repo="chchwy/chchwy.github.io"
+  data-repo-id="MDEwOlJlcG9zaXRvcnk1MjQ0MDkzNg=="
+  data-category="Announcements"
+  data-category-id="DIC_kwDOAyAvaM4Cglg7"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="top"
+  data-theme="preferred_color_scheme"
+  data-lang="zh-TW"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async>
+</script>
+<!---->
+<!---->
+  
+</article>
+
+    </main>
+
+    <footer class="mx-auto flex max-w-3xl flex-wrap items-center px-8 py-4 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+    &copy; 2024 -  2025
+    <a class="link" href="https://chchwy.github.io"
+      >chchwy</a
+    >
+     |<!---->
+    <!---->
+    <a class="link" href="https:&#x2F;&#x2F;creativecommons.org&#x2F;licenses&#x2F;by-sa&#x2F;4.0&#x2F;deed" rel="noopener" target="_blank">
+      CC BY-SA 4.0
+    </a>
+    <!---->
+    
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <a class="link mr-6 lg:ml-6" href="https://www.getzola.org/" rel="noopener" target="_blank"
+      >Powered by Zola</a
+    >
+    <a class="link" href="https://github.com/st1020/kita" rel="noopener" target="_blank">✎ Kita</a>
+  </div>
+</footer>
+<div class="mx-auto flex items-center max-w-3xl px-8 py-4">
+  <!-- Inizio Codice ShinyStat -->
+  <script src="//codice.shinystat.com/cgi-bin/getcod.cgi?USER=chchwy"></script>
+  <noscript>
+  <a href="https://www.shinystat.com/it/" target="_top">
+  <img src="//www.shinystat.com/cgi-bin/shinystat.cgi?USER=chchwy" alt="Statistiche web" style="border:0px"/></a>
+  </noscript>
+  <!-- Fine Codice ShinyStat -->
+</div>
+
+  </body>
+</html>

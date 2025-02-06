@@ -1,0 +1,400 @@
+<!doctype html>
+<html class="not-ready lg:text-base" lang="zh-tw">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title -->
+  <title>
+    用命令列操作FTP上傳檔案 - 調和的靈感
+  </title>
+
+  <!-- Meta -->
+  <meta name="theme-color" />
+
+  <!-- Author -->
+  
+  <meta name="description" content="用命令列操作FTP上傳檔案" />
+  <meta name="author" content="用命令列操作FTP上傳檔案" />
+  
+
+  <!-- CSS & JS -->
+  <link rel="preload stylesheet" as="style" href="https://chchwy.github.io/main.css" />
+  <style>
+    :root {
+      --bg: #f0e7dd;
+      --bg-dark: #18181b;
+      --header: #e4dbd2;
+      --header-dark: #27272a;
+    }
+    img[src*='#book'] { float: left; margin-right: 1em; }
+    img[src*='#right'] { float: right; margin-left: 1em; }
+    img[src*='#center'] { display: block; margin: auto; }
+  </style>
+
+  
+
+  <!-- Dark Icon -->
+  <link rel="preload" as="image" href="https://chchwy.github.io/icons/theme.svg" />
+
+  <!-- Math -->
+  
+  <!---->
+
+  <!-- Mermaid -->
+  
+  <!---->
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://chchwy.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://chchwy.github.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://chchwy.github.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://chchwy.github.io/favicon-16x16.png" />
+  <link rel="manifest" href="https://chchwy.github.io/site.webmanifest" />
+
+  <!-- Feeds -->
+  
+  <!---->
+  
+  <!---->
+  
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;ftp-upload-command-line&#x2F;" />
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header
+  class="header fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
+>
+  <div class="mx-auto w-full max-w-4xl p-3 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center">
+        <a class="text-2xl font-semibold" href="https://chchwy.github.io">調和的靈感</a>
+        <div
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0] [background:url(./icons/theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+          role="button"
+          aria-label="Dark"
+        ></div>
+      </div>
+      
+      <div
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+        role="button"
+        aria-label="Menu"
+      ></div>
+      
+    </div>
+    <script>
+      // base
+      const htmlClass = document.documentElement.classList;
+      setTimeout(() => {
+        htmlClass.remove("not-ready");
+      }, 10);
+
+      // mobile menu
+      const btnMenu = document.querySelector(".btn-menu");
+      btnMenu?.addEventListener("click", () => {
+        htmlClass.toggle("open");
+      });
+
+      // dark theme
+      const setDark = (isDark) => {
+        if (isDark) {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+          htmlClass.add("dark");
+        } else {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+          htmlClass.remove("dark");
+        }
+        localStorage.setItem("dark", isDark);
+      };
+
+      // init
+      const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      if (htmlClass.contains("dark")) {
+        setDark(true);
+      } else {
+        const darkVal = localStorage.getItem("dark");
+        setDark(darkVal ? darkVal === "true" : darkScheme.matches);
+      }
+
+      // listen system
+      darkScheme.addEventListener("change", (event) => {
+        setDark(event.matches);
+      });
+
+      // manual switch
+      const btnDark = document.querySelector(".btn-dark");
+      btnDark.addEventListener("click", () => {
+        setDark(localStorage.getItem("dark") !== "true");
+      });
+    </script>
+    
+    <nav class="flex w-full items-center lg:w-auto">
+      <ul
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0"
+      >
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/archive"
+            >Archive</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/tags"
+            >Tags</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/about"
+            >About</a
+          >
+        </li>
+        
+      </ul>
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl break-words px-4 pb-16 pt-32 dark:prose-invert"
+    >
+      
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">用命令列操作FTP上傳檔案</h1>
+    <div class="text-sm antialiased opacity-60">
+  
+  <time>2024-12-15</time>
+  <span class="mx-1">&middot;</span>
+  <span>3min</span>
+  <!---->
+  
+  <!---->
+  
+  <span class="mx-1">&middot;</span>
+  <span>chchwy</span>
+  
+</div>
+
+  </header>
+
+  
+
+  <!-- TOC -->
+  <!---->
+<div class="block-bg mb-12 flex rounded-lg p-2 text-lg">
+  <details>
+    <summary class="cursor-pointer py-1 pl-4">
+      <span>Table of Contents</span>
+    </summary>
+    <div class="px-2">
+      <ul>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://chchwy.github.io/ftp-upload-command-line/#fang-fa-yi-windowsnei-jian-de-ftpzhi-ling"
+            >方法一：Windows內建的ftp指令</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://chchwy.github.io/ftp-upload-command-line/#fang-fa-er-shi-yong-curl"
+            >方法二：使用 cURL</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://chchwy.github.io/ftp-upload-command-line/#jie-lun"
+            >結論</a
+          >
+          
+        </li>
+        
+      </ul>
+    </div>
+  </details>
+</div>
+
+<!---->
+
+  <!-- Content -->
+  <section><p>最近碰到一個需求，要在 CI 流程的最後一步將檔案上傳到 FTP 伺服器上。我研究了一下，發現有好幾種作法，順手紀錄一下我試過可行的兩招。</p>
+<h2 id="fang-fa-yi-windowsnei-jian-de-ftpzhi-ling">方法一：Windows內建的ftp指令</h2>
+<p>原來 Windows 作業系統本身內建了 <code>ftp</code> 指令，可以操作 FTP 上傳下載。</p>
+<p>這個 <code>ftp</code> 指令原本是互動式的，但是它也可以接收一個指令檔，檔案裡預先寫好一連串操作步驟，非常適合給 CI 使用。</p>
+<p>比如說，我想要上傳檔案到 IP 位址為 192.168.99.99 的 FTP 伺服器：</p>
+<pre data-lang="bat" style="background-color:#2b303b;color:#c0c5ce;" class="language-bat "><code class="language-bat" data-lang="bat"><span style="color:#b48ead;">echo</span><span> open </span><span style="color:#d08770;">192</span><span>.</span><span style="color:#d08770;">168</span><span>.</span><span style="color:#d08770;">99</span><span>.</span><span style="color:#d08770;">99</span><span>&gt; ftp_commands.txt
+</span><span style="color:#b48ead;">echo </span><span>%</span><span style="color:#bf616a;">FTP_USER</span><span>%&gt;&gt; ftp_commands.txt
+</span><span style="color:#b48ead;">echo </span><span>%</span><span style="color:#bf616a;">FTP_PASSWORD</span><span>%&gt;&gt; ftp_commands.txt
+</span><span style="color:#b48ead;">echo</span><span> binary&gt;&gt; ftp_commands.txt
+</span><span style="color:#b48ead;">echo</span><span> cd /Your/Server/Directory&gt;&gt; ftp_commands.txt
+</span><span style="color:#b48ead;">echo</span><span> send YOUR_LOCAL_FILE&gt;&gt; ftp_commands.txt
+</span><span style="color:#b48ead;">echo</span><span> bye&gt;&gt; ftp_commands.txt
+</span><span>
+</span><span style="color:#b48ead;">ftp</span><span> -d -s:ftp_commands.txt
+</span><span style="color:#b48ead;">del</span><span> ftp_commands.txt
+</span></code></pre>
+<p>拆解這段程式碼的運作：</p>
+<p>首先用<code>echo</code>指令把每個FTP操作步驟寫入<code>ftp_commands.txt</code>檔案，一行一個指令，就像自動化腳本：</p>
+<ul>
+<li><code>open IP</code> 連線到 FTP 伺服器，</li>
+<li>接下來兩行是帳號密碼，用環境變數<code>%FTP_USER%</code> <code>%FTP_PASSWORD%</code>保護敏感資訊</li>
+<li><code>binary</code> 設定傳輸模式為二進位模式</li>
+<li><code>cd</code> 切換到指定目錄</li>
+<li><code>send</code> 指令執行檔案上傳</li>
+<li><code>bye</code> 最後關閉連線。</li>
+</ul>
+<p>讀取指令檔並執行: <code>ftp -d -s:ftp_commands.txt</code> <br/>
+清理檔案 <code>del ftp_commands.txt</code></p>
+<h2 id="fang-fa-er-shi-yong-curl">方法二：使用 cURL</h2>
+<p>萬能瑞士刀 <code>curl</code> 也可以操作FTP上傳：</p>
+<pre data-lang="bat" style="background-color:#2b303b;color:#c0c5ce;" class="language-bat "><code class="language-bat" data-lang="bat"><span>curl -T &quot;</span><span style="color:#a3be8c;">YOUR_LOCAL_FILE</span><span>&quot;</span><span style="color:#96b5b4;">^
+</span><span>    --user &quot;</span><span style="color:#a3be8c;">FTP_USER:FTP_PASSWORD</span><span>&quot;</span><span style="color:#96b5b4;">^
+</span><span>    &quot;</span><span style="color:#a3be8c;">ftp://192.168.99.99/Your/Directory/UPLOADED_FILE</span><span>&quot;</span><span style="color:#96b5b4;">^
+</span><span>    --</span><span style="color:#b48ead;">ftp</span><span>-create-dirs
+</span></code></pre>
+<p>這個指令做的事情是一樣的：</p>
+<ul>
+<li><code>-T YOUR_LOCAL_FILE</code> 指定要上傳的本地端檔案</li>
+<li><code>--user</code> 帳號密碼</li>
+<li><code>ftp:/SERVER_IP/Your/Directory/UPLOADED_FILE</code> 指定伺服器 IP 位址以及上傳路徑</li>
+<li><code>--ftp-create-dirs</code> 如果上傳路徑中缺了任何目錄，自動建立目錄</li>
+</ul>
+<h2 id="jie-lun">結論</h2>
+<p>這兩個方法都可以用於 FTP 檔案上傳。<code>ftp</code> 是遠古時代就存在的指令，<code>cURL</code> 則在Windows 10 17063之後成為作業系統的預裝指令之一，所以兩者都內建。</p>
+<p>跨平台方面：<code>ftp</code>指令是Windows限定，<code>curl</code>可以跨平台。</p>
+<p>我最終採用 curl，指令更簡潔，且 Windows &amp; macOS 可以用同一招上傳。</p>
+</section>
+
+  <hr />
+
+  <!-- Post Taxonomies -->
+  
+<footer class="mt-12 flex flex-col">
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  
+  <div class="mb-2 flex flex-wrap">
+    <span class="block-bg mb-1.5 mr-1.5 rounded-lg px-5 py-1.5">Tags </span>
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://chchwy.github.io/tags/kai-fa-ri-chang/"
+      >開發日常</a
+    >
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://chchwy.github.io/tags/code/"
+      >code</a
+    >
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://chchwy.github.io/tags/troubleshooting/"
+      >Troubleshooting</a
+    >
+    
+  </div>
+  
+</footer>
+
+<!---->
+
+  <!-- Post Nav -->
+  
+<nav class="block-bg mt-12 flex rounded-lg text-lg">
+  
+  <a
+    class="block-hover-mask flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;pragmatic60-keyboard&#x2F;"
+    ><span class="mr-1.5">←</span><span>務實60分離式鍵盤 四個月使用心得</span></a
+  >
+  <!---->
+  
+  <a
+    class="block-hover-mask ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;ironman-2023-complete&#x2F;"
+    ><span>2023鐵人賽完賽心得: Qt6跨平台開發系列</span><span class="ml-1.5">→</span></a
+  >
+  
+</nav>
+
+<!---->
+
+  <!-- Comment -->
+  <!---->
+  
+<div class="giscus mt-12"></div>
+<script src="https://giscus.app/client.js"
+  data-repo="chchwy/chchwy.github.io"
+  data-repo-id="MDEwOlJlcG9zaXRvcnk1MjQ0MDkzNg=="
+  data-category="Announcements"
+  data-category-id="DIC_kwDOAyAvaM4Cglg7"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="top"
+  data-theme="preferred_color_scheme"
+  data-lang="zh-TW"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async>
+</script>
+<!---->
+<!---->
+  
+</article>
+
+    </main>
+
+    <footer class="mx-auto flex max-w-3xl flex-wrap items-center px-8 py-4 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+    &copy; 2024 -  2025
+    <a class="link" href="https://chchwy.github.io"
+      >chchwy</a
+    >
+     |<!---->
+    <!---->
+    <a class="link" href="https:&#x2F;&#x2F;creativecommons.org&#x2F;licenses&#x2F;by-sa&#x2F;4.0&#x2F;deed" rel="noopener" target="_blank">
+      CC BY-SA 4.0
+    </a>
+    <!---->
+    
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <a class="link mr-6 lg:ml-6" href="https://www.getzola.org/" rel="noopener" target="_blank"
+      >Powered by Zola</a
+    >
+    <a class="link" href="https://github.com/st1020/kita" rel="noopener" target="_blank">✎ Kita</a>
+  </div>
+</footer>
+<div class="mx-auto flex items-center max-w-3xl px-8 py-4">
+  <!-- Inizio Codice ShinyStat -->
+  <script src="//codice.shinystat.com/cgi-bin/getcod.cgi?USER=chchwy"></script>
+  <noscript>
+  <a href="https://www.shinystat.com/it/" target="_top">
+  <img src="//www.shinystat.com/cgi-bin/shinystat.cgi?USER=chchwy" alt="Statistiche web" style="border:0px"/></a>
+  </noscript>
+  <!-- Fine Codice ShinyStat -->
+</div>
+
+  </body>
+</html>

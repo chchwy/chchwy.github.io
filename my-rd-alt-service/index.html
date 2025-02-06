@@ -1,0 +1,359 @@
+<!doctype html>
+<html class="not-ready lg:text-base" lang="zh-tw">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title -->
+  <title>
+    寫在研發替代役面試之後 - 調和的靈感
+  </title>
+
+  <!-- Meta -->
+  <meta name="theme-color" />
+
+  <!-- Author -->
+  
+  <meta name="description" content="寫在研發替代役面試之後" />
+  <meta name="author" content="寫在研發替代役面試之後" />
+  
+
+  <!-- CSS & JS -->
+  <link rel="preload stylesheet" as="style" href="https://chchwy.github.io/main.css" />
+  <style>
+    :root {
+      --bg: #f0e7dd;
+      --bg-dark: #18181b;
+      --header: #e4dbd2;
+      --header-dark: #27272a;
+    }
+    img[src*='#book'] { float: left; margin-right: 1em; }
+    img[src*='#right'] { float: right; margin-left: 1em; }
+    img[src*='#center'] { display: block; margin: auto; }
+  </style>
+
+  
+
+  <!-- Dark Icon -->
+  <link rel="preload" as="image" href="https://chchwy.github.io/icons/theme.svg" />
+
+  <!-- Math -->
+  
+  <!---->
+
+  <!-- Mermaid -->
+  
+  <!---->
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://chchwy.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://chchwy.github.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://chchwy.github.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://chchwy.github.io/favicon-16x16.png" />
+  <link rel="manifest" href="https://chchwy.github.io/site.webmanifest" />
+
+  <!-- Feeds -->
+  
+  <!---->
+  
+  <!---->
+  
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;my-rd-alt-service&#x2F;" />
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header
+  class="header fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
+>
+  <div class="mx-auto w-full max-w-4xl p-3 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center">
+        <a class="text-2xl font-semibold" href="https://chchwy.github.io">調和的靈感</a>
+        <div
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0] [background:url(./icons/theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+          role="button"
+          aria-label="Dark"
+        ></div>
+      </div>
+      
+      <div
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+        role="button"
+        aria-label="Menu"
+      ></div>
+      
+    </div>
+    <script>
+      // base
+      const htmlClass = document.documentElement.classList;
+      setTimeout(() => {
+        htmlClass.remove("not-ready");
+      }, 10);
+
+      // mobile menu
+      const btnMenu = document.querySelector(".btn-menu");
+      btnMenu?.addEventListener("click", () => {
+        htmlClass.toggle("open");
+      });
+
+      // dark theme
+      const setDark = (isDark) => {
+        if (isDark) {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+          htmlClass.add("dark");
+        } else {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+          htmlClass.remove("dark");
+        }
+        localStorage.setItem("dark", isDark);
+      };
+
+      // init
+      const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      if (htmlClass.contains("dark")) {
+        setDark(true);
+      } else {
+        const darkVal = localStorage.getItem("dark");
+        setDark(darkVal ? darkVal === "true" : darkScheme.matches);
+      }
+
+      // listen system
+      darkScheme.addEventListener("change", (event) => {
+        setDark(event.matches);
+      });
+
+      // manual switch
+      const btnDark = document.querySelector(".btn-dark");
+      btnDark.addEventListener("click", () => {
+        setDark(localStorage.getItem("dark") !== "true");
+      });
+    </script>
+    
+    <nav class="flex w-full items-center lg:w-auto">
+      <ul
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0"
+      >
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/archive"
+            >Archive</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/tags"
+            >Tags</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/about"
+            >About</a
+          >
+        </li>
+        
+      </ul>
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl break-words px-4 pb-16 pt-32 dark:prose-invert"
+    >
+      
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">寫在研發替代役面試之後</h1>
+    <div class="text-sm antialiased opacity-60">
+  
+  <time>2012-10-21</time>
+  <span class="mx-1">&middot;</span>
+  <span>6min</span>
+  <!---->
+  
+  <!---->
+  
+  <span class="mx-1">&middot;</span>
+  <span>chchwy</span>
+  
+</div>
+
+  </header>
+
+  
+
+  <!-- TOC -->
+  <!---->
+<div class="block-bg mb-12 flex rounded-lg p-2 text-lg">
+  <details>
+    <summary class="cursor-pointer py-1 pl-4">
+      <span>Table of Contents</span>
+    </summary>
+    <div class="px-2">
+      <ul>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://chchwy.github.io/my-rd-alt-service/#xin-tai-wen-ti"
+            >心態問題</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://chchwy.github.io/my-rd-alt-service/#ren-shi-ye-jie"
+            >認識業界</a
+          >
+          
+        </li>
+        
+      </ul>
+    </div>
+  </details>
+</div>
+
+<!---->
+
+  <!-- Content -->
+  <section><p>去年此時，我正在辛苦的四處找研發替代役。一邊忙菸酒僧工作、一邊擔任電腦圖學課程助教、出作業改作業、還要四處面試的日子真的累，每天的精神幾乎完全消耗殆盡。</p>
+<p>每次我面試完，隔天就擺爛，就算進了 Lab 想掙扎一下，可是電腦開了就是不由自主地一直打電動。</p>
+<p>我後來在想，為什麼會那麼累呢?</p>
+<p>大概是因為面對面試官的逼問，多少會碰觸到一些心理上自己也不太願意面對的部分，在問跟答之間，逼著自己去思考這些平常不會思考的方向。算是一次強迫性的，對自己人生的回顧跟檢討吧。</p>
+<p>這樣說起來，那段時間辛苦歸辛苦，也是一次不錯的人生經驗。</p>
+<h2 id="xin-tai-wen-ti">心態問題</h2>
+<p>回顧去年的面試，我覺得我犯了一個心態錯誤，就是把「面試」當作「考試」來準備。</p>
+<p>面試官高高在上，單方面的向我出題，我答得好就有機會贏得工作。事實上，我覺得面試更像是媒合的過程，公司挑人，人也挑公司，雙方是對等的關係。</p>
+<p>所以除了公司方出題目考我外，我缺少相對充足的準備去反問工作職位內容和公司對待員工的方式。每當面試官問我：「請問你對公司有什麼問題嗎?」我只問了平常幾點下班，真是傻傻的。</p>
+<p>回家後我想了想，把應該問面試官的問題列下來:</p>
+<ul>
+<li>公司未來打算分配給我的工作是什麼? 會用到那些知識?</li>
+<li>會在哪個部門工作? 部門主要的工作內容? 主管帶團隊的風格?</li>
+<li>公司部門目前主打的方向? 請面試官聊聊他們的產品還有業務。</li>
+<li>上班時間? 平常幾點下班? 是否需要常態性加班? 有沒有加班費?</li>
+<li>研發替代役第二階段是否補滿? 什麼方式給? 有哪些津貼?</li>
+<li>公司有沒有培養新人的固定計畫?</li>
+<li>公司有沒有軟體開發流程? 有沒有版本控制系統? 有沒有 QA 團隊?</li>
+</ul>
+<p>每個問題都可以一直延伸下去，有禮貌的直接提問，不拐彎抹角。</p>
+<h2 id="ren-shi-ye-jie">認識業界</h2>
+<p>研發役期三年是很大的時間賭注，也是菜鳥工程師成長的黃金時期，萬一不認同公司的工作文化，連唯一抗拒方式「離職的權利」都被剝奪，大概會很痛苦。</p>
+<p>但是學生如我，沒待過業界，缺少第一手經驗來判斷公司好壞。所以我只能從書來窺探一些業界的事。</p>
+<p>首先是 <a href="https://www.books.com.tw/products/0010387385" title="Peopleware">Peopleware :腦力密集產業的人才管理之道</a> 確立了我心中評斷軟體公司的價值準則。還有嘴砲王約耳的<a href="https://www.tenlong.com.tw/products/9789866348341" title="約爾趣談軟體">『約耳談軟體』</a>和<a href="https://www.goodreads.com/book/show/9651113" title="約爾續談軟體">『約耳續談軟體』</a>，好笑又中肯。<a href="https://book.douban.com/subject/3319935/" title="走出軟體工廠">走出軟體工廠</a>寫出了一些華人軟體公司的面向。<a href="http://local.joelonsoftware.com/wiki/The_Joel_on_Software_Translation_Project:%E7%B4%84%E8%80%B3%E6%B8%AC%E8%A9%A6" title="約爾測試">程式之美</a> 開頭有概略的介紹軟體公司會有的基本職位。</p>
+</section>
+
+  <hr />
+
+  <!-- Post Taxonomies -->
+  
+<footer class="mt-12 flex flex-col">
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  
+  <div class="mb-2 flex flex-wrap">
+    <span class="block-bg mb-1.5 mr-1.5 rounded-lg px-5 py-1.5">Tags </span>
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://chchwy.github.io/tags/zhi-ya-fa-zhan/"
+      >職涯發展</a
+    >
+    
+  </div>
+  
+</footer>
+
+<!---->
+
+  <!-- Post Nav -->
+  
+<nav class="block-bg mt-12 flex rounded-lg text-lg">
+  
+  <a
+    class="block-hover-mask flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;do-you-think-what-you-think-you-think&#x2F;"
+    ><span class="mr-1.5">←</span><span>讀書: 你以為你以為的就是你以為的嗎?</span></a
+  >
+  <!---->
+  
+  <a
+    class="block-hover-mask ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;blogging-like-a-hacker-github-pages&#x2F;"
+    ><span>博客當如駭客 - Github Pages &amp; Jekyll</span><span class="ml-1.5">→</span></a
+  >
+  
+</nav>
+
+<!---->
+
+  <!-- Comment -->
+  <!---->
+  
+<div class="giscus mt-12"></div>
+<script src="https://giscus.app/client.js"
+  data-repo="chchwy/chchwy.github.io"
+  data-repo-id="MDEwOlJlcG9zaXRvcnk1MjQ0MDkzNg=="
+  data-category="Announcements"
+  data-category-id="DIC_kwDOAyAvaM4Cglg7"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="top"
+  data-theme="preferred_color_scheme"
+  data-lang="zh-TW"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async>
+</script>
+<!---->
+<!---->
+  
+</article>
+
+    </main>
+
+    <footer class="mx-auto flex max-w-3xl flex-wrap items-center px-8 py-4 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+    &copy; 2024 -  2025
+    <a class="link" href="https://chchwy.github.io"
+      >chchwy</a
+    >
+     |<!---->
+    <!---->
+    <a class="link" href="https:&#x2F;&#x2F;creativecommons.org&#x2F;licenses&#x2F;by-sa&#x2F;4.0&#x2F;deed" rel="noopener" target="_blank">
+      CC BY-SA 4.0
+    </a>
+    <!---->
+    
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <a class="link mr-6 lg:ml-6" href="https://www.getzola.org/" rel="noopener" target="_blank"
+      >Powered by Zola</a
+    >
+    <a class="link" href="https://github.com/st1020/kita" rel="noopener" target="_blank">✎ Kita</a>
+  </div>
+</footer>
+<div class="mx-auto flex items-center max-w-3xl px-8 py-4">
+  <!-- Inizio Codice ShinyStat -->
+  <script src="//codice.shinystat.com/cgi-bin/getcod.cgi?USER=chchwy"></script>
+  <noscript>
+  <a href="https://www.shinystat.com/it/" target="_top">
+  <img src="//www.shinystat.com/cgi-bin/shinystat.cgi?USER=chchwy" alt="Statistiche web" style="border:0px"/></a>
+  </noscript>
+  <!-- Fine Codice ShinyStat -->
+</div>
+
+  </body>
+</html>

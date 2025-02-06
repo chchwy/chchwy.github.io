@@ -1,0 +1,475 @@
+<!doctype html>
+<html class="not-ready lg:text-base" lang="zh-tw">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title -->
+  <title>
+    CMake 快速上手：跨平台 C++ 專案建置 - 調和的靈感
+  </title>
+
+  <!-- Meta -->
+  <meta name="theme-color" />
+
+  <!-- Author -->
+  
+  <meta name="description" content="CMake 快速上手：跨平台 C++ 專案建置" />
+  <meta name="author" content="CMake 快速上手：跨平台 C++ 專案建置" />
+  
+
+  <!-- CSS & JS -->
+  <link rel="preload stylesheet" as="style" href="https://chchwy.github.io/main.css" />
+  <style>
+    :root {
+      --bg: #f0e7dd;
+      --bg-dark: #18181b;
+      --header: #e4dbd2;
+      --header-dark: #27272a;
+    }
+    img[src*='#book'] { float: left; margin-right: 1em; }
+    img[src*='#right'] { float: right; margin-left: 1em; }
+    img[src*='#center'] { display: block; margin: auto; }
+  </style>
+
+  
+
+  <!-- Dark Icon -->
+  <link rel="preload" as="image" href="https://chchwy.github.io/icons/theme.svg" />
+
+  <!-- Math -->
+  
+  <!---->
+
+  <!-- Mermaid -->
+  
+  <!---->
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://chchwy.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://chchwy.github.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://chchwy.github.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://chchwy.github.io/favicon-16x16.png" />
+  <link rel="manifest" href="https://chchwy.github.io/site.webmanifest" />
+
+  <!-- Feeds -->
+  
+  <!---->
+  
+  <!---->
+  
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;cmake-basics&#x2F;" />
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header
+  class="header fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
+>
+  <div class="mx-auto w-full max-w-4xl p-3 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center">
+        <a class="text-2xl font-semibold" href="https://chchwy.github.io">調和的靈感</a>
+        <div
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0] [background:url(./icons/theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+          role="button"
+          aria-label="Dark"
+        ></div>
+      </div>
+      
+      <div
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+        role="button"
+        aria-label="Menu"
+      ></div>
+      
+    </div>
+    <script>
+      // base
+      const htmlClass = document.documentElement.classList;
+      setTimeout(() => {
+        htmlClass.remove("not-ready");
+      }, 10);
+
+      // mobile menu
+      const btnMenu = document.querySelector(".btn-menu");
+      btnMenu?.addEventListener("click", () => {
+        htmlClass.toggle("open");
+      });
+
+      // dark theme
+      const setDark = (isDark) => {
+        if (isDark) {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+          htmlClass.add("dark");
+        } else {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+          htmlClass.remove("dark");
+        }
+        localStorage.setItem("dark", isDark);
+      };
+
+      // init
+      const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      if (htmlClass.contains("dark")) {
+        setDark(true);
+      } else {
+        const darkVal = localStorage.getItem("dark");
+        setDark(darkVal ? darkVal === "true" : darkScheme.matches);
+      }
+
+      // listen system
+      darkScheme.addEventListener("change", (event) => {
+        setDark(event.matches);
+      });
+
+      // manual switch
+      const btnDark = document.querySelector(".btn-dark");
+      btnDark.addEventListener("click", () => {
+        setDark(localStorage.getItem("dark") !== "true");
+      });
+    </script>
+    
+    <nav class="flex w-full items-center lg:w-auto">
+      <ul
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0"
+      >
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/archive"
+            >Archive</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/tags"
+            >Tags</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://chchwy.github.io/about"
+            >About</a
+          >
+        </li>
+        
+      </ul>
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl break-words px-4 pb-16 pt-32 dark:prose-invert"
+    >
+      
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">CMake 快速上手：跨平台 C++ 專案建置</h1>
+    <div class="text-sm antialiased opacity-60">
+  
+  <time>2021-08-10</time>
+  <span class="mx-1">&middot;</span>
+  <span>8min</span>
+  <!---->
+  
+  <!---->
+  
+  <span class="mx-1">&middot;</span>
+  <span>chchwy</span>
+  
+</div>
+
+  </header>
+
+  
+
+  <!-- TOC -->
+  <!---->
+<div class="block-bg mb-12 flex rounded-lg p-2 text-lg">
+  <details>
+    <summary class="cursor-pointer py-1 pl-4">
+      <span>Table of Contents</span>
+    </summary>
+    <div class="px-2">
+      <ul>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://chchwy.github.io/cmake-basics/#wei-shen-mo-xu-yao-cmake"
+            >為什麼需要 CMake?</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://chchwy.github.io/cmake-basics/#hello-cmake"
+            >Hello CMake!</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://chchwy.github.io/cmake-basics/#bian-yi-zhuan-an"
+            >編譯專案</a
+          >
+          
+          <ul>
+            
+            <li>
+              <a class="no-underline hover:underline" href="https://chchwy.github.io/cmake-basics/#zhi-ding-jian-gou-xi-tong"
+                >指定建構系統</a
+              >
+            </li>
+            
+            <li>
+              <a class="no-underline hover:underline" href="https://chchwy.github.io/cmake-basics/#zhi-ding-debug-release-bian-yi-zu-tai"
+                >指定 Debug&#x2F;Release 編譯組態</a
+              >
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://chchwy.github.io/cmake-basics/#bi-jiao-wan-zheng-de-c-zhuan-an-fan-li"
+            >比較完整的 C++ 專案範例</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://chchwy.github.io/cmake-basics/#win32-shi-chuang-cheng-shi"
+            >Win32 視窗程式</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://chchwy.github.io/cmake-basics/#can-kao-lian-jie"
+            >參考連結</a
+          >
+          
+        </li>
+        
+      </ul>
+    </div>
+  </details>
+</div>
+
+<!---->
+
+  <!-- Content -->
+  <section><p>這篇文章紀錄我入門學習 CMake 的心得</p>
+<h3 id="wei-shen-mo-xu-yao-cmake">為什麼需要 CMake?</h3>
+<p>簡單來說，因為 C++ 的跨平台編譯很麻煩。</p>
+<p>雖然 C++ 程式碼本身是可以跨平台的，但每個平台使用的編譯工具鏈卻大不相同。</p>
+<p>Linux 使用 Makefile，Windows 使用 Visual Studio 專案，而 macOS 則可以使用 Xcode 專案或 Makefile，這些格式彼此不兼容。因此，即使程式碼是通用的，跨平台編譯專案仍然困難重重。。</p>
+<p>針對這個問題，除了同時維護多個個專案之外，還可以考慮像 CMake 這類的工具。</p>
+<p>CMake 的賣點就是幫助我們處理不同平台的編譯工具鏈。我們只需撰寫一份與平台無關的 CMake 腳本，然後讓 CMake 充當中介，負責操作當前平台的編譯工具鏈。這樣，我們在 Windows 上編譯專案時，CMake 會生成 Visual Studio 專案；在 macOS 上編譯時，則會生成 Xcode 專案。</p>
+<p>我個人時常在 Windows 和 macOS 之間切換，偶爾需要在 Linux 上工作。使用 CMake 可以節省我的時間和精力，避免在每個平台都要再學習一次建構系統的成本。</p>
+<h2 id="hello-cmake">Hello CMake!</h2>
+<p>馬上開始寫第一個 CMake 專案。</p>
+<p>CMake 規定，專案腳本的入口一定是個叫做 <code>CMakeLists.txt</code> 的純文字檔。所以我們在專案目錄下創建兩個檔案：<code>CMakeLists.txt</code> 和 <code>main.cpp</code>。</p>
+<p>這是 <code>CMakeLists.txt</code> 的內容：</p>
+<pre data-lang="cmake" style="background-color:#2b303b;color:#c0c5ce;" class="language-cmake "><code class="language-cmake" data-lang="cmake"><span style="color:#96b5b4;">cmake_minimum_required</span><span>(</span><span style="color:#bf616a;">VERSION </span><span>3.21) </span><span style="color:#65737e;"># 設定最低版本要求
+</span><span style="color:#96b5b4;">project</span><span>(HelloCMake)                  </span><span style="color:#65737e;"># 設定專案名稱
+</span><span style="color:#96b5b4;">add_executable</span><span>(MyHomework main.cpp)  </span><span style="color:#65737e;"># 指定執行檔和原始碼
+</span></code></pre>
+<p>這就是最簡單的 CMake 專案，只需要三行。這三行滿足了專案最基本的需求: 編譯 main.cpp 並產出執行檔 MyHomework.exe。</p>
+<p>CMake 用的是自家的腳本語法，本文不會著墨太多在腳本語法上，一開始只要知道 <code>cmake_minimum_required()</code>、<code>project()</code>、<code>add_executable()</code> 這些是內建函數就行了，參數用空白分隔。</p>
+<p><code>add_executable()</code> 函數指定了執行檔和原始碼。在這個例子中，<code>MyHomework</code> 是執行檔名稱，<code>main.cpp</code> 是原始碼。可以有多個原始碼，檔名間用空白分隔。</p>
+<p>井字號可以寫註解，讓腳本更容易閱讀。</p>
+<p><code>main.cpp</code>的內容就不多說了：</p>
+<pre data-lang="cpp" style="background-color:#2b303b;color:#c0c5ce;" class="language-cpp "><code class="language-cpp" data-lang="cpp"><span style="color:#b48ead;">#include </span><span>&lt;</span><span style="color:#a3be8c;">iostream</span><span>&gt;
+</span><span>
+</span><span style="color:#b48ead;">int </span><span style="color:#8fa1b3;">main</span><span>() { std::cout &lt;&lt; &quot;</span><span style="color:#a3be8c;">Hello CMake!</span><span>&quot; &lt;&lt; std::endl; </span><span style="color:#b48ead;">return </span><span style="color:#d08770;">0</span><span>; }
+</span></code></pre>
+<h2 id="bian-yi-zhuan-an">編譯專案</h2>
+<p>接著，用以下命令指示 CMake 來編譯專案：</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">cmake -S</span><span> .</span><span style="color:#bf616a;"> -B</span><span> build </span><span style="color:#65737e;"># 產生當前平台專案檔
+</span><span style="color:#bf616a;">cmake --build</span><span> build </span><span style="color:#65737e;"># 編譯專案
+</span></code></pre>
+<p>我們剛剛提過，CMake 不會自己編譯專案，而是產生當前平台的專案檔，然後再呼叫對應的編譯工具編譯。這兩行命令就是這個過程的兩個步驟。</p>
+<p><code>-S</code> 和 <code>-B</code> 是 CMake 的兩個參數，<code>-S</code> 參數指定專案的來源目錄，<code>-B</code> 參數指定編譯目錄。這樣 CMake 會在 build 目錄下產生對應的專案檔，然後用 <code>--build</code> 編譯專案。</p>
+<p>這裡我們引入了一個新的概念，就是「來源目錄」和「編譯目錄」的區分。</p>
+<p>來源目錄是指程式源碼的所在(也是 <code>CMakeLists.txt</code> 所在的目錄)。而編譯目錄則是用來放編譯產生的副產品的目錄，包括 CMake 替我們產生的當前平台專案，編譯暫存檔，以及最終編譯完成的執行檔。這些檔案是 CMake 和編譯器產生的，不是原始專案的一部分。</p>
+<p>這樣做的好處是，分開編譯目錄和來源目錄，不會污染原始專案，比較好做版本控制。另外，也方便清理副產品。</p>
+<p>依照 CMake 的慣例，編譯目錄通常是名為 build 的子目錄。在本例中，我們看一眼 build 子目錄，可以看見 CMake 為我產生的 VS2019 專案:
+<img src="/img/cmake-vs.png" alt="CMake VS2019" /></p>
+<p>最後 <code>cmake --build build</code> 命令，就會驅動當前平台的工具練，然後實際編譯專案。在本例中，這個命令會呼叫 MSBuild 編譯專案。</p>
+<p>當然，徑直打開 Visual Studio 來建構專案也可以，不一定要假手 CMake。</p>
+<h3 id="zhi-ding-jian-gou-xi-tong">指定建構系統</h3>
+<p>除了完全交由 CMake 決定之外，也可以用 <code>cmake -G</code> 直接指定建構系統，例如 Visual Studio 2019、Makefiles、Xcode 等等。</p>
+<p><code>-G</code> 參數後面接的是建構系統的名稱，例如 <code>Visual Studio 17 2022</code> 就是 Visual Studio 2022，<code>Unix Makefiles</code> 就是 Makefiles，<code>Xcode</code> 就是 Xcode。 當然，你的電腦上要有對應的建構系統才行。完整的建構系統支援清單，請參考<a href="https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html#manual:cmake-generators(7)">這個CMake官方文件連結</a></p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#65737e;"># 產生不同平台的專案的例子
+</span><span style="color:#bf616a;">cmake -G </span><span>&quot;</span><span style="color:#a3be8c;">Visual Studio 16 2019</span><span>&quot;</span><span style="color:#bf616a;"> -S</span><span> /source</span><span style="color:#bf616a;"> -B</span><span> build
+</span><span style="color:#bf616a;">cmake -G </span><span>&quot;</span><span style="color:#a3be8c;">Visual Studio 15 2017</span><span>&quot;</span><span style="color:#bf616a;"> -S</span><span> /source</span><span style="color:#bf616a;"> -B</span><span> build
+</span><span style="color:#bf616a;">cmake -G </span><span>&quot;</span><span style="color:#a3be8c;">Unix Makefiles</span><span>&quot;</span><span style="color:#bf616a;">   -S</span><span> /source</span><span style="color:#bf616a;"> -B</span><span> build
+</span><span style="color:#bf616a;">cmake -G</span><span> Xcode</span><span style="color:#bf616a;">              -S</span><span> /source</span><span style="color:#bf616a;"> -B</span><span> build
+</span><span style="color:#bf616a;">cmake -G</span><span> Ninja</span><span style="color:#bf616a;">              -S</span><span> /source</span><span style="color:#bf616a;"> -B</span><span> build
+</span></code></pre>
+<h3 id="zhi-ding-debug-release-bian-yi-zu-tai">指定 Debug/Release 編譯組態</h3>
+<p>開發時我們常常需要 Debug 和 Release 兩種編譯組態。</p>
+<p>可用 <code>--config</code> 指定編譯組態</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">cmake --build</span><span> .</span><span style="color:#bf616a;"> --config</span><span> Release
+</span><span style="color:#bf616a;">cmake --build</span><span> .</span><span style="color:#bf616a;"> --config</span><span> Debug
+</span></code></pre>
+<p>注意，這個參數只對 Visual Studio 和 Xcode 這類可以切換 Debug/Release 的專案有用，對 Makefiles 無效。</p>
+<h2 id="bi-jiao-wan-zheng-de-c-zhuan-an-fan-li">比較完整的 C++ 專案範例</h2>
+<p>看完了上面的極簡三行，接著是一個比較完整的 CMake C++ 專案範例。在剛剛的基礎上，加入 C++ 專案常見的標準備配置：標頭檔、多個原碼檔案、指定 C++11/14/17 版本標準、第三方程式庫的 include 路徑和 linker 路徑等等。有了這些，應該足以應付大多數開發需求。</p>
+<pre data-lang="cmake" style="background-color:#2b303b;color:#c0c5ce;" class="language-cmake "><code class="language-cmake" data-lang="cmake"><span style="color:#96b5b4;">cmake_minimum_required</span><span>(</span><span style="color:#bf616a;">VERSION </span><span>3.21)
+</span><span style="color:#96b5b4;">project</span><span>(MyProject)
+</span><span>
+</span><span style="color:#65737e;"># 要求 C++17 標準
+</span><span style="color:#96b5b4;">set</span><span>(</span><span style="color:#bf616a;">CMAKE_CXX_STANDARD </span><span>17)
+</span><span style="color:#65737e;"># 多個原始碼檔案和標頭檔
+</span><span style="color:#96b5b4;">add_executable</span><span>(MyApp main.cpp work.cpp header1.h header2.h)
+</span><span style="color:#65737e;"># 設定 include 目錄
+</span><span style="color:#96b5b4;">target_include_directories</span><span>(MyApp </span><span style="color:#bf616a;">PRIVATE </span><span>&quot;</span><span style="color:#a3be8c;">C:/path/to/include</span><span>&quot;)
+</span><span style="color:#65737e;"># 設定 lib 目錄
+</span><span style="color:#96b5b4;">target_link_libraries</span><span>(MyApp </span><span style="color:#bf616a;">PRIVATE </span><span>&quot;</span><span style="color:#a3be8c;">C:/path/to/lib</span><span>&quot;)
+</span></code></pre>
+<p>藉由 <code>target_include_directories()</code> 和 <code>target_link_libraries()</code> 函數，我們可以告訴編譯器，要去哪裡找第三方標頭檔和函式庫，記得要給絕對路徑。</p>
+<h2 id="win32-shi-chuang-cheng-shi">Win32 視窗程式</h2>
+<p>如果要開發 Win32 視窗程式，可以添加以下 CMake 設定：</p>
+<pre data-lang="cmake" style="background-color:#2b303b;color:#c0c5ce;" class="language-cmake "><code class="language-cmake" data-lang="cmake"><span style="color:#65737e;"># 關鍵字 WIN32 指明是 win32 視窗程式
+</span><span style="color:#96b5b4;">add_executable</span><span>(MyWin32App </span><span style="color:#bf616a;">WIN32 </span><span>main.cpp work.cpp header.h pch.h)
+</span><span style="color:#65737e;"># 設定寬字元
+</span><span style="color:#96b5b4;">target_compile_definitions</span><span>(MyWin32App </span><span style="color:#bf616a;">PRIVATE </span><span>UNICOD _UNICODE)
+</span></code></pre>
+<ul>
+<li>用 <code>WIN32</code> 關鍵字指明是 win32 視窗程式，這樣程式入口會從 <code>main()</code> 變成 <code>WinMain()</code></li>
+<li>定義 <code>UNICODE</code> 和 <code>_UNICODE</code> 告訴 VC++ 怎麼處理寬字元</li>
+</ul>
+<h2 id="can-kao-lian-jie">參考連結</h2>
+<ul>
+<li><a href="https://cmake.org/cmake/help/latest/guide/tutorial/">CMake 官方教學</a></li>
+<li><a href="https://www.jetbrains.com/help/clion/quick-cmake-tutorial.html">CLion Quick CMake tutorial</a></li>
+<li><a href="https://cliutils.gitlab.io/modern-cmake/">An introduction to Modern CMake</a></li>
+<li><a href="https://gist.github.com/Rod-Persky/e6b93e9ee31f9516261b">Qt5 Projects with CMake</a></li>
+<li><a href="https://minecraftxwinp.github.io/2017/11/27/%E7%94%A8CMake%E5%9C%A8%E5%BB%BA%E7%BD%AE%E6%99%82%E8%A4%87%E8%A3%BD%E6%AA%94%E6%A1%88%E5%88%B0%E8%BC%B8%E5%87%BA%E5%9F%B7%E8%A1%8C%E6%AA%94%E7%9A%84%E7%9B%AE%E9%8C%84/">用CMake在建置時複製檔案到輸出執行檔的目錄 </a></li>
+</ul>
+</section>
+
+  <hr />
+
+  <!-- Post Taxonomies -->
+  
+<footer class="mt-12 flex flex-col">
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  
+  <div class="mb-2 flex flex-wrap">
+    <span class="block-bg mb-1.5 mr-1.5 rounded-lg px-5 py-1.5">Tags </span>
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://chchwy.github.io/tags/cmake/"
+      >CMake</a
+    >
+    
+    <a
+      class="block-bg block-hover mb-1.5 mr-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://chchwy.github.io/tags/c/"
+      >C++</a
+    >
+    
+  </div>
+  
+</footer>
+
+<!---->
+
+  <!-- Post Nav -->
+  
+<nav class="block-bg mt-12 flex rounded-lg text-lg">
+  
+  <a
+    class="block-hover-mask flex w-1/2 items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;tortoise-dropbox-overlay&#x2F;"
+    ><span class="mr-1.5">←</span><span>寫 Powershell 解決 TortoiseGit 圖示消失問題</span></a
+  >
+  <!---->
+  
+  <a
+    class="block-hover-mask ml-auto flex w-1/2 items-center justify-end rounded-r-md p-6 pl-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;chchwy.github.io&#x2F;compression-compare&#x2F;"
+    ><span>隨手比較壓縮演算法：7zip&#x2F;GZIP&#x2F;LZ4 </span><span class="ml-1.5">→</span></a
+  >
+  
+</nav>
+
+<!---->
+
+  <!-- Comment -->
+  <!---->
+  
+<div class="giscus mt-12"></div>
+<script src="https://giscus.app/client.js"
+  data-repo="chchwy/chchwy.github.io"
+  data-repo-id="MDEwOlJlcG9zaXRvcnk1MjQ0MDkzNg=="
+  data-category="Announcements"
+  data-category-id="DIC_kwDOAyAvaM4Cglg7"
+  data-mapping="pathname"
+  data-strict="0"
+  data-reactions-enabled="1"
+  data-emit-metadata="0"
+  data-input-position="top"
+  data-theme="preferred_color_scheme"
+  data-lang="zh-TW"
+  data-loading="lazy"
+  crossorigin="anonymous"
+  async>
+</script>
+<!---->
+<!---->
+  
+</article>
+
+    </main>
+
+    <footer class="mx-auto flex max-w-3xl flex-wrap items-center px-8 py-4 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+    &copy; 2024 -  2025
+    <a class="link" href="https://chchwy.github.io"
+      >chchwy</a
+    >
+     |<!---->
+    <!---->
+    <a class="link" href="https:&#x2F;&#x2F;creativecommons.org&#x2F;licenses&#x2F;by-sa&#x2F;4.0&#x2F;deed" rel="noopener" target="_blank">
+      CC BY-SA 4.0
+    </a>
+    <!---->
+    
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <a class="link mr-6 lg:ml-6" href="https://www.getzola.org/" rel="noopener" target="_blank"
+      >Powered by Zola</a
+    >
+    <a class="link" href="https://github.com/st1020/kita" rel="noopener" target="_blank">✎ Kita</a>
+  </div>
+</footer>
+<div class="mx-auto flex items-center max-w-3xl px-8 py-4">
+  <!-- Inizio Codice ShinyStat -->
+  <script src="//codice.shinystat.com/cgi-bin/getcod.cgi?USER=chchwy"></script>
+  <noscript>
+  <a href="https://www.shinystat.com/it/" target="_top">
+  <img src="//www.shinystat.com/cgi-bin/shinystat.cgi?USER=chchwy" alt="Statistiche web" style="border:0px"/></a>
+  </noscript>
+  <!-- Fine Codice ShinyStat -->
+</div>
+
+  </body>
+</html>
