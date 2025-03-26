@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/2025-03-26-exe-file-size-breakdown.md",
+                "file": "content/2025-01-03-ironman-2023-complete.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-03-26-exe-file-size-breakdown"
+              "title": "2025-01-03-ironman-2023-complete"
             }
           }
         ]
@@ -177,10 +177,11 @@
   },
   "active": "5964cea28c304cf8",
   "lastOpenFiles": [
-    "content/2025-01-03-ironman-2023-complete.md",
     "xcode-link-map.md",
-    "content/2025-03-26-exe-file-size-breakdown.md",
     "xcode-link-map",
+    "content/2025-03-26-exe-file-size-breakdown.md",
+    "Untitled.md",
+    "content/2025-01-03-ironman-2023-complete.md",
     "content/2015-05-25-finish-python-course-of-codecademy.md",
     "content/2014-07-01-acm-useful-websites.md",
     "content/2013-12-23-the-magical-effect-of-objective-c-nil.md",
