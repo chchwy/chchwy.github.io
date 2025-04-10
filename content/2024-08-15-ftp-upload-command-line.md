@@ -1,20 +1,40 @@
 +++
 date=2024-12-15
-title="用命令列操作FTP上傳檔案"
+title="命令列上傳檔案到FTP"
 draft = false
 [taxonomies]
 tags = ["開發日常", "code", "Troubleshooting"]
 +++
 
-最近碰到一個需求，要在 CI 流程的最後一步將檔案上傳到 FTP 伺服器上。我研究了一下，發現有好幾種作法，順手紀錄一下我試過可行的兩招。
+最近需要在 CI 流程中上傳檔案到 FTP 伺服器，順手紀錄一下。
 
-## 方法一：Windows內建的ftp指令
+## 方法一：使用 cURL 上傳 FTP
+
+原來萬能瑞士刀 `curl` 可以操作FTP檔案上傳。
+
+在 Windows 上使用 `curl` 指令上傳檔案到 FTP 伺服器的範例：
+
+```bat
+curl -T "YOUR_LOCAL_FILE"^
+    --user "FTP_USER:FTP_PASSWORD"^
+    "ftp://192.168.99.99/Your/Directory/UPLOADED_FILE"^
+    --ftp-create-dirs
+```
+
+這段指令的意思是：
+
+- `-T YOUR_LOCAL_FILE` 指定要上傳的本地端檔案
+- `--user` 帳號密碼
+- `ftp:/SERVER_IP/Your/Directory/UPLOADED_FILE` 指定伺服器的 IP 位址以及上傳路徑
+- `--ftp-create-dirs` 如果上傳的目的地路徑中有缺任何目錄，自動建立目錄
+
+## 方法二：Windows 內建的 ftp 指令
 
 原來 Windows 作業系統本身內建了 `ftp` 指令，可以操作 FTP 上傳下載。
 
-這個 `ftp` 指令原本是互動式的，但是它也可以接收一個指令檔，檔案裡預先寫好一連串操作步驟，非常適合給 CI 使用。
+這個 `ftp` 指令原本是互動式的，但是它也可以接收一個指令檔，裡面預先寫好一串操作步驟，適合 CI 使用。
 
-比如說，我想要上傳檔案到 IP 位址為 192.168.99.99 的 FTP 伺服器：
+比如說，我想要上傳檔案到 IP 位址為 192.168.99.99 的 FTP 伺服器，以下就是操作範例：
 ```bat
 echo open 192.168.99.99> ftp_commands.txt
 echo %FTP_USER%>> ftp_commands.txt
@@ -30,7 +50,7 @@ del ftp_commands.txt
 
 拆解這段程式碼的運作：
 
-首先用`echo`指令把每個FTP操作步驟寫入`ftp_commands.txt`檔案，一行一個指令，就像自動化腳本：
+用`echo`指令把每個FTP操作步驟寫入`ftp_commands.txt`檔案，一行一個指令：
 - `open IP` 連線到 FTP 伺服器，
 - 接下來兩行是帳號密碼，用環境變數`%FTP_USER%` `%FTP_PASSWORD%`保護敏感資訊
 - `binary` 設定傳輸模式為二進位模式
@@ -40,23 +60,6 @@ del ftp_commands.txt
 
 讀取指令檔並執行: `ftp -d -s:ftp_commands.txt` <br/>
 清理檔案 `del ftp_commands.txt`
-
-## 方法二：使用 cURL
-
-萬能瑞士刀 `curl` 也可以操作FTP上傳：
-
-```bat
-curl -T "YOUR_LOCAL_FILE"^
-    --user "FTP_USER:FTP_PASSWORD"^
-    "ftp://192.168.99.99/Your/Directory/UPLOADED_FILE"^
-    --ftp-create-dirs
-```
-
-這個指令做的事情是一樣的：
-- `-T YOUR_LOCAL_FILE` 指定要上傳的本地端檔案
-- `--user` 帳號密碼
-- `ftp:/SERVER_IP/Your/Directory/UPLOADED_FILE` 指定伺服器 IP 位址以及上傳路徑
-- `--ftp-create-dirs` 如果上傳路徑中缺了任何目錄，自動建立目錄 
 
 ## 結論
 
