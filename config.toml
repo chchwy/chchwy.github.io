@@ -6,7 +6,7 @@ default_language = "zh-tw"
 
 generate_feeds = true
 feed_filenames = ["atom.xml"]
-taxonomies = [{ name = "tags", rss = true, paginate_by = 5 }]
+taxonomies = [{ name = "tags", rss = true, paginate_by = 20 }]
 theme = "kita"
 
 [markdown]
