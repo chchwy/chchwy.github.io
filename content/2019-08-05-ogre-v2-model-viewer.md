@@ -1,6 +1,6 @@
 ---
 date: 2019-08-05
-title: "Ogre3D v2.1 模型預覽器"
+title: "Side Project: Ogre3D v2.1 模型預覽器"
 taxonomies:
   tags: [Ogre3D, Qt, C++, Open Source]
 ---
