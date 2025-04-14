@@ -6,7 +6,7 @@ draft = false
 tags = ["寫作", "Qt"]
 +++
 
-系列文傳送門：[Qt 6 跨平台應用程式開發](https://ithelp.ithome.com.tw/users/20084263/ironman/6778)
+鐵人賽系列文傳送門：[Qt 6 跨平台應用程式開發](https://ithelp.ithome.com.tw/users/20084263/ironman/6778)
 
 人生有些事，做過了才發現沒那麼困難 —— 就像當兵每天早上六點跑三千，大學時我認為絕對不可能做到的事，真正去做時，卻發現沒想像中痛苦。
 
