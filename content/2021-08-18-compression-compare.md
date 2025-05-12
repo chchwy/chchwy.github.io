@@ -17,7 +17,7 @@ taxonomies:
 5. Zip
 
 實際跑的指令如下：
-```shell
+```bash
 time 7z -mx1 a test.7z ./trunk/             # 7zip 最快速壓縮
 time 7z -mx3 a test.zip ./trunk/            # 7zip 一般壓縮      
 time tar -czvf test.tar.gz ./trunk/         # GZIP
