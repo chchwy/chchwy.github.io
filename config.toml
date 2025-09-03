@@ -8,7 +8,7 @@ description = "紀錄我的思考，讀書筆記，還有程式設計"
 default_language = "zh-tw"
 compile_sass = false
 build_search_index = false
-generate_feed = true
+generate_feeds = true
 
 # Taxonomies
 taxonomies = [
