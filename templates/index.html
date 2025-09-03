@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}{{ config.title }}{% endblock title %}
+{% block description %}{{ config.description }}{% endblock description %}
+
+{% block content %}
+<section>
+    <h1>調和的靈感</h1>
+    <p>
+        嗨，我是麥特 (aka chchwy)👋。我是一名軟體工程師，二寶爸。
+        歡迎來到我部落格，這裡記錄著我的思考、讀書心得和技術筆記。
+    </p>
+<!-- 
+    <h2>主題</h2>
+    {% set categories = get_taxonomy(kind = "tags") %}
+    {% for category in categories.items | sort(attribute="pages") | reverse %}
+        <a href="{{ category.permalink }}">[#{{ category.name }}]</a>
+    {% endfor %}
+-->
+    <h2>最新文章</h2>
+    {% set blog_section = get_section(path="posts/_index.md") %}
+    {% if blog_section.pages %}
+        <div>
+            {% for page in blog_section.pages | slice(end=8) %}
+                <a class="blog-post" href="{{ page.permalink }}">
+                    <div class="post-content">
+                        {% if page.date %}
+                            <p class="post-date">{{ page.date | date(format="%b %d, %Y") }}</p>
+                        {% endif %}
+                        <p class="post-title">{{ page.title }}</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    {% endif %}
+</section>
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}{{ config.title }}{% endblock title %}
+{% block description %}Archive{% endblock description %}
+
+{% block content %}
+<section>
+  <h1>文章列表</h1>
+    
+  {% if section.pages %}
+    <div>
+      {% for year, pages in section.pages | group_by(attribute="year") %}
+        <h2>{{ year }}</h2>
+        {% for page in pages %}
+          <a class="blog-post" href="{{ page.permalink }}">
+            <div class="post-content">
+              {% if page.date %}
+                <p class="post-date">{{ page.date | date(format="%b %d, %Y") }}</p>
+              {% endif %}
+            <p class="post-title">{{ page.title }}</p>
+          </div>
+        </a>
+        {% endfor %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No posts found.</p>
+  {% endif %}
+</section>
+{% endblock content %}

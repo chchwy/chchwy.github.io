@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Tag "{{ term.name }}" - {{ config.title }}{% endblock title %}
+
+{% block content %}
+    <h1>分類："{{ term.name }}"</h1>
+    
+    {% if term.pages %}
+        <div class="post-list">
+            {% for page in term.pages %}
+                <article class="post-item">
+                    <a class="blog-post" href="{{ page.permalink }}">
+                      <div class="post-content">
+                        {% if page.date %}
+                            <p class="post-date" datetime="{{ page.date | date(format='%Y-%m-%d') }}">{{ page.date | date(format="%Y %b %d") }}</time>
+                        {% endif %}
+                        <p class="post-title">{{ page.title }}</p>
+                      </div>
+                    </a>
+                    <div class="post-meta">
+
+                    </div>
+                    {% if page.description %}
+                        <p class="post-description">{{ page.description }}</p>
+                    {% endif %}
+                </article>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No posts found with this tag.</p>
+    {% endif %}
+{% endblock content %}

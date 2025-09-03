@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} - {{ config.title }}{% endblock title %}
+
+{% block description %}{{ page.description | default(value=config.description) }}{% endblock description %}
+
+{% block og_title %}{{ page.title }}{% endblock og_title %}
+{% block og_description %}{{ page.description | default(value=config.description) }}{% endblock og_description %}
+{% block og_type %}article{% endblock og_type %}
+
+{% block twitter_title %}{{ page.title }}{% endblock twitter_title %}
+{% block twitter_description %}{{ page.description | default(value=config.description) }}{% endblock twitter_description %}
+
+{% block content %}
+    <article>
+        <header>
+            <h1>{{ page.title }}</h1>
+            <div class="post-meta">
+                {% if page.date %}
+                    <time datetime="{{ page.date | date(format='%Y-%m-%d') }}">{{ page.date | date(format="%Y年%m月%d日") }}</time>
+                {% endif %}
+                {% if page.extra.author %} • by {{ page.extra.author }}{% endif %}
+            </div>
+        </header>
+        
+        <div class="content">
+            {{ page.content | safe }}
+        </div>
+
+        {% if page.taxonomies.tags %}
+            <div class="post-tags">
+                {% for tag in page.taxonomies.tags %}
+                    <a href="{{ get_taxonomy_url(kind='tags', name=tag) }}" class="tag">{{ tag }}</a>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </article>
+{% endblock content %}
