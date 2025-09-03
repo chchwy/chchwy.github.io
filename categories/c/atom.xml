@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-tw">
+    <title>調和的靈感 Matt - C++</title>
+    <subtitle>紀錄我的思考，讀書筆記，還有程式設計</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://chchwy.github.io/categories/c/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://chchwy.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2021-08-10T00:00:00+00:00</updated>
+    <id>https://chchwy.github.io/categories/c/atom.xml</id>
+    <entry xml:lang="zh-tw">
+        <title>CMake 快速上手：跨平台 C++ 專案建置</title>
+        <published>2021-08-10T00:00:00+00:00</published>
+        <updated>2021-08-10T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/cmake-basics/"/>
+        <id>https://chchwy.github.io/posts/cmake-basics/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/cmake-basics/">&lt;p&gt;這篇文章紀錄我入門學習 CMake 的心得&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;wei-shen-mo-xu-yao-cmake&quot;&gt;為什麼需要 CMake?&lt;&#x2F;h3&gt;
+&lt;p&gt;簡單來說，因為 C++ 的跨平台編譯很麻煩。&lt;&#x2F;p&gt;
+&lt;p&gt;雖然 C++ 程式碼本身是可以跨平台的，但每個平台使用的編譯工具鏈卻大不相同。&lt;&#x2F;p&gt;
+&lt;p&gt;Linux 使用 Makefile，Windows 使用 Visual Studio 專案，而 macOS 則可以使用 Xcode 專案或 Makefile，這些格式彼此不兼容。因此，即使程式碼是通用的，跨平台編譯專案仍然困難重重。。&lt;&#x2F;p&gt;
+&lt;p&gt;針對這個問題，除了同時維護多個個專案之外，還可以考慮像 CMake 這類的工具。&lt;&#x2F;p&gt;
+&lt;p&gt;CMake 的賣點就是幫助我們處理不同平台的編譯工具鏈。我們只需撰寫一份與平台無關的 CMake 腳本，然後讓 CMake 充當中介，負責操作當前平台的編譯工具鏈。這樣，我們在 Windows 上編譯專案時，CMake 會生成 Visual Studio 專案；在 macOS 上編譯時，則會生成 Xcode 專案。&lt;&#x2F;p&gt;
+&lt;p&gt;我個人時常在 Windows 和 macOS 之間切換，偶爾需要在 Linux 上工作。使用 CMake 可以節省我的時間和精力，避免在每個平台都要再學習一次建構系統的成本。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;hello-cmake&quot;&gt;Hello CMake!&lt;&#x2F;h2&gt;
+&lt;p&gt;馬上開始寫第一個 CMake 專案。&lt;&#x2F;p&gt;
+&lt;p&gt;CMake 規定，專案腳本的入口一定是個叫做 &lt;code&gt;CMakeLists.txt&lt;&#x2F;code&gt; 的純文字檔。所以我們在專案目錄下創建兩個檔案：&lt;code&gt;CMakeLists.txt&lt;&#x2F;code&gt; 和 &lt;code&gt;main.cpp&lt;&#x2F;code&gt;。&lt;&#x2F;p&gt;
+&lt;p&gt;這是 &lt;code&gt;CMakeLists.txt&lt;&#x2F;code&gt; 的內容：&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#393939;color:#dedede;&quot;&gt;&lt;code&gt;&lt;span&gt;cmake_minimum_required(VERSION 3.21) # 設定最低版本要求
+&lt;&#x2F;span&gt;&lt;span&gt;project(HelloCMake)                  # 設定專案名稱
+&lt;&#x2F;span&gt;&lt;span&gt;add_executable(MyHomework main.cpp)  # 指定執行檔和原始碼
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;這就是最簡單的 CMake 專案，只需要三行。這三行滿足了專案最基本的需求: 編譯 main.cpp 並產出執行檔 MyHomework.exe。&lt;&#x2F;p&gt;
+&lt;p&gt;CMake 用的是自家的腳本語法，本文不會著墨太多在腳本語法上，一開始只要知道 &lt;code&gt;cmake_minimum_required()&lt;&#x2F;code&gt;、&lt;code&gt;project()&lt;&#x2F;code&gt;、&lt;code&gt;add_executable()&lt;&#x2F;code&gt; 這些是內建函數就行了，參數用空白分隔。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;add_executable()&lt;&#x2F;code&gt; 函數指定了執行檔和原始碼。在這個例子中，&lt;code&gt;MyHomework&lt;&#x2F;code&gt; 是執行檔名稱，&lt;code&gt;main.cpp&lt;&#x2F;code&gt; 是原始碼。可以有多個原始碼，檔名間用空白分隔。&lt;&#x2F;p&gt;
+&lt;p&gt;井字號可以寫註解，讓腳本更容易閱讀。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;main.cpp&lt;&#x2F;code&gt;的內容就不多說了：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;cpp&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-cpp &quot;&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;#include &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;iostream&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffb9d;&quot;&gt;int &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;main&lt;&#x2F;span&gt;&lt;span&gt;() { std::cout &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;lt;&amp;lt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;Hello CMake!&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;lt;&amp;lt;&lt;&#x2F;span&gt;&lt;span&gt; std::endl; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#87d6d5;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;; }
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;bian-yi-zhuan-an&quot;&gt;編譯專案&lt;&#x2F;h2&gt;
+&lt;p&gt;接著，用以下命令指示 CMake 來編譯專案：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;cmake -S . -B build &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 產生當前平台專案檔
+&lt;&#x2F;span&gt;&lt;span&gt;cmake --build build &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 編譯專案
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;我們剛剛提過，CMake 不會自己編譯專案，而是產生當前平台的專案檔，然後再呼叫對應的編譯工具編譯。這兩行命令就是這個過程的兩個步驟。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;-S&lt;&#x2F;code&gt; 和 &lt;code&gt;-B&lt;&#x2F;code&gt; 是 CMake 的兩個參數，&lt;code&gt;-S&lt;&#x2F;code&gt; 參數指定專案的來源目錄，&lt;code&gt;-B&lt;&#x2F;code&gt; 參數指定編譯目錄。這樣 CMake 會在 build 目錄下產生對應的專案檔，然後用 &lt;code&gt;--build&lt;&#x2F;code&gt; 編譯專案。&lt;&#x2F;p&gt;
+&lt;p&gt;這裡我們引入了一個新的概念，就是「來源目錄」和「編譯目錄」的區分。&lt;&#x2F;p&gt;
+&lt;p&gt;來源目錄是指程式源碼的所在(也是 &lt;code&gt;CMakeLists.txt&lt;&#x2F;code&gt; 所在的目錄)。而編譯目錄則是用來放編譯產生的副產品的目錄，包括 CMake 替我們產生的當前平台專案，編譯暫存檔，以及最終編譯完成的執行檔。這些檔案是 CMake 和編譯器產生的，不是原始專案的一部分。&lt;&#x2F;p&gt;
+&lt;p&gt;這樣做的好處是，分開編譯目錄和來源目錄，不會污染原始專案，比較好做版本控制。另外，也方便清理副產品。&lt;&#x2F;p&gt;
+&lt;p&gt;依照 CMake 的慣例，編譯目錄通常是名為 build 的子目錄。在本例中，我們看一眼 build 子目錄，可以看見 CMake 為我產生的 VS2019 專案:
+&lt;img src=&quot;&#x2F;img&#x2F;cmake-vs.png&quot; alt=&quot;CMake VS2019&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;最後 &lt;code&gt;cmake --build build&lt;&#x2F;code&gt; 命令，就會驅動當前平台的工具練，然後實際編譯專案。在本例中，這個命令會呼叫 MSBuild 編譯專案。&lt;&#x2F;p&gt;
+&lt;p&gt;當然，徑直打開 Visual Studio 來建構專案也可以，不一定要假手 CMake。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;zhi-ding-jian-gou-xi-tong&quot;&gt;指定建構系統&lt;&#x2F;h3&gt;
+&lt;p&gt;除了完全交由 CMake 決定之外，也可以用 &lt;code&gt;cmake -G&lt;&#x2F;code&gt; 直接指定建構系統，例如 Visual Studio 2019、Makefiles、Xcode 等等。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;-G&lt;&#x2F;code&gt; 參數後面接的是建構系統的名稱，例如 &lt;code&gt;Visual Studio 17 2022&lt;&#x2F;code&gt; 就是 Visual Studio 2022，&lt;code&gt;Unix Makefiles&lt;&#x2F;code&gt; 就是 Makefiles，&lt;code&gt;Xcode&lt;&#x2F;code&gt; 就是 Xcode。 當然，你的電腦上要有對應的建構系統才行。完整的建構系統支援清單，請參考&lt;a href=&quot;https:&#x2F;&#x2F;cmake.org&#x2F;cmake&#x2F;help&#x2F;latest&#x2F;manual&#x2F;cmake-generators.7.html#manual:cmake-generators(7)&quot;&gt;這個CMake官方文件連結&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 產生不同平台的專案的例子
+&lt;&#x2F;span&gt;&lt;span&gt;cmake -G &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;Visual Studio 16 2019&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt; -S &#x2F;source -B build
+&lt;&#x2F;span&gt;&lt;span&gt;cmake -G &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;Visual Studio 15 2017&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt; -S &#x2F;source -B build
+&lt;&#x2F;span&gt;&lt;span&gt;cmake -G &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;Unix Makefiles&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;   -S &#x2F;source -B build
+&lt;&#x2F;span&gt;&lt;span&gt;cmake -G Xcode              -S &#x2F;source -B build
+&lt;&#x2F;span&gt;&lt;span&gt;cmake -G Ninja              -S &#x2F;source -B build
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;zhi-ding-debug-release-bian-yi-zu-tai&quot;&gt;指定 Debug&#x2F;Release 編譯組態&lt;&#x2F;h3&gt;
+&lt;p&gt;開發時我們常常需要 Debug 和 Release 兩種編譯組態。&lt;&#x2F;p&gt;
+&lt;p&gt;可用 &lt;code&gt;--config&lt;&#x2F;code&gt; 指定編譯組態&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;cmake --build . --config Release
+&lt;&#x2F;span&gt;&lt;span&gt;cmake --build . --config Debug
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;注意，這個參數只對 Visual Studio 和 Xcode 這類可以切換 Debug&#x2F;Release 的專案有用，對 Makefiles 無效。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;bi-jiao-wan-zheng-de-c-zhuan-an-fan-li&quot;&gt;比較完整的 C++ 專案範例&lt;&#x2F;h2&gt;
+&lt;p&gt;看完了上面的極簡三行，接著是一個比較完整的 CMake C++ 專案範例。在剛剛的基礎上，加入 C++ 專案常見的標準備配置：標頭檔、多個原碼檔案、指定 C++11&#x2F;14&#x2F;17 版本標準、第三方程式庫的 include 路徑和 linker 路徑等等。有了這些，應該足以應付大多數開發需求。&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;cmake&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-cmake &quot;&gt;&lt;code class=&quot;language-cmake&quot; data-lang=&quot;cmake&quot;&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;cmake_minimum_required&lt;&#x2F;span&gt;&lt;span&gt;(VERSION 3.21)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;project&lt;&#x2F;span&gt;&lt;span&gt;(MyProject)
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 要求 C++17 標準
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;set&lt;&#x2F;span&gt;&lt;span&gt;(CMAKE_CXX_STANDARD 17)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 多個原始碼檔案和標頭檔
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;add_executable&lt;&#x2F;span&gt;&lt;span&gt;(MyApp main.cpp work.cpp header1.h header2.h)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 設定 include 目錄
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;target_include_directories&lt;&#x2F;span&gt;&lt;span&gt;(MyApp PRIVATE &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;C:&#x2F;path&#x2F;to&#x2F;include&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 設定 lib 目錄
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;target_link_libraries&lt;&#x2F;span&gt;&lt;span&gt;(MyApp PRIVATE &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;C:&#x2F;path&#x2F;to&#x2F;lib&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;藉由 &lt;code&gt;target_include_directories()&lt;&#x2F;code&gt; 和 &lt;code&gt;target_link_libraries()&lt;&#x2F;code&gt; 函數，我們可以告訴編譯器，要去哪裡找第三方標頭檔和函式庫，記得要給絕對路徑。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;win32-shi-chuang-cheng-shi&quot;&gt;Win32 視窗程式&lt;&#x2F;h2&gt;
+&lt;p&gt;如果要開發 Win32 視窗程式，可以添加以下 CMake 設定：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;cmake&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-cmake &quot;&gt;&lt;code class=&quot;language-cmake&quot; data-lang=&quot;cmake&quot;&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 關鍵字 WIN32 指明是 win32 視窗程式
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;add_executable&lt;&#x2F;span&gt;&lt;span&gt;(MyWin32App WIN32 main.cpp work.cpp header.h pch.h)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 設定寬字元
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;target_compile_definitions&lt;&#x2F;span&gt;&lt;span&gt;(MyWin32App PRIVATE UNICOD _UNICODE)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;用 &lt;code&gt;WIN32&lt;&#x2F;code&gt; 關鍵字指明是 win32 視窗程式，這樣程式入口會從 &lt;code&gt;main()&lt;&#x2F;code&gt; 變成 &lt;code&gt;WinMain()&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;定義 &lt;code&gt;UNICODE&lt;&#x2F;code&gt; 和 &lt;code&gt;_UNICODE&lt;&#x2F;code&gt; 告訴 VC++ 怎麼處理寬字元&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;can-kao-lian-jie&quot;&gt;參考連結&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cmake.org&#x2F;cmake&#x2F;help&#x2F;latest&#x2F;guide&#x2F;tutorial&#x2F;&quot;&gt;CMake 官方教學&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.jetbrains.com&#x2F;help&#x2F;clion&#x2F;quick-cmake-tutorial.html&quot;&gt;CLion Quick CMake tutorial&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cliutils.gitlab.io&#x2F;modern-cmake&#x2F;&quot;&gt;An introduction to Modern CMake&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gist.github.com&#x2F;Rod-Persky&#x2F;e6b93e9ee31f9516261b&quot;&gt;Qt5 Projects with CMake&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;minecraftxwinp.github.io&#x2F;2017&#x2F;11&#x2F;27&#x2F;%E7%94%A8CMake%E5%9C%A8%E5%BB%BA%E7%BD%AE%E6%99%82%E8%A4%87%E8%A3%BD%E6%AA%94%E6%A1%88%E5%88%B0%E8%BC%B8%E5%87%BA%E5%9F%B7%E8%A1%8C%E6%AA%94%E7%9A%84%E7%9B%AE%E9%8C%84&#x2F;&quot;&gt;用CMake在建置時複製檔案到輸出執行檔的目錄 &lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>十進位轉二進位</title>
+        <published>2007-11-24T00:00:00+00:00</published>
+        <updated>2007-11-24T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/decimal-to-binary/"/>
+        <id>https://chchwy.github.io/posts/decimal-to-binary/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/decimal-to-binary/">&lt;p&gt;目前為止寫過最簡短的版本&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;cpp&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-cpp &quot;&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;#include &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;iostream&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;#include &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;climits&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;using namespace&lt;&#x2F;span&gt;&lt;span&gt; std;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffb9d;&quot;&gt;int &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;main&lt;&#x2F;span&gt;&lt;span&gt;()
+&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffb9d;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span&gt; x &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#87d6d5;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffb9d;&quot;&gt;unsigned int&lt;&#x2F;span&gt;&lt;span&gt; y &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt; INT_MIN;
+&lt;&#x2F;span&gt;&lt;span&gt;    cout &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;lt;&amp;lt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;please enter a Integer:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    cin &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; x;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;while &lt;&#x2F;span&gt;&lt;span&gt;(y &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#87d6d5;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    {
+&lt;&#x2F;span&gt;&lt;span&gt;        (x &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;amp;&lt;&#x2F;span&gt;&lt;span&gt; y) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;? &lt;&#x2F;span&gt;&lt;span&gt;(cout &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;lt;&amp;lt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span&gt;(cout &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;lt;&amp;lt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;);
+&lt;&#x2F;span&gt;&lt;span&gt;        y &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt; y &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;lt;&amp;lt; &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#87d6d5;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;概念： INT_MIN 的二進位長這樣 10000000000000000000000000000000
+跟 x 做 bit AND，除了最左邊 bit，其他 bit 都會變 0。&lt;&#x2F;p&gt;
+&lt;p&gt;只有最左邊 bit 維持原樣，這時就可以單獨判斷該 bit 要印出 0 或 1。
+接下來將 INT_MIN 往右 shift 一個 bit。就可以判斷 x 第二個 bit 了，依此類推。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

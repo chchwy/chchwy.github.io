@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Objective-C 好用的 nil 和變數類型的思考 - 調和的靈感 Matt</title>
+    <meta name="description" content="紀錄我的思考，讀書筆記，還有程式設計">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Objective-C 好用的 nil 和變數類型的思考">
+    <meta property="og:description" content="紀錄我的思考，讀書筆記，還有程式設計">
+    <meta property="og:url" content="https:&#x2F;&#x2F;chchwy.github.io&#x2F;posts&#x2F;the-magical-effect-of-objective-c-nil&#x2F;">
+    <meta property="og:site_name" content="調和的靈感 Matt">
+    <meta property="og:type" content="article">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Objective-C 好用的 nil 和變數類型的思考">
+    <meta name="twitter:description" content="紀錄我的思考，讀書筆記，還有程式設計">
+    
+    <!-- Font preload -->
+    <link rel="preload" href="https://chchwy.github.io/fonts/Inter-roman.latin.var.woff2" as="font" type="font/woff2" crossorigin="">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="https://chchwy.github.io/main.css">
+</head>
+<body>
+    <main>
+        <!-- Navigation -->
+        <aside>
+            <div>
+                <nav id="nav">
+                    <div>
+                        <a href="/">Matt</a>
+                        <a href="https://chchwy.github.io">首頁</a>
+                        <a href="https://chchwy.github.io/posts">文章列表</a>
+                        <a href="https://chchwy.github.io/projects">專案</a>
+                    </div>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Content -->
+        
+    <article>
+        <header>
+            <h1>Objective-C 好用的 nil 和變數類型的思考</h1>
+            <div class="post-meta">
+                
+                    <time datetime="2013-12-23">2013年12月23日</time>
+                
+                
+            </div>
+        </header>
+        
+        <div class="content">
+            <p>Objective-C 裡有個我非常喜愛的特性，就是對空物件 nil 調用方法不會出錯。
+類似這樣：</p>
+<pre data-lang="cpp" style="background-color:#393939;color:#dedede;" class="language-cpp "><code class="language-cpp" data-lang="cpp"><span>NSArray</span><span style="color:#ececec;">*</span><span> myArray </span><span style="color:#ececec;">=</span><span> nil;
+</span><span>[myArray count]; </span><span style="color:#a0cfa1;">//</span><span style="color:#87ae86;"> It&#39;s ok.
+</span></code></pre>
+<p>在許多主流語言裡，像是 C++，對 NULL 指標調用方法都是非常嚴重的錯誤，程式很可能會馬上崩潰。但是在 Objective-C 裡不同，對 nil 調用方法被視為稀鬆平常的事情，這個方法調用不會使程式崩潰，也不會拋出異常，程式單純的不做任何反應，船過水無痕地默默繼續運行。如果該方法有回傳值，就回傳 nil 或零。</p>
+<p>空指標就不做事的原則，大多數時候也的確符合我們的期望，所以 Objective-C 程式裡不再需要處處塞滿 <code>if ( ptr != NULL ) { ... }</code> ，提心吊膽的提防遺漏的空指標造成程序崩潰，這個小差異大大提高了程序的穩定性。代碼也更簡短清晰了。</p>
+<p>後來我發覺這個 NULL / nil 的小差異，其實沒那麼簡單，真正的問題是 NULL 指標本身的存在，就破壞了程式語言的類型保護網。</p>
+<p>類型(Type)是編譯器給我們的一張保護網，string 類型的變數就只能呼叫 string 的方法，所有操作都由編譯器掛保證，不合法的方法調用，都在編譯期會被擋下來。</p>
+<p>但是超越這張保護網的唯一例外就是 NULL 。當我們聲明一個 <code>string*</code> 類型的變數，其實真正的意思是該變數既可以存放 string 指標， <strong>也可以</strong> 存放 NULL，對吧，兩者都合法，即使 NULL 完全不符合 string 類型的規範，一運行就會出錯，但是編譯器就是認可這個賦值，一聲不吭。</p>
+<p>為了處理 NULL 特例，我們程式設計師只能辛勤的手動防範，每個引用到該變數的地方都區分有效變數或 NULL 兩種行為，最終導致程式碼裡頭無止盡的 NULL check ，因為我們不知道指標何時是有效的變數，何時是 NULL。也因此才有人提出 Null Object Pattern ，用團隊的編程規範去禁止 NULL 的使用，改以一個自己撰寫的不做事的空物件取代之。</p>
+<p>所以 Objective-C 的 nil 並不單單只是一個不會程序崩潰的 NULL 指標而已，nil 滿足所有類型的規範，不再需要有特例需要防範，它其實等同了語言內建了所有類型的 NullObject 機制。</p>
+<p>這篇文章大部分來自<a href="http://www.yinwang.org/">王垠博客</a>的啟發。</p>
+
+        </div>
+
+        
+            <div class="post-tags">
+                
+                    <a href="https://chchwy.github.io/tags/kai-fa-ri-chang/" class="tag">開發日常</a>
+                
+            </div>
+        
+    </article>
+
+
+        <!-- Footer -->
+        <footer>
+            <ul>
+                
+                <li>
+                    <a rel="noopener noreferrer" target="_blank" href="https://chchwy.github.io/rss.xml">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-rss" viewBox="0 0 16 16">
+                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                        <path d="M5.5 12a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m-3-8.5a1 1 0 0 1 1-1c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1-1-1m0 4a1 1 0 0 1 1-1 6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1-1-1"/>
+                        </svg>
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a rel="noopener noreferrer" target="_blank" href="https://github.com/chchwy">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                        </svg>
+                    </a>
+                </li>
+                
+                <li>
+                    <a rel="noopener noreferrer" target="_blank" href="https://www.threads.com/@chchwy">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-threads" viewBox="0 0 16 16">
+                        <path d="M6.321 6.016c-.27-.18-1.166-.802-1.166-.802.756-1.081 1.753-1.502 3.132-1.502.975 0 1.803.327 2.394.948s.928 1.509 1.005 2.644q.492.207.905.484c1.109.745 1.719 1.86 1.719 3.137 0 2.716-2.226 5.075-6.256 5.075C4.594 16 1 13.987 1 7.994 1 2.034 4.482 0 8.044 0 9.69 0 13.55.243 15 5.036l-1.36.353C12.516 1.974 10.163 1.43 8.006 1.43c-3.565 0-5.582 2.171-5.582 6.79 0 4.143 2.254 6.343 5.63 6.343 2.777 0 4.847-1.443 4.847-3.556 0-1.438-1.208-2.127-1.27-2.127-.236 1.234-.868 3.31-3.644 3.31-1.618 0-3.013-1.118-3.013-2.582 0-2.09 1.984-2.847 3.55-2.847.586 0 1.294.04 1.663.114 0-.637-.54-1.728-1.9-1.728-1.25 0-1.566.405-1.967.868ZM8.716 8.19c-2.04 0-2.304.87-2.304 1.416 0 .878 1.043 1.168 1.6 1.168 1.02 0 2.067-.282 2.232-2.423a6.2 6.2 0 0 0-1.528-.161"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>            
+            <p>© 2025 Matt Chang</p>
+        </footer>
+    </main>
+</body>
+</html>

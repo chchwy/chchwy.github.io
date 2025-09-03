@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-tw">
+    <title>調和的靈感 Matt - 開發日常</title>
+    <subtitle>紀錄我的思考，讀書筆記，還有程式設計</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://chchwy.github.io/tags/kai-fa-ri-chang/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://chchwy.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-12-15T00:00:00+00:00</updated>
+    <id>https://chchwy.github.io/tags/kai-fa-ri-chang/atom.xml</id>
+    <entry xml:lang="zh-tw">
+        <title>命令列上傳檔案到FTP</title>
+        <published>2024-12-15T00:00:00+00:00</published>
+        <updated>2024-12-15T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/ftp-upload-command-line/"/>
+        <id>https://chchwy.github.io/posts/ftp-upload-command-line/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/ftp-upload-command-line/">&lt;p&gt;最近需要在 CI 流程中上傳檔案到 FTP 伺服器，順手紀錄一下。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;fang-fa-yi-shi-yong-curl-shang-chuan-ftp&quot;&gt;方法一：使用 cURL 上傳 FTP&lt;&#x2F;h2&gt;
+&lt;p&gt;萬能瑞士刀 &lt;code&gt;cURL&lt;&#x2F;code&gt; 可以操作FTP&lt;&#x2F;p&gt;
+&lt;p&gt;這是用 &lt;code&gt;curl&lt;&#x2F;code&gt; 指令上傳檔案到 FTP 的範例：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bat&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-bat &quot;&gt;&lt;code class=&quot;language-bat&quot; data-lang=&quot;bat&quot;&gt;&lt;span&gt;curl -T &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;YOUR_LOCAL_FILE&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#ff8080;&quot;&gt;^
+&lt;&#x2F;span&gt;&lt;span&gt;    --user &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;FTP_USER:FTP_PASSWORD&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#ff8080;&quot;&gt;^
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;ftp:&#x2F;&#x2F;192.168.99.99&#x2F;Your&#x2F;Directory&#x2F;UPLOADED_FILE&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#ff8080;&quot;&gt;^
+&lt;&#x2F;span&gt;&lt;span&gt;    --&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;ftp&lt;&#x2F;span&gt;&lt;span&gt;-create-dirs
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;各個參數解釋：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-T YOUR_LOCAL_FILE&lt;&#x2F;code&gt; 指定要上傳的本地端檔案&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;--user&lt;&#x2F;code&gt; 帳號密碼&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;ftp:&#x2F;SERVER_IP&#x2F;Your&#x2F;Directory&#x2F;UPLOADED_FILE&lt;&#x2F;code&gt; 指定伺服器的 IP 位址以及上傳路徑&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;--ftp-create-dirs&lt;&#x2F;code&gt; 如果上傳的目的地路徑中有缺任何目錄，自動建立目錄&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;fang-fa-er-windows-nei-jian-de-ftp-zhi-ling&quot;&gt;方法二：Windows 內建的 ftp 指令&lt;&#x2F;h2&gt;
+&lt;p&gt;Windows 作業系統本身內建 &lt;code&gt;ftp&lt;&#x2F;code&gt; 指令&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;ftp&lt;&#x2F;code&gt; 指令原本是互動式的，但是也可以給它一個指令檔，預錄好一串操作步驟。&lt;&#x2F;p&gt;
+&lt;p&gt;以下是上傳檔案到 IP 位址為 127.0.0.99 的 FTP 伺服器的範例：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bat&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-bat &quot;&gt;&lt;code class=&quot;language-bat&quot; data-lang=&quot;bat&quot;&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;echo&lt;&#x2F;span&gt;&lt;span&gt; open &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#87d6d5;&quot;&gt;127&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#87d6d5;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#87d6d5;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#87d6d5;&quot;&gt;99&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; ftp_commands.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;echo %&lt;&#x2F;span&gt;&lt;span&gt;FTP_USER&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;%&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; ftp_commands.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;echo %&lt;&#x2F;span&gt;&lt;span&gt;FTP_PASSWORD&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;%&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; ftp_commands.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;echo&lt;&#x2F;span&gt;&lt;span&gt; binary&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; ftp_commands.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;echo&lt;&#x2F;span&gt;&lt;span&gt; cd &#x2F;Your&#x2F;Server&#x2F;Directory&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; ftp_commands.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;echo&lt;&#x2F;span&gt;&lt;span&gt; send YOUR_LOCAL_FILE&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; ftp_commands.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;echo&lt;&#x2F;span&gt;&lt;span&gt; bye&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; ftp_commands.txt
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;ftp&lt;&#x2F;span&gt;&lt;span&gt; -d -s:ftp_commands.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;del&lt;&#x2F;span&gt;&lt;span&gt; ftp_commands.txt
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;拆解這段程式碼的運作：
+用&lt;code&gt;echo&lt;&#x2F;code&gt;指令把每個FTP操作步驟寫入&lt;code&gt;ftp_commands.txt&lt;&#x2F;code&gt;檔案，一行一個指令&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;open IP&lt;&#x2F;code&gt; 連線到 FTP 伺服器，&lt;&#x2F;li&gt;
+&lt;li&gt;接下來兩行是帳號密碼，用環境變數&lt;code&gt;%FTP_USER%&lt;&#x2F;code&gt; &lt;code&gt;%FTP_PASSWORD%&lt;&#x2F;code&gt;保護敏感資訊&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;binary&lt;&#x2F;code&gt; 設定傳輸模式為二進位模式&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;cd&lt;&#x2F;code&gt; 切換到指定目錄&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;send&lt;&#x2F;code&gt; 指令執行檔案上傳&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;bye&lt;&#x2F;code&gt; 最後關閉連線。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;讀取指令檔並執行: &lt;code&gt;ftp -d -s:ftp_commands.txt&lt;&#x2F;code&gt; &lt;br&#x2F;&gt;
+清理檔案 &lt;code&gt;del ftp_commands.txt&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;jie-lun&quot;&gt;結論&lt;&#x2F;h2&gt;
+&lt;p&gt;這兩個方法都可以用於 FTP 檔案上傳。&lt;code&gt;ftp&lt;&#x2F;code&gt; 是遠古時代就存在的指令，&lt;code&gt;cURL&lt;&#x2F;code&gt; 則在Windows 10 17063之後成為作業系統的預裝指令之一。&lt;&#x2F;p&gt;
+&lt;p&gt;跨平台方面：&lt;code&gt;ftp&lt;&#x2F;code&gt;指令是Windows限定，&lt;code&gt;curl&lt;&#x2F;code&gt;跨平台。&lt;&#x2F;p&gt;
+&lt;p&gt;我最終採用 &lt;code&gt;curl&lt;&#x2F;code&gt;，指令更簡潔，且 Windows &amp;amp; macOS 接可用。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>隨手比較壓縮演算法：7zip&#x2F;GZIP&#x2F;LZ4 </title>
+        <published>2021-08-18T00:00:00+00:00</published>
+        <updated>2021-08-18T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/compression-compare/"/>
+        <id>https://chchwy.github.io/posts/compression-compare/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/compression-compare/">&lt;p&gt;最近有定期從遠端 Linux 主機上拉檔案下來的需求，內容是遊戲開發的資源檔，每次數百GB。因為檔案實在太大，不得不找一些壓縮檔案的方法，希望縮短下載時間。&lt;&#x2F;p&gt;
+&lt;p&gt;我隨手估狗了五種壓縮方法如下：&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;7zip 最快速壓縮 (壓縮演算法是LZMA2)&lt;&#x2F;li&gt;
+&lt;li&gt;7zip 一般壓縮 (同上，只有參數不同)&lt;&#x2F;li&gt;
+&lt;li&gt;Gzip&lt;&#x2F;li&gt;
+&lt;li&gt;LZ4&lt;&#x2F;li&gt;
+&lt;li&gt;Zip&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;實際跑的指令如下：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;shell&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-shell &quot;&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span&gt;time 7z -mx1 a test.7z .&#x2F;trunk&#x2F;             # 7zip 最快速壓縮
+&lt;&#x2F;span&gt;&lt;span&gt;time 7z -mx3 a test.zip .&#x2F;trunk&#x2F;            # 7zip 一般壓縮      
+&lt;&#x2F;span&gt;&lt;span&gt;time tar -czvf test.tar.gz .&#x2F;trunk&#x2F;         # GZIP
+&lt;&#x2F;span&gt;&lt;span&gt;time tar -I lz4 -cvf test.tar.lz4 .&#x2F;trunk&#x2F;  # LZ4
+&lt;&#x2F;span&gt;&lt;span&gt;time zip -r -s 10G test.zip .&#x2F;trunk&#x2F;        # ZIP
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;挑選的標準很簡單，不要太冷門，壓縮&#x2F;解壓縮工具在 Windows&#x2F;Linux 上可以方便操作。如果有人知道什麼特別優秀的壓縮演算法麻煩告訴我。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;ce-shi-huan-jing&quot;&gt;測試環境&lt;&#x2F;h2&gt;
+&lt;p&gt;測試樣本總共 129GB，內容物大約為 45% FBX模型、45% TGA貼圖、10% 其他有的沒的。129GB 只是全部檔案的一部份，但我認為已經足夠有代表性來推斷出整體時間。&lt;&#x2F;p&gt;
+&lt;p&gt;測試的機子是 Vultr VPS 640G 方案，作業系統 Ubuntu 21.04。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;vultr-640.png&quot; alt=&quot;Vultr&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;ce-shi-jie-guo&quot;&gt;測試結果&lt;&#x2F;h2&gt;
+&lt;p&gt;表格內是五種方法的測試結果，包括壓縮後的檔案大小，壓縮比，以及壓縮時間&lt;&#x2F;p&gt;
+&lt;style&gt;
+table { border:solid 0px #cccccc; }
+th, td {border:1px solid #aaa; padding: 5px;}
+&lt;&#x2F;style&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;方法&lt;&#x2F;th&gt;&lt;th&gt;壓縮時間&lt;&#x2F;th&gt;&lt;th&gt;壓縮前大小&lt;&#x2F;th&gt;&lt;th&gt;壓縮後大小&lt;&#x2F;th&gt;&lt;th&gt;壓縮比&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;7zip 最快速壓縮&lt;&#x2F;td&gt;&lt;td&gt;22m55s&lt;&#x2F;td&gt;&lt;td&gt;129 GB&lt;&#x2F;td&gt;&lt;td&gt;38 GB&lt;&#x2F;td&gt;&lt;td&gt;29.5%&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;7Zip 一般壓縮&lt;&#x2F;td&gt;&lt;td&gt;43m3s&lt;&#x2F;td&gt;&lt;td&gt;129 GB&lt;&#x2F;td&gt;&lt;td&gt;36.8 GB&lt;&#x2F;td&gt;&lt;td&gt;28.5%&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Gzip&lt;&#x2F;td&gt;&lt;td&gt;75m33s&lt;&#x2F;td&gt;&lt;td&gt;129 GB&lt;&#x2F;td&gt;&lt;td&gt;57.2 GB&lt;&#x2F;td&gt;&lt;td&gt;33.1%&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;LZ4&lt;&#x2F;td&gt;&lt;td&gt;8m21s&lt;&#x2F;td&gt;&lt;td&gt;129 GB&lt;&#x2F;td&gt;&lt;td&gt;42.7 GB&lt;&#x2F;td&gt;&lt;td&gt;44.3%&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Zip&lt;&#x2F;td&gt;&lt;td&gt;79m28s&lt;&#x2F;td&gt;&lt;td&gt;129 GB&lt;&#x2F;td&gt;&lt;td&gt;43 GB&lt;&#x2F;td&gt;&lt;td&gt;33.3%&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;從表格來看，7zip (也就是LZMA2演算法) 的壓縮率全場最佳，GZIP&#x2F;ZIP 次之，LZ4 的壓縮率最差。壓縮速度則是 LZ4 最快，7zip 次之，Zip&#x2F;Gzip 最慢。&lt;&#x2F;p&gt;
+&lt;p&gt;接著根據我家的平均網速 4.5MB&#x2F;sec，計算出下載檔案需要的時間，再加總起來&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;方法&lt;&#x2F;th&gt;&lt;th&gt;壓縮時間 (秒)&lt;&#x2F;th&gt;&lt;th&gt;下載時間 (秒)&lt;&#x2F;th&gt;&lt;th&gt;總時間&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;7zip 最快速壓縮&lt;&#x2F;td&gt;&lt;td&gt;1375&lt;&#x2F;td&gt;&lt;td&gt;8647&lt;&#x2F;td&gt;&lt;td&gt;167分鐘&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;7zip 一般壓縮&lt;&#x2F;td&gt;&lt;td&gt;2583&lt;&#x2F;td&gt;&lt;td&gt;8374&lt;&#x2F;td&gt;&lt;td&gt;182分鐘&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Gzip&lt;&#x2F;td&gt;&lt;td&gt;4533&lt;&#x2F;td&gt;&lt;td&gt;9716&lt;&#x2F;td&gt;&lt;td&gt;237分鐘&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;LZ4&lt;&#x2F;td&gt;&lt;td&gt;501&lt;&#x2F;td&gt;&lt;td&gt;13016&lt;&#x2F;td&gt;&lt;td&gt;225分鐘&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Zip&lt;&#x2F;td&gt;&lt;td&gt;4768&lt;&#x2F;td&gt;&lt;td&gt;9784&lt;&#x2F;td&gt;&lt;td&gt;242分鐘&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;結果出來了，從總時間來看，&lt;strong&gt;7zip 最快速壓縮&lt;&#x2F;strong&gt;是最佳方案，只要167分鐘就可以把整包129GB檔案下載到我的本機。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;fang-an-bi-jiao&quot;&gt;方案比較&lt;&#x2F;h2&gt;
+&lt;p&gt;CPU 使用量，依我的粗略觀察，LZ4 CPU 使用量最低，Gzip&#x2F;Zip 單核使用量 100%，7zip 則是八核全部用滿，八核心全部 100%。所以雖然 7zip 總時間最短，但是代價是吃光全部主機資源。&lt;&#x2F;p&gt;
+&lt;p&gt;7zip 從最快速壓縮 &lt;code&gt;-mx1&lt;&#x2F;code&gt; 換成一般壓縮 &lt;code&gt;-mx3&lt;&#x2F;code&gt; 只增加了 1% 壓縮率，但是壓縮時間長了快一倍，不太值得。&lt;&#x2F;p&gt;
+&lt;p&gt;LZ4 演算法標榜超快速壓縮，名符其實，只用了八分多鐘壓完全部檔案，海放其他演算法。但是因為檔案總體積太大，所以壓縮率普通的缺點就被突顯出來，如果下次壓比較小的檔案，我可能會考慮LZ4。&lt;&#x2F;p&gt;
+&lt;p&gt;Zip&#x2F;Gzip 骨子裡是同一套壓縮演算法，所以不意外表現非常接近。壓縮比不差，但是真的壓太久了。&lt;&#x2F;p&gt;
+&lt;p&gt;另外 7zip 和 Zip 壓縮時可以指定輸出成多個固定尺寸的檔案，減少一次性傳輸超大檔案的失敗機會。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>寫 Powershell 解決 TortoiseGit 圖示消失問題</title>
+        <published>2021-05-17T00:00:00+00:00</published>
+        <updated>2021-05-17T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/tortoise-dropbox-overlay/"/>
+        <id>https://chchwy.github.io/posts/tortoise-dropbox-overlay/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/tortoise-dropbox-overlay/">&lt;p&gt;幾天前，小烏龜 TortoiseGit 圖示消失的問題又發生了，我在檔案總管上看不見 git 狀態，很不方便。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;icon-overlay.png&quot; alt=&quot;icon-overlay&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;上圖是正常狀態，有綠色小勾勾顯示 git 狀態。&lt;&#x2F;p&gt;
+&lt;p&gt;發生的原因，就是顯示綠色勾勾的那個機制: Windows Icon Overlay 有數量限制 16 個。這 16 個位置是所有應用程式共享的，包括 Dropbox、TortoiseGit、OneDrive 等等。&lt;&#x2F;p&gt;
+&lt;p&gt;如果超過了 16 個怎麼辦？名字排序，顯示前 16 個。&lt;&#x2F;p&gt;
+&lt;p&gt;我去打開 Windows Icon Overlay 的清單，發現 Dropbox 一隻程式就佔用了&lt;strong&gt;10 個位置&lt;&#x2F;strong&gt;，而且&lt;strong&gt;非常無恥&lt;&#x2F;strong&gt;的在名字前面插三個空格，確保他家的圖示一定會佔住最前面的位置。所以一旦電腦上同時裝了 Dropbox + TortoiseGit，小烏龜的圖示就有很大的機會被擠到 16 個有效位置以外，無法正確顯示。&lt;&#x2F;p&gt;
+&lt;p&gt;網路上已經很多人貼解法了，改註冊表，調整順序，都很詳細，我就不贅述了：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dotblogs.com.tw&#x2F;kevinya&#x2F;2017&#x2F;07&#x2F;24&#x2F;180237&quot; title=&quot;TorsoieGit 跟 Dropbox 相衝&quot;&gt;Dropbox與小烏龜Tortorise的圖示icon相衝問題解決&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.garethjmsaunders.co.uk&#x2F;2015&#x2F;03&#x2F;22&#x2F;managing-overlay-icons-for-dropbox-and-tortoisesvn-and-tortoisegit&#x2F;&quot;&gt;Managing overlay icons for Dropbox and TortoiseSVN and TortoiseGit&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;但是註冊表改好後，這個問題仍然會不定時出現。因為 Dropbox 每次更新版本後會把註冊表改回去！&lt;&#x2F;p&gt;
+&lt;p&gt;所以我就在想能不能把解法自動化，寫成程式?&lt;&#x2F;p&gt;
+&lt;p&gt;研究了一下，發現 Powershell 可以修改註冊表。就花了一點時間寫 Powershell:&lt;&#x2F;p&gt;
+&lt;p&gt;我發現 PowerShell 操作註冊表，跟操作檔案非常相似。&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Get-ChildItem&lt;&#x2F;code&gt;：列出註冊表子項目&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Remove-Item&lt;&#x2F;code&gt;：刪除註冊表&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Rename-Item&lt;&#x2F;code&gt;：重新命名&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Split-Path -leaf $path&lt;&#x2F;code&gt;：從完整路徑快速取出檔名&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;註冊表路徑以 &lt;code&gt;HKLM:\&lt;&#x2F;code&gt; 或 &lt;code&gt;HKCU:\&lt;&#x2F;code&gt; 起頭。&lt;code&gt;HKLM:\&lt;&#x2F;code&gt; 表示 Local Machine， &lt;code&gt;HKCU:\&lt;&#x2F;code&gt; 表示 Current User。&lt;&#x2F;p&gt;
+&lt;p&gt;比如這個註冊表路徑&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#393939;color:#dedede;&quot;&gt;&lt;code&gt;&lt;span&gt;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;在 powershell 裡面就要寫成這樣：&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#393939;color:#dedede;&quot;&gt;&lt;code&gt;&lt;span&gt;HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;以下是我的 PowerShell 腳本。砍掉比較少見的 Dropbox 圖示，留下必要的四個，再把無恥的三空格改成一個空格。確保他們的順序在 TortoiseGit 後面。&lt;&#x2F;p&gt;
+&lt;script src=&quot;https:&#x2F;&#x2F;gist.github.com&#x2F;chchwy&#x2F;5418022d47fa49481f71ba481f54c02a.js&quot;&gt;&lt;&#x2F;script&gt;
+&lt;h2 id=&quot;can-kao-wang-ye&quot;&gt;參考網頁&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dotblogs.com.tw&#x2F;kevinya&#x2F;2017&#x2F;07&#x2F;24&#x2F;180237&quot; title=&quot;TorsoieGit 跟 Dropbox 相衝&quot;&gt;Dropbox與小烏龜Tortorise的圖示icon相衝問題解決&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.garethjmsaunders.co.uk&#x2F;2015&#x2F;03&#x2F;22&#x2F;managing-overlay-icons-for-dropbox-and-tortoisesvn-and-tortoisegit&#x2F;&quot;&gt;Managing overlay icons for Dropbox and TortoiseSVN and TortoiseGit&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;blog.netwrix.com&#x2F;2018&#x2F;09&#x2F;11&#x2F;how-to-get-edit-create-and-delete-registry-keys-with-powershell&#x2F;&quot;&gt;How to Get, Edit, Create and Delete Registry Keys with PowerShell&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.microsoft.com&#x2F;zh-tw&#x2F;powershell&#x2F;scripting&#x2F;samples&#x2F;working-with-registry-keys?view=powershell-7.1&quot;&gt;PowerShell: 使用登錄機碼&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>Chocolatey 套件管理，重灌 Windows 後的好幫手</title>
+        <published>2019-08-14T00:00:00+00:00</published>
+        <updated>2019-08-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/chocolatey/"/>
+        <id>https://chchwy.github.io/posts/chocolatey/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/chocolatey/">&lt;p&gt;上個月，我又重灌了 Windows。&lt;&#x2F;p&gt;
+&lt;p&gt;重灌後，我給自己設了一個挑戰：不手動下載任何安裝檔，就把電腦恢復成可工作狀態。&lt;&#x2F;p&gt;
+&lt;p&gt;我想要這樣挑戰，是因為每次重灌電腦後，就是惡夢般的漫長的軟體安裝之旅。去每個軟體的官方網站，下載，等待，安裝，有時候要重新開機，無限迴圈。過程比安裝 Windows 本身還要漫長。&lt;&#x2F;p&gt;
+&lt;p&gt;事後來看，雖然「無手動下載」的目標還沒辦法達成百分之百。但是除了少數例外，我已經可以自動化安裝八成以上的常用軟體了。主要靠兩個的軟體套件管理：Chocolatey 和 Microsoft Store。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;chocolatey-jiao-xue&quot;&gt;Chocolatey 教學&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;chocolatey.org&#x2F;&quot; title=&quot;Chocolatey Official Website&quot;&gt;Chocolatey&lt;&#x2F;a&gt; 是命令列套件管理工具。類似 Ubuntu 的 &lt;code&gt;apt-get&lt;&#x2F;code&gt; 讓你一行指令完成軟體的安裝，同樣的概念在套用在 Windows 上就是 Chocolatey。許多常見的 Windows 軟體都已經在 Chocolatey 上架。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;an-zhuang-chocolatey&quot;&gt;安裝 Chocolatey&lt;&#x2F;h3&gt;
+&lt;p&gt;打開具有管理員權限的 Powershell，複製貼上官網的安裝指令 :&lt;br&#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;chocolatey.org&#x2F;install#install-with-powershellexe&quot;&gt;https:&#x2F;&#x2F;chocolatey.org&#x2F;install#install-with-powershellexe&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;chang-yong-zhi-ling&quot;&gt;常用指令&lt;&#x2F;h3&gt;
+&lt;p&gt;Chocolatey 的指令名稱是 &lt;code&gt;choco&lt;&#x2F;code&gt;，大多數操作需要管理員權限。&lt;&#x2F;p&gt;
+&lt;p&gt;安裝套件 (以 7-zip 為例)&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#393939;color:#dedede;&quot;&gt;&lt;code&gt;&lt;span&gt;choco install 7zip
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;反安裝套件&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#393939;color:#dedede;&quot;&gt;&lt;code&gt;&lt;span&gt;choco uninstall 7zip
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;列出已安裝的套件&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#393939;color:#dedede;&quot;&gt;&lt;code&gt;&lt;span&gt;choco list --local
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;檢查套件是否有新版本&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#393939;color:#dedede;&quot;&gt;&lt;code&gt;&lt;span&gt;choco outdated
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;更新所有套件到最新版&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#393939;color:#dedede;&quot;&gt;&lt;code&gt;&lt;span&gt;choco upgrade all
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;這是我的 Chocolatey 安裝清單：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;choco install -y 7zip                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 萬用壓縮軟體
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y geekuninstaller     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 強大的反安裝工具
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y firefox             &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 我的慣用瀏覽器
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y googlechrome        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 有時候需要另一個瀏覽器
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y everything          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 最強大的檔案搜尋工具
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y dropbox             &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; Dropbox 客戶端
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y golang              &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; Go lang
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y cmake               &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; CMake
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y vscode              &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; VS Code
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y notepadplusplus     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 老牌文字編輯器 Notepad++
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y tortoisegit         &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 小烏龜 Git
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y git-fork            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 另一款輕巧的 git 圖形化工具
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y beyondcompare       &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 超級好用的 diff&#x2F;merge 工具
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y filezilla           &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; FTP 客戶端
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y foxitreader         &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 我慣用的 PDF viewer
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y hugo                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 靜態博客產生器
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y pandoc              &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 強大的文件轉換工具
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y paint.net           &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 免費的小畫家強化版
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y workflowy           &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 條列式筆記工具
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y libreoffice-fresh   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 沒辦法，有時候還是要處理.docx
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y mp3tag              &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; MP3 標籤編輯
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y treesizefree        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 追蹤硬碟空間使用
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y ccleaner            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 清理垃圾檔案
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y teamviewer          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; Teamviewer 遠端桌面
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y 4k-video-downloader &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 影片&#x2F;音樂抓取
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y xnviewmp            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 看圖軟體
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y foobar2000          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 聽歌軟體
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y steam               &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 娛樂軟體
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y vlc                 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 開源影片播放軟體
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y k-litecodecpack-standard &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; k-lite 萬用影音播放 codec
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;只要一個 Powershell 腳本就可以把清單上的軟體全裝好了，之後升級版本也只要一個命令，異常方便。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;microsoft-store&quot;&gt;Microsoft Store&lt;&#x2F;h3&gt;
+&lt;p&gt;另外有幾款軟體，雖然也可以用 Chocolatey，但是我發現 Microsoft Store 上的版本更穩定。像是 Evernote 和 Line 的桌面版。用 Microsoft Store 安裝軟體的體驗也很好，一鍵安裝，無縫升級。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;qi-ta-mei-ban-fa-zi-dong-an-zhuang-de-ruan-ti&quot;&gt;其他沒辦法自動安裝的軟體&lt;&#x2F;h3&gt;
+&lt;p&gt;因為某些原因，以下軟體我還是必須手動安裝：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Visual Studio (沒有其他安裝方法)&lt;&#x2F;li&gt;
+&lt;li&gt;Qt (沒有其他安裝方法)&lt;&#x2F;li&gt;
+&lt;li&gt;git (安裝過程中我需要修改選項)&lt;&#x2F;li&gt;
+&lt;li&gt;Slack (我刻意安裝 32-bit 的版本，希望能限制記憶體用量，但是還沒驗證過有沒有效XD)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>Objective-C 好用的 nil 和變數類型的思考</title>
+        <published>2013-12-23T00:00:00+00:00</published>
+        <updated>2013-12-23T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/the-magical-effect-of-objective-c-nil/"/>
+        <id>https://chchwy.github.io/posts/the-magical-effect-of-objective-c-nil/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/the-magical-effect-of-objective-c-nil/">&lt;p&gt;Objective-C 裡有個我非常喜愛的特性，就是對空物件 nil 調用方法不會出錯。
+類似這樣：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;cpp&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-cpp &quot;&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span&gt;NSArray&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt; myArray &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt; nil;
+&lt;&#x2F;span&gt;&lt;span&gt;[myArray count]; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;&#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; It&amp;#39;s ok.
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;在許多主流語言裡，像是 C++，對 NULL 指標調用方法都是非常嚴重的錯誤，程式很可能會馬上崩潰。但是在 Objective-C 裡不同，對 nil 調用方法被視為稀鬆平常的事情，這個方法調用不會使程式崩潰，也不會拋出異常，程式單純的不做任何反應，船過水無痕地默默繼續運行。如果該方法有回傳值，就回傳 nil 或零。&lt;&#x2F;p&gt;
+&lt;p&gt;空指標就不做事的原則，大多數時候也的確符合我們的期望，所以 Objective-C 程式裡不再需要處處塞滿 &lt;code&gt;if ( ptr != NULL ) { ... }&lt;&#x2F;code&gt; ，提心吊膽的提防遺漏的空指標造成程序崩潰，這個小差異大大提高了程序的穩定性。代碼也更簡短清晰了。&lt;&#x2F;p&gt;
+&lt;p&gt;後來我發覺這個 NULL &#x2F; nil 的小差異，其實沒那麼簡單，真正的問題是 NULL 指標本身的存在，就破壞了程式語言的類型保護網。&lt;&#x2F;p&gt;
+&lt;p&gt;類型(Type)是編譯器給我們的一張保護網，string 類型的變數就只能呼叫 string 的方法，所有操作都由編譯器掛保證，不合法的方法調用，都在編譯期會被擋下來。&lt;&#x2F;p&gt;
+&lt;p&gt;但是超越這張保護網的唯一例外就是 NULL 。當我們聲明一個 &lt;code&gt;string*&lt;&#x2F;code&gt; 類型的變數，其實真正的意思是該變數既可以存放 string 指標， &lt;strong&gt;也可以&lt;&#x2F;strong&gt; 存放 NULL，對吧，兩者都合法，即使 NULL 完全不符合 string 類型的規範，一運行就會出錯，但是編譯器就是認可這個賦值，一聲不吭。&lt;&#x2F;p&gt;
+&lt;p&gt;為了處理 NULL 特例，我們程式設計師只能辛勤的手動防範，每個引用到該變數的地方都區分有效變數或 NULL 兩種行為，最終導致程式碼裡頭無止盡的 NULL check ，因為我們不知道指標何時是有效的變數，何時是 NULL。也因此才有人提出 Null Object Pattern ，用團隊的編程規範去禁止 NULL 的使用，改以一個自己撰寫的不做事的空物件取代之。&lt;&#x2F;p&gt;
+&lt;p&gt;所以 Objective-C 的 nil 並不單單只是一個不會程序崩潰的 NULL 指標而已，nil 滿足所有類型的規範，不再需要有特例需要防範，它其實等同了語言內建了所有類型的 NullObject 機制。&lt;&#x2F;p&gt;
+&lt;p&gt;這篇文章大部分來自&lt;a href=&quot;http:&#x2F;&#x2F;www.yinwang.org&#x2F;&quot;&gt;王垠博客&lt;&#x2F;a&gt;的啟發。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

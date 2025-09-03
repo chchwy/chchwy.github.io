@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-tw">
+    <title>調和的靈感 Matt - 職涯</title>
+    <subtitle>紀錄我的思考，讀書筆記，還有程式設計</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://chchwy.github.io/tags/zhi-ya/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://chchwy.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2013-06-17T00:00:00+00:00</updated>
+    <id>https://chchwy.github.io/tags/zhi-ya/atom.xml</id>
+    <entry xml:lang="zh-tw">
+        <title>第一支 iOS App 作品上架</title>
+        <published>2013-06-17T00:00:00+00:00</published>
+        <updated>2013-06-17T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/my-first-product/"/>
+        <id>https://chchwy.github.io/posts/my-first-product/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/my-first-product/">&lt;p&gt;上個月有件值得慶賀的事，就是我進職場後的第一個作品上架了，是個小小的、娛樂取向的 2D 臉部動畫 iOS App。&lt;&#x2F;p&gt;
+&lt;p&gt;上架後回頭來看，我的第一個感想是「軟體好貴阿」！&lt;&#x2F;p&gt;
+&lt;p&gt;用極度簡化的「人數 x 薪資」來估算成本，假設每人每月薪水是新台幣四萬元，平均五員參與，一個月的花費就是 20 萬。開發期六個月，算下來成本至少一百萬元跑不掉了，這還沒算上其他辦公室租金、水電冷氣、電腦等等開支。&lt;&#x2F;p&gt;
+&lt;p&gt;一個單純作為娛樂用途的小APP，背後竟然耗資百萬，這數字讓我確確實實地重新思考了軟體的價值。&lt;&#x2F;p&gt;
+&lt;p&gt;從成本面來看，團隊的人力配置已經非常精簡了，少了任何一個人，APP就沒有辦法在為期半年的時間內推出。收益僅僅來自解鎖進階功能的 0.99 美元，APP本身是免費的。我心裡琢磨著，別說賺大錢了，要賣幾個才能回本呢?&lt;&#x2F;p&gt;
+&lt;p&gt;另外一件事就是關於軟體品質，這是我第一次跟專業 QA 團隊合作。&lt;&#x2F;p&gt;
+&lt;p&gt;以前學校寫程式，頂多自己花點時間測試一下，幾個常用的使用情境能跑就好了。而這是史上頭一遭，有人認認真真的把我寫的程式，從頭到尾好好的徹底測試過一遍。&lt;&#x2F;p&gt;
+&lt;p&gt;結果呢，四五個操作畫面而已，被掃出一百多隻蟲，說實話有點灰心。但是一旦通過了強力 QA 團隊的檢驗，真的會由心底萌生對軟體品質的安定感。&lt;&#x2F;p&gt;
+&lt;p&gt;說真的，和 QA 合作過後才知道，要做出穩定成熟的程式產品，需要付出許多額外努力，或許等經驗增加之後可以節省走一些彎路的時間吧。這讓我想起了「人月神話」中的軟體成本定律:「將軟體產品化需要三倍的工作量」，此話的確有幾分可信。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>寫在研發替代役面試之後</title>
+        <published>2012-10-21T00:00:00+00:00</published>
+        <updated>2012-10-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/my-rd-alt-service/"/>
+        <id>https://chchwy.github.io/posts/my-rd-alt-service/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/my-rd-alt-service/">&lt;p&gt;去年此時，我正在辛苦的四處找研發替代役。一邊忙菸酒僧工作、一邊擔任電腦圖學課程助教、出作業改作業、還要四處面試的日子真的累，每天的精神幾乎完全消耗殆盡。&lt;&#x2F;p&gt;
+&lt;p&gt;每次我面試完，隔天就擺爛，就算進了 Lab 想掙扎一下，可是電腦開了就是不由自主地一直打電動。&lt;&#x2F;p&gt;
+&lt;p&gt;我後來在想，為什麼會那麼累呢?&lt;&#x2F;p&gt;
+&lt;p&gt;大概是因為面對面試官的逼問，多少會碰觸到一些心理上自己也不太願意面對的部分，在問跟答之間，逼著自己去思考這些平常不會思考的方向。算是一次強迫性的，對自己人生的回顧跟檢討吧。&lt;&#x2F;p&gt;
+&lt;p&gt;這樣說起來，那段時間辛苦歸辛苦，也是一次不錯的人生經驗。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;xin-tai-wen-ti&quot;&gt;心態問題&lt;&#x2F;h2&gt;
+&lt;p&gt;回顧去年的面試，我覺得我犯了一個心態錯誤，就是把「面試」當作「考試」來準備。&lt;&#x2F;p&gt;
+&lt;p&gt;面試官高高在上，單方面的向我出題，我答得好就有機會贏得工作。事實上，我覺得面試更像是媒合的過程，公司挑人，人也挑公司，雙方是對等的關係。&lt;&#x2F;p&gt;
+&lt;p&gt;所以除了公司方出題目考我外，我缺少相對充足的準備去反問工作職位內容和公司對待員工的方式。每當面試官問我：「請問你對公司有什麼問題嗎?」我只問了平常幾點下班，真是傻傻的。&lt;&#x2F;p&gt;
+&lt;p&gt;回家後我想了想，把應該問面試官的問題列下來:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;公司未來打算分配給我的工作是什麼? 會用到那些知識?&lt;&#x2F;li&gt;
+&lt;li&gt;會在哪個部門工作? 部門主要的工作內容? 主管帶團隊的風格?&lt;&#x2F;li&gt;
+&lt;li&gt;公司部門目前主打的方向? 請面試官聊聊他們的產品還有業務。&lt;&#x2F;li&gt;
+&lt;li&gt;上班時間? 平常幾點下班? 是否需要常態性加班? 有沒有加班費?&lt;&#x2F;li&gt;
+&lt;li&gt;研發替代役第二階段是否補滿? 什麼方式給? 有哪些津貼?&lt;&#x2F;li&gt;
+&lt;li&gt;公司有沒有培養新人的固定計畫?&lt;&#x2F;li&gt;
+&lt;li&gt;公司有沒有軟體開發流程? 有沒有版本控制系統? 有沒有 QA 團隊?&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;每個問題都可以一直延伸下去，有禮貌的直接提問，不拐彎抹角。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;ren-shi-ye-jie&quot;&gt;認識業界&lt;&#x2F;h2&gt;
+&lt;p&gt;研發役期三年是很大的時間賭注，也是菜鳥工程師成長的黃金時期，萬一不認同公司的工作文化，連唯一抗拒方式「離職的權利」都被剝奪，大概會很痛苦。&lt;&#x2F;p&gt;
+&lt;p&gt;但是學生如我，沒待過業界，缺少第一手經驗來判斷公司好壞。所以我只能從書來窺探一些業界的事。&lt;&#x2F;p&gt;
+&lt;p&gt;首先是 &lt;a href=&quot;https:&#x2F;&#x2F;www.books.com.tw&#x2F;products&#x2F;0010387385&quot; title=&quot;Peopleware&quot;&gt;Peopleware :腦力密集產業的人才管理之道&lt;&#x2F;a&gt; 確立了我心中評斷軟體公司的價值準則。還有嘴砲王約耳的&lt;a href=&quot;https:&#x2F;&#x2F;www.tenlong.com.tw&#x2F;products&#x2F;9789866348341&quot; title=&quot;約爾趣談軟體&quot;&gt;『約耳談軟體』&lt;&#x2F;a&gt;和&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;9651113&quot; title=&quot;約爾續談軟體&quot;&gt;『約耳續談軟體』&lt;&#x2F;a&gt;，好笑又中肯。&lt;a href=&quot;https:&#x2F;&#x2F;book.douban.com&#x2F;subject&#x2F;3319935&#x2F;&quot; title=&quot;走出軟體工廠&quot;&gt;走出軟體工廠&lt;&#x2F;a&gt;寫出了一些華人軟體公司的面向。&lt;a href=&quot;http:&#x2F;&#x2F;local.joelonsoftware.com&#x2F;wiki&#x2F;The_Joel_on_Software_Translation_Project:%E7%B4%84%E8%80%B3%E6%B8%AC%E8%A9%A6&quot; title=&quot;約爾測試&quot;&gt;程式之美&lt;&#x2F;a&gt; 開頭有概略的介紹軟體公司會有的基本職位。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

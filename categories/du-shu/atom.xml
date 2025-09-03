@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-tw">
+    <title>調和的靈感 Matt - 讀書</title>
+    <subtitle>紀錄我的思考，讀書筆記，還有程式設計</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://chchwy.github.io/categories/du-shu/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://chchwy.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2010-12-24T00:00:00+00:00</updated>
+    <id>https://chchwy.github.io/categories/du-shu/atom.xml</id>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 史岱爾莊謀殺案</title>
+        <published>2010-12-24T00:00:00+00:00</published>
+        <updated>2010-12-24T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/mysterious-styles/"/>
+        <id>https://chchwy.github.io/posts/mysterious-styles/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/mysterious-styles/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;myth-styles.jpg#book&quot; alt=&quot;史岱爾莊謀殺案&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;本書是克莉絲蒂的出道之作，年方25，文筆爽朗輕快，典型克莉絲蒂風格，絲毫不見一點新手的生澀。我讀完後驚訝極了，能夠一出手就如此夠水準，一方面是佩服，另一方面是懷疑克嬸嬸您一開始就這麼厲害，怎麼進步阿？&lt;&#x2F;p&gt;
+&lt;p&gt;看完史岱爾莊謀殺案後，我真的忍不住要說白羅跟海斯汀這偵探與助手的天生搭檔，兩位真是絕配，一個是精明的過份，另一個是蠢的過份。&lt;&#x2F;p&gt;
+&lt;p&gt;偵探白羅這傢伙老是神秘兮兮的講些怪話，故意不說明白，一邊把讀者弄的身在五里霧中，一邊又不時的奚落他那位搞不清狀況的海斯汀老弟，我說白羅你阿，根本是指桑罵槐，一邊罵海斯汀一邊把讀者罵了個夠吧！難怪吳念真的序文裡出現『我想把那個矮羅壓到馬桶吃屎』。&lt;&#x2F;p&gt;
+&lt;p&gt;另外一邊則是海思汀那個蠢蛋，正直老實沒心機，但是每次看到漂亮美眉就心蕩神馳，冒冒失失的跟人求婚，每當我看到類似橋段我都一直笑。&lt;&#x2F;p&gt;
+&lt;p&gt;而經過好幾本推理小說的考驗之後，我的腦袋也有終於稍微有一點進化了，一開始我就精明的發現跟老太婆吵架的對象其實是另有其人，所以我可以說漂亮的繞過了劇情中的第一個陷阱，不過我得意了沒多久，就老老實實的掉進了第二道陷阱裡，最後的謎底真的很難猜阿，哎呀，哈哈。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: Just for Fun, Linux 創始人托瓦茲自傳</title>
+        <published>2010-12-21T00:00:00+00:00</published>
+        <updated>2010-12-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/just-for-fun-linux/"/>
+        <id>https://chchwy.github.io/posts/just-for-fun-linux/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/just-for-fun-linux/">&lt;h2 id=&quot;bu-ping-fan-de-ping-fan-ren&quot;&gt;不平凡的平凡人&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;justforfun.jpg#book&quot; alt=&quot;Just for Fun&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;我想對此書有興趣的人，大多想瞭解兩個問題&lt;&#x2F;p&gt;
+&lt;p&gt;一、Linux為什麼會成功 ?
+二、Linus Torvalds此公到底是何等人物 ?&lt;&#x2F;p&gt;
+&lt;p&gt;針對這兩個問題，如果你對 Linux 的歷史背景跟開發過程沒那麼熟悉，那我會推薦大家先去看&lt;a href=&quot;&#x2F;post&#x2F;book&#x2F;2010-12-21-rebel-code-review&#x2F;&quot;&gt;「Rebel Code」&lt;&#x2F;a&gt;(中譯: Linux傳奇)。為什麼這樣說呢？ 因為我自己讀 Just for Fun 這本書時，很多時候因為不瞭解當時開發 Linux 的時空背景，所以無法體會 Linus 對事件做出的評論。第二個是 Linus 本人實在很謙虛，往往輕描淡寫的帶過自己的事蹟。&lt;&#x2F;p&gt;
+&lt;p&gt;我讀完 Rebel Code 之後又重讀此書，才終於有抓到一些感覺。舉個例子來說，像是 Linus 在書裡暢談他對 Linux 社群呈多頭馬車時的處理法，要了解他說的話，就得先知道 Linux 發展的過程中曾經出現過兩次分裂危機，一次 是 TCP&#x2F;IP ，一次是 vger 事件。看完 Rebel code 後我才搞懂整個來龍去脈，事實上本書也只有記述 Linus 自己片面的說法，不夠全面。&lt;&#x2F;p&gt;
+&lt;p&gt;Linus 此公基本上就是個電腦宅宅，比起一些商場大人物的自傳整本吹噓自己， Linus 平易近人多了。Linus 是個務實派駭客，沒有 Stallman 那種崇高的理念，除了喜歡玩電腦之外，跟一般人沒什麼兩樣。當初開發 Linux 的原因只是覺得好玩，想要搞懂386晶片的底細，某次陰錯陽差之下，就成了一個真正的作業系統。本書也可以看出 Linus 的帶領原則就是無為而治，而他這樣的個性正好適合 Linux 這個海納百川的大型開源專案。&lt;&#x2F;p&gt;
+&lt;p&gt;Linux的成功固然有些機運，但是絕不僥倖。這位電腦宅宅12歲就開始寫組合語言的驚人事蹟，就別說了。Linus 說影響他一生最大的一本書籍就是Tanenbaum 寫的『Operating System』，他老媽這樣形容他:「他是個很好養的孩子，只要空出一個衣櫥，塞台電腦進去，外加一點乾麵餅，對他就是人間至樂了。」 當一個人能專心致志如斯，那只是機會早到晚到的問題。&lt;&#x2F;p&gt;
+&lt;p&gt;最近看了電影「三傻」，赫然發現 Linus 不正是真實世界版的主角蘭切嗎? Just for Fun!&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 東方快車謀殺案</title>
+        <published>2010-12-21T00:00:00+00:00</published>
+        <updated>2010-12-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/murder-orient-express/"/>
+        <id>https://chchwy.github.io/posts/murder-orient-express/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/murder-orient-express/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;orient-murder.jpg#book&quot; alt=&quot;東方快車謀殺案&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;談起這本書，就要說起當我還是個小大二時，有一次在社團看見學長手上拿著「東方快車謀殺案」，就隨口探詢了大概的故事內容，聽完後心裡第一個冒出來念頭是「老天，這本書聽起來超無聊的。」&lt;&#x2F;p&gt;
+&lt;p&gt;幾年後，有機會翻開它，整個故事架構一如意料的單調：火車上死了一個人，神探白羅把車廂內的有嫌疑的乘客一個一個抓來問話，篇幅一人一章，十個人就問了十章。白羅思考後又重複訊問乘客一次，破案。&lt;&#x2F;p&gt;
+&lt;p&gt;當時年紀輕輕的我顯然不能瞭解整本都在問話與找不在場證明的書有什麼好看。所以之後我讀A.B.C謀殺案時，看到書裡白羅自己說道：『如果在第一章兇案就已經發生，而一直看到書中的倒數第二頁都只在追查每個人的不在場證明，這樣的故事實在太冗長乏味。』我看完這句話當場拍桌大笑，阿嘉莎阿姨幽了自己一默，因為白羅這句話正好拿來形容「東方快車謀殺案」，但結論恰恰相反，故事太精采了。&lt;&#x2F;p&gt;
+&lt;p&gt;沒有飛車追逐或男女情愛妝點，單調的故事架構，反而凸顯了克莉絲蒂作品最純粹的趣味。白羅探案的特色就是一直對話，在對話中刺探每個人的想法，刺探人心中最微妙的部分。在我看來，阿嘉莎．克莉絲蒂無疑是個觀察入微，洞悉人性的人，光憑對話，就把每個人物形象的刻劃的生動精彩。整個車廂內十多個人，每個人都有不同的國籍，不同的個性，冷靜的英國小姐，聒噪的美國太太，剛毅的俄國公主，死板的德國女僕，以及精明又有些自戀的白羅等等，只消聽聽這些傢伙嘴巴說出的話，馬上整個角色的形象活起來，好像真的站在我眼前一樣。白羅一個一個向列車上的乘客詢問證詞，這樣互相對話就可以寫得讓人欲罷不能。&lt;&#x2F;p&gt;
+&lt;p&gt;而推動劇情發展的要素，我想直接引用東方快車董事布克先生的話：「謊言，更多的謊言！」後半段白羅一一揭穿每個乘客的謊言，大概是全書最讓人拍案叫絕大喊痛快的橋段。每個人各懷鬼胎，與白羅嘴巴上你來我往，每次讀我都覺得真是有趣極了。精巧設計的結局，我反而印象沒那麼深刻。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: Linux 傳奇 (Rebel Code)</title>
+        <published>2010-12-21T00:00:00+00:00</published>
+        <updated>2010-12-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/rebel-code/"/>
+        <id>https://chchwy.github.io/posts/rebel-code/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/rebel-code/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;linux-rebel-code.jpg#book&quot; alt=&quot;Linux 傳奇&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;rebel-code-kai-yuan-ge-ming-shi&quot;&gt;Rebel Code 開源革命史&lt;&#x2F;h2&gt;
+&lt;p&gt;報導文學的傑作！回想上一次讀書心中湧現出類似的激動，已經是四五年前讀『宇宙的寂寞心靈』。這兩本書的共同點就是雖然主軸是科學技術，但是內容述說的卻是這個行業中的&lt;strong&gt;人&lt;&#x2F;strong&gt;的故事。技術是冰冷的，但是走在大時代洪流中的人，卻各個有血有肉。&lt;&#x2F;p&gt;
+&lt;p&gt;原文書名叫做『Rebel Code』，直譯叫『叛碼』，副標題則是 Linux And The Open Source Revolution (Linux 與開源革命)，一定要吐槽一下糟糕的中文譯名，副標題比爾蓋茲云云可說完全搞錯方向。這個書名非常有意思，因為這兒 Code 是個雙關，表面意思是代碼，背面意思是法典。恰恰代表了本書描寫的兩個對象，以 Linux 為首顛覆傳統開發方式大獲成功的開源軟體，以及一群奔放不羈、充滿理想的平凡人，運用自己的力量搖動世界成為典範的故事。&lt;&#x2F;p&gt;
+&lt;p&gt;本書以自由軟體先驅 &lt;a href=&quot;https:&#x2F;&#x2F;zh.wikipedia.org&#x2F;zh-tw&#x2F;%E7%90%86%E6%9F%A5%E5%BE%B7%C2%B7%E6%96%AF%E6%89%98%E6%9B%BC&quot;&gt;Richard Stallman&lt;&#x2F;a&gt; 做起點，以 Linux 的發展作為主幹，譜成了長達十年、可歌可泣的故事。我看著好多個只曾在課本上見過的資訊大佬們，如 Linus 與 Tanenbaum，在網路群組上對作業系統設計架構針鋒相對互噴口水，頓時覺得這些名字不再是遙遠天邊的神，而是跟我們一樣活生生的人，而且這些人口水也很能噴，有趣的緊。&lt;&#x2F;p&gt;
+&lt;p&gt;除了Linux之外，著名的開源項目 GNU、GCC、Apache、Perl、Mozilla 也都在書中占有一定篇幅，本書可以說是一個全面的開放源碼運動的紀錄。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;da-jiao-tang-yu-shi-ji&quot;&gt;大教堂與市集&lt;&#x2F;h2&gt;
+&lt;p&gt;全書的結構分為兩大段，前八章是 Linux 的成長過程，第十章後則是 Linux 一路攻城掠地。而位居中間的第九章是本書的一個高潮，全章以『大教堂和市集』一文為中心，深入淺出的分析了開源自由軟體成功的原因。&lt;&#x2F;p&gt;
+&lt;p&gt;大教堂與市集代表兩種相互衝突的軟體開發觀點，大教堂是傳統的軟體開發觀：&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;『我相信最重要的軟體必須如建造一座教堂般，由個別的高手或一小群專家在光輝的孤立中小心翼翼地精雕細琢，時機未到之前，不會釋出測試版。』&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;但 Linux 完全顛覆了傳統，來自世界各地的烏合之眾打造了高品質的程式：&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;『儘早並經常發表新版本，授權每一件可以委託的事，不拒絕幾乎到混亂程度的程式，...Linux 的同好們似乎組成了喧鬧的大市集，以這個風格發展出來的Linux既一致又穩定，表面上看來真是一連串的奇蹟。』&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;大教堂和市集深切的探討了 Linux 成功的原因，並把成功的原因歸納成一系列的格言，每句格言都很有意思，不妨一讀。&lt;a href=&quot;http:&#x2F;&#x2F;www.cui-zy.cn&#x2F;Recommended&#x2F;Linux&#x2F;%E6%95%99%E5%A0%82%E8%88%87%E5%B8%82%E9%9B%86.pdf&quot;&gt;大教堂與市集全文&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;讀完書後，我自己的對開源的一點想法是，其實使用者並不管軟體本身開不開放，真正關心的是軟體到底合不合乎需要。而開放比封閉更容易貼近使用者的需求。每個人都曾經想過「如果OO軟體有XX功能就好了!」而專利軟體最糟糕的一點就是使用者對這個問題幾乎無能為力。開源軟體的架構下，每個人都可以自己動手添加功能或修復錯誤。當使用者同時也是開發者，兩個角色重疊，軟體最麻煩的需求分析的門檻就降到零了。&lt;&#x2F;p&gt;
+&lt;p&gt;同時書中提到一個觀點，開源軟體的知識共享可以免去重複造輪子。Linux 之前，很多版本的 Unix 擁技術各據山頭，收取高額權利金，結果因為 Unix 版本太多，每家公司都要重新開發一次類似的功能，消耗整個軟體界的能量。最後的下場是便宜的 Windows NT 一來，風吹樹倒，整個 Unix 伺服器佔有率掉光光。不過本書也說明開源不是萬靈丹，並不是什麼專案開源之後都會成功。&lt;&#x2F;p&gt;
+&lt;p&gt;另外一點，Linux 的成功與 Torvalds 本身個性有很大關係。Linux 發展之初，其實有兩個開源 Unix 互相競爭，分別是 Tanenbaum 撰寫的 Minix，以及 Torvalds 撰寫的 Linux。而勝出的關鍵就在 Torvalds 的個性極為開放，幾乎任何人送來的 patch 都來者不拒，還鼓勵大家這麼做。反觀 Tanenbaum 對修改 Minix 一直機機歪歪，步調緩慢。群眾自然湧向願意聆聽大眾聲音並改變的 Linux。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;hai-ke-jing-shen&quot;&gt;駭客精神&lt;&#x2F;h2&gt;
+&lt;p&gt;另外貫穿於全書之中令人敬佩的 - 駭客精神：把金錢擺到次位，一心追求最好的技術、最好的軟體。重視自由、分享、社群精神，關注軟體的創作、美、以及有趣。我覺得這才是整個開源運動最動人的地方。書中有句話『自由軟體即是關心社會』，讓我會心一笑。&lt;&#x2F;p&gt;
+&lt;p&gt;本書出版於2000年左右，至今以過了十載，開源有許多後續發展，像十一章Linux系統採用的版本控制軟體 BitKeeper 終被拋棄，git誕生。2001年時被認為失敗的案例Mozilla，以Firefox之姿浴火重生，現在已經是鋒頭最健的開源項目之一。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;chai-jing-de-zhong-wen-ban&quot;&gt;差勁的中文版&lt;&#x2F;h2&gt;
+&lt;p&gt;最後我要抱怨 -- 本書的編輯&lt;strong&gt;很差&lt;&#x2F;strong&gt;，好好一本傑作就這樣被糟蹋了，書的目錄印錯，翻譯品質也很爛。譯者明顯是個電腦外行人，很多業內的通用譯名如 GPL、CVS、micro-kernel、CSS、DOM 都譯得亂七八糟，語句中明顯看的出來譯者自己也不知道在寫什麼，『妙不可言的人月』其實是著名的軟體工程著作『人月神話』，『HTML標識』應該叫『HTML標籤』，作業系統內核的字句名詞也錯誤百出，我建議本書的翻譯稿也應該開源一下。&lt;&#x2F;p&gt;
+&lt;p&gt;對了，看完本書後，我真的覺得 GCC 是這個世界上最偉大的軟體之一。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 精通 Objective-C 2.0 程式設計</title>
+        <published>2010-11-29T00:00:00+00:00</published>
+        <updated>2010-11-29T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/programming-in-objc-4ed/"/>
+        <id>https://chchwy.github.io/posts/programming-in-objc-4ed/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/programming-in-objc-4ed/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;objc2.jpg#book&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;原文書名： Programming in Objective-C (4th Edition)&lt;&#x2F;p&gt;
+&lt;p&gt;以一本程式語言教學的書來說，我給這本書的評價是：水準以上，但是差了那麼一點醍醐味兒。&lt;&#x2F;p&gt;
+&lt;p&gt;整體的寫作的風格就是平實八穩的依照語言的各種特性，一個個清楚而且詳細的解釋。總共分為三大塊主題: Objetive-C語言、Foundation Framework (objc的標準函式庫) 以及 Cocoa and iPhone SDK。第三部分 Cocoa 只能算淺嘗性質的示範了一個小巧的 iPhone 程式，全書大部分專注於闡述 Objective-C 這個&quot;程序語言&quot;的基礎，沒有特定侷限於某個平台。所以如果你期望在裡面看到更多關於 iPhone&#x2F;iPad 開發的介紹，那可能要失望了。&lt;&#x2F;p&gt;
+&lt;p&gt;全書以數個範例貫穿頭尾，藉由不斷添加功能於其上，引出各式各樣的 Objc 語言特性，我認為相當好。但是這本書對 Objc 2.0 新增的 property 特性並沒有說得很清楚。必須去網路上搜尋其他資料輔助。&lt;&#x2F;p&gt;
+&lt;p&gt;本書把 Objc 當作一個全新的語言來講，而不是 C 語言的延伸，這對沒學過 C 的人算是好消息。我個人是已經學了  C 好多年了，所以這本書到底適不適合完全的新手，我也說不個準。書完全以 OO 的方式來介紹 objc，對於一些舊式C語言的東西如 top-level function、pointer 並不鼓勵使用。所以全書只留有一章把傳統C語言的特性收集起來做個介紹，算是選讀的章節，沒唸也無傷大雅。這章揭露了一些objc底層的實做，對於熟悉C的人倒是相當有趣的一段。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;chai-liao-yi-dian-ti-hu-wei-er&quot;&gt;差了一點醍醐味兒&lt;&#x2F;h2&gt;
+&lt;p&gt;我說差了點醍醐味兒的原因是我掃完本書第一遍後，心中有個聲音響起：又一個程式語言！我學的程式語言還不夠多嗎？其實從本書我對 Objective-C 的第一印象並不太好，對 API 函數的命名尤其反感，比如說 Foundation Framework 裡的字串的比對 &lt;code&gt;[str1 isEqualToString str2];&lt;&#x2F;code&gt; 見到這個方法我差點沒把口中的咖啡噴出來，哎喲，我真的得說服自己在寫程式語言而不是英文作文。&lt;&#x2F;p&gt;
+&lt;p&gt;扯遠了，吐槽 Objective-C 的話題就此打住。總之我認為本書並沒有寫出 Objective-C 的靈魂來。 圖靈獎得主 Alan Perlis 說:「如果一門語言不能影響你寫程式的思維，那它就不值得你去學。」 各種語言形形色色，總有它們優秀獨特的地方。從這本書我看不見 Objective-C 為什麼選擇這樣子的語言設計，或者說這樣的特性有什麼好處，比如書裡第九章標題是 Dynamic Typing、Dynamic Biding 書裡寫道『這使它成為很有威力的程式語言，以及辨別它與其他程式語言(如C++)不同之處』，但章節內容舉的例子有如玩具，完全感受不到威力何在。&lt;&#x2F;p&gt;
+&lt;p&gt;直到我讀了維基百科的 Objective-C 條目，才知道原來 objc 留著 Smalltalk 的血液，這個程式語言史上赫赫有名的老古董。 Objective-C 採用了 smalltalk 的訊息傳遞(message passing)模型，所以 Objective-C 帶著一些今日動態語言才有的特性。這樣來看，本書教會了我大部分 Objective-C 的語法，但維基百科才畫龍點睛般的讓我抓住 Objective-C 的風格。&lt;&#x2F;p&gt;
+&lt;p&gt;相關連結： &lt;a href=&quot;http:&#x2F;&#x2F;zh.wikipedia.org&#x2F;zh-tw&#x2F;Objective-C&quot;&gt;Wiki條目 Objective-C&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 專業 PHP 5 程式設計</title>
+        <published>2010-09-04T00:00:00+00:00</published>
+        <updated>2010-09-04T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/professional-php-5/"/>
+        <id>https://chchwy.github.io/posts/professional-php-5/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/professional-php-5/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;prof-php5.jpg#book&quot; alt=&quot;專業PHP5程式設計&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;原文書名：Professional PHP 5&lt;&#x2F;p&gt;
+&lt;p&gt;如果你受夠了一般坊間的書對PHP物件導向的膚淺介紹，喔，對，就像學生跟老師class、或者狗跟貓繼承了動物所以都會叫，這種看了好像有點道理，但是完全無法明白這跟網頁程式有什麼相關的屁話，那麼這本書鐵定會給你不一樣的感受。&lt;&#x2F;p&gt;
+&lt;p&gt;該怎麼說呢，我看過的書裡，這是第一本真的能「有效」利用物件導向來改善 PHP 網頁開發流程的書。&lt;&#x2F;p&gt;
+&lt;p&gt;PHP 的基本風格就是大雜燴，HTML 與程式碼夾雜一起。這也無可厚非，因為 PHP 的特色就是快速直覺。但是我以前很難想像，原來PHP也可以寫得有組織，有條理，很容易開發跟維護。&lt;&#x2F;p&gt;
+&lt;p&gt;本書的第一部份介紹 &lt;code&gt;PropertyObject&lt;&#x2F;code&gt;：將資料以物件封裝起來，切開資料庫跟網頁的關聯，於是乎網頁的程式變得很簡潔，很好讀，資料部份的程式也因為集中在一起，很容易維護。這種工具封裝再利用恰巧展現了物件導向的威力，傳統的PHP鐵定做不到的，給當時的我很大的震撼。&lt;&#x2F;p&gt;
+&lt;p&gt;於是我照著書本的想法自己寫了一個輕巧的資料存取模組，用在網路程式課程的期末專題。起頭碰到很多困難，花了很多時間在調校物件，但一旦工具準備好後，倒吃甘蔗的感覺就來了，最後一天晚上甚至一口氣衝完好多個頁面功能，這是我人生第一次嚐到物件導向的甜頭，原來物件導向真的有用，而且很有用。&lt;&#x2F;p&gt;
+&lt;p&gt;在今天 PHP Framework 滿天飛的狀況來看，這本書的內容有些過時了。比方說後來我發現我寫的資料存取小模組原來有個專有名詞叫做 ORM，而且網路上有很多高手寫了更好用、更強大的 ORM。一些知名框架像 CakePHP、 CodeIgniter 甚至提供了非常完善的解決方案來組織整個網站。&lt;&#x2F;p&gt;
+&lt;p&gt;回頭來看這本書的工具，是有些陽春了。不過畢竟那都是別人寫好的工具，光使用也不會有什麼長進。有基本的PHP知識，想要一窺這些超級工具開發的秘密，那我認為這本書是非常好、非常難得的敲門磚。程式師圈子裡有句話叫做「Eat Your Own Dog Food」，意思是程式員必須要使用自己開發的工具來改善自己的工作，那本書就是這句話最好的實踐。&lt;&#x2F;p&gt;
+&lt;p&gt;本書的內容其實不只這些小工具，還有很多內容像是 Design Pattern 、SOAP、MVC、 專案管理等等，簡直就是包山包海了，個人認為 Design Pattern 的部份沒什麼有用的例子，後面我則是沒有細看，不好評論。&lt;&#x2F;p&gt;
+&lt;p&gt;有些缺點不得不說：其一是 code 很長而解釋稍嫌不足，而且 code 實在寫得太醜了，閱讀來實在很痛苦。我想一本教學書把程式碼寫得簡潔清楚，可以大大地增進讀者的胃口。其二是本書讀來很明顯就是分成四塊，這也沒什麼，因為有四位作者嘛，但慘的是這四位顯然配合的不好，以致於書裡產生了 PropertyObject 與 GenericObject 這兩套明明目的差不多，但就是不同的兩套實做。我初讀還困惑了一下。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 學習的王道</title>
+        <published>2010-06-30T00:00:00+00:00</published>
+        <updated>2010-06-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/art-of-learning/"/>
+        <id>https://chchwy.github.io/posts/art-of-learning/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/art-of-learning/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;art-of-learning.jpg#book&quot; alt=&quot;學習的王道&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;本書的主人翁 Josh Waitzkin 是美國一位著名的天才少年棋手，曾拿下多次全美冠軍，Josh 長大後對西洋棋倦勤，轉行打太極拳，令人訝異的是他也拿下了一座太極拳世界冠軍。&lt;&#x2F;p&gt;
+&lt;p&gt;他自己發現兩個完全八竿子打不著邊的領域在學習過程中竟然有許多相似之處，於是寫下這本書紀錄他自己的學習方式與心得。&lt;&#x2F;p&gt;
+&lt;p&gt;書的前半段我還蠻有共鳴的，一些訣竅像「習數以忘數」、教育者應該扮演引導者的角色而不是權威人士、支持學習論而不是天份論等等，也都是我常用的學習撇步。&lt;&#x2F;p&gt;
+&lt;p&gt;不過讀到書的後半，我就發現我完全被 Josh 甩在後頭，連車尾燈都看不到。Josh 身段柔軟，非常擅長根據狀況微調自己的心裡，不斷地從失敗中吸取教訓，每次都可以把自己往上昇華一個層次，好像超級賽亞人一、二、三一直變強。我喜歡這本書的一點，就是他很寫實的把學習碰到的困境一五一十的寫下來，所以讀得時候常常可以這樣問自己，如果是我，我會怎麼辦呢？&lt;&#x2F;p&gt;
+&lt;p&gt;後半段花很多段落探討心的問題，許多一流選手不只是技藝精湛，而且都有一顆強韌的心，卡斯帕洛夫、麥可喬登都很擅長利用情緒來激發自己表現，高手過招時候心理上微妙的攻防戰，寫得實在精彩。&lt;&#x2F;p&gt;
+&lt;p&gt;我沒有很多這種必須跟對手一決死戰的經驗，不過每當我讀到西洋棋賽的時候，我腦子裡浮現的竟然是 ACM 題，或許是那種緊繃的氣氛吧，哈哈。還有本書最後 Josh 寫他參加台灣世界推手大賽的經歷，我一邊看一邊苦笑，台灣的愛國裁判完全不輸韓國人呀。&lt;&#x2F;p&gt;
+&lt;p&gt;其實書裡說，Josh 的每盤棋，每場太極拳，他老爸都會錄影起來，說不定充足的自省材料，才是他成功的關鍵？&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 線性代數的世界</title>
+        <published>2010-02-11T00:00:00+00:00</published>
+        <updated>2010-02-11T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/introduction-to-linear-algebra/"/>
+        <id>https://chchwy.github.io/posts/introduction-to-linear-algebra/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/introduction-to-linear-algebra/">&lt;blockquote&gt;
+&lt;p&gt;「你不能把蘋果跟橘子加在一起」
+從某種觀點來說，就是為了想要做這種事，我們才需要向量。&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;linear-algebra.jpg#book&quot; alt=&quot;線性代數的世界&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;這是本書第一章的第一句話，我一翻開書就噗呲笑了出來，心想我準會愛上這本書。Gilbert Strang 教授用幽默卻精準的語言貫穿全書，娓娓述說線性代數這門學科。&lt;&#x2F;p&gt;
+&lt;p&gt;以我個人學習線性代數的經驗，認為學習線性代數必須要從兩方面著手，一是證明，這是前後貫通這們學科的唯一方法，特別是線性代數這座層層相疊，環環相扣的高塔，這讓人學會嚴謹。另一方面則是直覺，你如何從大堆頭的數學式子中看出意義，直搗核心，這讓人思考靈活，學會應用。&lt;&#x2F;p&gt;
+&lt;p&gt;我在研究所補習班所學的線性代數的教學太過於偏重證明，我叫它金字塔教學法，從最底層一塊一塊磚慢慢往上蓋、慢慢往上證明。於是乎有這樣的現象：學生知道證明的東西，證明每一步都懂，但是就是無法在腦中成型，或者看不見這些式子的意義，這是因為數學證明的抽象性、嚴謹性犧牲了直覺性(例如線性獨立的證明)，若沒有良好的引導，學生往往在真正看清定理的意義之前就先被繁雜的證明打敗了。「我認為線性代數的教學已經變得太抽象了。」這是Strang教授在序裡說的另一句話，我舉雙手同意。&lt;&#x2F;p&gt;
+&lt;p&gt;Strang 教授說自己在寫書的時候努力做到：致力於解釋，而不是演繹。我研讀下來的感覺也是這樣，Strang教授會先像箭一樣射穿核心觀念，然後佐以例子慢慢的向旁邊擴張解釋，最後才用證明結尾。我舉個例子，固有向量(Ax=?x)，章節裡是這樣寫：『我們用A去乘時，幾乎所有的的向量都會改變方向，但是有些特殊的非零向量，它的方向仍然跟Ax相同，只是拉長、縮短、翻轉方向或絲毫未動。... 而固有值就是看進矩陣核心的新途徑。』於是乎學習者從一開始就有一個清楚的圖像浮在腦海中，以此作為往下學習的基礎，比抽象的數學式子好太多啦。我認為這是本書的魅力。&lt;&#x2F;p&gt;
+&lt;p&gt;優點同時也是缺點，Strang教授把線性代數處理的滑順可口，無可避免的本書的證明就顯得相對虛弱，偏偏證明是線性代數不可或缺的重要部份。書中大多是以歐式空間為基礎來講解，歐式空間容易學習，容易舉例，但是線性代數可以處理的範圍遠超過歐式空間。這種證明帶來的抽象性，正是線性代數的威力所在，但本書很少提到這部分。&lt;&#x2F;p&gt;
+&lt;p&gt;不管如何，這是一本少見的優秀又有趣的數學教科書，我在裡面找到了數學的樂趣，相信你也可以。:D&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;strang-jiao-shou-miao-yu-ji-jin&quot;&gt;Strang 教授妙語集錦&lt;&#x2F;h2&gt;
+&lt;p&gt;談為什麼需要向量&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&quot;You can&#x27;t add apples and oranges.&quot; &lt;br&gt;「你不能把蘋果和橘子加在一起」&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;線性代數的精神&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The central porblem of linear algebra is to solve a system of equations.&lt;&#x2F;p&gt;
+&lt;p&gt;線性代數的核心問題就是要解方程組！&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;談為何AB的反矩陣是 B&lt;sup&gt;-1&lt;&#x2F;sup&gt;A&lt;sup&gt;-1&lt;&#x2F;sup&gt;&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It is also common sense: If you put on socks and then shoes, the first to be taken off are the _____.&lt;br&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;常識也告訴我們：假如你先穿襪子再穿鞋，那麼脫的時候，首先該脫掉_____。&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;談為何(AB)&lt;sup&gt;T&lt;&#x2F;sup&gt; = B&lt;sup&gt;T&lt;&#x2F;sup&gt;A&lt;sup&gt;T&lt;&#x2F;sup&gt;&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Ax combines the columns of A while x&lt;sup&gt;T&lt;&#x2F;sup&gt;A&lt;sup&gt;T&lt;&#x2F;sup&gt; combines the rows of A&lt;sup&gt;T&lt;&#x2F;sup&gt;&lt;br&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Ax線性組合了A的諸行，而x&lt;sup&gt;T&lt;&#x2F;sup&gt;A&lt;sup&gt;T&lt;&#x2F;sup&gt;線性組合了A&lt;sup&gt;T&lt;&#x2F;sup&gt;的諸列。&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;不論是趣味的例子，或者是一句話直搗觀念核心，都常讓我拍案叫絕。比起補習班名師的講義，研讀起來樂趣大多了。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

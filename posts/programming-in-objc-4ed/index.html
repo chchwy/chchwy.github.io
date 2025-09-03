@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>讀書: 精通 Objective-C 2.0 程式設計 - 調和的靈感 Matt</title>
+    <meta name="description" content="紀錄我的思考，讀書筆記，還有程式設計">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="讀書: 精通 Objective-C 2.0 程式設計">
+    <meta property="og:description" content="紀錄我的思考，讀書筆記，還有程式設計">
+    <meta property="og:url" content="https:&#x2F;&#x2F;chchwy.github.io&#x2F;posts&#x2F;programming-in-objc-4ed&#x2F;">
+    <meta property="og:site_name" content="調和的靈感 Matt">
+    <meta property="og:type" content="article">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="讀書: 精通 Objective-C 2.0 程式設計">
+    <meta name="twitter:description" content="紀錄我的思考，讀書筆記，還有程式設計">
+    
+    <!-- Font preload -->
+    <link rel="preload" href="https://chchwy.github.io/fonts/Inter-roman.latin.var.woff2" as="font" type="font/woff2" crossorigin="">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="https://chchwy.github.io/main.css">
+</head>
+<body>
+    <main>
+        <!-- Navigation -->
+        <aside>
+            <div>
+                <nav id="nav">
+                    <div>
+                        <a href="/">Matt</a>
+                        <a href="https://chchwy.github.io">首頁</a>
+                        <a href="https://chchwy.github.io/posts">文章列表</a>
+                        <a href="https://chchwy.github.io/projects">專案</a>
+                    </div>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Content -->
+        
+    <article>
+        <header>
+            <h1>讀書: 精通 Objective-C 2.0 程式設計</h1>
+            <div class="post-meta">
+                
+                    <time datetime="2010-11-29">2010年11月29日</time>
+                
+                
+            </div>
+        </header>
+        
+        <div class="content">
+            <p><img src="/img/book/objc2.jpg#book" alt="" /></p>
+<p>原文書名： Programming in Objective-C (4th Edition)</p>
+<p>以一本程式語言教學的書來說，我給這本書的評價是：水準以上，但是差了那麼一點醍醐味兒。</p>
+<p>整體的寫作的風格就是平實八穩的依照語言的各種特性，一個個清楚而且詳細的解釋。總共分為三大塊主題: Objetive-C語言、Foundation Framework (objc的標準函式庫) 以及 Cocoa and iPhone SDK。第三部分 Cocoa 只能算淺嘗性質的示範了一個小巧的 iPhone 程式，全書大部分專注於闡述 Objective-C 這個"程序語言"的基礎，沒有特定侷限於某個平台。所以如果你期望在裡面看到更多關於 iPhone/iPad 開發的介紹，那可能要失望了。</p>
+<p>全書以數個範例貫穿頭尾，藉由不斷添加功能於其上，引出各式各樣的 Objc 語言特性，我認為相當好。但是這本書對 Objc 2.0 新增的 property 特性並沒有說得很清楚。必須去網路上搜尋其他資料輔助。</p>
+<p>本書把 Objc 當作一個全新的語言來講，而不是 C 語言的延伸，這對沒學過 C 的人算是好消息。我個人是已經學了  C 好多年了，所以這本書到底適不適合完全的新手，我也說不個準。書完全以 OO 的方式來介紹 objc，對於一些舊式C語言的東西如 top-level function、pointer 並不鼓勵使用。所以全書只留有一章把傳統C語言的特性收集起來做個介紹，算是選讀的章節，沒唸也無傷大雅。這章揭露了一些objc底層的實做，對於熟悉C的人倒是相當有趣的一段。</p>
+<h2 id="chai-liao-yi-dian-ti-hu-wei-er">差了一點醍醐味兒</h2>
+<p>我說差了點醍醐味兒的原因是我掃完本書第一遍後，心中有個聲音響起：又一個程式語言！我學的程式語言還不夠多嗎？其實從本書我對 Objective-C 的第一印象並不太好，對 API 函數的命名尤其反感，比如說 Foundation Framework 裡的字串的比對 <code>[str1 isEqualToString str2];</code> 見到這個方法我差點沒把口中的咖啡噴出來，哎喲，我真的得說服自己在寫程式語言而不是英文作文。</p>
+<p>扯遠了，吐槽 Objective-C 的話題就此打住。總之我認為本書並沒有寫出 Objective-C 的靈魂來。 圖靈獎得主 Alan Perlis 說:「如果一門語言不能影響你寫程式的思維，那它就不值得你去學。」 各種語言形形色色，總有它們優秀獨特的地方。從這本書我看不見 Objective-C 為什麼選擇這樣子的語言設計，或者說這樣的特性有什麼好處，比如書裡第九章標題是 Dynamic Typing、Dynamic Biding 書裡寫道『這使它成為很有威力的程式語言，以及辨別它與其他程式語言(如C++)不同之處』，但章節內容舉的例子有如玩具，完全感受不到威力何在。</p>
+<p>直到我讀了維基百科的 Objective-C 條目，才知道原來 objc 留著 Smalltalk 的血液，這個程式語言史上赫赫有名的老古董。 Objective-C 採用了 smalltalk 的訊息傳遞(message passing)模型，所以 Objective-C 帶著一些今日動態語言才有的特性。這樣來看，本書教會了我大部分 Objective-C 的語法，但維基百科才畫龍點睛般的讓我抓住 Objective-C 的風格。</p>
+<p>相關連結： <a href="http://zh.wikipedia.org/zh-tw/Objective-C">Wiki條目 Objective-C</a></p>
+
+        </div>
+
+        
+            <div class="post-tags">
+                
+                    <a href="https://chchwy.github.io/tags/du-shu/" class="tag">讀書</a>
+                
+            </div>
+        
+    </article>
+
+
+        <!-- Footer -->
+        <footer>
+            <ul>
+                
+                <li>
+                    <a rel="noopener noreferrer" target="_blank" href="https://chchwy.github.io/rss.xml">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-rss" viewBox="0 0 16 16">
+                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                        <path d="M5.5 12a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m-3-8.5a1 1 0 0 1 1-1c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1-1-1m0 4a1 1 0 0 1 1-1 6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1-1-1"/>
+                        </svg>
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a rel="noopener noreferrer" target="_blank" href="https://github.com/chchwy">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                        </svg>
+                    </a>
+                </li>
+                
+                <li>
+                    <a rel="noopener noreferrer" target="_blank" href="https://www.threads.com/@chchwy">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-threads" viewBox="0 0 16 16">
+                        <path d="M6.321 6.016c-.27-.18-1.166-.802-1.166-.802.756-1.081 1.753-1.502 3.132-1.502.975 0 1.803.327 2.394.948s.928 1.509 1.005 2.644q.492.207.905.484c1.109.745 1.719 1.86 1.719 3.137 0 2.716-2.226 5.075-6.256 5.075C4.594 16 1 13.987 1 7.994 1 2.034 4.482 0 8.044 0 9.69 0 13.55.243 15 5.036l-1.36.353C12.516 1.974 10.163 1.43 8.006 1.43c-3.565 0-5.582 2.171-5.582 6.79 0 4.143 2.254 6.343 5.63 6.343 2.777 0 4.847-1.443 4.847-3.556 0-1.438-1.208-2.127-1.27-2.127-.236 1.234-.868 3.31-3.644 3.31-1.618 0-3.013-1.118-3.013-2.582 0-2.09 1.984-2.847 3.55-2.847.586 0 1.294.04 1.663.114 0-.637-.54-1.728-1.9-1.728-1.25 0-1.566.405-1.967.868ZM8.716 8.19c-2.04 0-2.304.87-2.304 1.416 0 .878 1.043 1.168 1.6 1.168 1.02 0 2.067-.282 2.232-2.423a6.2 6.2 0 0 0-1.528-.161"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>            
+            <p>© 2025 Matt Chang</p>
+        </footer>
+    </main>
+</body>
+</html>

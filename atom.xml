@@ -1,0 +1,2181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-tw">
+    <title>調和的靈感 Matt</title>
+    <subtitle>紀錄我的思考，讀書筆記，還有程式設計</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://chchwy.github.io/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://chchwy.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-01-03T00:00:00+00:00</updated>
+    <id>https://chchwy.github.io/atom.xml</id>
+    <entry xml:lang="zh-tw">
+        <title>2023鐵人賽完賽心得: Qt6跨平台開發系列</title>
+        <published>2025-01-03T00:00:00+00:00</published>
+        <updated>2025-01-03T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/ironman-2023-complete/"/>
+        <id>https://chchwy.github.io/posts/ironman-2023-complete/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/ironman-2023-complete/">&lt;p&gt;鐵人賽系列文傳送門：&lt;a href=&quot;https:&#x2F;&#x2F;ithelp.ithome.com.tw&#x2F;users&#x2F;20084263&#x2F;ironman&#x2F;6778&quot;&gt;Qt 6 跨平台應用程式開發&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;人生有些事，做過了才發現沒那麼難：每天早上六點起床跑三千公尺。這是我大學時認為絕對不可能的事，真的到當兵時，卻發現沒有想像中那麼痛苦。&lt;&#x2F;p&gt;
+&lt;p&gt;人生也有另一種事，做完才知道它真的很難。像是今年的鐵人賽：二寶爸每天哄完小孩入睡、洗碗收拾廚房後，還要熬夜寫文章。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;shi-bai-hou-de-di-er-ci-chang-shi&quot;&gt;失敗後的第二次嘗試&lt;&#x2F;h3&gt;
+&lt;p&gt;回想我2020年第一次挑戰鐵人賽，只持續了五天。第五天晚上，午夜的截稿線前幾分鐘，我突然完美主義發作，開始糾結一些字句，導致晚了兩分鐘按下「送出」鍵，被判定挑戰失敗。隔天醒來，所有寫作動力瞬間歸零，直接放棄。&lt;&#x2F;p&gt;
+&lt;p&gt;過了兩年，2023年我捲土重來。這是我一開始寫的參賽宣言：&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Qt 是目前市面上最成熟的桌面跨平台開發函式庫。只要用同一份 C++ 程式碼，就可以寫出同時支援 Windows、Mac 和 Linux 三大作業系統的圖形界面程式。&lt;&#x2F;p&gt;
+&lt;p&gt;我在 2020 年曾經以相似題目挑戰鐵人賽，可惜寫了幾天就中斷了。這次以同樣主題捲土重來，Qt 版本由 Qt 5 升級至 Qt 6，希望能夠以全新的動力完賽！&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h3 id=&quot;xian-qiu-you-zai-qiu-hao&quot;&gt;先求有，再求好&lt;&#x2F;h3&gt;
+&lt;p&gt;這個系列，我沒有積搞，當天的文章當天寫，盡可能善用各種破碎時間：上班會議中的空檔、午休時間，但最主要的寫作，還是在小孩入睡後，那一點點珍貴的「爸媽私人時間」。&lt;&#x2F;p&gt;
+&lt;p&gt;後來我發現一個關鍵小技巧：即使文章沒有修飾到完美，也要先送出。&lt;&#x2F;p&gt;
+&lt;p&gt;像寫程式一樣，先能動，再優化。鐵人賽文章也雷同，先寫一個大概，馬上送出確保「三十天連續寫作」這個關鍵指標沒有中斷，語句通順等等都是小事，晚一點再慢慢修。&lt;&#x2F;p&gt;
+&lt;p&gt;我有好幾篇文章都是這樣：白天先寫個七八成就貼上去。等家人都進入夢鄉，午夜後的寧靜時分，我才開始細細修改當天的稿子。&lt;&#x2F;p&gt;
+&lt;p&gt;這個策略讓我雖然常常越過午夜截止線才「真的」完稿，但從未拖稿超過一天。心理壓力也小了很多。&lt;&#x2F;p&gt;
+&lt;p&gt;「等等，都2025年了才發2023年的完賽心得？」&lt;&#x2F;p&gt;
+&lt;p&gt;「呃...因為我把文章忘在草稿夾裡面了...」&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>命令列上傳檔案到FTP</title>
+        <published>2024-12-15T00:00:00+00:00</published>
+        <updated>2024-12-15T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/ftp-upload-command-line/"/>
+        <id>https://chchwy.github.io/posts/ftp-upload-command-line/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/ftp-upload-command-line/">&lt;p&gt;最近需要在 CI 流程中上傳檔案到 FTP 伺服器，順手紀錄一下。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;fang-fa-yi-shi-yong-curl-shang-chuan-ftp&quot;&gt;方法一：使用 cURL 上傳 FTP&lt;&#x2F;h2&gt;
+&lt;p&gt;萬能瑞士刀 &lt;code&gt;cURL&lt;&#x2F;code&gt; 可以操作FTP&lt;&#x2F;p&gt;
+&lt;p&gt;這是用 &lt;code&gt;curl&lt;&#x2F;code&gt; 指令上傳檔案到 FTP 的範例：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bat&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-bat &quot;&gt;&lt;code class=&quot;language-bat&quot; data-lang=&quot;bat&quot;&gt;&lt;span&gt;curl -T &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;YOUR_LOCAL_FILE&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#ff8080;&quot;&gt;^
+&lt;&#x2F;span&gt;&lt;span&gt;    --user &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;FTP_USER:FTP_PASSWORD&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#ff8080;&quot;&gt;^
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;ftp:&#x2F;&#x2F;192.168.99.99&#x2F;Your&#x2F;Directory&#x2F;UPLOADED_FILE&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#ff8080;&quot;&gt;^
+&lt;&#x2F;span&gt;&lt;span&gt;    --&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;ftp&lt;&#x2F;span&gt;&lt;span&gt;-create-dirs
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;各個參數解釋：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-T YOUR_LOCAL_FILE&lt;&#x2F;code&gt; 指定要上傳的本地端檔案&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;--user&lt;&#x2F;code&gt; 帳號密碼&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;ftp:&#x2F;SERVER_IP&#x2F;Your&#x2F;Directory&#x2F;UPLOADED_FILE&lt;&#x2F;code&gt; 指定伺服器的 IP 位址以及上傳路徑&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;--ftp-create-dirs&lt;&#x2F;code&gt; 如果上傳的目的地路徑中有缺任何目錄，自動建立目錄&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;fang-fa-er-windows-nei-jian-de-ftp-zhi-ling&quot;&gt;方法二：Windows 內建的 ftp 指令&lt;&#x2F;h2&gt;
+&lt;p&gt;Windows 作業系統本身內建 &lt;code&gt;ftp&lt;&#x2F;code&gt; 指令&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;ftp&lt;&#x2F;code&gt; 指令原本是互動式的，但是也可以給它一個指令檔，預錄好一串操作步驟。&lt;&#x2F;p&gt;
+&lt;p&gt;以下是上傳檔案到 IP 位址為 127.0.0.99 的 FTP 伺服器的範例：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bat&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-bat &quot;&gt;&lt;code class=&quot;language-bat&quot; data-lang=&quot;bat&quot;&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;echo&lt;&#x2F;span&gt;&lt;span&gt; open &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#87d6d5;&quot;&gt;127&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#87d6d5;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#87d6d5;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#87d6d5;&quot;&gt;99&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; ftp_commands.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;echo %&lt;&#x2F;span&gt;&lt;span&gt;FTP_USER&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;%&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; ftp_commands.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;echo %&lt;&#x2F;span&gt;&lt;span&gt;FTP_PASSWORD&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;%&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; ftp_commands.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;echo&lt;&#x2F;span&gt;&lt;span&gt; binary&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; ftp_commands.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;echo&lt;&#x2F;span&gt;&lt;span&gt; cd &#x2F;Your&#x2F;Server&#x2F;Directory&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; ftp_commands.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;echo&lt;&#x2F;span&gt;&lt;span&gt; send YOUR_LOCAL_FILE&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; ftp_commands.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;echo&lt;&#x2F;span&gt;&lt;span&gt; bye&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; ftp_commands.txt
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;ftp&lt;&#x2F;span&gt;&lt;span&gt; -d -s:ftp_commands.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;del&lt;&#x2F;span&gt;&lt;span&gt; ftp_commands.txt
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;拆解這段程式碼的運作：
+用&lt;code&gt;echo&lt;&#x2F;code&gt;指令把每個FTP操作步驟寫入&lt;code&gt;ftp_commands.txt&lt;&#x2F;code&gt;檔案，一行一個指令&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;open IP&lt;&#x2F;code&gt; 連線到 FTP 伺服器，&lt;&#x2F;li&gt;
+&lt;li&gt;接下來兩行是帳號密碼，用環境變數&lt;code&gt;%FTP_USER%&lt;&#x2F;code&gt; &lt;code&gt;%FTP_PASSWORD%&lt;&#x2F;code&gt;保護敏感資訊&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;binary&lt;&#x2F;code&gt; 設定傳輸模式為二進位模式&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;cd&lt;&#x2F;code&gt; 切換到指定目錄&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;send&lt;&#x2F;code&gt; 指令執行檔案上傳&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;bye&lt;&#x2F;code&gt; 最後關閉連線。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;讀取指令檔並執行: &lt;code&gt;ftp -d -s:ftp_commands.txt&lt;&#x2F;code&gt; &lt;br&#x2F;&gt;
+清理檔案 &lt;code&gt;del ftp_commands.txt&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;jie-lun&quot;&gt;結論&lt;&#x2F;h2&gt;
+&lt;p&gt;這兩個方法都可以用於 FTP 檔案上傳。&lt;code&gt;ftp&lt;&#x2F;code&gt; 是遠古時代就存在的指令，&lt;code&gt;cURL&lt;&#x2F;code&gt; 則在Windows 10 17063之後成為作業系統的預裝指令之一。&lt;&#x2F;p&gt;
+&lt;p&gt;跨平台方面：&lt;code&gt;ftp&lt;&#x2F;code&gt;指令是Windows限定，&lt;code&gt;curl&lt;&#x2F;code&gt;跨平台。&lt;&#x2F;p&gt;
+&lt;p&gt;我最終採用 &lt;code&gt;curl&lt;&#x2F;code&gt;，指令更簡潔，且 Windows &amp;amp; macOS 接可用。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>務實60分離式鍵盤 四個月使用心得</title>
+        <published>2024-07-05T00:00:00+00:00</published>
+        <updated>2024-07-05T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/pragmatic60-keyboard/"/>
+        <id>https://chchwy.github.io/posts/pragmatic60-keyboard/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/pragmatic60-keyboard/">&lt;p&gt;我已經在辦公室和家裡用分離式鍵盤四個月了。鍵盤叫做&lt;strong&gt;務實60&lt;&#x2F;strong&gt;。&lt;&#x2F;p&gt;
+&lt;p&gt;人生第一次用分離式鍵盤，我覺得挺好的，很舒服。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;kai-xiang&quot;&gt;開箱&lt;&#x2F;h3&gt;
+&lt;p&gt;這張照片是我的務實60鍵盤，換了高特奶油黃軸，配上蘋果風白色注音鍵帽。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;pragmatic&#x2F;keyboard.jpg&quot; alt=&quot;務實60&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;yong-liao-si-ge-yue-hou-xian-shuo-you-dian&quot;&gt;用了四個月後，先說優點：&lt;&#x2F;h3&gt;
+&lt;p&gt;一、分離式鍵盤確實更符合人體自然姿勢，雙臂自然分開，背部比較舒緩。&lt;&#x2F;p&gt;
+&lt;p&gt;剛開始使用時感受還不太明顯，但一旦打習慣了分離式鍵盤的寬度，回頭打普通鍵盤，就會明顯感受到背部的緊繃以及手腕的扭曲不適。半小時後，就很想很想回去打分離式鍵盤。&lt;&#x2F;p&gt;
+&lt;p&gt;二、直列鍵盤讓手指直上直下，非常舒適。&lt;&#x2F;p&gt;
+&lt;p&gt;以傳統的錯列鍵盤為例，「3EDC」這一排四個鍵，都歸左手中指來按，但是這四個鍵的排列卻不是一條直線，而是斜斜的由左上往右下，需要轉動手腕來敲擊。&lt;&#x2F;p&gt;
+&lt;p&gt;下排的「ZXCV」和最上排的數字鍵，擊鍵時的手腕轉動特別明顯。這是我換到直列鍵盤後，才意識到打字的額外動作。相較之下，直列鍵盤真的只需要移動手指，非常輕鬆。&lt;&#x2F;p&gt;
+&lt;p&gt;三、鍵盤上的每個鍵都可以自訂。&lt;&#x2F;p&gt;
+&lt;p&gt;我以前用過最小尺寸的鍵盤是75%，一開始完全無法想像如何只用60鍵打字。但花了幾天參透 Layer 的精神後，發現不移動前臂就能按方向鍵以及 Home&#x2F;End&#x2F;PageUp&#x2F;PageDown 等等一大堆功能鍵，真是太方便了。務實鍵盤用的是開源的 QMK 韌體，我花了一些時間調整自己喜歡的數字層和符號層，還將一些常用的冗長句子設成巨集一鍵輸入，可玩性很高。&lt;&#x2F;p&gt;
+&lt;p&gt;四、櫻桃軸、熱插拔。預裝的軸體是櫻桃紅，為了靜音我先換成高特奶油黃，後來又換了凱華孤島軸。&lt;&#x2F;p&gt;
+&lt;p&gt;五、不用管什麼大鍵調校，因為根本沒有大鍵XD&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;pragmatic&#x2F;switch.jpg&quot; alt=&quot;Switch&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;zai-lai-shuo-que-dian&quot;&gt;再來說缺點：&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;一、單模有線&lt;&#x2F;li&gt;
+&lt;li&gt;二、別人不會用你的鍵盤，很不方便&lt;&#x2F;li&gt;
+&lt;li&gt;三、有學習成本&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h3 id=&quot;guan-yu-xue-xi-cheng-ben-zhe-jian-shi&quot;&gt;關於學習成本這件事&lt;&#x2F;h3&gt;
+&lt;p&gt;一開始下訂分離式直列鍵盤時，我內心想：「應該沒那麼難吧～」。但是當我實際收到鍵盤，雙手放上去的瞬間，我就愣住了。以前十秒鐘可以打完的廢噗，花了超過十分鐘還發不出去。過去十幾年的中英盲打能力瞬間退化到幾乎不會打字。&lt;&#x2F;p&gt;
+&lt;p&gt;後來，照著務實鍵盤站長的建議，每天睡前上 keybr.com 練習十五分鐘的英打，慢慢打，追求正確率，不追求速度。還好只過了幾天，英打的肌肉記憶就慢慢重建起來了。&lt;&#x2F;p&gt;
+&lt;p&gt;大約在英打速度回復到70%之後，我熊熊發現注音也要重練。&lt;&#x2F;p&gt;
+&lt;p&gt;因為在傳統鍵盤上，左手跟右手中間有塊模糊地帶。比如說，英打模式下我會用右手打Y鍵，但是注音模式下，同一個位置的注音ㄗ我就用左手打（我慣用左手打子音）。但是分離式鍵盤中間，沒有這種模糊地帶，所以鍵在哪一邊就得用哪一隻手打，等於一些舊的打字習慣需要打破重建。例如ㄗㄘㄙ用右手打，注音二聲用右手打。&lt;&#x2F;p&gt;
+&lt;p&gt;(爭議的6鍵，到底該用左手還是右手？)
+&lt;img src=&quot;&#x2F;img&#x2F;pragmatic&#x2F;6key.jpg&quot; alt=&quot;6Key&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;順帶一提，我剛拿到鍵盤時，馬上換上了一組非常漂亮的純英刻鍵帽。但很快我就發現，已經無法依賴以前的注音盲打肌肉記憶了，需要眼睛幫忙看鍵。無奈只能再緊急訂購一組有注音的鍵帽，先練注音中打。&lt;&#x2F;p&gt;
+&lt;p&gt;等注音練到差不多可以社群軟體聊天後，我又花了幾天熟悉快速鍵（我重度使用快速鍵）。工作寫程式時，需要頻繁用到大量符號&lt;code&gt;{}[]()&#x2F;\|&lt;&#x2F;code&gt;，也都花了一點力氣調整成自己順手的鍵位。&lt;&#x2F;p&gt;
+&lt;p&gt;中間重新學習和習慣的東西很多，但是事後回頭看，以我每天晚上使用一兩個小時，其實兩個禮拜左右就能回復基本的中英工作打字能力，一個月後我就有膽子把務實60帶去公司了，陣痛期沒有想像長。&lt;&#x2F;p&gt;
+&lt;p&gt;當然，一個月後，我終於把漂亮的英刻鍵帽換回去了。&lt;&#x2F;p&gt;
+&lt;p&gt;目前的桌面配置：
+&lt;img src=&quot;&#x2F;img&#x2F;pragmatic&#x2F;desk.jpg&quot; alt=&quot;桌面配置&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;yi-xie-xin-de&quot;&gt;一些心得&lt;&#x2F;h3&gt;
+&lt;p&gt;經過這次換分離式鍵盤的經驗，我真的體會到人的無限潛力。即使已經要奔向不惑之年的大叔，也可以學會新把戲。只是要稍微踏出舒適圈，提醒自己一段時日做事情會卡卡的，暫時接受那股不適感。&lt;&#x2F;p&gt;
+&lt;p&gt;另外一個體悟是，人的本性是服從習慣，而不是追求最佳。即使直列分離式鍵盤更舒適，對人體結構更友善，卻因為自己早已長年習慣於傳統鍵盤，所以也猶豫了好一陣子才下定決心嘗試分離式鍵盤。&lt;&#x2F;p&gt;
+&lt;p&gt;然後受益於QMK韌體，我發現可以自訂鍵位，可以自訂層，可以自訂巨集，可以自訂一切。這種自由度，讓我對鍵盤有了更多的想像空間。第一次我發現，應該是鍵盤來適應我，而不是我去適應鍵盤。&lt;&#x2F;p&gt;
+&lt;p&gt;至於我上手務實60之後，突然發現有信心挑戰務實54的事情，又是後話了。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>隨手比較壓縮演算法：7zip&#x2F;GZIP&#x2F;LZ4 </title>
+        <published>2021-08-18T00:00:00+00:00</published>
+        <updated>2021-08-18T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/compression-compare/"/>
+        <id>https://chchwy.github.io/posts/compression-compare/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/compression-compare/">&lt;p&gt;最近有定期從遠端 Linux 主機上拉檔案下來的需求，內容是遊戲開發的資源檔，每次數百GB。因為檔案實在太大，不得不找一些壓縮檔案的方法，希望縮短下載時間。&lt;&#x2F;p&gt;
+&lt;p&gt;我隨手估狗了五種壓縮方法如下：&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;7zip 最快速壓縮 (壓縮演算法是LZMA2)&lt;&#x2F;li&gt;
+&lt;li&gt;7zip 一般壓縮 (同上，只有參數不同)&lt;&#x2F;li&gt;
+&lt;li&gt;Gzip&lt;&#x2F;li&gt;
+&lt;li&gt;LZ4&lt;&#x2F;li&gt;
+&lt;li&gt;Zip&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;實際跑的指令如下：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;shell&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-shell &quot;&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span&gt;time 7z -mx1 a test.7z .&#x2F;trunk&#x2F;             # 7zip 最快速壓縮
+&lt;&#x2F;span&gt;&lt;span&gt;time 7z -mx3 a test.zip .&#x2F;trunk&#x2F;            # 7zip 一般壓縮      
+&lt;&#x2F;span&gt;&lt;span&gt;time tar -czvf test.tar.gz .&#x2F;trunk&#x2F;         # GZIP
+&lt;&#x2F;span&gt;&lt;span&gt;time tar -I lz4 -cvf test.tar.lz4 .&#x2F;trunk&#x2F;  # LZ4
+&lt;&#x2F;span&gt;&lt;span&gt;time zip -r -s 10G test.zip .&#x2F;trunk&#x2F;        # ZIP
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;挑選的標準很簡單，不要太冷門，壓縮&#x2F;解壓縮工具在 Windows&#x2F;Linux 上可以方便操作。如果有人知道什麼特別優秀的壓縮演算法麻煩告訴我。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;ce-shi-huan-jing&quot;&gt;測試環境&lt;&#x2F;h2&gt;
+&lt;p&gt;測試樣本總共 129GB，內容物大約為 45% FBX模型、45% TGA貼圖、10% 其他有的沒的。129GB 只是全部檔案的一部份，但我認為已經足夠有代表性來推斷出整體時間。&lt;&#x2F;p&gt;
+&lt;p&gt;測試的機子是 Vultr VPS 640G 方案，作業系統 Ubuntu 21.04。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;vultr-640.png&quot; alt=&quot;Vultr&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;ce-shi-jie-guo&quot;&gt;測試結果&lt;&#x2F;h2&gt;
+&lt;p&gt;表格內是五種方法的測試結果，包括壓縮後的檔案大小，壓縮比，以及壓縮時間&lt;&#x2F;p&gt;
+&lt;style&gt;
+table { border:solid 0px #cccccc; }
+th, td {border:1px solid #aaa; padding: 5px;}
+&lt;&#x2F;style&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;方法&lt;&#x2F;th&gt;&lt;th&gt;壓縮時間&lt;&#x2F;th&gt;&lt;th&gt;壓縮前大小&lt;&#x2F;th&gt;&lt;th&gt;壓縮後大小&lt;&#x2F;th&gt;&lt;th&gt;壓縮比&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;7zip 最快速壓縮&lt;&#x2F;td&gt;&lt;td&gt;22m55s&lt;&#x2F;td&gt;&lt;td&gt;129 GB&lt;&#x2F;td&gt;&lt;td&gt;38 GB&lt;&#x2F;td&gt;&lt;td&gt;29.5%&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;7Zip 一般壓縮&lt;&#x2F;td&gt;&lt;td&gt;43m3s&lt;&#x2F;td&gt;&lt;td&gt;129 GB&lt;&#x2F;td&gt;&lt;td&gt;36.8 GB&lt;&#x2F;td&gt;&lt;td&gt;28.5%&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Gzip&lt;&#x2F;td&gt;&lt;td&gt;75m33s&lt;&#x2F;td&gt;&lt;td&gt;129 GB&lt;&#x2F;td&gt;&lt;td&gt;57.2 GB&lt;&#x2F;td&gt;&lt;td&gt;33.1%&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;LZ4&lt;&#x2F;td&gt;&lt;td&gt;8m21s&lt;&#x2F;td&gt;&lt;td&gt;129 GB&lt;&#x2F;td&gt;&lt;td&gt;42.7 GB&lt;&#x2F;td&gt;&lt;td&gt;44.3%&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Zip&lt;&#x2F;td&gt;&lt;td&gt;79m28s&lt;&#x2F;td&gt;&lt;td&gt;129 GB&lt;&#x2F;td&gt;&lt;td&gt;43 GB&lt;&#x2F;td&gt;&lt;td&gt;33.3%&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;從表格來看，7zip (也就是LZMA2演算法) 的壓縮率全場最佳，GZIP&#x2F;ZIP 次之，LZ4 的壓縮率最差。壓縮速度則是 LZ4 最快，7zip 次之，Zip&#x2F;Gzip 最慢。&lt;&#x2F;p&gt;
+&lt;p&gt;接著根據我家的平均網速 4.5MB&#x2F;sec，計算出下載檔案需要的時間，再加總起來&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;方法&lt;&#x2F;th&gt;&lt;th&gt;壓縮時間 (秒)&lt;&#x2F;th&gt;&lt;th&gt;下載時間 (秒)&lt;&#x2F;th&gt;&lt;th&gt;總時間&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;7zip 最快速壓縮&lt;&#x2F;td&gt;&lt;td&gt;1375&lt;&#x2F;td&gt;&lt;td&gt;8647&lt;&#x2F;td&gt;&lt;td&gt;167分鐘&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;7zip 一般壓縮&lt;&#x2F;td&gt;&lt;td&gt;2583&lt;&#x2F;td&gt;&lt;td&gt;8374&lt;&#x2F;td&gt;&lt;td&gt;182分鐘&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Gzip&lt;&#x2F;td&gt;&lt;td&gt;4533&lt;&#x2F;td&gt;&lt;td&gt;9716&lt;&#x2F;td&gt;&lt;td&gt;237分鐘&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;LZ4&lt;&#x2F;td&gt;&lt;td&gt;501&lt;&#x2F;td&gt;&lt;td&gt;13016&lt;&#x2F;td&gt;&lt;td&gt;225分鐘&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;Zip&lt;&#x2F;td&gt;&lt;td&gt;4768&lt;&#x2F;td&gt;&lt;td&gt;9784&lt;&#x2F;td&gt;&lt;td&gt;242分鐘&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;結果出來了，從總時間來看，&lt;strong&gt;7zip 最快速壓縮&lt;&#x2F;strong&gt;是最佳方案，只要167分鐘就可以把整包129GB檔案下載到我的本機。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;fang-an-bi-jiao&quot;&gt;方案比較&lt;&#x2F;h2&gt;
+&lt;p&gt;CPU 使用量，依我的粗略觀察，LZ4 CPU 使用量最低，Gzip&#x2F;Zip 單核使用量 100%，7zip 則是八核全部用滿，八核心全部 100%。所以雖然 7zip 總時間最短，但是代價是吃光全部主機資源。&lt;&#x2F;p&gt;
+&lt;p&gt;7zip 從最快速壓縮 &lt;code&gt;-mx1&lt;&#x2F;code&gt; 換成一般壓縮 &lt;code&gt;-mx3&lt;&#x2F;code&gt; 只增加了 1% 壓縮率，但是壓縮時間長了快一倍，不太值得。&lt;&#x2F;p&gt;
+&lt;p&gt;LZ4 演算法標榜超快速壓縮，名符其實，只用了八分多鐘壓完全部檔案，海放其他演算法。但是因為檔案總體積太大，所以壓縮率普通的缺點就被突顯出來，如果下次壓比較小的檔案，我可能會考慮LZ4。&lt;&#x2F;p&gt;
+&lt;p&gt;Zip&#x2F;Gzip 骨子裡是同一套壓縮演算法，所以不意外表現非常接近。壓縮比不差，但是真的壓太久了。&lt;&#x2F;p&gt;
+&lt;p&gt;另外 7zip 和 Zip 壓縮時可以指定輸出成多個固定尺寸的檔案，減少一次性傳輸超大檔案的失敗機會。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>CMake 快速上手：跨平台 C++ 專案建置</title>
+        <published>2021-08-10T00:00:00+00:00</published>
+        <updated>2021-08-10T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/cmake-basics/"/>
+        <id>https://chchwy.github.io/posts/cmake-basics/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/cmake-basics/">&lt;p&gt;這篇文章紀錄我入門學習 CMake 的心得&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;wei-shen-mo-xu-yao-cmake&quot;&gt;為什麼需要 CMake?&lt;&#x2F;h3&gt;
+&lt;p&gt;簡單來說，因為 C++ 的跨平台編譯很麻煩。&lt;&#x2F;p&gt;
+&lt;p&gt;雖然 C++ 程式碼本身是可以跨平台的，但每個平台使用的編譯工具鏈卻大不相同。&lt;&#x2F;p&gt;
+&lt;p&gt;Linux 使用 Makefile，Windows 使用 Visual Studio 專案，而 macOS 則可以使用 Xcode 專案或 Makefile，這些格式彼此不兼容。因此，即使程式碼是通用的，跨平台編譯專案仍然困難重重。。&lt;&#x2F;p&gt;
+&lt;p&gt;針對這個問題，除了同時維護多個個專案之外，還可以考慮像 CMake 這類的工具。&lt;&#x2F;p&gt;
+&lt;p&gt;CMake 的賣點就是幫助我們處理不同平台的編譯工具鏈。我們只需撰寫一份與平台無關的 CMake 腳本，然後讓 CMake 充當中介，負責操作當前平台的編譯工具鏈。這樣，我們在 Windows 上編譯專案時，CMake 會生成 Visual Studio 專案；在 macOS 上編譯時，則會生成 Xcode 專案。&lt;&#x2F;p&gt;
+&lt;p&gt;我個人時常在 Windows 和 macOS 之間切換，偶爾需要在 Linux 上工作。使用 CMake 可以節省我的時間和精力，避免在每個平台都要再學習一次建構系統的成本。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;hello-cmake&quot;&gt;Hello CMake!&lt;&#x2F;h2&gt;
+&lt;p&gt;馬上開始寫第一個 CMake 專案。&lt;&#x2F;p&gt;
+&lt;p&gt;CMake 規定，專案腳本的入口一定是個叫做 &lt;code&gt;CMakeLists.txt&lt;&#x2F;code&gt; 的純文字檔。所以我們在專案目錄下創建兩個檔案：&lt;code&gt;CMakeLists.txt&lt;&#x2F;code&gt; 和 &lt;code&gt;main.cpp&lt;&#x2F;code&gt;。&lt;&#x2F;p&gt;
+&lt;p&gt;這是 &lt;code&gt;CMakeLists.txt&lt;&#x2F;code&gt; 的內容：&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#393939;color:#dedede;&quot;&gt;&lt;code&gt;&lt;span&gt;cmake_minimum_required(VERSION 3.21) # 設定最低版本要求
+&lt;&#x2F;span&gt;&lt;span&gt;project(HelloCMake)                  # 設定專案名稱
+&lt;&#x2F;span&gt;&lt;span&gt;add_executable(MyHomework main.cpp)  # 指定執行檔和原始碼
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;這就是最簡單的 CMake 專案，只需要三行。這三行滿足了專案最基本的需求: 編譯 main.cpp 並產出執行檔 MyHomework.exe。&lt;&#x2F;p&gt;
+&lt;p&gt;CMake 用的是自家的腳本語法，本文不會著墨太多在腳本語法上，一開始只要知道 &lt;code&gt;cmake_minimum_required()&lt;&#x2F;code&gt;、&lt;code&gt;project()&lt;&#x2F;code&gt;、&lt;code&gt;add_executable()&lt;&#x2F;code&gt; 這些是內建函數就行了，參數用空白分隔。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;add_executable()&lt;&#x2F;code&gt; 函數指定了執行檔和原始碼。在這個例子中，&lt;code&gt;MyHomework&lt;&#x2F;code&gt; 是執行檔名稱，&lt;code&gt;main.cpp&lt;&#x2F;code&gt; 是原始碼。可以有多個原始碼，檔名間用空白分隔。&lt;&#x2F;p&gt;
+&lt;p&gt;井字號可以寫註解，讓腳本更容易閱讀。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;main.cpp&lt;&#x2F;code&gt;的內容就不多說了：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;cpp&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-cpp &quot;&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;#include &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;iostream&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffb9d;&quot;&gt;int &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;main&lt;&#x2F;span&gt;&lt;span&gt;() { std::cout &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;lt;&amp;lt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;Hello CMake!&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;lt;&amp;lt;&lt;&#x2F;span&gt;&lt;span&gt; std::endl; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#87d6d5;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;; }
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;bian-yi-zhuan-an&quot;&gt;編譯專案&lt;&#x2F;h2&gt;
+&lt;p&gt;接著，用以下命令指示 CMake 來編譯專案：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;cmake -S . -B build &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 產生當前平台專案檔
+&lt;&#x2F;span&gt;&lt;span&gt;cmake --build build &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 編譯專案
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;我們剛剛提過，CMake 不會自己編譯專案，而是產生當前平台的專案檔，然後再呼叫對應的編譯工具編譯。這兩行命令就是這個過程的兩個步驟。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;-S&lt;&#x2F;code&gt; 和 &lt;code&gt;-B&lt;&#x2F;code&gt; 是 CMake 的兩個參數，&lt;code&gt;-S&lt;&#x2F;code&gt; 參數指定專案的來源目錄，&lt;code&gt;-B&lt;&#x2F;code&gt; 參數指定編譯目錄。這樣 CMake 會在 build 目錄下產生對應的專案檔，然後用 &lt;code&gt;--build&lt;&#x2F;code&gt; 編譯專案。&lt;&#x2F;p&gt;
+&lt;p&gt;這裡我們引入了一個新的概念，就是「來源目錄」和「編譯目錄」的區分。&lt;&#x2F;p&gt;
+&lt;p&gt;來源目錄是指程式源碼的所在(也是 &lt;code&gt;CMakeLists.txt&lt;&#x2F;code&gt; 所在的目錄)。而編譯目錄則是用來放編譯產生的副產品的目錄，包括 CMake 替我們產生的當前平台專案，編譯暫存檔，以及最終編譯完成的執行檔。這些檔案是 CMake 和編譯器產生的，不是原始專案的一部分。&lt;&#x2F;p&gt;
+&lt;p&gt;這樣做的好處是，分開編譯目錄和來源目錄，不會污染原始專案，比較好做版本控制。另外，也方便清理副產品。&lt;&#x2F;p&gt;
+&lt;p&gt;依照 CMake 的慣例，編譯目錄通常是名為 build 的子目錄。在本例中，我們看一眼 build 子目錄，可以看見 CMake 為我產生的 VS2019 專案:
+&lt;img src=&quot;&#x2F;img&#x2F;cmake-vs.png&quot; alt=&quot;CMake VS2019&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;最後 &lt;code&gt;cmake --build build&lt;&#x2F;code&gt; 命令，就會驅動當前平台的工具練，然後實際編譯專案。在本例中，這個命令會呼叫 MSBuild 編譯專案。&lt;&#x2F;p&gt;
+&lt;p&gt;當然，徑直打開 Visual Studio 來建構專案也可以，不一定要假手 CMake。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;zhi-ding-jian-gou-xi-tong&quot;&gt;指定建構系統&lt;&#x2F;h3&gt;
+&lt;p&gt;除了完全交由 CMake 決定之外，也可以用 &lt;code&gt;cmake -G&lt;&#x2F;code&gt; 直接指定建構系統，例如 Visual Studio 2019、Makefiles、Xcode 等等。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;-G&lt;&#x2F;code&gt; 參數後面接的是建構系統的名稱，例如 &lt;code&gt;Visual Studio 17 2022&lt;&#x2F;code&gt; 就是 Visual Studio 2022，&lt;code&gt;Unix Makefiles&lt;&#x2F;code&gt; 就是 Makefiles，&lt;code&gt;Xcode&lt;&#x2F;code&gt; 就是 Xcode。 當然，你的電腦上要有對應的建構系統才行。完整的建構系統支援清單，請參考&lt;a href=&quot;https:&#x2F;&#x2F;cmake.org&#x2F;cmake&#x2F;help&#x2F;latest&#x2F;manual&#x2F;cmake-generators.7.html#manual:cmake-generators(7)&quot;&gt;這個CMake官方文件連結&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 產生不同平台的專案的例子
+&lt;&#x2F;span&gt;&lt;span&gt;cmake -G &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;Visual Studio 16 2019&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt; -S &#x2F;source -B build
+&lt;&#x2F;span&gt;&lt;span&gt;cmake -G &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;Visual Studio 15 2017&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt; -S &#x2F;source -B build
+&lt;&#x2F;span&gt;&lt;span&gt;cmake -G &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;Unix Makefiles&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;   -S &#x2F;source -B build
+&lt;&#x2F;span&gt;&lt;span&gt;cmake -G Xcode              -S &#x2F;source -B build
+&lt;&#x2F;span&gt;&lt;span&gt;cmake -G Ninja              -S &#x2F;source -B build
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;zhi-ding-debug-release-bian-yi-zu-tai&quot;&gt;指定 Debug&#x2F;Release 編譯組態&lt;&#x2F;h3&gt;
+&lt;p&gt;開發時我們常常需要 Debug 和 Release 兩種編譯組態。&lt;&#x2F;p&gt;
+&lt;p&gt;可用 &lt;code&gt;--config&lt;&#x2F;code&gt; 指定編譯組態&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;cmake --build . --config Release
+&lt;&#x2F;span&gt;&lt;span&gt;cmake --build . --config Debug
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;注意，這個參數只對 Visual Studio 和 Xcode 這類可以切換 Debug&#x2F;Release 的專案有用，對 Makefiles 無效。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;bi-jiao-wan-zheng-de-c-zhuan-an-fan-li&quot;&gt;比較完整的 C++ 專案範例&lt;&#x2F;h2&gt;
+&lt;p&gt;看完了上面的極簡三行，接著是一個比較完整的 CMake C++ 專案範例。在剛剛的基礎上，加入 C++ 專案常見的標準備配置：標頭檔、多個原碼檔案、指定 C++11&#x2F;14&#x2F;17 版本標準、第三方程式庫的 include 路徑和 linker 路徑等等。有了這些，應該足以應付大多數開發需求。&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;cmake&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-cmake &quot;&gt;&lt;code class=&quot;language-cmake&quot; data-lang=&quot;cmake&quot;&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;cmake_minimum_required&lt;&#x2F;span&gt;&lt;span&gt;(VERSION 3.21)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;project&lt;&#x2F;span&gt;&lt;span&gt;(MyProject)
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 要求 C++17 標準
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;set&lt;&#x2F;span&gt;&lt;span&gt;(CMAKE_CXX_STANDARD 17)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 多個原始碼檔案和標頭檔
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;add_executable&lt;&#x2F;span&gt;&lt;span&gt;(MyApp main.cpp work.cpp header1.h header2.h)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 設定 include 目錄
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;target_include_directories&lt;&#x2F;span&gt;&lt;span&gt;(MyApp PRIVATE &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;C:&#x2F;path&#x2F;to&#x2F;include&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 設定 lib 目錄
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;target_link_libraries&lt;&#x2F;span&gt;&lt;span&gt;(MyApp PRIVATE &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;C:&#x2F;path&#x2F;to&#x2F;lib&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;藉由 &lt;code&gt;target_include_directories()&lt;&#x2F;code&gt; 和 &lt;code&gt;target_link_libraries()&lt;&#x2F;code&gt; 函數，我們可以告訴編譯器，要去哪裡找第三方標頭檔和函式庫，記得要給絕對路徑。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;win32-shi-chuang-cheng-shi&quot;&gt;Win32 視窗程式&lt;&#x2F;h2&gt;
+&lt;p&gt;如果要開發 Win32 視窗程式，可以添加以下 CMake 設定：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;cmake&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-cmake &quot;&gt;&lt;code class=&quot;language-cmake&quot; data-lang=&quot;cmake&quot;&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 關鍵字 WIN32 指明是 win32 視窗程式
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;add_executable&lt;&#x2F;span&gt;&lt;span&gt;(MyWin32App WIN32 main.cpp work.cpp header.h pch.h)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 設定寬字元
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;target_compile_definitions&lt;&#x2F;span&gt;&lt;span&gt;(MyWin32App PRIVATE UNICOD _UNICODE)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;用 &lt;code&gt;WIN32&lt;&#x2F;code&gt; 關鍵字指明是 win32 視窗程式，這樣程式入口會從 &lt;code&gt;main()&lt;&#x2F;code&gt; 變成 &lt;code&gt;WinMain()&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;定義 &lt;code&gt;UNICODE&lt;&#x2F;code&gt; 和 &lt;code&gt;_UNICODE&lt;&#x2F;code&gt; 告訴 VC++ 怎麼處理寬字元&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;can-kao-lian-jie&quot;&gt;參考連結&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cmake.org&#x2F;cmake&#x2F;help&#x2F;latest&#x2F;guide&#x2F;tutorial&#x2F;&quot;&gt;CMake 官方教學&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.jetbrains.com&#x2F;help&#x2F;clion&#x2F;quick-cmake-tutorial.html&quot;&gt;CLion Quick CMake tutorial&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cliutils.gitlab.io&#x2F;modern-cmake&#x2F;&quot;&gt;An introduction to Modern CMake&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gist.github.com&#x2F;Rod-Persky&#x2F;e6b93e9ee31f9516261b&quot;&gt;Qt5 Projects with CMake&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;minecraftxwinp.github.io&#x2F;2017&#x2F;11&#x2F;27&#x2F;%E7%94%A8CMake%E5%9C%A8%E5%BB%BA%E7%BD%AE%E6%99%82%E8%A4%87%E8%A3%BD%E6%AA%94%E6%A1%88%E5%88%B0%E8%BC%B8%E5%87%BA%E5%9F%B7%E8%A1%8C%E6%AA%94%E7%9A%84%E7%9B%AE%E9%8C%84&#x2F;&quot;&gt;用CMake在建置時複製檔案到輸出執行檔的目錄 &lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>寫 Powershell 解決 TortoiseGit 圖示消失問題</title>
+        <published>2021-05-17T00:00:00+00:00</published>
+        <updated>2021-05-17T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/tortoise-dropbox-overlay/"/>
+        <id>https://chchwy.github.io/posts/tortoise-dropbox-overlay/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/tortoise-dropbox-overlay/">&lt;p&gt;幾天前，小烏龜 TortoiseGit 圖示消失的問題又發生了，我在檔案總管上看不見 git 狀態，很不方便。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;icon-overlay.png&quot; alt=&quot;icon-overlay&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;上圖是正常狀態，有綠色小勾勾顯示 git 狀態。&lt;&#x2F;p&gt;
+&lt;p&gt;發生的原因，就是顯示綠色勾勾的那個機制: Windows Icon Overlay 有數量限制 16 個。這 16 個位置是所有應用程式共享的，包括 Dropbox、TortoiseGit、OneDrive 等等。&lt;&#x2F;p&gt;
+&lt;p&gt;如果超過了 16 個怎麼辦？名字排序，顯示前 16 個。&lt;&#x2F;p&gt;
+&lt;p&gt;我去打開 Windows Icon Overlay 的清單，發現 Dropbox 一隻程式就佔用了&lt;strong&gt;10 個位置&lt;&#x2F;strong&gt;，而且&lt;strong&gt;非常無恥&lt;&#x2F;strong&gt;的在名字前面插三個空格，確保他家的圖示一定會佔住最前面的位置。所以一旦電腦上同時裝了 Dropbox + TortoiseGit，小烏龜的圖示就有很大的機會被擠到 16 個有效位置以外，無法正確顯示。&lt;&#x2F;p&gt;
+&lt;p&gt;網路上已經很多人貼解法了，改註冊表，調整順序，都很詳細，我就不贅述了：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dotblogs.com.tw&#x2F;kevinya&#x2F;2017&#x2F;07&#x2F;24&#x2F;180237&quot; title=&quot;TorsoieGit 跟 Dropbox 相衝&quot;&gt;Dropbox與小烏龜Tortorise的圖示icon相衝問題解決&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.garethjmsaunders.co.uk&#x2F;2015&#x2F;03&#x2F;22&#x2F;managing-overlay-icons-for-dropbox-and-tortoisesvn-and-tortoisegit&#x2F;&quot;&gt;Managing overlay icons for Dropbox and TortoiseSVN and TortoiseGit&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;但是註冊表改好後，這個問題仍然會不定時出現。因為 Dropbox 每次更新版本後會把註冊表改回去！&lt;&#x2F;p&gt;
+&lt;p&gt;所以我就在想能不能把解法自動化，寫成程式?&lt;&#x2F;p&gt;
+&lt;p&gt;研究了一下，發現 Powershell 可以修改註冊表。就花了一點時間寫 Powershell:&lt;&#x2F;p&gt;
+&lt;p&gt;我發現 PowerShell 操作註冊表，跟操作檔案非常相似。&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Get-ChildItem&lt;&#x2F;code&gt;：列出註冊表子項目&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Remove-Item&lt;&#x2F;code&gt;：刪除註冊表&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Rename-Item&lt;&#x2F;code&gt;：重新命名&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Split-Path -leaf $path&lt;&#x2F;code&gt;：從完整路徑快速取出檔名&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;註冊表路徑以 &lt;code&gt;HKLM:\&lt;&#x2F;code&gt; 或 &lt;code&gt;HKCU:\&lt;&#x2F;code&gt; 起頭。&lt;code&gt;HKLM:\&lt;&#x2F;code&gt; 表示 Local Machine， &lt;code&gt;HKCU:\&lt;&#x2F;code&gt; 表示 Current User。&lt;&#x2F;p&gt;
+&lt;p&gt;比如這個註冊表路徑&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#393939;color:#dedede;&quot;&gt;&lt;code&gt;&lt;span&gt;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;在 powershell 裡面就要寫成這樣：&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#393939;color:#dedede;&quot;&gt;&lt;code&gt;&lt;span&gt;HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;以下是我的 PowerShell 腳本。砍掉比較少見的 Dropbox 圖示，留下必要的四個，再把無恥的三空格改成一個空格。確保他們的順序在 TortoiseGit 後面。&lt;&#x2F;p&gt;
+&lt;script src=&quot;https:&#x2F;&#x2F;gist.github.com&#x2F;chchwy&#x2F;5418022d47fa49481f71ba481f54c02a.js&quot;&gt;&lt;&#x2F;script&gt;
+&lt;h2 id=&quot;can-kao-wang-ye&quot;&gt;參考網頁&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dotblogs.com.tw&#x2F;kevinya&#x2F;2017&#x2F;07&#x2F;24&#x2F;180237&quot; title=&quot;TorsoieGit 跟 Dropbox 相衝&quot;&gt;Dropbox與小烏龜Tortorise的圖示icon相衝問題解決&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.garethjmsaunders.co.uk&#x2F;2015&#x2F;03&#x2F;22&#x2F;managing-overlay-icons-for-dropbox-and-tortoisesvn-and-tortoisegit&#x2F;&quot;&gt;Managing overlay icons for Dropbox and TortoiseSVN and TortoiseGit&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;blog.netwrix.com&#x2F;2018&#x2F;09&#x2F;11&#x2F;how-to-get-edit-create-and-delete-registry-keys-with-powershell&#x2F;&quot;&gt;How to Get, Edit, Create and Delete Registry Keys with PowerShell&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.microsoft.com&#x2F;zh-tw&#x2F;powershell&#x2F;scripting&#x2F;samples&#x2F;working-with-registry-keys?view=powershell-7.1&quot;&gt;PowerShell: 使用登錄機碼&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>Windows 電腦切換 Python 2&#x2F;3 版本</title>
+        <published>2021-04-23T00:00:00+00:00</published>
+        <updated>2021-04-23T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/python-on-windows/"/>
+        <id>https://chchwy.github.io/posts/python-on-windows/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/python-on-windows/">&lt;p&gt;目前看來，Python 2 和 3 應該還會共存相當長一段時間，所以電腦上免不了要同時安裝兩個版本。以下是我找到 Windows 作業系統下可以輕鬆切換版本的方法。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;py-launcher&quot;&gt;py Launcher&lt;&#x2F;h2&gt;
+&lt;p&gt;Python 3.3 開始內建 &lt;code&gt;py&lt;&#x2F;code&gt; 啟動器，可用參數選擇 Python 版本。&lt;&#x2F;p&gt;
+&lt;p&gt;py 指令使用方法如下:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;py -2 myscript2.py &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 指定 Python 2
+&lt;&#x2F;span&gt;&lt;span&gt;py -3 myscript3.py &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 指定 Python 3
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;列出所有已安裝的 Python 版本&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;py --list
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;安裝模組&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;py -2 -m pip install SomePackage  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 指定 Python 2
+&lt;&#x2F;span&gt;&lt;span&gt;py -3 -m pip install SomePackage  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 指定 Python 3
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;zai-dang-an-zhong-zhi-ding-ban-ben&quot;&gt;在檔案中指定版本&lt;&#x2F;h2&gt;
+&lt;p&gt;使用 py 啟動器的話，也可以在 Python 腳本檔案的第一行加入以下語句來指定版本&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;py&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-py &quot;&gt;&lt;code class=&quot;language-py&quot; data-lang=&quot;py&quot;&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt;! python2.7
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt;! python3
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;這樣 py 啟動器就不用下版本參數，會根據檔案第一行啟動對應的版本&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;py myScript.py &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 使用檔案裡指定的版本
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;yuan-shi-ma-zhen-ce-yu-yan-ban-ben&quot;&gt;原始碼偵測語言版本&lt;&#x2F;h2&gt;
+&lt;p&gt;在 Python 腳本裡面偵測目前語言版本的方法:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#393939;color:#dedede;&quot;&gt;&lt;code&gt;&lt;span&gt;&amp;gt;&amp;gt;&amp;gt; import sys
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&amp;gt;&amp;gt; print(sys.version_info)
+&lt;&#x2F;span&gt;&lt;span&gt;sys.version_info(major=2, minor=7, micro=18, releaselevel=&amp;#39;final&amp;#39;, serial=0)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;can-kao-lian-jie&quot;&gt;參考連結&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3&#x2F;installing&#x2F;index.html#install-scientific-python-packages&quot;&gt;Python 官方文件&lt;&#x2F;a&gt;,&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.zhihu.com&#x2F;question&#x2F;22846291&#x2F;answer&#x2F;22928449&quot;&gt;知乎：在同一台电脑下如何进行 Python 2 与 3 的切换？&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>《無雙☆群星大會串》白金遊戲心得</title>
+        <published>2020-12-07T00:00:00+00:00</published>
+        <updated>2020-12-07T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/warriors-all-stars/"/>
+        <id>https://chchwy.github.io/posts/warriors-all-stars/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/warriors-all-stars/">&lt;p&gt;最近剛打完一輪《無雙☆群星大會串》。&lt;&#x2F;p&gt;
+&lt;p&gt;作為一個一歲小孩的老爸，能玩的遊戲類型非常受限，第一：關卡長度不能太長，最好在 10-15 分鐘內，因為我的閒暇空檔只有這麼長。第二：單人遊戲，小孩哭了隨時按下暫停去哄小孩。第三：簡單輕鬆不燒腦，完成一天的工作和家務後已經非常疲累了。無雙群星剛好符合這三點，睡覺前來一場無腦割草，非常抒壓。&lt;&#x2F;p&gt;
+&lt;p&gt;(織田信喵在這個遊戲裡面根本就是梗王)&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;allstar-cat.jpg&quot; alt=&quot;Oda-Kasumi&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;以下是一些遊戲心得：&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;開場第一要務是衝高「勇氣值」，因為高勇氣角可以痛打低勇氣角，不管等級跟裝備差距，敵我都一樣。&lt;&#x2F;li&gt;
+&lt;li&gt;無雙狂熱是早期衝勇氣值的好方法。&lt;&#x2F;li&gt;
+&lt;li&gt;善用英雄援護技能。英雄技能是本作的精華，帶著四個隊友可不是看戲的。&lt;&#x2F;li&gt;
+&lt;li&gt;個人愛用的英雄援護技能如下 (比無雙還好用啊!)
+&lt;ul&gt;
+&lt;li&gt;撲克臉雙妹：蜜蕾妮雅+蕾格琳娜。把散落的小兵吸成一團，然後全部集中電死。清據點速度一流。&lt;&#x2F;li&gt;
+&lt;li&gt;蘇菲：飛彈齊射轟炸，全遊戲最強的範圍殲滅技能。&lt;&#x2F;li&gt;
+&lt;li&gt;周倉：趕路，趕路，趕路。&lt;&#x2F;li&gt;
+&lt;li&gt;威廉：刀光，清兵範圍大又遠。&lt;&#x2F;li&gt;
+&lt;li&gt;穗香：火拳，非常痛，高勇氣的時候可以一拳秒掉敵將。&lt;&#x2F;li&gt;
+&lt;li&gt;幻空：沒有蜜蕾妮雅時候的替代品，也可以把小兵群吸成一團集中擊殺。&lt;&#x2F;li&gt;
+&lt;li&gt;霞：給主角超高攻速。&lt;&#x2F;li&gt;
+&lt;li&gt;其他高傷害的英雄：趙雲&#x2F;時繼&#x2F;有馬一&lt;&#x2F;li&gt;
+&lt;li&gt;其他範圍清兵英雄：達瑞斯&#x2F;志貴&#x2F;剎那&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;卡片必附「龍神的啟示」，放無雙可以消除 50% 隊友技能冷卻時間。&lt;&#x2F;li&gt;
+&lt;li&gt;理想的戰鬥節奏：小兵團裡開英雄技能 =&amp;gt; 清了一堆兵，集滿無雙槽 =&amp;gt; 開無雙 (消除英雄技能冷卻) =&amp;gt; 繼續用英雄技能清兵 =&amp;gt; 再度集滿無雙槽 (無限循環)&lt;&#x2F;li&gt;
+&lt;li&gt;關卡『覺醒的邪惡』很適合刷卡片，因為英雄幻影會無限復活，所以故意不去打最終 Boss 就可以一直刷英雄拿卡片。&lt;&#x2F;li&gt;
+&lt;li&gt;最終戰『完全的黑暗』和『重生的黑暗』很容易因為刹那、志貴或環其中一人死亡而敗北。解決辦法就是把這三個人加進隊伍，這樣他們就不會死了，關卡難度瞬間大減。&lt;&#x2F;li&gt;
+&lt;li&gt;這遊戲自帶攻略，「世界資訊」 =&amp;gt; 「戰鬥傳聞」就會告訴你各關卡的解鎖條件。&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;(大家都想摸信喵)&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;allstar-honoka.jpg&quot; alt=&quot;Oda-Honoka&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;!--
+拿白金最困難的成就應該是「True Devotee 完成所有的故事・英雄・戲劇性戰鬥」。鑑賞室的動畫列表可以檢查哪些序章跟英雄招募關卡還沒打。像我一開始趙雲開場，周倉跟呂布自動變成隊友，所以我從來沒有打過這兩個人的英雄招募關卡。主線劇情部份，志貴線有三個關卡會走向同一個志貴稱王的結局，剎那線有兩個關卡導向稱王結局，環線也有兩個關卡導向稱王結局，這個就很煩，很難追蹤哪些關卡沒打過。夜見線有兩個「追蹤夜見」。
+--&gt;
+&lt;p&gt;《無雙群星》玩下來，我基本上同意某個 steam 評論：這就是一款服務粉絲的遊戲，玩的人大多數都是因為喜歡某個角色或某款作品，就不要太要求強大的世界觀或武器系統了，玩得開心，享受各角色互相吐槽的歡樂氣氛就好了。&lt;&#x2F;p&gt;
+&lt;p&gt;最後秀一下我的破關角色，就是角色風格大亂鬥 (稱讚的意味)。&lt;&#x2F;p&gt;
+&lt;p&gt;霞：我的第一隻角色。後來玩了別隻角色才知道，原來遊戲沒那麼難，只是角色機體性能比較低...。C4 帶炎最大化傷害，可以把敵人踢在空中燒一陣子。優點是無雙啟動的速度很快 (有些角色要先跑好幾秒的角色動畫，無雙才放出去，敵人都不知道跑哪去了)&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;allstar-kasumi.jpg&quot; alt=&quot;End-Kasumi&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;織田信喵：遠程安全牌角色，輸出能力中等，可以站得遠遠的一直射射射。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;allstar-oda.jpg&quot; alt=&quot;End-Oda&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;有馬一：最後一輪破關愛角，範圍廣輸出高。C3、C4、C5 都很好用。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;allstar-hajime.jpg&quot; alt=&quot;End-Hajime&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;白金之星成就截圖&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;allstar-platinum.png&quot; alt=&quot;Platinum Star&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>分析閱讀的十五條規則</title>
+        <published>2020-09-11T00:00:00+00:00</published>
+        <updated>2020-09-11T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/analytical-reading/"/>
+        <id>https://chchwy.github.io/posts/analytical-reading/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/analytical-reading/">&lt;p&gt;以前我曾經寫過一篇&lt;a href=&quot;&#x2F;post&#x2F;book&#x2F;2011-05-23-%E8%AE%80%E6%9B%B8%E5%BF%83%E5%BE%97-%E5%A6%82%E4%BD%95%E9%96%B1%E8%AE%80%E4%B8%80%E6%9C%AC%E6%9B%B8&#x2F;&quot;&gt;「如何閱讀一本書」的讀書心得&lt;&#x2F;a&gt;，但多年過去我已經逐漸淡忘書本裡面的規則。今天把這十五條分析閱讀的規則列出來，溫故知新。我用我自己的話重寫部份規則，字句不一定跟原書完全相符。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;fen-xi-yue-du-de-di-yi-jie-duan-zhua-zhu-shu-ben-de-gu-jia&quot;&gt;分析閱讀的第一階段： 抓住書本的骨架&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;規則一：知道正在讀的書的類型，因為不同類型的書有不同閱讀技巧。&lt;&#x2F;li&gt;
+&lt;li&gt;規則二：用幾個簡單的句子，最多一小段話簡述整本書的內容。&lt;&#x2F;li&gt;
+&lt;li&gt;規則三：列舉書中的主要部份，寫出全書的大綱、也列出各部份的大綱。&lt;&#x2F;li&gt;
+&lt;li&gt;規則四：確定作者想要解決的問題。作者在開始寫作前都有一個(或一串)問題，而書的內容就是答案。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;fen-xi-yue-du-di-er-jie-duan-quan-shi-shu-ben-de-lun-dian&quot;&gt;分析閱讀第二階段： 詮釋書本的論點&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;規則五：詮釋書中的關鍵字，並與作者達成共識。(比如九二共識就是反例)&lt;&#x2F;li&gt;
+&lt;li&gt;規則六：圈出書中最重要的句子，找出作者的主旨。&lt;&#x2F;li&gt;
+&lt;li&gt;規則七：解讀規則七的句子，推理出關聯，並設法重建整本書的基本論述。&lt;&#x2F;li&gt;
+&lt;li&gt;規則八：找出作者的解答。回答了哪些部份、沒有回答哪些部份。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;fen-xi-yue-du-di-san-jie-duan-gong-zheng-de-ping-duan&quot;&gt;分析閱讀第三階段： 公正的評斷&lt;&#x2F;h2&gt;
+&lt;p&gt;當個理性的批評者&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;規則九：當你說出「我同意」、「我反對」或「我暫緩評論」之前，你必須能肯定「我瞭解了」。&lt;&#x2F;li&gt;
+&lt;li&gt;規則十：當你不同意作者的觀點時，有理有據的表達自己的意見，不要流於情緒爭論。&lt;&#x2F;li&gt;
+&lt;li&gt;規則十一：清楚區分客觀知識與個人觀點的不同。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;批評的標準&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;規則十二：證明作者的知識不足。&lt;&#x2F;li&gt;
+&lt;li&gt;規則十三：證明作者的知識錯誤。&lt;&#x2F;li&gt;
+&lt;li&gt;規則十四：證明作者的推論不合邏輯。&lt;&#x2F;li&gt;
+&lt;li&gt;規則十五：證明作者的分析不夠完整。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>用 Github Actions 更新部落格</title>
+        <published>2020-09-01T00:00:00+00:00</published>
+        <updated>2020-09-01T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/github-actions-hugo-blog/"/>
+        <id>https://chchwy.github.io/posts/github-actions-hugo-blog/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/github-actions-hugo-blog/">&lt;p&gt;現在我的部落格是 Hugo + Github Pages 的組合。&lt;&#x2F;p&gt;
+&lt;p&gt;跟一般的部落格平台不一樣，用 Hugo 這類靜態網站產生器，內容更新了需要全站重新編譯。所以更新部落格就變得稍微有點麻煩。&lt;&#x2F;p&gt;
+&lt;p&gt;我怎麼處理部落格更新，總分成三個時期：&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;自己手動編譯。每次小修改都要打指令，麻煩，讓我變得不太愛寫部落格。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.travis-ci.com&#x2F;user&#x2F;deployment&#x2F;pages&#x2F;&quot;&gt;Travis-CI 自動編譯&lt;&#x2F;a&gt;。只要 Git Repo 推送就會自動重新編譯，節省我很多力氣。缺點是需要兩個 Git Repo，這個 chchwy.github.io 只保存編譯後的結果，需要另一個 Git 倉庫保存原始 markdown 檔案。&lt;&#x2F;li&gt;
+&lt;li&gt;現在。採用 Github Actions 部署。直接在 Github 上一站搞定所有的事情。
+&lt;ul&gt;
+&lt;li&gt;只有一個 Git Repo，用 branch 區隔原檔和編譯結果。原檔放 &lt;code&gt;blog&lt;&#x2F;code&gt;，編譯結果放 &lt;code&gt;master&lt;&#x2F;code&gt;。&lt;&#x2F;li&gt;
+&lt;li&gt;任何 git push 都會觸發 Github Actions 自動全站編譯。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;she-ding-github-action&quot;&gt;設定 Github Action&lt;&#x2F;h2&gt;
+&lt;p&gt;設定步驟如下：&lt;&#x2F;p&gt;
+&lt;p&gt;一、先到你的 Git Repo 點選 Action 分頁，然後點 &lt;code&gt;New workflow&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;github-action-01.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;二、接著點選 &lt;code&gt;set up a workflow yourself&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;三、Github 會導引你創建一個 Workflow 設定檔，位於 &lt;code&gt;.github&#x2F;workflows&#x2F;main.xml&lt;&#x2F;code&gt;。&lt;&#x2F;p&gt;
+&lt;p&gt;在文字框填入以下設定 (依個人情況修改適合自己的設定)&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;yml&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-yml &quot;&gt;&lt;code class=&quot;language-yml&quot; data-lang=&quot;yml&quot;&gt;&lt;span style=&quot;font-weight:bold;color:#fed6af;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;Deploy my blog&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 自己取一個喜歡的名字
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#d6d6ae;&quot;&gt;on&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#fed6af;&quot;&gt;push&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#fed6af;&quot;&gt;branches&lt;&#x2F;span&gt;&lt;span&gt;: [ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;blog &lt;&#x2F;span&gt;&lt;span&gt;] &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 設定哪些 branch 會觸發 Action
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#fed6af;&quot;&gt;jobs&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#fed6af;&quot;&gt;build&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#fed6af;&quot;&gt;runs-on&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;ubuntu-latest &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 執行環境
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#fed6af;&quot;&gt;steps&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;    - &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#fed6af;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;Checkout Repo
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#fed6af;&quot;&gt;uses&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;actions&#x2F;checkout@v2
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 直接引用其他人寫好的 Hugo to Github Pages Action
+&lt;&#x2F;span&gt;&lt;span&gt;    - &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#fed6af;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;Publish Hugo Site&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#fed6af;&quot;&gt;uses&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;chabad360&#x2F;hugo-gh-pages@master 
+&lt;&#x2F;span&gt;&lt;span&gt;      &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#fed6af;&quot;&gt;with&lt;&#x2F;span&gt;&lt;span&gt;:
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#fed6af;&quot;&gt;branch&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;master&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#fed6af;&quot;&gt;args&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;--gc --minify --cleanDestinationDir
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#fed6af;&quot;&gt;githubToken&lt;&#x2F;span&gt;&lt;span&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;${{ secrets.PERSONAL_TOKEN }}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;四、Github Action 需要 Access Token，它才可以讀寫你的 Git 倉庫。&lt;&#x2F;p&gt;
+&lt;p&gt;照著官方文件的指示 &lt;a href=&quot;https:&#x2F;&#x2F;docs.github.com&#x2F;en&#x2F;github&#x2F;authenticating-to-github&#x2F;creating-a-personal-access-token&quot;&gt;Creating a Personal Access Token&lt;&#x2F;a&gt; 建立 Access Token，記得要給予適當的讀寫權限。&lt;&#x2F;p&gt;
+&lt;p&gt;接著到 Github 倉庫的 Setting 分頁，選 Secrets -&amp;gt; New Secrets。給這個 Secret 取名叫做 PERSONAL_TOKEN (基本上就是 workflow 設定檔的最後一行那個變數名)，貼上剛剛建立的 Access Token 字串。&lt;&#x2F;p&gt;
+&lt;p&gt;五、測試 Github Action&lt;&#x2F;p&gt;
+&lt;p&gt;推送修改到你的 Git 倉庫，到 Actions 分頁看看有沒有觸發 Workflow&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;github-action-03.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;看見 workflow 開始執行就表示大功告成，Github Action 設定完畢，可以射後不理盡情寫部落格了。&lt;&#x2F;p&gt;
+&lt;p&gt;參考連結: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;chabad360&#x2F;hugo-gh-pages&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;chabad360&#x2F;hugo-gh-pages&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>Chocolatey 套件管理，重灌 Windows 後的好幫手</title>
+        <published>2019-08-14T00:00:00+00:00</published>
+        <updated>2019-08-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/chocolatey/"/>
+        <id>https://chchwy.github.io/posts/chocolatey/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/chocolatey/">&lt;p&gt;上個月，我又重灌了 Windows。&lt;&#x2F;p&gt;
+&lt;p&gt;重灌後，我給自己設了一個挑戰：不手動下載任何安裝檔，就把電腦恢復成可工作狀態。&lt;&#x2F;p&gt;
+&lt;p&gt;我想要這樣挑戰，是因為每次重灌電腦後，就是惡夢般的漫長的軟體安裝之旅。去每個軟體的官方網站，下載，等待，安裝，有時候要重新開機，無限迴圈。過程比安裝 Windows 本身還要漫長。&lt;&#x2F;p&gt;
+&lt;p&gt;事後來看，雖然「無手動下載」的目標還沒辦法達成百分之百。但是除了少數例外，我已經可以自動化安裝八成以上的常用軟體了。主要靠兩個的軟體套件管理：Chocolatey 和 Microsoft Store。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;chocolatey-jiao-xue&quot;&gt;Chocolatey 教學&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;chocolatey.org&#x2F;&quot; title=&quot;Chocolatey Official Website&quot;&gt;Chocolatey&lt;&#x2F;a&gt; 是命令列套件管理工具。類似 Ubuntu 的 &lt;code&gt;apt-get&lt;&#x2F;code&gt; 讓你一行指令完成軟體的安裝，同樣的概念在套用在 Windows 上就是 Chocolatey。許多常見的 Windows 軟體都已經在 Chocolatey 上架。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;an-zhuang-chocolatey&quot;&gt;安裝 Chocolatey&lt;&#x2F;h3&gt;
+&lt;p&gt;打開具有管理員權限的 Powershell，複製貼上官網的安裝指令 :&lt;br&#x2F;&gt;
+&lt;a href=&quot;https:&#x2F;&#x2F;chocolatey.org&#x2F;install#install-with-powershellexe&quot;&gt;https:&#x2F;&#x2F;chocolatey.org&#x2F;install#install-with-powershellexe&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;chang-yong-zhi-ling&quot;&gt;常用指令&lt;&#x2F;h3&gt;
+&lt;p&gt;Chocolatey 的指令名稱是 &lt;code&gt;choco&lt;&#x2F;code&gt;，大多數操作需要管理員權限。&lt;&#x2F;p&gt;
+&lt;p&gt;安裝套件 (以 7-zip 為例)&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#393939;color:#dedede;&quot;&gt;&lt;code&gt;&lt;span&gt;choco install 7zip
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;反安裝套件&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#393939;color:#dedede;&quot;&gt;&lt;code&gt;&lt;span&gt;choco uninstall 7zip
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;列出已安裝的套件&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#393939;color:#dedede;&quot;&gt;&lt;code&gt;&lt;span&gt;choco list --local
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;檢查套件是否有新版本&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#393939;color:#dedede;&quot;&gt;&lt;code&gt;&lt;span&gt;choco outdated
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;更新所有套件到最新版&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#393939;color:#dedede;&quot;&gt;&lt;code&gt;&lt;span&gt;choco upgrade all
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;這是我的 Chocolatey 安裝清單：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;choco install -y 7zip                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 萬用壓縮軟體
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y geekuninstaller     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 強大的反安裝工具
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y firefox             &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 我的慣用瀏覽器
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y googlechrome        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 有時候需要另一個瀏覽器
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y everything          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 最強大的檔案搜尋工具
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y dropbox             &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; Dropbox 客戶端
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y golang              &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; Go lang
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y cmake               &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; CMake
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y vscode              &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; VS Code
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y notepadplusplus     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 老牌文字編輯器 Notepad++
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y tortoisegit         &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 小烏龜 Git
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y git-fork            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 另一款輕巧的 git 圖形化工具
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y beyondcompare       &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 超級好用的 diff&#x2F;merge 工具
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y filezilla           &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; FTP 客戶端
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y foxitreader         &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 我慣用的 PDF viewer
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y hugo                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 靜態博客產生器
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y pandoc              &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 強大的文件轉換工具
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y paint.net           &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 免費的小畫家強化版
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y workflowy           &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 條列式筆記工具
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y libreoffice-fresh   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 沒辦法，有時候還是要處理.docx
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y mp3tag              &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; MP3 標籤編輯
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y treesizefree        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 追蹤硬碟空間使用
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y ccleaner            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 清理垃圾檔案
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y teamviewer          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; Teamviewer 遠端桌面
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y 4k-video-downloader &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 影片&#x2F;音樂抓取
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y xnviewmp            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 看圖軟體
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y foobar2000          &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 聽歌軟體
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y steam               &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 娛樂軟體
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y vlc                 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 開源影片播放軟體
+&lt;&#x2F;span&gt;&lt;span&gt;choco install -y k-litecodecpack-standard &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; k-lite 萬用影音播放 codec
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;只要一個 Powershell 腳本就可以把清單上的軟體全裝好了，之後升級版本也只要一個命令，異常方便。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;microsoft-store&quot;&gt;Microsoft Store&lt;&#x2F;h3&gt;
+&lt;p&gt;另外有幾款軟體，雖然也可以用 Chocolatey，但是我發現 Microsoft Store 上的版本更穩定。像是 Evernote 和 Line 的桌面版。用 Microsoft Store 安裝軟體的體驗也很好，一鍵安裝，無縫升級。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;qi-ta-mei-ban-fa-zi-dong-an-zhuang-de-ruan-ti&quot;&gt;其他沒辦法自動安裝的軟體&lt;&#x2F;h3&gt;
+&lt;p&gt;因為某些原因，以下軟體我還是必須手動安裝：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Visual Studio (沒有其他安裝方法)&lt;&#x2F;li&gt;
+&lt;li&gt;Qt (沒有其他安裝方法)&lt;&#x2F;li&gt;
+&lt;li&gt;git (安裝過程中我需要修改選項)&lt;&#x2F;li&gt;
+&lt;li&gt;Slack (我刻意安裝 32-bit 的版本，希望能限制記憶體用量，但是還沒驗證過有沒有效XD)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>Side Project: Ogre3D v2.1 模型預覽器</title>
+        <published>2019-08-05T00:00:00+00:00</published>
+        <updated>2019-08-05T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/ogre-v2-model-viewer/"/>
+        <id>https://chchwy.github.io/posts/ogre-v2-model-viewer/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/ogre-v2-model-viewer/">&lt;p&gt;我寫了一個 Ogre v2.1 的 3D 模型預覽器。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;ogre-v2-mesh-viewer-screenshot.png&quot; alt=&quot;Ogre V2 Mesh Viewer Screenshot&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;chchwy&#x2F;ogre-v2-mesh-viewer&quot;&gt;這是 Github Repo 連結&lt;&#x2F;a&gt; ，所有的程式碼都是開源的。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;chchwy&#x2F;ogre-v2-mesh-viewer&#x2F;releases&quot;&gt;下載頁面&lt;&#x2F;a&gt;：zip 解壓之後直接執行 &lt;code&gt;ogre-v2-mesh-viewer.exe&lt;&#x2F;code&gt; 就行。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;gong-neng-jian-jie&quot;&gt;功能簡介&lt;&#x2F;h2&gt;
+&lt;p&gt;就是個簡單的 3D 模型預覽器，加上一些簡單的編輯功能：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;讀取 Ogre3D 原生 3D 模型格式 (包括 v1, v2, xml 三種形式)&lt;&#x2F;li&gt;
+&lt;li&gt;匯入 Wavefront obj 模型&lt;&#x2F;li&gt;
+&lt;li&gt;匯入 glTF 2.0 模型&lt;&#x2F;li&gt;
+&lt;li&gt;顯示場景樹狀結構&lt;&#x2F;li&gt;
+&lt;li&gt;基本的 HLMS 材質編輯
+&lt;ul&gt;
+&lt;li&gt;貼圖通道: diffuse, background diffuse, normal, roughness, metalness&lt;&#x2F;li&gt;
+&lt;li&gt;半透明&lt;&#x2F;li&gt;
+&lt;li&gt;網格 (wireframe)&lt;&#x2F;li&gt;
+&lt;li&gt;雙面材質 (Two-sided)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;調整場景節點位置，包括位置、旋轉、縮放等等&lt;&#x2F;li&gt;
+&lt;li&gt;顯示 Bounding box&lt;&#x2F;li&gt;
+&lt;li&gt;obj =&amp;gt; .mesh 批次轉換工具&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;kai-fa-yuan-you&quot;&gt;開發緣由&lt;&#x2F;h2&gt;
+&lt;p&gt;目前網路上大多數的既有資源都是針對 Ogre 第一版引擎。Ogre3D 第二版，包括 2.1 和 2.2 的文章及資源都像對較少，也找不到一個可靠的模型預覽器，所以我就自己寫了一個。&lt;&#x2F;p&gt;
+&lt;p&gt;開發環境是 Visual Studio 2019。UI 界面是我的老朋友 Qt。Ogre3D 後端採用 OpenGL3+ 渲染 (用 DirectX 11 渲染也可以，只是有些貼圖的縮圖會沒辦法正確顯示)。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 新田次郎的『武田信玄』</title>
+        <published>2019-02-10T00:00:00+00:00</published>
+        <updated>2019-02-10T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/takeda-shingen/"/>
+        <id>https://chchwy.github.io/posts/takeda-shingen/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/takeda-shingen/">&lt;p&gt;我對歷史的興趣，一向都是來自電腦遊戲。&lt;&#x2F;p&gt;
+&lt;p&gt;原本對日本戰國歷史並沒有什麼興致。但自從玩了光榮「無雙蛇魔」系列後，對這群個性鮮明的戰國武將們，漸漸的產生了好奇心。
+所以這本新田次郎的「武田信玄」就成了我接觸這段歷史的第一本書。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;shingen-01.jpg#book&quot; alt=&quot;武田信玄&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;mo-sheng-de-ri-ben&quot;&gt;陌生的日本&lt;&#x2F;h3&gt;
+&lt;p&gt;第一本讀接觸日本歷史，閱讀過程中我一直發出驚訝的嘖嘖聲：原來當時的日本社會是這樣子運作的，原來戰爭是這樣子打的呀，跟古中國非常不同，一切都非常新奇。&lt;&#x2F;p&gt;
+&lt;p&gt;日本戰國大約在十六世紀，對應到中國是明朝中葉。&lt;&#x2F;p&gt;
+&lt;p&gt;我有點驚訝，日本一直到戰國以前，都還沒演化出中央集權的國家組織。所以在當時的時空背景，與其說日本是個國家，不如說是一群地主恰好住在同一塊土地上。&lt;&#x2F;p&gt;
+&lt;p&gt;各據一方的領主們名義上尊崇天皇和幕府將軍，但他們才是真正掌控實權的人。領主可以在自己的領地裡收稅，徵調徭役，制定法律；同時供養武士集團，手握地方的軍事力量。這些武士們效忠供養他們的領主，而非遙遠的天皇和將軍。領主爵位由家族代代世襲，像極了中國周朝的封建制度。&lt;&#x2F;p&gt;
+&lt;p&gt;武田信玄就是當時&lt;a href=&quot;https:&#x2F;&#x2F;zh.wikipedia.org&#x2F;wiki&#x2F;%E7%94%B2%E6%96%90%E5%9C%8B&quot; title=&quot;甲斐國&quot;&gt;甲斐國&lt;&#x2F;a&gt;的領主。我讀了小說後才知道，武田信玄本名叫武田晴信。我們耳熟能詳的「信玄」是他中年出家之後才拿到的法名。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;wu-tian-qing-xin-de-jue-qi&quot;&gt;武田晴信的崛起&lt;&#x2F;h3&gt;
+&lt;p&gt;晴信年輕的時候就很有野心，他察覺到當時日本的傳統社會秩序正在崩解，隨著幕府逐漸失去威信，動盪的戰國之世即將到來。他果斷聯合了幾位老臣，放逐自己的父親，取而代之成為武田家的家督。並用一生的時間，一步一腳印的經營武田家成為一方之霸。&lt;&#x2F;p&gt;
+&lt;p&gt;從這本小說裡，我看見傳統上的日本地方領主，是怎樣履行職責的。&lt;&#x2F;p&gt;
+&lt;p&gt;首先呢，他必須保護自己的人民不受鄰國的侵害。當時甲斐國常常受到鄰國諏訪的侵襲。戰國是不講規則的時代，你不打別人，別人也會跑來打你。晴信看出了這一點，所以與其消極的防禦，不如主動出擊壯大自己。他首先吞併了鄰近的諏訪國。接著花了十年時間平定信濃，成為甲斐信濃地區最強大的勢力。&lt;&#x2F;p&gt;
+&lt;p&gt;再來，晴信也需要治理內政。制定&lt;a href=&quot;https:&#x2F;&#x2F;zh.wikipedia.org&#x2F;wiki&#x2F;%E7%94%B2%E5%B7%9E%E6%B3%95%E5%BA%A6%E6%AC%A1%E7%AC%AC&quot; title=&quot;甲州法律&quot;&gt;甲州法律&lt;&#x2F;a&gt;讓人民發生紛爭時有法可循。修建「信玄堤」整治甲府盆地河川氾濫的問題，促進農業。同時開採黑川金山，積極發展採金技術，以甲州黃金作為軍事行動的資金來源。&lt;&#x2F;p&gt;
+&lt;p&gt;對待家臣，晴信要扮演仲裁者的角色。晴信手下的家臣，每個人都有自己的領土和軍隊。比如武田軍中的猛將小山田信有，其率領的「小山田眾」戰力高強，多次擔任武田軍的先鋒，卻不接受晴信的直接指揮，很奇怪是吧？因為小山田的軍隊只聽自己家主公的話，這是戰國時期軍隊組織的常態。&lt;&#x2F;p&gt;
+&lt;p&gt;家臣的忠誠程度不一，有許多因素影響他們效忠程度。比如有些人只是想依附武田家的強大勢力來保障自己的領土和家園，順便藉由戰功撈一點獎賞。一些夾在兩強之間的小土豪們，對於局勢異常敏感，一旦情勢稍微不利，就會立刻倒戈或叛亂。所以晴信必須一直打勝仗，並依據戰功給予公正的獎賞，才能夠穩固內部的團結。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;shingen-02.jpg#book&quot; alt=&quot;武田信玄&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;xin-xuan-de-cheng-yu-bai&quot;&gt;信玄的成與敗&lt;&#x2F;h3&gt;
+&lt;p&gt;讀完小說之後，我覺得武田信玄在領主這個職位上可以是善盡職守。對外戰爭常勝，對內賞罰分明。為什麼武田信玄沒有成為統一日本的那個人呢？&lt;&#x2F;p&gt;
+&lt;p&gt;因為上天給武田信玄開了兩個玩笑。第一個玩笑是信玄一生的宿敵：上杉謙信。令一個則是肺癆。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;yi-sheng-de-su-di&quot;&gt;一生的宿敵&lt;&#x2F;h3&gt;
+&lt;p&gt;「越後之龍」上杉謙信是&lt;a href=&quot;https:&#x2F;&#x2F;zh.wikipedia.org&#x2F;wiki&#x2F;%E8%B6%8A%E5%BE%8C%E5%9C%8B&quot; title=&quot;越後國&quot;&gt;越後地區&lt;&#x2F;a&gt;的領主。當時信玄當時已經打爆附近所有的小勢力。但在繼續擴張的路上，信玄偏偏碰上了上杉謙信。&lt;&#x2F;p&gt;
+&lt;p&gt;上杉謙信是一名真正的戰爭天才，和其他小角色不同。我讀完武田信玄之後馬上找了「天與地：軍神上杉謙信」來讀，非常精彩，留待下一篇再講。&lt;&#x2F;p&gt;
+&lt;p&gt;當信玄勢力擴張到北信濃之後，就驚動了當時位於北方的上杉謙信。兩支強權在川中島這個地方前後歷時十二年，打了四次「川中島合戰」，雙方機謀算盡，最終打出了一個五五波，不分勝敗。最慘烈的第四次川中島之戰，雖然越軍最終撤離戰場，但是甲軍方面武田信玄的弟弟武田信繁和多位大將戰死，損失慘重。&lt;&#x2F;p&gt;
+&lt;p&gt;「既升瑜，何生亮」大概就是這樣了。如果當時武田軍打贏了川中島合戰，那麼武田信玄可能早已揮軍上京。同樣地，如果沒有武田信玄，那麼上杉謙信可能一生都找不到敵手。&lt;&#x2F;p&gt;
+&lt;p&gt;分不出勝敗的雙雄相爭，就這樣拖住了兩個人的命運，也改變了日本戰國的結局。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;ti-nei-de-di-ren&quot;&gt;體內的敵人&lt;&#x2F;h3&gt;
+&lt;p&gt;令一個阻止武田信玄的敵人是「肺癆」。&lt;&#x2F;p&gt;
+&lt;p&gt;在讀完小說之後，我去查了肺結核的相關資料，果然就像小說裡的醫生說的：「肺癆是個會潛伏的疾病。深藏在體內，乘隙出擊。因過分疲勞而使身體轉弱時，肺癆就會發作。有時看來好像痊癒，其實不然。是直到肉體被摧毀之前，仍然一直糾纏不已的病。」&lt;&#x2F;p&gt;
+&lt;p&gt;信玄年輕的時候感染了肺癆，病情一直好壞不定。當一個長年在外征戰的將軍，碰到了極需要靜養的疾病，就是三個字「沒辦法」。武田信玄一生中有好幾次，因為病情惡化必須要退入溫泉鄉靜養，並把國政暫時交給家臣打理。&lt;&#x2F;p&gt;
+&lt;p&gt;信玄的一生就像是一場跟肺癆的賽跑，必須在有限的健康時間內盡全力往前跑。然而在揮軍進京的路程上，信玄最終還是沒能跑過肺癆，病逝在遠征途中，讓人不勝唏噓。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;wu-qing-de-xian-shi-zhu-yi-zhe&quot;&gt;無情的現實主義者&lt;&#x2F;h3&gt;
+&lt;p&gt;綜觀武田信玄此人，我讀到後來其實覺得有些無趣。信玄的一生就是征服土地和征服女人，而且征服女人的段落還佔了不少篇幅。武田信玄內心有強烈的執念：揮軍進京，號令天下。所有跟目標無關的其他東西，都會被他無情的捨棄。他為了這個目標，不惜逼死了自己的妹妹和長子。他的長子武田義信在進攻今川家的策略上和信玄意見相左，最終被軟禁至死。或許這是為了在戰國中生存的無可奈何，但是確實讓人看見了信玄的冷酷無情的一面。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;dui-shou-de-guan-dian&quot;&gt;對手的觀點&lt;&#x2F;h3&gt;
+&lt;p&gt;這本小說之後我馬上接著讀「天與地：軍神上杉謙信」，從死對頭眼裡看見了另一個截然不同的武田信玄。我相信在這本書裡，作者或多或少有美化、或者神話了主人公武田信玄。比如在本書裡，織田信長是得到武田家間諜的幫助，才得以在桶狹間狙擊今川義元。&lt;&#x2F;p&gt;
+&lt;p&gt;但畢竟是歷史小說嘛，作者盡力在能力範圍之內做足了調查功課，也適當的採納野史來增加娛樂性，描寫戰國的社會百態也相當細微，我對本書整體感覺還是相當不錯的。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>Boost 極簡編譯法</title>
+        <published>2017-09-22T00:00:00+00:00</published>
+        <updated>2017-09-22T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/boost-compile-guide/"/>
+        <id>https://chchwy.github.io/posts/boost-compile-guide/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/boost-compile-guide/">&lt;p&gt;最近因為工作的緣故需要編譯 &lt;code&gt;Boost&lt;&#x2F;code&gt;。Boost 這套大名鼎鼎的 C++ Library 中，大多數的模組都是 header-only，意思是模組裡只有標頭檔(&lt;code&gt;*.hpp&lt;&#x2F;code&gt;) 沒有實現檔(&lt;code&gt;*.cpp&lt;&#x2F;code&gt;)，所以不需要編譯，引入(#include)標頭檔就可以直接用了。只有少部份模組需要先編譯，這裡紀錄一下編譯 Boost 的方法。&lt;&#x2F;p&gt;
+&lt;p&gt;環境: Windows 10 編譯器: Visual Studio 2015&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;第一步，雙擊 Boost 根目錄下的 bootstrap.bat，產生 Boost 自帶的編譯工具 b2.exe 和 bjam.exe&lt;&#x2F;li&gt;
+&lt;li&gt;第二步，用 b2 來編譯 boost，指令如下：&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre style=&quot;background-color:#393939;color:#dedede;&quot;&gt;&lt;code&gt;&lt;span&gt;b2 toolset=msvc-14.0 address-model=64 --with-system
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;我並沒有深究 b2 和 bjam 到底有什麼差異，我用 b2&lt;&#x2F;li&gt;
+&lt;li&gt;編譯的參數中，&lt;code&gt;toolset&lt;&#x2F;code&gt; 指編譯器，msvc-14.0 就是 VS2015，msvc-11.0 就是 VS2012，gcc 就是 gcc。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;address-model&lt;&#x2F;code&gt; 指定 32 &#x2F; 64 bit&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;--with-xxx&lt;&#x2F;code&gt; 指定要編譯的模組名稱，例如要編譯 system 就打 &lt;code&gt;--with-system&lt;&#x2F;code&gt;，編譯 chrono 就是 &lt;code&gt;--with-chrono&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;或者用 &lt;code&gt;-a&lt;&#x2F;code&gt; 要求編譯全部模組。編譯全部模組需要不少時間，我編了 15 分鐘發現還沒完成就放棄了。&lt;&#x2F;li&gt;
+&lt;li&gt;產出的 lib 檔默認放在 &lt;strong&gt;stage&#x2F;lib&lt;&#x2F;strong&gt; 目錄下，瞄一眼裡面的檔案，如果看見 &lt;code&gt;libboost_chrono-vc140-mt-1_61.lib&lt;&#x2F;code&gt; 之類的檔案冒出來就是編譯成功了。以該檔名為例，可以得知我們成功編譯了 chrono 模組，適用編譯器 vc140，boost 版本 1.61。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;接著把把 boost 的根目錄加進 Include Path，把 &#x2F;stage&#x2F;lib 加進 Library Search Path，應該就可以順利使用我們自己編譯的 boost 了。不需要一一指名每個用到的 lib 檔，挺方便的。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>編譯 Ogre3D Next 引擎</title>
+        <published>2017-05-07T00:00:00+00:00</published>
+        <updated>2017-05-07T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/how-to-compile-ogre-windows/"/>
+        <id>https://chchwy.github.io/posts/how-to-compile-ogre-windows/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/how-to-compile-ogre-windows/">&lt;p&gt;本文紀錄我編譯 Ogre Next 引擎的方法跟步驟。&lt;&#x2F;p&gt;
+&lt;p&gt;Ogre3D 2.x 分支已經改名叫 Ogre-Next，跟原本的 Ogre3D 1.x 版本引擎做出區隔。這篇文章裡提到的 Ogre 都是指 Ogre-Next。&lt;a href=&quot;https:&#x2F;&#x2F;chchwy.github.io&#x2F;posts&#x2F;how-to-compile-ogre-windows&#x2F;(https:&#x2F;&#x2F;www.ogre3d.org&#x2F;about&#x2F;what-version-to-choose)&quot; title=&quot;Ogre What version to choose&quot;&gt;新舊版引擎的比較&lt;&#x2F;a&gt;。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;qu-de-yuan-shi-ma&quot;&gt;取得原始碼&lt;&#x2F;h2&gt;
+&lt;p&gt;目前 Ogre3D 原始碼放在 Github 上，需要下載兩份 source code:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Ogre3D 引擎本體 &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;OGRECave&#x2F;ogre-next&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;OGRECave&#x2F;ogre-next&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;第三方依賴函式庫 &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;OGRECave&#x2F;ogre-next-deps&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;OGRECave&#x2F;ogre-next-deps&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;把兩個 repo 放在同一層目錄下，比如像這樣：&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#393939;color:#dedede;&quot;&gt;&lt;code&gt;&lt;span&gt;C:&#x2F;OgreSDK&#x2F;ogre
+&lt;&#x2F;span&gt;&lt;span&gt;C:&#x2F;OgreSDK&#x2F;ogredeps
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;an-zhuang-cmake-jian-gou-xi-tong&quot;&gt;安裝 CMake 建構系統&lt;&#x2F;h2&gt;
+&lt;p&gt;Ogre 用的建構系統是 &lt;a href=&quot;https:&#x2F;&#x2F;cmake.org&#x2F;&quot; title=&quot;CMake official site&quot;&gt;CMake&lt;&#x2F;a&gt;，這是我第一次用 CMake，花了一些時間才搞懂用法。&lt;&#x2F;p&gt;
+&lt;p&gt;CMake 本身並不直接編譯程式。它的主要用法讓開發者寫 CMake 腳本(通常叫CMakeLists.txt)，然後依據腳本生成適合各平台的專案檔案。例如在 Windows 上會生成 Visual Studio 專案，在 Mac 上則會生成 Xcode 專案。&lt;&#x2F;p&gt;
+&lt;p&gt;寫這篇文章的時候我安裝的是 CMake 3.17。到 &lt;a href=&quot;https:&#x2F;&#x2F;cmake.org&#x2F;&quot; title=&quot;CMake official site&quot;&gt;CMake&lt;&#x2F;a&gt; 官方網站下載安裝就好了。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;bian-yi-yi-lai-han-shi-ku&quot;&gt;編譯依賴函式庫&lt;&#x2F;h2&gt;
+&lt;p&gt;首先，我們需要先編譯 &lt;code&gt;ogre-next-deps&lt;&#x2F;code&gt;，這裡面都是 Ogre3D 用到的第三方函式庫。&lt;&#x2F;p&gt;
+&lt;p&gt;打開 &lt;strong&gt;CMake-GUI&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;cmake-ogredeps.png&quot; alt=&quot;ogredeps&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Where is the source code&lt;&#x2F;strong&gt; 這一欄填寫 Repo 的目錄位置&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Where to build the binaries&lt;&#x2F;strong&gt; 這一欄通常按照慣例，會在原始碼目錄下加一層 build&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;接著以下步驟&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;按 &lt;strong&gt;Configure&lt;&#x2F;strong&gt;，選擇編譯器版本 &lt;code&gt;Visual Studio 16 2019 Win64&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;再按 &lt;strong&gt;Generate&lt;&#x2F;strong&gt; ，產生 VS 專案檔&lt;&#x2F;li&gt;
+&lt;li&gt;按 &lt;strong&gt;Open Project&lt;&#x2F;strong&gt; 打開 Visual Studio solution&lt;&#x2F;li&gt;
+&lt;li&gt;開啟 Visual Studio 之後，編譯 &lt;code&gt;ALL_BUILD&lt;&#x2F;code&gt; 專案，Debug&#x2F;Release 都要&lt;&#x2F;li&gt;
+&lt;li&gt;接著單獨編譯 &lt;code&gt;INSTALL&lt;&#x2F;code&gt; 專案，在 INSTALL 上按右鍵 Build，同樣 Debug&#x2F;Release 都要&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;這樣子第三方函式庫就算編譯完成了&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;bian-yi-yin-qing-ben-ti&quot;&gt;編譯引擎本體&lt;&#x2F;h2&gt;
+&lt;p&gt;接著編譯 Ogre 引擎本體。跟前一步一樣，打開 CMake GUI&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Where is the source code&lt;&#x2F;strong&gt; 填 ogre 引擎的原始碼目錄&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Where to build the binaries&lt;&#x2F;strong&gt; 往下加一層子目錄 build&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;cmake-ogre3d.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;按下 Configure 按鈕之後呢，應該會跳出一些錯誤，別擔心，這是因為 CMake 無法定位前一步編譯的依賴庫的位置，藉由設定 &lt;strong&gt;OGRE_DEPENDENCIES_DIR&lt;&#x2F;strong&gt;  這個欄位告訴 CMake 依賴庫的位置：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;OGRE_DEPENDENCIES_DIR&lt;&#x2F;strong&gt; 欄位填入 &lt;code&gt;C:&#x2F;OgreSDK&#x2F;ogredeps&#x2F;build&#x2F;ogredeps&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;渲染引擎可選用 DirectX 或者 OpenGL3+，兩者都勾也行&lt;&#x2F;li&gt;
+&lt;li&gt;OGRE_BUILD_SAMPLES2 是 Ogre 2.1 版的官方範例集，勾起來&lt;&#x2F;li&gt;
+&lt;li&gt;勾選 SSE2 硬體指令集，加速數學運算&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;OGRE_UNITY_BUILD&lt;&#x2F;code&gt; 可以大大縮短編譯的時間，建議勾選&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;cmake-ogre3d-config.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;再 Congifure 一次，應該就沒有錯誤訊息了&lt;&#x2F;li&gt;
+&lt;li&gt;按下 Generate 產生 Ogre.sln&lt;&#x2F;li&gt;
+&lt;li&gt;Open Project 打開 Visual Studio&lt;&#x2F;li&gt;
+&lt;li&gt;編譯 &lt;code&gt;ALL_BUILD&lt;&#x2F;code&gt; 專案，Debug&#x2F;Release 都要&lt;&#x2F;li&gt;
+&lt;li&gt;編譯 &lt;code&gt;INSTALL&lt;&#x2F;code&gt; 專案，同樣 Debug&#x2F;Release 都要&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;到此為止全部完成，挑選任一 Sample 執行即可&lt;&#x2F;p&gt;
+&lt;p&gt;下圖是我成功執行 Ogre-Next 官方範例 Forwrad3D 的畫面：&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;ogre3d-forward.jpg&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;附註：&lt;&#x2F;p&gt;
+&lt;p&gt;我寫這篇文章時的開發環境&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;作業系統 Windows 10 Home&lt;&#x2F;li&gt;
+&lt;li&gt;編譯器 Visual Studio 2019 Community&lt;&#x2F;li&gt;
+&lt;li&gt;版本控制系統 git&lt;&#x2F;li&gt;
+&lt;li&gt;建構系統 CMake 3.17&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>UVa 解題自動輸入測資</title>
+        <published>2016-03-08T00:00:00+00:00</published>
+        <updated>2016-03-08T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/acm-io-redirection/"/>
+        <id>https://chchwy.github.io/posts/acm-io-redirection/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/acm-io-redirection/">&lt;p&gt;解 ACM 題目的時候，測試資料都是走標準輸入流 &lt;code&gt;cin&#x2F;scanf()&#x2F;gets()&lt;&#x2F;code&gt;。當測試資料量很大的時候，手動鍵入測試資料很慢又浪費時間。我後來發現了一個技巧叫做 I&#x2F;O 轉向 (I&#x2F;O redirection) ，可以重新定義標準輸入流，省去手動鍵入測資的步驟。&lt;&#x2F;p&gt;
+&lt;p&gt;先上例子：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;cpp&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-cpp &quot;&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span style=&quot;color:#fffb9d;&quot;&gt;int &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;main&lt;&#x2F;span&gt;&lt;span&gt;() {
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;#ifndef&lt;&#x2F;span&gt;&lt;span style=&quot;color:#e8bc92;&quot;&gt; ONLINE_JUDGE
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;freopen&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;input.txt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, stdin);
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;freopen&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;output.txt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;w&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, stdout);
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;#endif
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;&#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; do whatever you need to do
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;&#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; cin&#x2F;cout&#x2F;scanf&#x2F;printf as usual
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#87d6d5;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;關鍵是 &lt;code&gt;freopen()&lt;&#x2F;code&gt; 函數&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;cpp&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-cpp &quot;&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span&gt;freopen(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;input.txt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, stdin);
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;這一行的作用就是把 input.txt 當作 stdin 的來源。一旦呼叫過 &lt;code&gt;freopen()&lt;&#x2F;code&gt;，接下來所有的標準輸入函數 &lt;code&gt;cin&#x2F;scanf()&#x2F;getline()&lt;&#x2F;code&gt; 就變成從 input.txt 讀取資料。&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;cpp&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-cpp &quot;&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span&gt;freopen(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;output.txt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;w&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, stdout);
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;同樣的也可以把標準輸出導向檔案寫出，這樣所有的 &lt;code&gt;cout&#x2F;printf()&#x2F;puts()&lt;&#x2F;code&gt; 都會寫入 output.txt 這個檔案。&lt;&#x2F;p&gt;
+&lt;p&gt;因為 UVa online judge 在編譯的時候會下 &lt;code&gt;-DONLINE_JUDGE&lt;&#x2F;code&gt; 的編譯參數。所以我們把freopen() 用 &lt;code&gt;#ifndef&lt;&#x2F;code&gt; (if Not defined) 夾起來，這樣只有在本機測試的時候才做 I&#x2F;O 轉向，上傳程式碼的時候走回正常的標準輸入。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>客製化 Visual C++ clean project 的行為</title>
+        <published>2015-06-20T00:00:00+00:00</published>
+        <updated>2015-06-20T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/customize-vs2013-clean-project/"/>
+        <id>https://chchwy.github.io/posts/customize-vs2013-clean-project/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/customize-vs2013-clean-project/">&lt;p&gt;昨天花了一點時間研究一下，Visual C++ 該怎麼客製 Clean 的行為。&lt;&#x2F;p&gt;
+&lt;p&gt;簡單講，我想要在按下 Clean Project 的時候，請 Visual Studio 「順便」幫我刪掉幾個目錄。說是順便但是其實不太容易，因為像 Build Project 這個動作，在專案設定頁有 Pre-build Event 和 Post-build Event 可以掛上額外的工作，但是 Clean 在專案設定裡就沒有相關的掛勾。至少 Visual Studio 並沒有 UI 可以直接操作。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;yan-jiu-vcxproj&quot;&gt;研究 .vcxproj&lt;&#x2F;h2&gt;
+&lt;p&gt;我簡單研究了一下 vcxproj 的文件格式，我發現整個 C++ 專案的編譯流程，都是由 &lt;code&gt;Microsoft.Cpp.targets&lt;&#x2F;code&gt; 這個設定檔定義的。每個 .vcxproj 透過 &lt;code&gt;&amp;lt;Import&amp;gt;&lt;&#x2F;code&gt; 將 &lt;code&gt;Microsoft.Cpp.targets&lt;&#x2F;code&gt; 這個檔案引入，確立整個 C++ 專案的建構流程。&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;xml&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-xml &quot;&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Import &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;Project&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;$(VCTargetsPath)\Microsoft.Cpp.targets&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;&#x2F;&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;所以我打開 Microsoft.Cpp.target 文件，發現裡面又透過另一個檔案 &lt;code&gt;Microsoft.CppClean.targets&lt;&#x2F;code&gt; 來定義 Clean 的行為：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;xml&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-xml &quot;&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Import &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;Project&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;$(VCTargetsPath)\Microsoft.CppClean.targets&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;&#x2F;&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;感覺我離目標越來越近了，再打開 Microsoft.CppClean.targets 文件，我馬上看見了兩個空的 Target tag:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;xml&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-xml &quot;&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;&amp;lt;!--&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; BeforeCppClean: Redefine this target in your project in order to run tasks just before Clean. &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;--&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Target &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;Name&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;BeforeCppClean&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Target&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;&amp;lt;!--&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; AfterCppClean: Redefine this target in your project in order to run tasks just after Clean. &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;--&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Target &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;Name&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;AfterCppClean&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Target&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;OK，所以其實 Visual C++ 在 Clean 的流程中已經保留了 BeforeCppClean 和 AfterCppClean 兩個事件，分別會在 Clean 之前和之後觸發，我只要複寫這兩個事件就行了。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;fu-xie-beforecppclean&quot;&gt;複寫 BeforeCppClean&lt;&#x2F;h2&gt;
+&lt;p&gt;現在我需要把「刪除目錄」這件事掛上 BeforeCppClean 這個 Target。作法是寫一個自己的 .target 文件，然後再透過 &lt;code&gt;&amp;lt;Import&amp;gt;&lt;&#x2F;code&gt; 標籤引入 vcxproj。實際上要做的工作就寫在 Target 標籤裡。&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;xml&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-xml &quot;&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span&gt;&#x2F;&#x2F; 我自己定義的 MyCppClean.target
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Project &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;ToolsVersion&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;12.0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;xmlns&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;http:&#x2F;&#x2F;schemas.microsoft.com&#x2F;developer&#x2F;msbuild&#x2F;2003&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Target &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;Name&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;BeforeCppClean&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;            &#x2F;&#x2F; 複寫 BeforeCppClean
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Message &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;Text&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;Delete XXXX Folder!&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;&#x2F;&amp;gt;  &#x2F;&#x2F; 印出訊息
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;RemoveDir &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;Directories&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;XXXX&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;&#x2F;&amp;gt;        &#x2F;&#x2F; 刪除 XXXX 這個目錄
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Target&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Project&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;最後我們把自定義的 target 引入專案，在 .vcxproj 中加入一行：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;xml&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-xml &quot;&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Project&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  ...
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Import &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;Project&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;MyCppClean.target&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;&#x2F;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Project&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;這樣子 Clean 專案時，就會刪除我指定的目錄了，可喜可賀。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;can-kao-lian-jie&quot;&gt;參考連結&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;msdn.microsoft.com&#x2F;zh-tw&#x2F;library&#x2F;dd393574.aspx&quot;&gt;MSBuild 基本觀念&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;msdn.microsoft.com&#x2F;zh-tw&#x2F;library&#x2F;ms171466.aspx&quot;&gt;MSBuild工作&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;msdn.microsoft.com&#x2F;zh-tw&#x2F;library&#x2F;xyfz6ddb.aspx&quot;&gt;RemoveDir標籤&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;msdn.microsoft.com&#x2F;en-us&#x2F;library&#x2F;6yy0yx8d.aspx&quot;&gt;Message標籤&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;msdn.microsoft.com&#x2F;en-us&#x2F;library&#x2F;5dy88c2e.aspx&quot;&gt;MSBuild Project File Schema&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>「因為這個系統上已停用指令碼執行，所以無法載入」</title>
+        <published>2015-06-14T00:00:00+00:00</published>
+        <updated>2015-06-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/powershell-error/"/>
+        <id>https://chchwy.github.io/posts/powershell-error/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/powershell-error/">&lt;p&gt;每個學 PowerShell 的人必然碰到的錯誤。&lt;&#x2F;p&gt;
+&lt;p&gt;Windows 因為安全性考量，PowerShell 腳本(副檔名.ps1)預設是禁止執行的。所以同樣的命令，命令視窗直接打可以跑，但是存成檔案就會出現這個讓人摸不著頭腦的錯誤。&lt;&#x2F;p&gt;
+&lt;p&gt;手動打開權限的作法如下：&lt;&#x2F;p&gt;
+&lt;p&gt;用「系統管理員」身份打開 PowerShell，再輸入以下命令：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ps1&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-ps1 &quot;&gt;&lt;code class=&quot;language-ps1&quot; data-lang=&quot;ps1&quot;&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;Set-ExecutionPolicy&lt;&#x2F;span&gt;&lt;span&gt; RemoteSigned
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;就可以解鎖 PowerShell Script 了。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;Execution Policy&lt;&#x2F;code&gt; 是 PowerShell 的安全機制。&lt;code&gt;Remote Signed&lt;&#x2F;code&gt; 的意思是從網路上抓下來的 .ps1 要檢查數位簽章，但是本地的 PowerShell 檔案直接放行。&lt;&#x2F;p&gt;
+&lt;p&gt;更多 Execution Policy 等級可以參考&lt;a href=&quot;http:&#x2F;&#x2F;gelis-dotnet.blogspot.tw&#x2F;2010&#x2F;10&#x2F;win72008-server-powershell.html&quot;&gt;這裡&lt;&#x2F;a&gt;。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>完成 Codecademy 的 Python 課程</title>
+        <published>2015-05-25T00:00:00+00:00</published>
+        <updated>2015-05-25T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/finish-python-course-of-codecademy/"/>
+        <id>https://chchwy.github.io/posts/finish-python-course-of-codecademy/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/finish-python-course-of-codecademy/">&lt;p&gt;其實已經完成一陣子了(茶)&lt;&#x2F;p&gt;
+&lt;p&gt;很久以前就想要學 Python 了，但是因為沒有明確的目標，所以雖然讀完了 &lt;a href=&quot;http:&#x2F;&#x2F;www.diveintopython3.net&#x2F;&quot;&gt;Dive into Python 3&lt;&#x2F;a&gt; ，學了一些語法，依然未脫離 Python 門外漢的狀態。後來發現 Codecademy 的 &lt;a href=&quot;http:&#x2F;&#x2F;www.codecademy.com&#x2F;en&#x2F;tracks&#x2F;python&quot;&gt;Python&lt;&#x2F;a&gt; 課程，一試之下覺得非常順手，就每天撥出半小時，用兩個月左右的時間把課程做完了。&lt;&#x2F;p&gt;
+&lt;p&gt;Codecademy 課程的優點就是強迫學習者動手敲代碼。Codecademy 的課程都有三個部份：一小段解說，一個小問題，然後要求你敲代碼解決它。第一課就是簡單介紹 datetime 的用法，然後要我打印出今天的年、月、日數值。每個課程段落都切分得很小，很容易進行，可以很快得到學習的反饋。每解掉一道習題，看見代表答案正確的綠色勾勾亮起，再按下「Start Next Lesson」，真的很像遊戲過關，很有學習成就感。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;Codecademy.png&quot; alt=&quot;Codecademy.png&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;我覺的 Codecademy 這種互動式的教學比書本、老師都還要有效，因為編程這項技藝的黑手性質很強，看懂了、聽懂了，往往只是虛幻的錯覺，一定要自己手敲代碼，親眼面對每個編譯錯誤，實現過每個步驟，才能說「我真的學會了」。而且這種習題為主的課程，恰好適合我目前沒有明確目標，想學 Python 但是還不知道 Python 可以拿來寫啥東西的學生。第一次學習 Python 失敗的經驗，就是腦袋裝了一卡車語法跟函數，但是沒地方應用，所以很快的就忘光光了。接下來想要嘗試看看用 Flask Framework 來寫 Web ，或者用 PyQt 來做點桌面小程式。&lt;&#x2F;p&gt;
+&lt;p&gt;順便推薦一篇老文章&lt;a href=&quot;https:&#x2F;&#x2F;www.evernote.com&#x2F;shard&#x2F;s15&#x2F;sh&#x2F;75622311-fa01-4184-8bd1-21a01216b5d9&#x2F;173cc5bf2b21effd4906fdcd048d7646&quot;&gt;「學會開放性思維」&lt;&#x2F;a&gt;，這是啟發我對 Python 關注的起點。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>ACM 程式解題競賽： 一些有用的網站</title>
+        <published>2014-07-01T00:00:00+00:00</published>
+        <updated>2014-07-01T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/acm-useful-websites/"/>
+        <id>https://chchwy.github.io/posts/acm-useful-websites/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/acm-useful-websites/">&lt;p&gt;收錄一些解題過程中幫助我很多的網站，以 UVa Online Judge 為主。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;code-1839406_1280.jpg&quot; alt=&quot;Code&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;首先必推薦的站點是&lt;a href=&quot;http:&#x2F;&#x2F;acm.uva.es&#x2F;board&#x2F;&quot; title=&quot;UVa Official forum&quot;&gt;UVa官方論壇&lt;&#x2F;a&gt;，全世界 UVa 解題者的集散地。我解不出題目時，第一反應就是來這裡搜尋該題號，只要找到該題專屬的討論串，通常能找到很多好心人的測試數據和關鍵提示。&lt;&#x2F;p&gt;
+&lt;p&gt;再來是 &lt;a href=&quot;http:&#x2F;&#x2F;www.comp.nus.edu.sg&#x2F;~stevenha&#x2F;programming&#x2F;acmoj.html&quot; title=&quot;Methods to solve&quot;&gt;Methods to Solve&lt;&#x2F;a&gt;，大概是全世界最大的 UVa 解題提示網站了，收錄的題目數量很多，提示品質也不錯。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;http:&#x2F;&#x2F;uhunt.felix-halim.net&#x2F;&quot; title=&quot;uHunt&quot;&gt;uHunt&lt;&#x2F;a&gt; 是追蹤個人解題狀態的工具網頁，打上 UVa id 就可以看見自己的解題紀錄和統計數據，還有推薦的解題方向，題號快速搜尋題目等等，非常好用。&lt;&#x2F;p&gt;
+&lt;p&gt;再提供一個比對數據的工具網頁 &lt;a href=&quot;http:&#x2F;&#x2F;uvatoolkit.com&#x2F;problemssolve.php&quot;&gt;UVa Toolkit&lt;&#x2F;a&gt;，簡單講--餵它吃輸入數據，吐出對應輸出。通常可以有效釐清題意，彌補題目頁上的過份簡陋的示範數據。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;ti-mu-zhong-yi&quot;&gt;題目中譯&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;zerojudge.tw%E2%80%8E&#x2F;&quot;&gt;ZeroJudge.tw&lt;&#x2F;a&gt;: 優秀的國產程式解題網站，有一區專門收錄 UVa 中譯題目。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;luckycat.kshs.kh.edu.tw&#x2F;&quot;&gt;Lucky貓&lt;&#x2F;a&gt;: 著名的ACM題目中譯網站。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;suan-fa-jiao-xue&quot;&gt;算法教學&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.csie.ntnu.edu.tw&#x2F;~u91029&#x2F;&quot;&gt;DJWS的網路日誌&lt;&#x2F;a&gt;: 資源豐富的網站，整理了很多的算法教學，以及各種ACM競賽的資料。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.acmsolver.org&#x2F;?tag=art-of-programming-contest&#x2F;&quot;&gt;Art of Programming Contest for uva&lt;&#x2F;a&gt;: 淺顯的ACM入門書，英文，免費。作者是上面 Methods to Solve 網站站長。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;program-lover.blogspot.tw&#x2F;2008&#x2F;04&#x2F;acm-online-judge.html&quot;&gt;Infinite Loop&lt;&#x2F;a&gt;: 提供一些 ACM 教學及題目解答。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;api-reference&quot;&gt;API Reference&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.cplusplus.com&#x2F;reference&#x2F;&quot;&gt;Cplusplus.com&lt;&#x2F;a&gt;
+最好的 C&#x2F;C++ 標準函式庫參考手冊，範例碼簡潔清楚，值得常來，我自己是當後花園逛了。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;ti-mu-lie-biao&quot;&gt;題目列表&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.angelfire.com&#x2F;on4&#x2F;surbaniak&#x2F;acm_grading_score.htm&quot;&gt;ACM熱題排行榜&lt;&#x2F;a&gt;: 芭樂題排行榜，看看哪些熱門題你還沒解過吧 XD&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tao-lun-lun-tan&quot;&gt;討論論壇&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www3.tcgs.tc.edu.tw&#x2F;npsc&#x2F;index.php&quot;&gt;NPSC補完計畫&lt;&#x2F;a&gt;: 針對NPSC的解題網站&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.mail-archive.com&#x2F;algogeeks@googlegroups.com&#x2F;&quot;&gt;algogeeks &lt;&#x2F;a&gt;: Google group about algorithms.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;jie-ti-qiang-zhe&quot;&gt;解題強者&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;using-c.blogspot.com&#x2F;&quot;&gt;C語言考古題 &amp;amp; C的解題&lt;&#x2F;a&gt;: 大量題目解答。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.cppblog.com&#x2F;rakerichard&#x2F;&quot;&gt;心如止水&lt;&#x2F;a&gt;: 350+解答，有基本的題目分類。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;knightzone.org&#x2F;?cat=24&quot;&gt;翼世界夢想領域&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;yalin.tw&#x2F;acm.php&quot;&gt;Ya-Lin Huang&#x27;s ACM Problemset&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;morris821028.github.io&#x2F;categories&#x2F;%E8%A7%A3%E9%A1%8C%E5%8D%80&#x2F;%E8%A7%A3%E9%A1%8C%E5%8D%80-UVa&#x2F;&quot;&gt;Morris&#x27; Blog&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;new-acos.blogspot.com&#x2F;search&#x2F;label&#x2F;ACM&quot;&gt;Nothing is Everything&lt;&#x2F;a&gt;: 少量UVa解答，品質不錯。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;redbug0314.blogspot.tw&#x2F;search&#x2F;label&#x2F;ACM&quot;&gt;朱色虫居&lt;&#x2F;a&gt;: 少量UVa解答，品質不錯。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>Objective-C 好用的 nil 和變數類型的思考</title>
+        <published>2013-12-23T00:00:00+00:00</published>
+        <updated>2013-12-23T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/the-magical-effect-of-objective-c-nil/"/>
+        <id>https://chchwy.github.io/posts/the-magical-effect-of-objective-c-nil/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/the-magical-effect-of-objective-c-nil/">&lt;p&gt;Objective-C 裡有個我非常喜愛的特性，就是對空物件 nil 調用方法不會出錯。
+類似這樣：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;cpp&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-cpp &quot;&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span&gt;NSArray&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt; myArray &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt; nil;
+&lt;&#x2F;span&gt;&lt;span&gt;[myArray count]; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;&#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; It&amp;#39;s ok.
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;在許多主流語言裡，像是 C++，對 NULL 指標調用方法都是非常嚴重的錯誤，程式很可能會馬上崩潰。但是在 Objective-C 裡不同，對 nil 調用方法被視為稀鬆平常的事情，這個方法調用不會使程式崩潰，也不會拋出異常，程式單純的不做任何反應，船過水無痕地默默繼續運行。如果該方法有回傳值，就回傳 nil 或零。&lt;&#x2F;p&gt;
+&lt;p&gt;空指標就不做事的原則，大多數時候也的確符合我們的期望，所以 Objective-C 程式裡不再需要處處塞滿 &lt;code&gt;if ( ptr != NULL ) { ... }&lt;&#x2F;code&gt; ，提心吊膽的提防遺漏的空指標造成程序崩潰，這個小差異大大提高了程序的穩定性。代碼也更簡短清晰了。&lt;&#x2F;p&gt;
+&lt;p&gt;後來我發覺這個 NULL &#x2F; nil 的小差異，其實沒那麼簡單，真正的問題是 NULL 指標本身的存在，就破壞了程式語言的類型保護網。&lt;&#x2F;p&gt;
+&lt;p&gt;類型(Type)是編譯器給我們的一張保護網，string 類型的變數就只能呼叫 string 的方法，所有操作都由編譯器掛保證，不合法的方法調用，都在編譯期會被擋下來。&lt;&#x2F;p&gt;
+&lt;p&gt;但是超越這張保護網的唯一例外就是 NULL 。當我們聲明一個 &lt;code&gt;string*&lt;&#x2F;code&gt; 類型的變數，其實真正的意思是該變數既可以存放 string 指標， &lt;strong&gt;也可以&lt;&#x2F;strong&gt; 存放 NULL，對吧，兩者都合法，即使 NULL 完全不符合 string 類型的規範，一運行就會出錯，但是編譯器就是認可這個賦值，一聲不吭。&lt;&#x2F;p&gt;
+&lt;p&gt;為了處理 NULL 特例，我們程式設計師只能辛勤的手動防範，每個引用到該變數的地方都區分有效變數或 NULL 兩種行為，最終導致程式碼裡頭無止盡的 NULL check ，因為我們不知道指標何時是有效的變數，何時是 NULL。也因此才有人提出 Null Object Pattern ，用團隊的編程規範去禁止 NULL 的使用，改以一個自己撰寫的不做事的空物件取代之。&lt;&#x2F;p&gt;
+&lt;p&gt;所以 Objective-C 的 nil 並不單單只是一個不會程序崩潰的 NULL 指標而已，nil 滿足所有類型的規範，不再需要有特例需要防範，它其實等同了語言內建了所有類型的 NullObject 機制。&lt;&#x2F;p&gt;
+&lt;p&gt;這篇文章大部分來自&lt;a href=&quot;http:&#x2F;&#x2F;www.yinwang.org&#x2F;&quot;&gt;王垠博客&lt;&#x2F;a&gt;的啟發。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>第一支 iOS App 作品上架</title>
+        <published>2013-06-17T00:00:00+00:00</published>
+        <updated>2013-06-17T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/my-first-product/"/>
+        <id>https://chchwy.github.io/posts/my-first-product/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/my-first-product/">&lt;p&gt;上個月有件值得慶賀的事，就是我進職場後的第一個作品上架了，是個小小的、娛樂取向的 2D 臉部動畫 iOS App。&lt;&#x2F;p&gt;
+&lt;p&gt;上架後回頭來看，我的第一個感想是「軟體好貴阿」！&lt;&#x2F;p&gt;
+&lt;p&gt;用極度簡化的「人數 x 薪資」來估算成本，假設每人每月薪水是新台幣四萬元，平均五員參與，一個月的花費就是 20 萬。開發期六個月，算下來成本至少一百萬元跑不掉了，這還沒算上其他辦公室租金、水電冷氣、電腦等等開支。&lt;&#x2F;p&gt;
+&lt;p&gt;一個單純作為娛樂用途的小APP，背後竟然耗資百萬，這數字讓我確確實實地重新思考了軟體的價值。&lt;&#x2F;p&gt;
+&lt;p&gt;從成本面來看，團隊的人力配置已經非常精簡了，少了任何一個人，APP就沒有辦法在為期半年的時間內推出。收益僅僅來自解鎖進階功能的 0.99 美元，APP本身是免費的。我心裡琢磨著，別說賺大錢了，要賣幾個才能回本呢?&lt;&#x2F;p&gt;
+&lt;p&gt;另外一件事就是關於軟體品質，這是我第一次跟專業 QA 團隊合作。&lt;&#x2F;p&gt;
+&lt;p&gt;以前學校寫程式，頂多自己花點時間測試一下，幾個常用的使用情境能跑就好了。而這是史上頭一遭，有人認認真真的把我寫的程式，從頭到尾好好的徹底測試過一遍。&lt;&#x2F;p&gt;
+&lt;p&gt;結果呢，四五個操作畫面而已，被掃出一百多隻蟲，說實話有點灰心。但是一旦通過了強力 QA 團隊的檢驗，真的會由心底萌生對軟體品質的安定感。&lt;&#x2F;p&gt;
+&lt;p&gt;說真的，和 QA 合作過後才知道，要做出穩定成熟的程式產品，需要付出許多額外努力，或許等經驗增加之後可以節省走一些彎路的時間吧。這讓我想起了「人月神話」中的軟體成本定律:「將軟體產品化需要三倍的工作量」，此話的確有幾分可信。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 笑傲江湖</title>
+        <published>2013-04-10T00:00:00+00:00</published>
+        <updated>2013-04-10T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/xiao-ao-jiang-hu/"/>
+        <id>https://chchwy.github.io/posts/xiao-ao-jiang-hu/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/xiao-ao-jiang-hu/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;laughing-wind.jpg#book&quot; alt=&quot;笑傲江湖&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;趁著年假空檔一口氣啃完了笑傲江湖。雖然我沒看過這本小說，但是可沒錯過小時候的熱門八點檔電視劇，每當提到「令狐沖」這三個字，我的腦袋就會反射性的浮出任賢齊的臉。當然我也記得岳不群練了神功，所以讀到小說的結局時雖然驚訝，卻沒預期中的震撼。&lt;&#x2F;p&gt;
+&lt;p&gt;一直以來，我覺得金庸武俠中的角色給人的感覺比較親切，但這次讀笑傲江湖我才比較清楚的意識到原因 -- 因為金庸武俠中的主角常常在煩惱，就像普通人一樣常常在煩惱。相較之下古龍的主角比較少煩惱，所以給人距離感。令狐沖有煩惱，即使他的武功已經登峰造極，獨孤九劍橫行天下，但是他掛心的依然是他的小師妹，以及有一天師傅能回心轉意，重新收他回華山派門下之類的小事。&lt;&#x2F;p&gt;
+&lt;p&gt;令狐冲有超凡的武藝，卻沒有超凡的心靈，這造就了一種衝突感。有時候我看的很想摔書，令狐沖這個人也太沒有心機了，每當身處風口浪尖時，他傻傻的以近乎愚忠的方式去對待誤解他的人。以他這種個性，照理說在江湖上混沒幾天就會被不明不白的殺害了，就算靠著獨孤九劍僥倖逃了幾次，最後也必定要死在東方不敗或任我行之手。&lt;&#x2F;p&gt;
+&lt;p&gt;可是在劇情的安排下，令狐沖最危險的敵人東方不敗和任我行都很巧的自己栽了。狡詐無比的各派掌門人們都死了，岳靈珊也死了，武林回復和平，留下了令狐沖和任盈盈從此逍遙的好結局。&lt;&#x2F;p&gt;
+&lt;p&gt;當然令狐沖的際遇並不是他自個願意的，他只是個被捲入風暴的單純的人，不過我覺得令狐沖能在正邪夾縫跟醜惡的江湖陰謀中活到最後，實在走運了點。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>博客當如駭客 - Github Pages &amp; Jekyll</title>
+        <published>2012-12-16T00:00:00+00:00</published>
+        <updated>2012-12-16T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/blogging-like-a-hacker-github-pages/"/>
+        <id>https://chchwy.github.io/posts/blogging-like-a-hacker-github-pages/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/blogging-like-a-hacker-github-pages/">&lt;h2 id=&quot;wei-shen-mo-yong-github-pages&quot;&gt;為什麼用 Github Pages?&lt;&#x2F;h2&gt;
+&lt;p&gt;遇見 Github Page 之前我定居在 &lt;a href=&quot;http:&#x2F;&#x2F;chchwy.blogspot.tw&#x2F;&quot; title=&quot;Blogger 調和的靈感&quot;&gt;Blogger&lt;&#x2F;a&gt; ，斷斷續續不是很認真的寫了四年左右的博客，除了一些小缺點，像貼程式碼時老是跟我抱怨&lt;code&gt;&amp;lt;iostream&amp;gt;&lt;&#x2F;code&gt;不是合法的 HTML 標籤外，還算滿意 Blogger 的服務。畢竟要找到比 Blogger 更好的平台也不容易。&lt;&#x2F;p&gt;
+&lt;p&gt;但是身為一個程式設計師，總想要對自己的 Blog 有更多、更多的控制權。我曾經試著自己架設伺服器，不過養機器實在太過麻煩，離開學校之後博客該何去何從也沒個底，就不了了之。&lt;&#x2F;p&gt;
+&lt;p&gt;所以當我看見 &lt;a href=&quot;http:&#x2F;&#x2F;pages.github.com&#x2F;&quot; title=&quot;Github Pages&quot;&gt;Github Pages&lt;&#x2F;a&gt; 時眼睛一亮，馬上就發覺這就是我想要的博客系統:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;kumamoto-542410_1280.jpg&quot; alt=&quot;Dawn&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;首先，Github Pages 給予我完全控制頁面的權力，省卻了管理主機的麻煩。
+Github本身作為全球性的代碼託管服務商，不需要擔心服務品質。&lt;&#x2F;p&gt;
+&lt;p&gt;不同於其他的博客系統，後端總要有一套 PHP+MySQL 之類的運行環境即時運算頁面，
+Github Pages 後端採用了一個叫作 &lt;a href=&quot;http:&#x2F;&#x2F;jekyllrb.com&#x2F;&quot; title=&quot;Jekyll&quot;&gt;Jekyll&lt;&#x2F;a&gt; 的靜態網站產生器。
+Jekyll 一開始就將整個網站編譯成靜態HTML頁面，所以不用資料庫，也不用後端語言，對於網路空間的要求極低。博客這類好幾天才會更新一篇的網站，靜態編譯再適合不過了。&lt;&#x2F;p&gt;
+&lt;p&gt;但是靜態網站的缺點就是訪客沒辦法回應文章，必須倚賴第三方服務，好在&lt;a href=&quot;http:&#x2F;&#x2F;disqus.com&quot; title=&quot;Disqus&quot;&gt;Disqus&lt;&#x2F;a&gt; 和 &lt;a href=&quot;http:&#x2F;&#x2F;developers.facebook.com&#x2F;docs&#x2F;reference&#x2F;plugins&#x2F;comments&#x2F;&quot; title=&quot;Facebook comments&quot;&gt;Facebook&lt;&#x2F;a&gt; 都提供這類網站評論的服務，申請一個很容易，我現在就是用Disqus。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;markdown&quot;&gt;Markdown&lt;&#x2F;h2&gt;
+&lt;p&gt;另一個我喜歡的特性就是可以用 Markdown 語法寫文章，不知道什麼是 Markdown 的朋友可以&lt;a href=&quot;http:&#x2F;&#x2F;markdown.tw&quot; title=&quot;Markdown Syntax&quot;&gt;看看語法說明&lt;&#x2F;a&gt; 。用 Markdown 來寫文章太省力了，可讀性也很好，我不再需要為了文章的樣式跟 HTML 標籤瞎攪和，回歸單純寫作的樂趣，而且可以用我最鍾愛的文字編輯器 &lt;a href=&quot;http:&#x2F;&#x2F;www.sublimetext.com&#x2F;&quot; title=&quot;Sublime Text&quot;&gt;Sublime Text 2&lt;&#x2F;a&gt; 。&lt;&#x2F;p&gt;
+&lt;p&gt;想當然爾，Github Pages 一定是用 git 版本控制系統來管理博客，整個博客就是一個版本庫，因此我不用上網，可以先在本地端寫文章，寫好再推送上 Github 就好了。用了 git ，基本上不必擔心內容遺失，文章都有完整的歷史紀錄，多台電腦同步也很方便。&lt;&#x2F;p&gt;
+&lt;p&gt;還有一點，Jekyll 的標語是 Blogging Like a Hacker，聽起來很帥。XD&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;ru-he-kai-shi&quot;&gt;如何開始&lt;&#x2F;h2&gt;
+&lt;p&gt;我在網路上搜尋了很多Jekyll&#x2F;Github Pages教學，大部分不是寫的雜亂無章，就是有所缺漏， 最後總算找到一篇條理清晰的教學
+「&lt;a href=&quot;http:&#x2F;&#x2F;www.ruanyifeng.com&#x2F;blog&#x2F;2012&#x2F;08&#x2F;blogging_with_jekyll.html&quot;&gt;搭建一个免费的，无限流量的Blog----github Pages和Jekyll入门&lt;&#x2F;a&gt;」，只能說阮一峰，不意外。
+裡面有個小錯誤需要更正，就是單純的個人博客不需要特別建立 gh-pages 分支， 直接放在主分支 master裡就可以了。&lt;&#x2F;p&gt;
+&lt;p&gt;只要有基本的 HTML&#x2F;CSS 知識，和折騰的精神，可以來試試看Jekyll :D&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>寫在研發替代役面試之後</title>
+        <published>2012-10-21T00:00:00+00:00</published>
+        <updated>2012-10-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/my-rd-alt-service/"/>
+        <id>https://chchwy.github.io/posts/my-rd-alt-service/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/my-rd-alt-service/">&lt;p&gt;去年此時，我正在辛苦的四處找研發替代役。一邊忙菸酒僧工作、一邊擔任電腦圖學課程助教、出作業改作業、還要四處面試的日子真的累，每天的精神幾乎完全消耗殆盡。&lt;&#x2F;p&gt;
+&lt;p&gt;每次我面試完，隔天就擺爛，就算進了 Lab 想掙扎一下，可是電腦開了就是不由自主地一直打電動。&lt;&#x2F;p&gt;
+&lt;p&gt;我後來在想，為什麼會那麼累呢?&lt;&#x2F;p&gt;
+&lt;p&gt;大概是因為面對面試官的逼問，多少會碰觸到一些心理上自己也不太願意面對的部分，在問跟答之間，逼著自己去思考這些平常不會思考的方向。算是一次強迫性的，對自己人生的回顧跟檢討吧。&lt;&#x2F;p&gt;
+&lt;p&gt;這樣說起來，那段時間辛苦歸辛苦，也是一次不錯的人生經驗。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;xin-tai-wen-ti&quot;&gt;心態問題&lt;&#x2F;h2&gt;
+&lt;p&gt;回顧去年的面試，我覺得我犯了一個心態錯誤，就是把「面試」當作「考試」來準備。&lt;&#x2F;p&gt;
+&lt;p&gt;面試官高高在上，單方面的向我出題，我答得好就有機會贏得工作。事實上，我覺得面試更像是媒合的過程，公司挑人，人也挑公司，雙方是對等的關係。&lt;&#x2F;p&gt;
+&lt;p&gt;所以除了公司方出題目考我外，我缺少相對充足的準備去反問工作職位內容和公司對待員工的方式。每當面試官問我：「請問你對公司有什麼問題嗎?」我只問了平常幾點下班，真是傻傻的。&lt;&#x2F;p&gt;
+&lt;p&gt;回家後我想了想，把應該問面試官的問題列下來:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;公司未來打算分配給我的工作是什麼? 會用到那些知識?&lt;&#x2F;li&gt;
+&lt;li&gt;會在哪個部門工作? 部門主要的工作內容? 主管帶團隊的風格?&lt;&#x2F;li&gt;
+&lt;li&gt;公司部門目前主打的方向? 請面試官聊聊他們的產品還有業務。&lt;&#x2F;li&gt;
+&lt;li&gt;上班時間? 平常幾點下班? 是否需要常態性加班? 有沒有加班費?&lt;&#x2F;li&gt;
+&lt;li&gt;研發替代役第二階段是否補滿? 什麼方式給? 有哪些津貼?&lt;&#x2F;li&gt;
+&lt;li&gt;公司有沒有培養新人的固定計畫?&lt;&#x2F;li&gt;
+&lt;li&gt;公司有沒有軟體開發流程? 有沒有版本控制系統? 有沒有 QA 團隊?&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;每個問題都可以一直延伸下去，有禮貌的直接提問，不拐彎抹角。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;ren-shi-ye-jie&quot;&gt;認識業界&lt;&#x2F;h2&gt;
+&lt;p&gt;研發役期三年是很大的時間賭注，也是菜鳥工程師成長的黃金時期，萬一不認同公司的工作文化，連唯一抗拒方式「離職的權利」都被剝奪，大概會很痛苦。&lt;&#x2F;p&gt;
+&lt;p&gt;但是學生如我，沒待過業界，缺少第一手經驗來判斷公司好壞。所以我只能從書來窺探一些業界的事。&lt;&#x2F;p&gt;
+&lt;p&gt;首先是 &lt;a href=&quot;https:&#x2F;&#x2F;www.books.com.tw&#x2F;products&#x2F;0010387385&quot; title=&quot;Peopleware&quot;&gt;Peopleware :腦力密集產業的人才管理之道&lt;&#x2F;a&gt; 確立了我心中評斷軟體公司的價值準則。還有嘴砲王約耳的&lt;a href=&quot;https:&#x2F;&#x2F;www.tenlong.com.tw&#x2F;products&#x2F;9789866348341&quot; title=&quot;約爾趣談軟體&quot;&gt;『約耳談軟體』&lt;&#x2F;a&gt;和&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;9651113&quot; title=&quot;約爾續談軟體&quot;&gt;『約耳續談軟體』&lt;&#x2F;a&gt;，好笑又中肯。&lt;a href=&quot;https:&#x2F;&#x2F;book.douban.com&#x2F;subject&#x2F;3319935&#x2F;&quot; title=&quot;走出軟體工廠&quot;&gt;走出軟體工廠&lt;&#x2F;a&gt;寫出了一些華人軟體公司的面向。&lt;a href=&quot;http:&#x2F;&#x2F;local.joelonsoftware.com&#x2F;wiki&#x2F;The_Joel_on_Software_Translation_Project:%E7%B4%84%E8%80%B3%E6%B8%AC%E8%A9%A6&quot; title=&quot;約爾測試&quot;&gt;程式之美&lt;&#x2F;a&gt; 開頭有概略的介紹軟體公司會有的基本職位。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 你以為你以為的就是你以為的嗎?</title>
+        <published>2012-07-17T00:00:00+00:00</published>
+        <updated>2012-07-17T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/do-you-think-what-you-think-you-think/"/>
+        <id>https://chchwy.github.io/posts/do-you-think-what-you-think-you-think/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/do-you-think-what-you-think-you-think/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;what-you-think-is-what-you-think.jpg#book&quot; alt=&quot;你以為你以為的就是你以為的嗎？&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;當初想要接觸哲學的時候，挑上的第一本書就是「你以為你以為就是你以為的嗎?」，因為書名太好玩了。讀完後發現內容也一樣好玩，整本書的形式有點像坊間流行的心理測驗小書，每章的開頭都要讀者先做一組題目，後面接著就對你的答案做一番分析。&lt;&#x2F;p&gt;
+&lt;p&gt;我自己的讀後感是，恩，這些題目對一個以前從未接觸過哲學的人來說太過犀利，第一次作答的時候，每翻過一頁都好像在呼自己巴掌，臉頰很燙。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;ni-de-nao-dai-xiang-fa-yi-zhi-ma&quot;&gt;你的腦袋想法一致嗎?&lt;&#x2F;h2&gt;
+&lt;p&gt;「你以為你以為就是你以為的嗎?」書名念起來很拗口，但是很貼切，因為這些題目為的是要檢查我們腦袋內的想法是否一致，在邏輯上有沒有BUG。&lt;&#x2F;p&gt;
+&lt;p&gt;我舉個例子，書裡有道題目「只要不傷害他人，任何人都有權自由追求自己的目標」要讀者回答同不同意，我認為這句話聽起來相當合理，所以勾了同意。過了幾題後，出現另一道題目是「為個人吸食而持有毒品的行為應予除罪化」，這次我的直覺是毒品這麼危險，怎麼可以除罪化呢，馬上勾不同意。&lt;&#x2F;p&gt;
+&lt;p&gt;但是，我沒有發現這是刻意安排的陷阱，因為這兩句話其實講的是同一回事。&lt;&#x2F;p&gt;
+&lt;p&gt;單純個人持有毒品，不散佈也不販賣，就不算傷害他人，那他就應該有自由追求自己的「吸食毒品」目標的權利，畢竟他只有傷害自己呀。這敘述聽起來有點危險，不過我必須承認一開始的確想的不夠清楚，我以為第一句話是真理，但馬上被反例打了自己的臉。&lt;&#x2F;p&gt;
+&lt;p&gt;再舉一個例子，首先是「對藝術品的評斷，純粹是個人品味的問題」，接著是「米開朗基羅是史上數一數二的偉大藝術家」，這牽涉到評斷藝術的標準，不過你只能認同兩句話的其中之一。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;xin-yang-de-kao-yan&quot;&gt;信仰的考驗&lt;&#x2F;h2&gt;
+&lt;p&gt;書中我最有興趣的是「神明DIY工作室」與「信仰殺戮戰場」，這兩章擺明了直衝基督徒而來。當中有些問題圍繞著以下的敘述，如果你同意「神是全知、全能、又全然慈愛」，那該怎麼解釋世界上發生的許多苦難呢? 比如說被南亞海嘯淹沒的小女孩? 如果神沒辦法消除這些苦難，祂就不是全能。如果神沒辦法事先知道創造出來的世界會有這些苦難，祂就不是全知。如果神明知道有苦難，也有能力去掉，但是卻故意不做，那祂就不是全然慈愛。&lt;&#x2F;p&gt;
+&lt;p&gt;我思考後的結論是，全然慈愛的神並不等於神希望世上的苦難越少越好，這些苦難都是在祂的允許下發生的。&lt;&#x2F;p&gt;
+&lt;p&gt;書裡指出了一個基督徒的通病，被問倒了之後就嚷嚷「你不知道神是超越人所理解的嗎 」，但回頭又馬上賦予神非常明確地人的屬性。後來我也理解到這些尖銳的問題並不是故意要為難我對神的看法，而是逼迫我去反思一些比較深層的宗教議題，就像我從神研班學到的經驗，不要害怕去質疑信仰，越去思辨，通常最後的結果會越清晰。就像本章的結論「只有信仰淺薄的人，才會覺得這是一項嚴厲的挑戰」。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;dao-de-de-gen-yuan-shi-shen-mo&quot;&gt;道德的根源是什麼?&lt;&#x2F;h2&gt;
+&lt;p&gt;另一個有趣的議題是道德，我們常常會認為某些事不對，比如說闖紅燈不對，偷東西不對，更激烈一點的例子像是「近親發生性行為」，這件事在一般社會中被認為是禁忌。本書就故意問了一個白爛問題: 一對已經成年的兄妹，妹妹已知不孕，在兩情相悅而且絕對沒有第三者知道的狀況下發生了性行為，那麼他們的作為仍舊違反道德嗎?&lt;&#x2F;p&gt;
+&lt;p&gt;這個問題其實牽涉到道德的根源，我們說一件事情是對的(符合道德)或者不對(違反道德)，依據的理由是什麼?&lt;&#x2F;p&gt;
+&lt;p&gt;我們認為一件事之所以是錯的，往往是因為這件事做了會造成傷害。但是這對兄妹的例子既私密又無害，還有理由說近親性行為絕對是錯的嗎? 我並不是要支持近親性行為，而是書裡指出了一件事，道德上人們經常從心底先入為主的討厭某件事，然後才製造出各種「理由」支持自己的結論，而不是反過來以理由為基礎推出結論。很多被認為違反道德的事情，甚至沒有辦法說出經得起考驗的理由，而只是出於一種發自心裡的情感反應。&lt;&#x2F;p&gt;
+&lt;p&gt;最後用書裡的兩句話來提醒自己，「推理完善的論證往往不易理解，漏洞百出的論證卻常因為訴諸情緒和一般人的偏見而效果奇佳」「未受教育的人用詞簡單，反倒比受過教育的人更容易打動聽眾」，也獻給理盲與濫情的台灣社會。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 明朝那些事兒</title>
+        <published>2012-04-29T00:00:00+00:00</published>
+        <updated>2012-04-29T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/things-about-ming-dynasty/"/>
+        <id>https://chchwy.github.io/posts/things-about-ming-dynasty/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/things-about-ming-dynasty/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;things-of-ming.jpg#book&quot; alt=&quot;明朝那些事兒&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;這套「明朝那些事兒」我並不是讀完的，而是聽完的。我聽的是對岸劉繼同先生的有聲書，恰好這本書的形式也像極了說書的先生，講歷史故事，說傳奇英雄，講啊講的，每天睡覺前聽上一回當床前故事，剛好幫助入眠。但有時候講的太精采，會欲罷不能接連聽上兩三回，弄到三更半夜才睡覺。&lt;&#x2F;p&gt;
+&lt;p&gt;「明朝那些事兒」講的就是明朝的事兒，從開國皇帝朱元璋開始，一直講到末代崇禎皇帝為止。但是作者當年明月先生並不僅僅滿足於講歷史故事，他還試圖要講出社會運作的規律，我讀完這套書後陡然發現，歷史滾滾過了幾百年，科技進步了，但人性仍然沒有改變，我開始有點兒明白為什麼社會上老是有狗屁倒灶的事情，那些事在明朝就發生過了，今天同樣在重演。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;hao-ren-yao-bi-huai-ren-geng-neng-dou&quot;&gt;好人要比壞人更能鬥&lt;&#x2F;h2&gt;
+&lt;p&gt;我看完書之後，發現鬥爭其實是正常的社會現象。這個道理也很簡單，因為官場是權力的遊戲場，想要把權，唯一的方法就是把上面的人鬥下來。看了明朝前前後後鬥了幾百年，再看現在所謂藍綠惡鬥竟然是驚人的相似，沒什麼新意。&lt;&#x2F;p&gt;
+&lt;p&gt;鬥爭不單單是壞蛋的權利，我發現好人也要鬥，不只要鬥，還要比壞蛋更能鬥。因為你若鬥不倒壞蛋，就會被壞蛋鬥倒，匡世濟民的夢想也就等於付諸流水，有句話說『清官要比貪官更奸』就是在說這個道理。&lt;&#x2F;p&gt;
+&lt;p&gt;書裏頭最著名的例子莫過於徐階與嚴嵩的戰爭，奸相嚴嵩把持朝政的時候，徐階還只是個憤青，這場戰爭從徐階年輕時期開始，持續鬥了將近二十年，詭詐橫行，智計迭生，最終徐階靠著一記黑狀，用現在話說就是抹黑誣告，終於鬥垮嚴嵩，為接下來的名臣時代鋪下浩浩坦途。我認為這是『明朝那些事兒』的一個高潮，每次看到這裡，我都不禁感嘆，徐階真的很不容易阿。一位名臣要實現濟世的夢想，單靠正直善良的心是不夠的，你得用自己的雙手去把壞蛋拉下來才行，即使這個手段不太光明。好像火鳳燎原中曹操說的:「弄權，只為把權，力壓奸臣。」&lt;&#x2F;p&gt;
+&lt;p&gt;縱看明朝權臣，每個都是萬中選一的鬥爭好手，只是有人掌權了之後，就開始貪汙受賄，嚴嵩魏忠賢是也，有人掌權之後則開始努力幹活兒，張居正高拱是也。鬥完了，是好人抑或是壞人，最終還是存乎一心。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;qing-guan-bu-yi-ding-hao&quot;&gt;清官不一定好&lt;&#x2F;h2&gt;
+&lt;p&gt;說到好人壞人，評價一位歷史人物並不容易，這不是道德上貼個賢愚忠奸的標籤就好。比如說，讀過『明朝那些事兒』之後，我才懂得「清官」跟「能臣」是兩碼子事。&lt;&#x2F;p&gt;
+&lt;p&gt;書上有個兩位鮮明對比的人物，一位是海瑞，一位是張居正。&lt;&#x2F;p&gt;
+&lt;p&gt;海瑞為官清廉，直言敢諫，但是死腦子不知變通，俗稱正義魔人。道德標準搬出來，所有看不順眼的人都罵。要知道明朝的官俸極低，官員大多會有些灰色收入，能達到海瑞的完美道德標準者幾希。海瑞面對這樣的官場，除了痛罵，還是痛罵，不惜與整個文官集團為敵，最終落得曲高和寡，勢單力孤。他是個清官，卻沒有什麼用。&lt;&#x2F;p&gt;
+&lt;p&gt;相對的張居正就務實圓滑的多，他是個能臣，卻不是清官。一條鞭法改革，一方面增加了國庫收入，也沒有完全剝去官員們的油水。他很明白不可能要求所有的人都道德完美，想成事就必須有所妥協。張居正自己有生活奢侈的問題，也有專權獨斷的問題，但是張居正才真正扭轉了整個大明王朝的命運。&lt;&#x2F;p&gt;
+&lt;p&gt;關於清廉與能力，還有個例子可以講。高拱擔任首輔時兩廣發生叛亂，我原文摘錄如下，高拱這樣說: 「我撥一百萬兩軍餉給殷正茂，他至少貪污一半，但以他的才能，足以平定叛亂，如果我派一個清廉的人去，或許他一兩也不貪，但是辦不成事，朝廷就要多加軍餉，這麼拖下去，幾百萬兩也解決不了問題。」這席話給我相當大的震撼，無能的官員的確比貪汙還要可怕。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;qi-ta&quot;&gt;其他&lt;&#x2F;h2&gt;
+&lt;p&gt;其實『明朝那些事兒』這本書的內容非常豐富，短短一篇心得只能寫出一二。明朝三百年，皇帝、權臣、宦官一個換過一個，無數英雄競折腰，但是要論我最喜歡的內容，卻不是這些呼風喚雨的大人物，而是只佔少數篇幅的明朝的平民生活、科舉考試、李時珍的本草綱目、鄭和下西洋等等與政治無關的事。&lt;&#x2F;p&gt;
+&lt;p&gt;最後一點我比較不喜歡的部分，是本書意外地用了很長的篇幅在講萬曆年間的對日戰爭，而且通篇宣揚大中華主義，講沒三兩句就要酸一下日本，提到日本人就加個鬼子之類的稱號，有失氣度。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 大話設計模式</title>
+        <published>2012-03-12T00:00:00+00:00</published>
+        <updated>2012-03-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/book-big-say-disign-pattern/"/>
+        <id>https://chchwy.github.io/posts/book-big-say-disign-pattern/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/book-big-say-disign-pattern/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;bigtalk-design-pattern.jpg#book&quot; alt=&quot;大話設計模式&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;當初我跟同學們辦設計模式讀書會的時候，列出來的書單有兩本，一本是「深入淺出設計模式」，另一本就是這本「大話設計模式」。大話設計模式其實寫得也不錯，只是跟另一本深入淺出比較起來，就明顯差了一個檔次。&lt;&#x2F;p&gt;
+&lt;p&gt;大話設計模式的優點是內容非常非常的淺顯，例子很容易明白。但缺點就是是舉出來的例子真的太淺了，設計模式是拿來解決某些特定的軟體設計難題的手法，這難題若是太過簡單，那麼使用設計模式就會顯得殺雞用牛刀。&lt;&#x2F;p&gt;
+&lt;p&gt;大部分的例子都跟實際脫節，為了模式而模式。像是Decorator Pattern的穿衣服，Builder Pattern也沒有真的建造出什麼東西，這樣的例子一點用都沒有，看是看懂了，但是無法明白為何要使用模式，以及模式的威力在哪裡，實際工作中也不會寫這種程式的。&lt;&#x2F;p&gt;
+&lt;p&gt;不過還是看的出來作者非常的用心，書裡很多比喻都很棒，像用活字印刷來比喻物件導向程式設計，讓我讀時眼睛一亮，說的真好。華文電腦書界需要多一些這樣的作者。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 程式設計師提昇生產力秘笈</title>
+        <published>2012-02-12T00:00:00+00:00</published>
+        <updated>2012-02-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/productive-programmer/"/>
+        <id>https://chchwy.github.io/posts/productive-programmer/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/productive-programmer/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;the-productive-programmer.jpg#book&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;原文書名：Productive Programmer
+&lt;br&gt;(對岸譯『卓有成效的程序員』，我比較喜歡這個名字，更精鍊。)&lt;&#x2F;p&gt;
+&lt;p&gt;「程式設計師提升生產力秘笈」這本書非常有趣，它不打算教一套新的程式心法或者尖端技術，這本書想說的是「扭轉你從小到大操作電腦的習慣」。有點莫名其妙，不過讀過之後，我發現自己過去的不良習慣，甚至一般人習以為常的電腦操作習慣，的確相當浪費時間。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;qi-dong-ban&quot;&gt;啟動板&lt;&#x2F;h2&gt;
+&lt;p&gt;啟動板「Launchy」是我後打開書後安裝的第一個小工具軟體，而且五分鐘後我就愛上它了！平常我們想要啟動一隻程式，例如打開 Word，你會怎麼做呢？當然是先把滑鼠移到螢幕左下角點「開始功能表」、展開「程式集」、選擇「Office」目錄、最後用滑鼠點一下 Word 圖示。&lt;&#x2F;p&gt;
+&lt;p&gt;這個過程一般人已經習以為常，不以為怪；而啟動版 Launchy 讓你直接這樣幹：按下 &lt;code&gt;Alt+Space&lt;&#x2F;code&gt; 叫出啟動板，敲W-O-R-D四個鍵就行了。(甚至只要敲W，啟動版就替你挑出最常用的程式)，傳統的方法相較之下簡直是繁文縟節。&lt;&#x2F;p&gt;
+&lt;p&gt;這例子很小，但是隱約帶出了幾個本書強調的原則：&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;第一、用搜尋取代瀏覽。&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;隨著電腦用的時間越久，應用程式清單就會越來越長，目錄裡的檔案會越來越多，而長度正好和其用處成反比，清單越長，效率就越低。啟動版可以幫助你跳過這段用眼睛上下找尋瀏覽的時間，保證啟動程式的動作永遠是O(1)。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;第二、啟動版可以隔離那些會讓人不小心分心的事物。&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;從你想要啟動某個程式，到程式真的運行起來之間，不會有瞥見一眼就丟掉十幾分鐘的東西，例如 RSS Reader，或者是某個你之前就很有興趣但是一直沒時間看的漂亮網頁。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;第三、手不需要離開鍵盤。&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;程序員大多時間都把手放在鍵盤上，滑鼠雖然直覺，但是操作速度上一定沒有鍵盤快，而且手臂在鍵盤與滑鼠之間一直移動也是很令人討厭的事情。&lt;&#x2F;p&gt;
+&lt;p&gt;上面提到的這幾項都是書中不斷重複出現的中心思想，用搜尋取代瀏覽，排除讓你分心的事物，鍵盤永遠比滑鼠好，以及最重要的，不要不停的重複做同一件事。&lt;&#x2F;p&gt;
+&lt;p&gt;附帶一提，我的桌面現在非常乾淨，只有一個資源回收桶跟幾個常用檔案，那些花花綠綠的圖示跟捷徑都被我封存進一個資料夾，再也沒有點過。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;piao-liang-de-guishi-xiao-lu-de-zhang-ai&quot;&gt;漂亮的GUI是效率的障礙&lt;&#x2F;h2&gt;
+&lt;p&gt;「重複做同樣的事」是軟體開發裡面最嚴重的效率傷害，通常稱作 D.R.Y (Don&#x27;t Repeat Yourself) 原則。&lt;&#x2F;p&gt;
+&lt;p&gt;但其實不光是程式碼複製貼上存在 DRY 原則而已，操作電腦的習慣也有 DRY 。例如重複來回地在兩個視窗之間複製貼上，手動修改一份文件裡的幾十個同樣的格式錯誤，或者在許多目錄之間來回的瀏覽翻找一個檔案都是。&lt;&#x2F;p&gt;
+&lt;p&gt;重複動作有雙重傷害：浪費時間，而且會傷害專注力。節錄書裡的幾段話：&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;『對使用者有生產力的事情（漂亮的 GUI、滑鼠、下拉式選單等等）實際上可能是某人試著讓電腦發揮最大效能的障礙。』&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;『最近幾十年來最大的諷刺之一就是，高手執行日常任務的速度變慢了。往昔 Unix 的傢伙都比較有效率，因為他們把一切都自動化了。』&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;我看了很震撼，對於 GUI 的效率傷害深有所感。&lt;&#x2F;p&gt;
+&lt;p&gt;回想起之前我剛開始用 CodeIgniter Framework 寫網站的時候，因為一個網頁程式被切成 M-V-C 三隻檔案，所以我必須一直用滑鼠去點分頁切換檔案，手不斷地在滑鼠跟鍵盤之間移動，這樣重複的操作把我弄得很痛苦，但是我卻從來沒有想過是 GUI 的問題，不知道從何改善。現在想想，我只要學一下切換分頁的快速鍵，或者「跳到某某檔案」的快速鍵，就可以節省大量精力。&lt;&#x2F;p&gt;
+&lt;p&gt;現在我開始轉變自己的心態，放開心胸去學習那些以前看起來不太友善的東西。&lt;&#x2F;p&gt;
+&lt;p&gt;比方說，書裡說道『IDE 有大量鍵盤捷徑，全都學！』我把 eclipse 快捷鍵全部翻出來作成一份清單放在案前。以前我寫 PHPUnit，一個檔案裡總會出現幾十次 &lt;code&gt;$this-&amp;gt;assertEquals($v1, $v2);&lt;&#x2F;code&gt; ，現在我把它編成 Code Template，我現在只要打 &lt;code&gt;aeq+Tab&lt;&#x2F;code&gt; 就會自動展開句子。還有比方說看起來很難懂的 vim (號稱不需要滑鼠的文字編輯器)、Regular Expression，還有命令列工具。&lt;&#x2F;p&gt;
+&lt;p&gt;我的觀念從原本的基本會用就好，轉為積極的去探究 IDE 的極限。程序員應該是使用工具的終極高手。只要一件工具能讓你效率倍增，就值得多花時間學習掌握。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;dian-nao-shi-zhong-fu-gong-zuo-de-neng-shou&quot;&gt;電腦是重複工作的能手&lt;&#x2F;h2&gt;
+&lt;p&gt;我想我被本書影響最大的一點就是對 D.R.Y 原則的敏感程度，由一般人的程度拉高到靈敏有如狗鼻子，每當察覺自己做了同一件事兩三次後，就思考如何讓電腦代勞。書中到處可見一支支用 Script Language (Ruby&#x2F;Python&#x2F;Perl) 隨手捏成的小程式，作者甚至連每天要固定開啟數個 Excel 檔案都寫成 Ruby 程式。&lt;&#x2F;p&gt;
+&lt;p&gt;雖然第一次會多花一些時間來撰寫 Script，但是作者的論點很簡單『想出聰明的方法讓任務自動化，可讓你變精明，因為一路上你得學點什麼。』而這個加速的過程是正向循環，越熟悉工具，就能把更多任務自動化，然後你的效能就會進一步提高。人手熟練有先天的肌肉跟反應的速度極限，而電腦的自動化速度幾乎沒有極限。所以讓電腦來代勞重複的工作吧，電腦可以一眨眼就掃過數千個文件，不要再勤勤懇懇的，像做家事或洗碗碟一般的操作電腦了。&lt;&#x2F;p&gt;
+&lt;p&gt;這本書的前半段就是一個收集很多技巧的大錦囊，總共有四大原則幾十條內容。總結來說吧，作者認為 Unix 上曾經有一套非常高效的方法跟工具來操作電腦。但這套方法現今已逐漸失傳，於是作者打算撥亂反正，把這些訣竅重新挖出來分享給大家，而且試圖證明這些訣竅在 Windows、Mac 上一樣有效。&lt;&#x2F;p&gt;
+&lt;p&gt;本書後半段是一系列思考軟體開發的散文集。有機會我再把後半段也吸收消化成另一篇讀書心得。&lt;&#x2F;p&gt;
+&lt;p&gt;最後留下兩篇我認為跟本書呼應的文章，相當值得一看：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;blog.vgod.tw&#x2F;2009&#x2F;12&#x2F;18&#x2F;divine-code-10&#x2F;&quot;&gt;Vgod 追求神乎其技的程式設計(十): 程式員生產力之謎&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;blog.roodo.com&#x2F;rocksaying&#x2F;archives&#x2F;11157957.html&quot;&gt;軟體開發之建置風險的故事&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 朱敬一 給青年知識追求者的信</title>
+        <published>2011-10-29T00:00:00+00:00</published>
+        <updated>2011-10-29T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/letters-for-young-researchers/"/>
+        <id>https://chchwy.github.io/posts/letters-for-young-researchers/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/letters-for-young-researchers/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;letters-to-young-minds.jpg#book&quot; alt=&quot;給青年知識追求者的信&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;朱敬一先生是少數幾位我聽過的中研院院士的其中之一，可惜不是因為他的研究，而是新聞報導上常常看見朱先生的大名。個人粗淺的印象中，此人敢說敢做，意見頗值得一聽，所以偶然在圖書館翻到這本書，就把它帶回來了。本書總共由十封信組成，內容大略可分為兩半，前五封信是個人治學心得，我覺得相當不錯，後五封信則是對學術圈的建議，可能要有志於學術者讀起來才比較有感覺吧。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;you-zou-zhu-fang-er-chu-lei-pang-tong&quot;&gt;遊走諸方而觸類旁通&lt;&#x2F;h2&gt;
+&lt;p&gt;整本書看完後，我認為朱敬一先生想要對這個高度專業分工，以致於過於狹隘與僵化的社會提供一點反思，用朱敬一先生的話來說就是: 「你如果專注於其中部分領域而一頭鑽進去，當然是好的，但是你若想遊走諸方而觸類旁通，也沒有什麼不可以」。&lt;&#x2F;p&gt;
+&lt;p&gt;每當我想著「資訊工程是我的專業」的時候，到底是不是替我自己立下了一道牆，阻止我往外看，而失去了一些激發思想火花的機會。朱敬一是社會學家，所以書裡用很生動的例子來說明這種法政經社本一體的狀況，雖然表面觀察的對象不同，但是底下的氣息卻隱隱互通。&lt;&#x2F;p&gt;
+&lt;p&gt;書裡舉了經濟學家拉維(Levitt) 作為這類遊走諸方的學者典型。 拉維教授的其中一個研究證明，美國各州到一九九零年左右突然犯罪率大幅下降，其實是肇因於十八年前美國最高法院判定禁止墮胎違憲。墮胎合法化後，許多意外懷孕的女人就不用生下「不想要的小孩」，因而抑止了將來潛在的犯罪者的出生。這樣驚奇的研究結論，實在很難相信出自一位經濟學家之手。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;fa-jue-wen-ti-de-neng-li&quot;&gt;發掘問題的能力&lt;&#x2F;h2&gt;
+&lt;p&gt;不過我看過拉維的例子後，我開始有點相信朱敬一說的，廣博的通識教育帶來的不是顯然可見的解題能力，而是「發掘、形成新問題」的能力。這也是許多台灣學生的弱點，解問題一流，但是不懂得找問題。&lt;&#x2F;p&gt;
+&lt;p&gt;而想要有這種能力，就要依靠後天的「不住相讀書」，朱敬一改自金剛經的句子說「學子不住相讀書，其功用不可限量」，讀書不該功利的只求「有用」，不帶目的廣泛的讀書，才能成其大用，在大腦裡面埋下知識火種，也許有一天各個不相干的點會突然串起來，另闢蹊徑。這讓我想起賈伯斯的演講，他就是休學跑去旁聽書法課，我們今天才有漂亮字體的Mac電腦。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;ta-shang-lang-tou-qu&quot;&gt;踏上浪頭去&lt;&#x2F;h2&gt;
+&lt;p&gt;書中有段話剛好點醒了我最近的一些迷惘，朱敬一說，到了一定年紀之後，就不要再以「我某某還不夠好」的彌補心態來作為學習的動力，因為知識永遠學不完。最好的方式是一腳踏到浪頭上去，讓自己成為前緣浪花的一部份。&lt;&#x2F;p&gt;
+&lt;p&gt;其實不管內容的話，聽聽朱敬一閒聊也是蠻有趣的，裏頭有一段兩三頁就簡單的道出社會科學的本質，文字淺顯清楚，相當精彩。對於自然科學、社會科學與人文科學分際探討也很有趣，讓我現在開始想一個問題，究竟我念的本科是屬於哪一方面? 電腦科學固然屬自然科學，不過一腳踏入軟體工程之後，是不是就有很強的社會科學的味道了呢?&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>遲到的 Amazon Kindle DX 電子閱讀器開箱文</title>
+        <published>2011-09-30T00:00:00+00:00</published>
+        <updated>2011-09-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/kindle-dx-review/"/>
+        <id>https://chchwy.github.io/posts/kindle-dx-review/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/kindle-dx-review/">&lt;p&gt;Amazon 網路書店出的電子書閱讀器 Kindle DX，當初我看著機子猶豫了很久，一直無法決定要不要買。直到下定決心買下手後，到現在使用超過半年了，我的感想是「真的很不錯」， 雖然有些小缺點，但是瑕不掩瑜。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;kindle-dx-2.jpg#book&quot; alt=&quot;Kindle02&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;kindle-dx-vs-ipad&quot;&gt;Kindle DX vs. iPad&lt;&#x2F;h2&gt;
+&lt;p&gt;廢話不多說，以「長時間閱讀」來評分，如果紙本閱讀是滿分10分，而螢幕閱讀是0分的話，那我會給這台 Kindle DX 打 7 分，蘋果的 iPad 頂多只有 2 分吧。&lt;&#x2F;p&gt;
+&lt;p&gt;這是單單以「長時間閱讀」來打的分數。我用 iPad 看完兩本書，Kindle 則是看完十幾本了，閱讀舒適度確實差很多。&lt;&#x2F;p&gt;
+&lt;p&gt;iPad 的閱讀體驗跟螢幕差不多，除了拿在手上比較方便以外，所有螢幕的缺點 iPad 都有，像是背光會給眼睛造成負擔，近距離字的邊緣不夠清晰，太陽下會看不清楚等等。&lt;&#x2F;p&gt;
+&lt;p&gt;Kindle 的閱讀感覺則已經 90% 像紙面印刷品，這感覺很奇妙，很難形容，我自己覺是最接近的形容就是「字印在墊板上」，不管怎樣 Kindle 使用的電子墨水技術已經甩開了一般印象中螢幕的閱讀體驗，文字邊緣銳利清楚，而且靠自然光閱讀就是舒服，長篇小說讀一整天都沒有問題。&lt;&#x2F;p&gt;
+&lt;p&gt;不過除了閱讀以外，Kindle 就一無是處了，我建議絕對不要有任何一絲想用 Kindle 上網、玩遊戲、或者聽音樂等等的不純妄想，Kindle 的長處就是讀書很舒服，而且是唯一的優點。 相較之下 iPad 什麼都好，但就是讀書不好。事實上，我認為「電子書閱讀器」跟「平板電腦」是完完全全兩個不同取向的產品，除了外觀都是一塊板子之外，本質完全不同。&lt;&#x2F;p&gt;
+&lt;p&gt;說起買 Kindle DX 的原因，因為小弟我的本業需要閱讀很多的原文文件，而且沒意外的話今年是我最後一年學生生涯，也是有閒暇可以大量閱讀的最後機會，於是心一橫就買下去了。買到現在，原本打算讀的專業書籍沒讀幾本，小說倒是一本接一本看了不少。orz&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;jie-xia-lai-jiu-ji-ge-fang-mian-lai-tao-lun-yi-xia&quot;&gt;接下來，就幾個方面來討論一下&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;strong&gt;螢幕尺寸:&lt;&#x2F;strong&gt; Kindle DX 螢幕是 9.7 吋，大約是B5尺寸。一般開本的 PDF 檔看起來相當舒適，頁邊會自動切白，但如果是 A4 的頁面如學術論文，看起來就會嫌字太小。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;翻頁速度:&lt;&#x2F;strong&gt; 按下翻頁鍵到翻頁完成大約半秒鐘，個人覺得還好。最適合 Kindle 閱讀的讀物是長篇小說，一頁一頁地連續往下讀，根本是絕配，但是如果是需要來回翻閱的書，那這個翻頁速度就會有點兒讓人受不了。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;電池續航力:&lt;&#x2F;strong&gt; 以我平均一天看兩個小時，不打開3G網路的話，三個禮拜才需要充一次電，表現相當不錯，出外旅行也不用帶變壓器跟插頭。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;管理電子書:&lt;&#x2F;strong&gt; 傳電子書進 Kindle 不需要什麼特殊軟體，只要一條 micro USB 線接上電腦，就可以像隨身碟一樣把電子書檔案全部丟進去，內容量是 4G。可以看 pdf，不能看 epub，平常我都用 Calibre 這套軟體把檔案格式轉來轉去，蠻方便的。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;重量:&lt;&#x2F;strong&gt;  有一次我跟我弟搭長途火車，只有站位，他搶走我的 Kindle 後一手扶著欄杆一手拿 Kindle 就這樣站著看了兩個小時的絕代雙驕，個人覺得比一本 400 頁的小說稍重一些。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;que-dian-yu-zong-jie&quot;&gt;缺點與總結&lt;&#x2F;h3&gt;
+&lt;p&gt;最後抱怨一些小毛病，Kindle DX 沒有觸控螢幕，所以只能用五向鍵來控制，打字也只能用下面的小小鍵盤，不太方便。Kindle DX沒有內建的中文字體，所以書目選單上的中文書名都是問號，後來我去抓了一個大陸人寫的補丁，才看的到中文書名。&lt;&#x2F;p&gt;
+&lt;p&gt;整體來講，Kindle DX 還未臻完美，但是我用起來已經不錯了，我估計下一代 Kindle 電子閱讀器才會完全成熟。我自己則是已經等不及了，受夠揹著重重的書四處跑，還有一大堆書搬家的痛苦，所以搶先買了，給各位參考看看囉。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 撒哈拉的故事</title>
+        <published>2011-09-15T00:00:00+00:00</published>
+        <updated>2011-09-15T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/sa-ha-la-de-gu-shi/"/>
+        <id>https://chchwy.github.io/posts/sa-ha-la-de-gu-shi/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/sa-ha-la-de-gu-shi/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;story-sahara.jpg#book&quot; alt=&quot;撒哈拉的故事&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;初拿起「撒哈拉的故事」時，我心中想著大概是以沙漠為背景、美麗幻想般的愛情小說吧，有誰會真的費盡千辛萬苦跑去撒哈拉沙漠，在物質極為缺乏的環境下過著刻苦的生活呢？沒想到這人就是三毛，只因為一個理由「我要認識沙漠」。&lt;&#x2F;p&gt;
+&lt;p&gt;「撒哈拉的故事」是三毛與她的丈夫荷西在撒哈拉沙漠旅遊生活的紀實，生活在沙漠很糟糕，至少我看完最後一篇『白手成家』後認為實在很糟，不過在樂觀又開朗的三毛的筆下，撒哈拉沙漠化為一個有趣又不可思議的國度，說著一個又一個異國的故事。&lt;&#x2F;p&gt;
+&lt;p&gt;我完全不能想像沙哈拉威人三四年才洗一次澡，『觀浴記』裡三毛跑去看沙漠女人洗澡，要先用蒸氣蒸，再用石片刮下身上的泥沙，而且沙漠女人不只洗外面，還洗裡面，讓我看的哈哈大笑。『娃娃新娘』 裡則是三毛的一個沙哈拉威鄰居叫「姑卡」要出嫁了，可是她才十歲呀，結婚習俗更是特別，新郎去迎接新娘時，新娘拼命的抵抗，原來才在沙哈拉威人的觀念裡，打得激烈才叫做「好女人」，不掙扎事後會被取笑的。&lt;&#x2F;p&gt;
+&lt;p&gt;沙哈拉威人很少受教育，思想沒有邏輯，通常講道理是講不通的。有次三毛要參加晚宴，遍尋不著自己的漂亮高跟鞋，反倒是鞋櫃上多了一雙破鞋子，原來高跟鞋被鄰居小女孩偷去穿了。事後三毛很生氣地跟她理論，小女孩竟然回嘴「生氣，生氣，你的鞋子在我家，我的鞋子還不是在你家，我比你還要氣。」聽見這種話真的是秀才遇到兵，有理講不清，還好三毛是個灑脫的人，笑笑就過去了。&lt;&#x2F;p&gt;
+&lt;p&gt;事實上，生活在沙漠真的需要灑脫，老是計較小事肯定活不下去。除了講不清道理的沙拉哈威鄰居，沙漠也有許多危險，書中至少有兩次三毛差點在沙漠裡丟掉小命。但是每一篇故事裡，我都看見一位勇氣可嘉的中國女孩兒，她不屈不撓，以樂觀的心和智慧面對生活中的困難，盡情享受生活，像個瘋狂的孩子般，甚至布置了一個號稱撒哈拉沙漠裡最美麗的家，連記者都聞風專程前來拜訪，他們的物質生活雖不富裕，但是精神卻很富足。&lt;&#x2F;p&gt;
+&lt;p&gt;說到三毛不能不提她的另一半荷西。三毛書裡這樣子描寫『荷西有一個很大的優點，任何三毛所做的事情，在別人看來也許是瘋狂的行為，在他看來卻是理所當然的』，所以當三毛說要去沙漠時，荷西早她兩個月，就先對著撒哈拉沙漠找工作去了，沙漠裡的瘋狂事也總有荷西的一份。人生能遇見這樣的他，既是羨慕，也是感動。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 天涯。明月。刀</title>
+        <published>2011-07-31T00:00:00+00:00</published>
+        <updated>2011-07-31T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/sky-moon-saber/"/>
+        <id>https://chchwy.github.io/posts/sky-moon-saber/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/sky-moon-saber/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;sky-moon-knife.jpg#book&quot; alt=&quot;天涯明月刀&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;小李飛刀系列雖然有好幾部，但其實小李探花李尋歡只在第一部「多情劍客無情劍」裡有出場，承接故事的「邊城浪子」講的是小李飛刀傳人葉開，和他的好兄弟傅紅雪糾葛不清的故事。邊城浪子之後，故事就叉開成兩條支線，「九月鷹飛」裡葉開出場，「天涯明月刀」的主角就輪到傅紅雪了。&lt;&#x2F;p&gt;
+&lt;p&gt;據聞「天涯明月刀」是古龍的實驗性作品，曾經被罵得很慘，所以我剛開始讀的時候格外戰戰競競，以為會讀到什麼驚人之筆，結果讀完之後反而覺得還好嘛，古龍寫小說不都是這個調調嗎? 喜歡就會喜歡。&lt;&#x2F;p&gt;
+&lt;p&gt;在「邊城浪子」裡我第一次接觸到傅紅雪這個角色，還挺討厭他的，但是「天涯明月刀」裡面，我對他的印象有改觀不少，我其實很高興看到傅紅雪終於有了一點人性，不再只是個被復仇驅使的機器人。  第十一回「明月何處有」傅紅雪冷冰冰地對卓玉貞說：「這是你第一次看見我的刀，也是最後一次。」，要他亮刀簡直像要他的命一樣，但是到了下一回「生死之間」，傅紅雪不只拔出刀給卓玉珍看，還拿來削人蔘，挖石頭，刀鋒崩出了三個缺口。這是整個故事裡我最喜愛的一個轉折，能讓一個人的個性在這麼短的時間之內徹底改變，是因為傅紅雪當爸爸了。&lt;&#x2F;p&gt;
+&lt;p&gt;但是故事的衝突就在於他才剛迎接新生命的出生，就面臨整家人被埋在地底下的困境，我認為這是傅紅雪第一次重新思考他的人生意義，以前他的人生就是他的刀，刀是用來殺人的，但是這次傅紅雪看著手裡的刀，聲音中充滿痛恨說：「這是殺人的利器，不是救人的。」巧的是，若刀沒有崩出缺口，他們也不會被燕南飛發現，傅紅雪的改變救了他們自己一命。&lt;&#x2F;p&gt;
+&lt;p&gt;然而，就是傅紅雪做出了這麼大的犧牲轉變，接下來的背叛才會更加痛苦與殘酷。一個女人，使得傅紅雪的刀又淪喪為殺人的刀，而另一個女人，使殺人的刀又變回救人的刀，這段的曲折也寫得很深刻，礙於劇透我就不明講了。&lt;&#x2F;p&gt;
+&lt;p&gt;我喜歡「天涯明月刀」打鬥場面多，傅紅雪的刀拔不停，很爽快，而且打的精采，不像邊城浪子廢話一堆但是死都不拔刀，看到快睡著。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 邊城浪子</title>
+        <published>2011-07-25T00:00:00+00:00</published>
+        <updated>2011-07-25T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/bian-cheng-lang-zi/"/>
+        <id>https://chchwy.github.io/posts/bian-cheng-lang-zi/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/bian-cheng-lang-zi/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;frontier-boy.jpg#book&quot; alt=&quot;邊城浪子&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;古龍很喜歡寫廢話，例如這樣:『只有一種人不會說話。』『那就是死人!』，一句話硬要分好成幾句來講的廢話，有時候反而會有一種曲折的效果。但是古龍的文風，發展到某個偏執的方向，大概就會變得像邊城浪子一樣。又臭又長，太多陰謀，太多廢話，讀得很累。&lt;&#x2F;p&gt;
+&lt;p&gt;邊城浪子，說的是傅紅雪的復仇之旅，但是看完整本書之後，我卻對這個腳色哭笑不得，因為傅紅雪怎麼看都像一個笨蛋。傅紅雪只是魁儡，被周圍的眾人耍著團團轉，傻傻的追著他心中以為的仇人。而且劇情也是一直不停重複，傅紅雪陷入危機，葉開跳出來出來救他，傅紅雪快要殺錯人了，葉開跳出來點醒他，如此無窮迴圈，所以我覺得傅紅雪是笨蛋。但是另一位主角葉開，我就更搞不懂他了，他好像什麼都知道，但偏偏又什麼都不講，放任事情發展，表現很平面，從頭到尾就是「出一張嘴」葉開，真是愧對小李飛刀傳人的名號。&lt;&#x2F;p&gt;
+&lt;p&gt;說到劇情，前半段的萬馬堂內鬥風雲，我覺得不錯，根本可以獨立成一個緊湊的故事。而走入傅紅雪的主線劇情後拖泥帶水，可能我對於復仇這檔事沒什麼共鳴吧，打得又不精彩。直到最後一一揭開真相時，我已經沒有看到真相的興奮，只覺得很疲倦，陰謀跟懸疑是古龍的長項，但是邊城浪子陰謀實在太多了，我猜傅紅雪應該比我還疲倦，終於可以結束這堆亂七八糟的事情了。讀到結局時葉開鬆了一口氣，我也鬆了一口氣。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 多情劍客無情劍</title>
+        <published>2011-07-25T00:00:00+00:00</published>
+        <updated>2011-07-25T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/little-lee-swardman/"/>
+        <id>https://chchwy.github.io/posts/little-lee-swardman/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/little-lee-swardman/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;little-lee.jpg#book&quot; alt=&quot;多情劍客無情劍&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;最近突然開始瘋狂地看古龍，一本接著一本的看。&lt;&#x2F;p&gt;
+&lt;p&gt;講到古龍難免要跟金庸比較一下。我自己感覺，如果用食物來比喻這兩位名家的話，讀金庸的作品就像吃一桌豐盛的大餐，書裡滿滿的人物流派、武功招式、歷史題材，有各樣不同的味道可供品嘗。但是古龍不一樣，古龍的作品味道沒那麼多元，讀起來感覺總是澀澀的又有點苦味，講的是氣氛，大概就像喝酒的感覺吧，雖然我自己還不太明白喝酒的趣味。&lt;&#x2F;p&gt;
+&lt;p&gt;有時候一本小說寫得太好看，感想反而難以下筆，因為佳作天成，各方面都是不多不少剛剛好，只好隨便亂聊。看完了小李飛刀四部曲「多情劍客無情劍」、「邊城浪子」、「九月鷹飛」、和「天涯明月刀」，還是覺得第一部，以李尋歡為主角的多情劍客無情劍最好看。&lt;&#x2F;p&gt;
+&lt;p&gt;在多情劍客無情劍裡面，所謂江湖上的名門正派幾乎無一例外都被描寫成道貌岸然的偽君子，古龍很喜歡使用這種背景設定。如第七章「誤傷故人子」裡，秦重秦大俠為了救自己的兒子縱人行兇，被李尋歡酸了兩句：「秦大俠倒也不必太謙，只不過，若在下殺了人，便是冷酷毒辣，閣下殺了人，便是替天行道了。」「今日這孩子若殺了在下，日後傳說出去，必然不會說他是為了要搶大夫而殺人的，必定要說他和秦大俠又為江湖除了一害，是麼？」 剛剛好把這些表裡不一的醜態揭的一清二楚。一片灰暗中襯托出李尋歡的真誠率性。而例不虛發的小李飛刀，就儼然化為劃破黑暗的正義化身，出手一刀，必大快人心。&lt;&#x2F;p&gt;
+&lt;p&gt;但是另一方面，李尋歡這個腳色本身卻有著矛盾，與林詩音、龍嘯雲理不清的三角關係，這一切的悲劇的起因，都是李尋歡年輕時自己犯下的錯，他做了這個決定後，一定馬上就後悔了，但是卻拼命的騙自己沒有後悔，這也註定李尋歡這人個性有點彆扭，又成了酒鬼跟浪子。第五十三章「騙局」 道盡了龍嘯雲的無奈心情 「人生本就充滿了矛盾，任何人都無可奈何」&lt;&#x2F;p&gt;
+&lt;p&gt;另外書中表面上李尋歡平起平坐的對頭是上官金虹，但背後興風作浪，造成無數風波的卻是「她看來如仙子，卻專門帶男人下地獄」的林仙兒。書中發生的各種事件插曲，有一大半是因林仙兒而起，而林仙兒的「傾國傾城」差不多要把整本書裡的男性英雄豪傑都要傾光了。據說古龍嗜酒嗜色，讀完小說後我完全相信這是事實。如果真有女人這樣對待我，我保證一定自己乖乖跳進她的網子裡。古龍的確很了解什麼樣的女人最能令男人拜倒石榴裙下。&lt;&#x2F;p&gt;
+&lt;p&gt;古龍寫短片段寫得很好，就我認為比長篇架構要亮眼得多。像是「多情劍客」開頭的阿飛的出場橋段，前後呼應，讓我拍案叫絕。孫小紅與孫老頭說書一搭一唱，還有孫小紅跟李尋歡的文比拚酒，都是讓我回味再三的橋段，餘韻不絕。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 如何閱讀一本書</title>
+        <published>2011-05-23T00:00:00+00:00</published>
+        <updated>2011-05-23T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/how-to-read-a-book/"/>
+        <id>https://chchwy.github.io/posts/how-to-read-a-book/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/how-to-read-a-book/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;how-to-read-a-book.jpg#book&quot; alt=&quot;如何閱讀一本書&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;affiliate.api.rakuten.com.tw&#x2F;redirect?nw=tw&amp;amp;site=afl&amp;amp;a=71032b702639407836d6c880d8e6a095ddade3284b95a891fbd7a1ebff75248826ad0cd9cb4a293a&amp;amp;ar=a747b10f014cf18584f9ee2ca5516854cb91d9c5d6849f5c93000e3163fa586b69315791463a07d2&amp;amp;cs=83316e801792f920f23aa93348ce66dc&amp;amp;pr=5fb9e3b6b880aa41&amp;amp;ap=pr%3D5fb9e3b6b880aa41&amp;amp;e=1&amp;amp;url=https%3A%2F%2Fwww.rakuten.com.tw%2Fshop%2Frbook%2Fproduct%2F2010190045635%3Fscid%3Drafp-&quot;&gt;KOBO 購書連結&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;「如何閱讀一本書」就像書名一樣，一本關於讀書技巧的書，不過這兒「閱讀」兩個字有特別的意義。&lt;&#x2F;p&gt;
+&lt;p&gt;我打個譬喻，在台灣爬山是不錯的運動，全家大小一起去風景區走上一個早晨，呼吸呼吸新鮮空氣，是爬山。但是一位專業的登山者，經過周密規畫後，全副武裝的的去挑戰台灣百岳，也是爬山，兩個爬山名詞一樣，但是意思顯然不一樣呀。&lt;&#x2F;p&gt;
+&lt;p&gt;這兒也是，閒暇時看看雜誌打發時間是閱讀，挑戰大部頭又難懂的磚頭書也是閱讀。作者開宗明義就寫『這本書是為了把讀書當作是增進理解能力的人而寫的』，用我的話來理解，就是一本讀書界的喜馬拉雅山登山技術指南吧。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;si-ge-ceng-ci&quot;&gt;四個層次&lt;&#x2F;h2&gt;
+&lt;p&gt;作者把閱讀分成四個層次，由低而高分別叫做 -- 基礎閱讀，檢視閱讀，分析閱讀，綜合閱讀。不同的時機要用上不同的閱讀技巧。第一層的基礎閱讀就不必說了，總要先看懂句子才能說其他閱讀技巧吧。第二層的檢視閱讀，目的是教你使用很短的時間，判斷是一本書值不值得繼續深入的技巧。到了第三層的分析閱讀，就是我們俗稱的精讀了。而第四層綜合閱讀的技巧，已經超越單一本書的範圍，進入一整個主題領域的研究了。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;fen-xi-yue-du-shi-jing-hua&quot;&gt;分析閱讀是精華&lt;&#x2F;h2&gt;
+&lt;p&gt;我認為分析閱讀是全書最精華、最有價值的部分，分析閱讀裡作者總共提出了16條明確可執行的步驟，告訴你如何把書扒皮拆骨，再加上X光裡裡外外都看個透徹。&lt;&#x2F;p&gt;
+&lt;p&gt;怎樣才算讀懂一本書呢? 這個問題不好回答，至少本書訂出了一個相當高的標準。看懂一本書必須抓住三個要點，第一個是從架構方面，能掌握整本書的骨架，第二個是詮釋，能清晰的了解論點的發展，還有支持論點的理由。最後是批判思考，能公正地說出書本好與不好的地方，有憑有據。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;ben-shen-jiu-shi-yi-zuo-gao-shan&quot;&gt;本身就是一座高山&lt;&#x2F;h2&gt;
+&lt;p&gt;雖然本書的目的是教你征服超出理解範圍的書，但很不幸，本書也是一個必須征服的山頭。我第一次遇見這本書後，前後總共挑戰了三次，一直到最近這次才敢說從頭到尾看懂了。我覺得這本書難讀主要原因是例子太少，特別是分析閱讀後半部，論述完整，不厭其煩，但是就是例子不夠，空有原則卻無處施力。後來我只好一邊讀分析閱讀的原則，一邊就把原則應用在當下閱讀的段落本身，來回好幾次才抓到條理。這算不算是作者的陰謀阿?&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;zhu-dong-de-du-zhe&quot;&gt;主動的讀者&lt;&#x2F;h2&gt;
+&lt;p&gt;以前的我是那種書看完之後心得永遠只有兩句，很精彩很好看，或，很有道理，但是要我說出更具體的理由就張口結舌的人。因為以前我習慣用海綿思考，把書的內容當知識一直往腦袋塞。但是現在我了解這不夠，做為一個負責任的讀者，要時時不斷的對書提出問題，為什麼作者要這樣寫? 這樣寫有什麼意義? 這就是書裡強調的主動閱讀的精神，閱讀不應該只是被動的吸收。&lt;&#x2F;p&gt;
+&lt;p&gt;最後跟大家分享四個問題作為結尾，這是「如何閱讀一本書」裡強調一位主動負責的讀者，一定要回答的四個問題。而現在這份心得，也就是我回應這四個問題的答案囉。&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;整體來說，這本書到底在談些什麼？&lt;&#x2F;li&gt;
+&lt;li&gt;作者細部說了什麼？怎麼說的？&lt;&#x2F;li&gt;
+&lt;li&gt;這本書說得有道理嗎？是全部有道理？還是部分有道理？&lt;&#x2F;li&gt;
+&lt;li&gt;這本書跟我有什麼關係？&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 父親的最後30堂哲學課</title>
+        <published>2011-05-08T00:00:00+00:00</published>
+        <updated>2011-05-08T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/30-classes-of-philosophy/"/>
+        <id>https://chchwy.github.io/posts/30-classes-of-philosophy/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/30-classes-of-philosophy/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;dad-30-philosophy.jpg#book&quot; alt=&quot;父親的最後30堂哲學課&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;想接觸哲學，卻又對哲學一竅不通。最終找上了麥田出版的「哲學小徑」系列，是因為系列序文裡的這段話打動了我：「 內容艱澀的書我們不出版，法國思想家蒙田曾說:『艱澀是學者用來變把戲的銅板，目的就是為了避免洩漏它們徒勞無功的研究』」&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;wen-he-de-ru-men-shu&quot;&gt;溫和的入門書&lt;&#x2F;h3&gt;
+&lt;p&gt;「父親的最後30堂哲學課」作者是一位哲學教授，這位可愛的父親寫了30封信給尚在念國中的女兒，每一封信都具體而微的介紹了一個哲學主題。&lt;&#x2F;p&gt;
+&lt;p&gt;讀完後，我覺得這本書就像青少年哲學概論，每封信都短短的，談一點但是談不深，走馬看花吧，看完對哲學也只有一個很淺的輪廓的了解。我想作者原本的目的，就不是單刀直入，而是循循善誘完全不了解哲學的女兒。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;zhe-xue-gai-zen-mo-nian&quot;&gt;哲學該怎麼念&lt;&#x2F;h3&gt;
+&lt;p&gt;我認為本書對我有價值的部份是解答了「該怎麼念哲學?」這個問題，解答自古以來分為兩派，一派認為應該從哲學史開始，了解過去各個偉大哲學家他們的生平以及重要思想。另一派則認為必須從辯證開始，直接去思考哲學問題才是正途。事實上兩條路都是對的，不可偏廢，第一條路我打算讀「蘇菲的世界」，第二條路我則打算讀「哲學入門九堂課」。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;zi-you-de-qi-fa&quot;&gt;自由的啟發&lt;&#x2F;h3&gt;
+&lt;p&gt;書中一個令我印象深刻的主題就是「自由」，跟「QBQ」的觀念不謀而合。自由的意義就是一個人意識到自己有權選擇，並且為自己的決定負責。比方說學生抱怨「我很想學好OOO，但都是因為老師教的太爛我才學不好。」&lt;&#x2F;p&gt;
+&lt;p&gt;其實學生應該明白自己有選擇學習方式的自由，如果真的很想學好該技能，學生還有許多條路可走，選擇向老師反映、自修、請教學長姊，或者擺爛給他當掉，不管哪種方式，都不能把責任全部推到老師身上。&lt;&#x2F;p&gt;
+&lt;p&gt;簡單講，老師教不好，你就必須被迫接受某技能很爛這個事實嗎? 不，學生可以選擇，選擇自學補救或者擺爛，選了自學補救，就必須承擔玩樂時間減少的事實，不管哪個，都是學生自己選的，而且選了你都要為自己的能力好或差負責，同時付出應付的代價。所以書中說『自由的最高形式在於﹔清楚明白地接受一切不可避免之事』，實乃懇切之語。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 隱身魔鬼</title>
+        <published>2011-04-05T00:00:00+00:00</published>
+        <updated>2011-04-05T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/secret-adversary/"/>
+        <id>https://chchwy.github.io/posts/secret-adversary/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/secret-adversary/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;secret-adversary.jpg#book&quot; alt=&quot;隱身魔鬼&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;讀完「密碼」之後，我馬上就把「隱身魔鬼」排入了待讀清單之中，原因當然就是因為這對有趣的小夫妻: 湯米與陶品絲。不過密碼裡頭湯米與陶品絲已經是有三個小孩的老夫老妻了，而隱身魔鬼裡面，湯米跟陶品絲甚至還沒有在一起呢。&lt;&#x2F;p&gt;
+&lt;p&gt;湯米與陶品絲兩位天不怕地不怕的年輕人，成立了一個宗旨是「天底下沒有什麼不能幹(只要有錢)」的青年冒險家公司，誤打誤撞地捲入了一樁嚴重的國際政治陰謀中，莫名其妙地成為情報幹員。聽我這樣說，應該就可以感受到這系列跟白羅系列不太一樣，有湯米與陶品絲的故事總是充滿歡樂派，故事線依然維持克嬸嬸拿手的懸疑緊張，但是年輕人生性樂觀，比起白羅那個死老頭子，氣氛就是輕鬆。&lt;&#x2F;p&gt;
+&lt;p&gt;整個故事主線都圍繞著兩個問題打轉: 珍。芬恩到底在哪裡? 還有，誰是布朗先生? 同為終極的隱藏反派，我覺得這位布朗先生塑造的比四大天王裡的李長彥要好上太多了，布朗先生真的很厲害，深藏不出，但是全局都掌控在他手裡，沒有人知道這位布朗先生到底是誰，但是他卻多次親自出馬，完成關鍵任務後悄然身退。&lt;&#x2F;p&gt;
+&lt;p&gt;以下有點劇透，布朗先生的謎團在那位某某夫人昏倒之後，其實就很明顯了，可能性只有二個，而且照克嬸嬸的心理個性推理法，答案幾乎是呼之欲出。接續的故事情節雖然拼命地往反方向誤導，但是我心裡最深處就是覺得另外一位可能性太低。&lt;&#x2F;p&gt;
+&lt;p&gt;最後不能免俗地經歷患難之後發現真情，把湯米與陶品絲送作堆，老梗但是讀者就是吃這套阿，我等不及要預約下一本啦。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 底牌</title>
+        <published>2011-03-27T00:00:00+00:00</published>
+        <updated>2011-03-27T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/cards-on-the-table/"/>
+        <id>https://chchwy.github.io/posts/cards-on-the-table/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/cards-on-the-table/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;cards.jpg#book&quot; alt=&quot;底牌&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;這整本書，攏系克莉絲蒂的陰謀啦~。&lt;&#x2F;p&gt;
+&lt;p&gt;克莉絲蒂的拿手好戲就是在極為有限的場景跟人物裡，以縝密的邏輯創造出意想不到的發展，像東方快車謀殺案的場景只有一個車廂，尼羅河謀殺案的場景只在一艘輪船上。這次「底牌」更是把這拿手好戲發揮到淋漓盡致。&lt;&#x2F;p&gt;
+&lt;p&gt;「底牌」謀殺案發生在一個小晚宴上，扣除被謀殺的晚宴主人，參加晚宴的八位來賓，正分坐兩張橋牌桌捉對廝殺。&lt;&#x2F;p&gt;
+&lt;p&gt;這個克莉絲蒂精心設計出來的場面，就在八位來賓的身份，非常剛好，對半兩分，四位是偵探，另外四位則是嫌疑兇手，而且我覺得最該死的一點是，克嬸嬸非常公平(有點刻意)的給這四位嫌疑犯平等的地位，不但都有動機，下手的機會差不多，同時這四位嫌疑犯各有一段不可告人的往事，掌握在死者手中。&lt;&#x2F;p&gt;
+&lt;p&gt;克嬸嬸在一開頭的作者的話就寫道：一般推理小說只要找出最不可能作案的人，十之八九謎底就揭曉了，他不希望讀者這樣嫌惡的草草讀完書，所以他故意讓四位嫌疑犯站在同一個起跑點上，這樣讀者的奸計就沒辦法得逞了。&lt;&#x2F;p&gt;
+&lt;p&gt;除了起跑點相同之外，讀完後回頭一看，整個故事情節根本都已經刻意設計好。劇情圍繞著四位嫌疑犯的過去鋪陳，隨著事實真相一一浮現，我就像一尊克嬸嬸手上的魁儡，先懷疑第一個人，再懷疑第二個人，又懷疑第三個人，到最後懷疑目標繞了一圈，把四個人都懷疑了一遍。可是這麼刻意編排的劇情，一口氣讀下來卻是合情合理，生動流暢呀。&lt;&#x2F;p&gt;
+&lt;p&gt;書裡有個有趣的角色我一定要講講，就是四位偵探之一的推理小說家 -- 奧利薇夫人。每當奧利薇夫人對自己的工作，也就是寫推理小說抱怨發牢騷時，我都忍不住想克莉絲蒂是否在影射她自己，像奧利薇夫人說的：「我筆下的偵探是個芬蘭人，但我其實對芬蘭一無所知，經常有些芬蘭讀者來信，說他的很多言行舉止讓他們感到不可思議...」， 也許克嬸嬸也收到很多比利時人的來信呢。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 四大天王</title>
+        <published>2011-03-09T00:00:00+00:00</published>
+        <updated>2011-03-09T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/si-da-tian-wang/"/>
+        <id>https://chchwy.github.io/posts/si-da-tian-wang/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/si-da-tian-wang/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;the-4.jpg#book&quot; alt=&quot;四大天王&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;shi-bai-de-chang-shi&quot;&gt;失敗的嘗試&lt;&#x2F;h2&gt;
+&lt;p&gt;本次白羅老爹的對手是一個跨國地下犯罪集團，白羅從一個只動灰色腦細胞的老頭，搖身一變成了詹姆斯龐德，上山下海，拯救世界。大概克嬸嬸覺得過去的故事背景都太寒酸了，不來個大場面不行。整個故事就像動作電影，一個接一個往主角白羅撲來的突發事件。每個事件單獨來看都很玄奇，但是整體來看關聯卻顯得薄弱，好像互不相干的獨立事件。&lt;&#x2F;p&gt;
+&lt;p&gt;書中說這些行動都是由幕後主使「四大天王」策動，但這樣零散缺乏組織的攻擊行動，讓我很很懷疑四大天王的腦袋智商。最吐血的一點，最終隱藏大頭目：四大天王中的一號李長彥，從頭到尾沒有露臉，結局突然就自殺了。除了四號來去無形，殺人技巧不錯以外，二號與三號兩位也沒有什麼特別作為。整個故事就在誇張不合理的事件與差勁的敵人之中莫名其妙的結束了。&lt;&#x2F;p&gt;
+&lt;p&gt;看開場白羅與海斯汀重逢的那一小段，我發現克莉絲蒂還是我們熟悉的克莉絲蒂，她寫的人際互動非常有魅力，非常有趣，可惜不巧走了一個不擅長的故事路線。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 射雕英雄傳</title>
+        <published>2011-02-24T00:00:00+00:00</published>
+        <updated>2011-02-24T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/she-diao-ying-xiong-chuan/"/>
+        <id>https://chchwy.github.io/posts/she-diao-ying-xiong-chuan/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/she-diao-ying-xiong-chuan/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;shooting-eagle-hero.jpg#book&quot; alt=&quot;射雕英雄傳&amp;quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;「射鵰英雄傳」是我人生的第一部武俠小說，第一本金庸作品。書裡如假似真的歷史背景，真實而鮮明的人物，令小時候的我著迷不已。現在長大了，重讀射鵰，一樣充滿樂趣。&lt;&#x2F;p&gt;
+&lt;p&gt;我之所以喜愛『射雕』，是因為射雕裡頭的人。每個人也許個性南轅北轍，但是都有自己的執著、痴迷，每個人用全心活出自己希望的樣子，反派如歐陽鋒、梅超風等等，壞也壞的迷人。&lt;&#x2F;p&gt;
+&lt;p&gt;再來說說郭靖與黃蓉小倆口。小時候還沒感覺，現在我覺得郭靖根本是個臭笨蛋。在我看，從來就只有郭靖負黃蓉，沒有黃蓉負郭靖。如果沒有黃蓉聰慧，郭靖不可能學到降龍十八掌，也不可能找出殺害他師父的真正兇手；不是黃蓉處處幫他，也沒這好狗運能當大俠。但是郭靖心中狗屁忠義過剩，太過迂腐，幾次丟下黃蓉，我都很想往郭靖臉上貓下去。&lt;&#x2F;p&gt;
+&lt;p&gt;郭靖是檯面上的主角，但我認為黃蓉才是故事裡最亮眼的角色，不僅個性率真，又聰明，好幾次劇情眼見就要拐進死彎，都是靠著黃蓉伶牙俐齒硬生生給轉了回去，歐陽鋒一代大俠，最後也是栽在黃蓉手裡。黃蓉真的是射雕故事中畫龍點睛的一筆。&lt;&#x2F;p&gt;
+&lt;p&gt;這次整本射雕英雄傳都是在新敗家的 Kindle DX 上讀完的，相當過癮，一開始還不太習慣橫書的武俠小說呢。國中之後能有機會重讀射雕英雄傳，也是買 Kindle 之初意料不到的。回想射雕人物，世事無奈，掩 Kindle 長嘆。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 密碼 ( N or M? )</title>
+        <published>2011-02-14T00:00:00+00:00</published>
+        <updated>2011-02-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/n-or-m/"/>
+        <id>https://chchwy.github.io/posts/n-or-m/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/n-or-m/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;m-or-n.jpg#book&quot; alt=&quot;密碼&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;讀到一半才發現原來克嬸嬸也寫間諜小說，難怪我一直痴痴的等，就是等不到謀殺案發生。&lt;&#x2F;p&gt;
+&lt;p&gt;故事是講二戰時期的一對英國情報員夫妻，受命追捕滲透到英國的德國臥底間諜的過程。讀完後我上網一查才知道，這對活躍的夫妻：湯米與陶品絲，也是克莉絲蒂筆下有名的主角組合之一。&lt;&#x2F;p&gt;
+&lt;p&gt;雖然說是間諜小說與二戰背景，但是故事其實是在一個非戰區的安靜的鄉下渡假小村展開，一開始又沒有死人，所以氣氛蠻歡樂的。英國情報部門懷疑德國要在這個平靜的小村莊佈置登陸基地，派了湯米跟陶品絲去捕捉間諜。雖說是間諜小說吧，不過鄉下小村盡是一些三姑六婆，爺爺伯伯一堆，要在這些人裡抓出哪個是德國間諜也實在不容易，我看克嬸嬸寫不了軍人，但是寫這種市井小民正是她最拿手的項目啦，劇情當中的爾虞我詐，不錯精彩。&lt;&#x2F;p&gt;
+&lt;p&gt;最後容我稍微抱怨一下，結尾段是不公平的推理，陶品絲自己暗藏了一手，而讀者卻沒有獲得同等的線索跟資訊! 所以我跟敵人鬥智鬥到一半才發現，怎麼被擺了一道，真的是暗自不爽在心裡阿，奉勸各位讀者就把本書當作冒險故事來看就好了。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 高爾夫球場命案</title>
+        <published>2010-12-24T00:00:00+00:00</published>
+        <updated>2010-12-24T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/murder-on-the-links/"/>
+        <id>https://chchwy.github.io/posts/murder-on-the-links/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/murder-on-the-links/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;murder-golf.jpg#book&amp;amp;&quot; alt=&quot;高爾夫球場命案&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;如果說「東方快車謀殺案」是經典的內斂風格，那麼「高爾夫球場命案」就是完全相反的典型了。&lt;&#x2F;p&gt;
+&lt;p&gt;「高爾夫案」集合各種暢銷小說要素於一身：名偵探及死對頭、身世成謎的死者、衝突糾葛的人際關係、峰迴路轉的劇情，結尾前的千鈞一髮的高潮橋段，以及...別忘了，主角與偶然邂逅的美麗女孩的愛情對手戲 (百用不爛的典型公式)！就算拍成電影也不為過。&lt;&#x2F;p&gt;
+&lt;p&gt;我這個人讀偵探小說，相當享受那種被當呆子耍的樂趣(就像偵探身旁的助手一樣)，當然這個犯案的計畫必須夠高明，否則樂趣就減半了。說到「高爾夫案」這個劇情進展實在太曲折，直到結束前的末幾頁，我都以為要收尾叫警察抓人了，還來了一個一百八十度的絕地大迴轉，完全推翻之前所有推理，更別說之前就經數次劇情迴轉，心情整個就像雲霄飛車一樣。這感覺在我第二次邊讀邊回顧的過程中特別強烈，暗潮之下還藏暗潮，伏筆之中還埋伏筆，一絲不差在恰當的時機揭露開來，克嬸嬸的縝密的劇情組織能力，真的佩服。&lt;&#x2F;p&gt;
+&lt;p&gt;不過我這個笨腦袋想不明白的是，到底什麼時候開始，白羅就已經掌握了整個複雜的案情呢？就算讀了兩次，我也還是不明白。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 史岱爾莊謀殺案</title>
+        <published>2010-12-24T00:00:00+00:00</published>
+        <updated>2010-12-24T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/mysterious-styles/"/>
+        <id>https://chchwy.github.io/posts/mysterious-styles/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/mysterious-styles/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;myth-styles.jpg#book&quot; alt=&quot;史岱爾莊謀殺案&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;本書是克莉絲蒂的出道之作，年方25，文筆爽朗輕快，典型克莉絲蒂風格，絲毫不見一點新手的生澀。我讀完後驚訝極了，能夠一出手就如此夠水準，一方面是佩服，另一方面是懷疑克嬸嬸您一開始就這麼厲害，怎麼進步阿？&lt;&#x2F;p&gt;
+&lt;p&gt;看完史岱爾莊謀殺案後，我真的忍不住要說白羅跟海斯汀這偵探與助手的天生搭檔，兩位真是絕配，一個是精明的過份，另一個是蠢的過份。&lt;&#x2F;p&gt;
+&lt;p&gt;偵探白羅這傢伙老是神秘兮兮的講些怪話，故意不說明白，一邊把讀者弄的身在五里霧中，一邊又不時的奚落他那位搞不清狀況的海斯汀老弟，我說白羅你阿，根本是指桑罵槐，一邊罵海斯汀一邊把讀者罵了個夠吧！難怪吳念真的序文裡出現『我想把那個矮羅壓到馬桶吃屎』。&lt;&#x2F;p&gt;
+&lt;p&gt;另外一邊則是海思汀那個蠢蛋，正直老實沒心機，但是每次看到漂亮美眉就心蕩神馳，冒冒失失的跟人求婚，每當我看到類似橋段我都一直笑。&lt;&#x2F;p&gt;
+&lt;p&gt;而經過好幾本推理小說的考驗之後，我的腦袋也有終於稍微有一點進化了，一開始我就精明的發現跟老太婆吵架的對象其實是另有其人，所以我可以說漂亮的繞過了劇情中的第一個陷阱，不過我得意了沒多久，就老老實實的掉進了第二道陷阱裡，最後的謎底真的很難猜阿，哎呀，哈哈。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: Just for Fun, Linux 創始人托瓦茲自傳</title>
+        <published>2010-12-21T00:00:00+00:00</published>
+        <updated>2010-12-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/just-for-fun-linux/"/>
+        <id>https://chchwy.github.io/posts/just-for-fun-linux/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/just-for-fun-linux/">&lt;h2 id=&quot;bu-ping-fan-de-ping-fan-ren&quot;&gt;不平凡的平凡人&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;justforfun.jpg#book&quot; alt=&quot;Just for Fun&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;我想對此書有興趣的人，大多想瞭解兩個問題&lt;&#x2F;p&gt;
+&lt;p&gt;一、Linux為什麼會成功 ?
+二、Linus Torvalds此公到底是何等人物 ?&lt;&#x2F;p&gt;
+&lt;p&gt;針對這兩個問題，如果你對 Linux 的歷史背景跟開發過程沒那麼熟悉，那我會推薦大家先去看&lt;a href=&quot;&#x2F;post&#x2F;book&#x2F;2010-12-21-rebel-code-review&#x2F;&quot;&gt;「Rebel Code」&lt;&#x2F;a&gt;(中譯: Linux傳奇)。為什麼這樣說呢？ 因為我自己讀 Just for Fun 這本書時，很多時候因為不瞭解當時開發 Linux 的時空背景，所以無法體會 Linus 對事件做出的評論。第二個是 Linus 本人實在很謙虛，往往輕描淡寫的帶過自己的事蹟。&lt;&#x2F;p&gt;
+&lt;p&gt;我讀完 Rebel Code 之後又重讀此書，才終於有抓到一些感覺。舉個例子來說，像是 Linus 在書裡暢談他對 Linux 社群呈多頭馬車時的處理法，要了解他說的話，就得先知道 Linux 發展的過程中曾經出現過兩次分裂危機，一次 是 TCP&#x2F;IP ，一次是 vger 事件。看完 Rebel code 後我才搞懂整個來龍去脈，事實上本書也只有記述 Linus 自己片面的說法，不夠全面。&lt;&#x2F;p&gt;
+&lt;p&gt;Linus 此公基本上就是個電腦宅宅，比起一些商場大人物的自傳整本吹噓自己， Linus 平易近人多了。Linus 是個務實派駭客，沒有 Stallman 那種崇高的理念，除了喜歡玩電腦之外，跟一般人沒什麼兩樣。當初開發 Linux 的原因只是覺得好玩，想要搞懂386晶片的底細，某次陰錯陽差之下，就成了一個真正的作業系統。本書也可以看出 Linus 的帶領原則就是無為而治，而他這樣的個性正好適合 Linux 這個海納百川的大型開源專案。&lt;&#x2F;p&gt;
+&lt;p&gt;Linux的成功固然有些機運，但是絕不僥倖。這位電腦宅宅12歲就開始寫組合語言的驚人事蹟，就別說了。Linus 說影響他一生最大的一本書籍就是Tanenbaum 寫的『Operating System』，他老媽這樣形容他:「他是個很好養的孩子，只要空出一個衣櫥，塞台電腦進去，外加一點乾麵餅，對他就是人間至樂了。」 當一個人能專心致志如斯，那只是機會早到晚到的問題。&lt;&#x2F;p&gt;
+&lt;p&gt;最近看了電影「三傻」，赫然發現 Linus 不正是真實世界版的主角蘭切嗎? Just for Fun!&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 東方快車謀殺案</title>
+        <published>2010-12-21T00:00:00+00:00</published>
+        <updated>2010-12-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/murder-orient-express/"/>
+        <id>https://chchwy.github.io/posts/murder-orient-express/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/murder-orient-express/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;orient-murder.jpg#book&quot; alt=&quot;東方快車謀殺案&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;談起這本書，就要說起當我還是個小大二時，有一次在社團看見學長手上拿著「東方快車謀殺案」，就隨口探詢了大概的故事內容，聽完後心裡第一個冒出來念頭是「老天，這本書聽起來超無聊的。」&lt;&#x2F;p&gt;
+&lt;p&gt;幾年後，有機會翻開它，整個故事架構一如意料的單調：火車上死了一個人，神探白羅把車廂內的有嫌疑的乘客一個一個抓來問話，篇幅一人一章，十個人就問了十章。白羅思考後又重複訊問乘客一次，破案。&lt;&#x2F;p&gt;
+&lt;p&gt;當時年紀輕輕的我顯然不能瞭解整本都在問話與找不在場證明的書有什麼好看。所以之後我讀A.B.C謀殺案時，看到書裡白羅自己說道：『如果在第一章兇案就已經發生，而一直看到書中的倒數第二頁都只在追查每個人的不在場證明，這樣的故事實在太冗長乏味。』我看完這句話當場拍桌大笑，阿嘉莎阿姨幽了自己一默，因為白羅這句話正好拿來形容「東方快車謀殺案」，但結論恰恰相反，故事太精采了。&lt;&#x2F;p&gt;
+&lt;p&gt;沒有飛車追逐或男女情愛妝點，單調的故事架構，反而凸顯了克莉絲蒂作品最純粹的趣味。白羅探案的特色就是一直對話，在對話中刺探每個人的想法，刺探人心中最微妙的部分。在我看來，阿嘉莎．克莉絲蒂無疑是個觀察入微，洞悉人性的人，光憑對話，就把每個人物形象的刻劃的生動精彩。整個車廂內十多個人，每個人都有不同的國籍，不同的個性，冷靜的英國小姐，聒噪的美國太太，剛毅的俄國公主，死板的德國女僕，以及精明又有些自戀的白羅等等，只消聽聽這些傢伙嘴巴說出的話，馬上整個角色的形象活起來，好像真的站在我眼前一樣。白羅一個一個向列車上的乘客詢問證詞，這樣互相對話就可以寫得讓人欲罷不能。&lt;&#x2F;p&gt;
+&lt;p&gt;而推動劇情發展的要素，我想直接引用東方快車董事布克先生的話：「謊言，更多的謊言！」後半段白羅一一揭穿每個乘客的謊言，大概是全書最讓人拍案叫絕大喊痛快的橋段。每個人各懷鬼胎，與白羅嘴巴上你來我往，每次讀我都覺得真是有趣極了。精巧設計的結局，我反而印象沒那麼深刻。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: Linux 傳奇 (Rebel Code)</title>
+        <published>2010-12-21T00:00:00+00:00</published>
+        <updated>2010-12-21T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/rebel-code/"/>
+        <id>https://chchwy.github.io/posts/rebel-code/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/rebel-code/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;linux-rebel-code.jpg#book&quot; alt=&quot;Linux 傳奇&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;rebel-code-kai-yuan-ge-ming-shi&quot;&gt;Rebel Code 開源革命史&lt;&#x2F;h2&gt;
+&lt;p&gt;報導文學的傑作！回想上一次讀書心中湧現出類似的激動，已經是四五年前讀『宇宙的寂寞心靈』。這兩本書的共同點就是雖然主軸是科學技術，但是內容述說的卻是這個行業中的&lt;strong&gt;人&lt;&#x2F;strong&gt;的故事。技術是冰冷的，但是走在大時代洪流中的人，卻各個有血有肉。&lt;&#x2F;p&gt;
+&lt;p&gt;原文書名叫做『Rebel Code』，直譯叫『叛碼』，副標題則是 Linux And The Open Source Revolution (Linux 與開源革命)，一定要吐槽一下糟糕的中文譯名，副標題比爾蓋茲云云可說完全搞錯方向。這個書名非常有意思，因為這兒 Code 是個雙關，表面意思是代碼，背面意思是法典。恰恰代表了本書描寫的兩個對象，以 Linux 為首顛覆傳統開發方式大獲成功的開源軟體，以及一群奔放不羈、充滿理想的平凡人，運用自己的力量搖動世界成為典範的故事。&lt;&#x2F;p&gt;
+&lt;p&gt;本書以自由軟體先驅 &lt;a href=&quot;https:&#x2F;&#x2F;zh.wikipedia.org&#x2F;zh-tw&#x2F;%E7%90%86%E6%9F%A5%E5%BE%B7%C2%B7%E6%96%AF%E6%89%98%E6%9B%BC&quot;&gt;Richard Stallman&lt;&#x2F;a&gt; 做起點，以 Linux 的發展作為主幹，譜成了長達十年、可歌可泣的故事。我看著好多個只曾在課本上見過的資訊大佬們，如 Linus 與 Tanenbaum，在網路群組上對作業系統設計架構針鋒相對互噴口水，頓時覺得這些名字不再是遙遠天邊的神，而是跟我們一樣活生生的人，而且這些人口水也很能噴，有趣的緊。&lt;&#x2F;p&gt;
+&lt;p&gt;除了Linux之外，著名的開源項目 GNU、GCC、Apache、Perl、Mozilla 也都在書中占有一定篇幅，本書可以說是一個全面的開放源碼運動的紀錄。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;da-jiao-tang-yu-shi-ji&quot;&gt;大教堂與市集&lt;&#x2F;h2&gt;
+&lt;p&gt;全書的結構分為兩大段，前八章是 Linux 的成長過程，第十章後則是 Linux 一路攻城掠地。而位居中間的第九章是本書的一個高潮，全章以『大教堂和市集』一文為中心，深入淺出的分析了開源自由軟體成功的原因。&lt;&#x2F;p&gt;
+&lt;p&gt;大教堂與市集代表兩種相互衝突的軟體開發觀點，大教堂是傳統的軟體開發觀：&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;『我相信最重要的軟體必須如建造一座教堂般，由個別的高手或一小群專家在光輝的孤立中小心翼翼地精雕細琢，時機未到之前，不會釋出測試版。』&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;但 Linux 完全顛覆了傳統，來自世界各地的烏合之眾打造了高品質的程式：&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;『儘早並經常發表新版本，授權每一件可以委託的事，不拒絕幾乎到混亂程度的程式，...Linux 的同好們似乎組成了喧鬧的大市集，以這個風格發展出來的Linux既一致又穩定，表面上看來真是一連串的奇蹟。』&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;大教堂和市集深切的探討了 Linux 成功的原因，並把成功的原因歸納成一系列的格言，每句格言都很有意思，不妨一讀。&lt;a href=&quot;http:&#x2F;&#x2F;www.cui-zy.cn&#x2F;Recommended&#x2F;Linux&#x2F;%E6%95%99%E5%A0%82%E8%88%87%E5%B8%82%E9%9B%86.pdf&quot;&gt;大教堂與市集全文&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;讀完書後，我自己的對開源的一點想法是，其實使用者並不管軟體本身開不開放，真正關心的是軟體到底合不合乎需要。而開放比封閉更容易貼近使用者的需求。每個人都曾經想過「如果OO軟體有XX功能就好了!」而專利軟體最糟糕的一點就是使用者對這個問題幾乎無能為力。開源軟體的架構下，每個人都可以自己動手添加功能或修復錯誤。當使用者同時也是開發者，兩個角色重疊，軟體最麻煩的需求分析的門檻就降到零了。&lt;&#x2F;p&gt;
+&lt;p&gt;同時書中提到一個觀點，開源軟體的知識共享可以免去重複造輪子。Linux 之前，很多版本的 Unix 擁技術各據山頭，收取高額權利金，結果因為 Unix 版本太多，每家公司都要重新開發一次類似的功能，消耗整個軟體界的能量。最後的下場是便宜的 Windows NT 一來，風吹樹倒，整個 Unix 伺服器佔有率掉光光。不過本書也說明開源不是萬靈丹，並不是什麼專案開源之後都會成功。&lt;&#x2F;p&gt;
+&lt;p&gt;另外一點，Linux 的成功與 Torvalds 本身個性有很大關係。Linux 發展之初，其實有兩個開源 Unix 互相競爭，分別是 Tanenbaum 撰寫的 Minix，以及 Torvalds 撰寫的 Linux。而勝出的關鍵就在 Torvalds 的個性極為開放，幾乎任何人送來的 patch 都來者不拒，還鼓勵大家這麼做。反觀 Tanenbaum 對修改 Minix 一直機機歪歪，步調緩慢。群眾自然湧向願意聆聽大眾聲音並改變的 Linux。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;hai-ke-jing-shen&quot;&gt;駭客精神&lt;&#x2F;h2&gt;
+&lt;p&gt;另外貫穿於全書之中令人敬佩的 - 駭客精神：把金錢擺到次位，一心追求最好的技術、最好的軟體。重視自由、分享、社群精神，關注軟體的創作、美、以及有趣。我覺得這才是整個開源運動最動人的地方。書中有句話『自由軟體即是關心社會』，讓我會心一笑。&lt;&#x2F;p&gt;
+&lt;p&gt;本書出版於2000年左右，至今以過了十載，開源有許多後續發展，像十一章Linux系統採用的版本控制軟體 BitKeeper 終被拋棄，git誕生。2001年時被認為失敗的案例Mozilla，以Firefox之姿浴火重生，現在已經是鋒頭最健的開源項目之一。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;chai-jing-de-zhong-wen-ban&quot;&gt;差勁的中文版&lt;&#x2F;h2&gt;
+&lt;p&gt;最後我要抱怨 -- 本書的編輯&lt;strong&gt;很差&lt;&#x2F;strong&gt;，好好一本傑作就這樣被糟蹋了，書的目錄印錯，翻譯品質也很爛。譯者明顯是個電腦外行人，很多業內的通用譯名如 GPL、CVS、micro-kernel、CSS、DOM 都譯得亂七八糟，語句中明顯看的出來譯者自己也不知道在寫什麼，『妙不可言的人月』其實是著名的軟體工程著作『人月神話』，『HTML標識』應該叫『HTML標籤』，作業系統內核的字句名詞也錯誤百出，我建議本書的翻譯稿也應該開源一下。&lt;&#x2F;p&gt;
+&lt;p&gt;對了，看完本書後，我真的覺得 GCC 是這個世界上最偉大的軟體之一。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 精通 Objective-C 2.0 程式設計</title>
+        <published>2010-11-29T00:00:00+00:00</published>
+        <updated>2010-11-29T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/programming-in-objc-4ed/"/>
+        <id>https://chchwy.github.io/posts/programming-in-objc-4ed/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/programming-in-objc-4ed/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;objc2.jpg#book&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;原文書名： Programming in Objective-C (4th Edition)&lt;&#x2F;p&gt;
+&lt;p&gt;以一本程式語言教學的書來說，我給這本書的評價是：水準以上，但是差了那麼一點醍醐味兒。&lt;&#x2F;p&gt;
+&lt;p&gt;整體的寫作的風格就是平實八穩的依照語言的各種特性，一個個清楚而且詳細的解釋。總共分為三大塊主題: Objetive-C語言、Foundation Framework (objc的標準函式庫) 以及 Cocoa and iPhone SDK。第三部分 Cocoa 只能算淺嘗性質的示範了一個小巧的 iPhone 程式，全書大部分專注於闡述 Objective-C 這個&quot;程序語言&quot;的基礎，沒有特定侷限於某個平台。所以如果你期望在裡面看到更多關於 iPhone&#x2F;iPad 開發的介紹，那可能要失望了。&lt;&#x2F;p&gt;
+&lt;p&gt;全書以數個範例貫穿頭尾，藉由不斷添加功能於其上，引出各式各樣的 Objc 語言特性，我認為相當好。但是這本書對 Objc 2.0 新增的 property 特性並沒有說得很清楚。必須去網路上搜尋其他資料輔助。&lt;&#x2F;p&gt;
+&lt;p&gt;本書把 Objc 當作一個全新的語言來講，而不是 C 語言的延伸，這對沒學過 C 的人算是好消息。我個人是已經學了  C 好多年了，所以這本書到底適不適合完全的新手，我也說不個準。書完全以 OO 的方式來介紹 objc，對於一些舊式C語言的東西如 top-level function、pointer 並不鼓勵使用。所以全書只留有一章把傳統C語言的特性收集起來做個介紹，算是選讀的章節，沒唸也無傷大雅。這章揭露了一些objc底層的實做，對於熟悉C的人倒是相當有趣的一段。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;chai-liao-yi-dian-ti-hu-wei-er&quot;&gt;差了一點醍醐味兒&lt;&#x2F;h2&gt;
+&lt;p&gt;我說差了點醍醐味兒的原因是我掃完本書第一遍後，心中有個聲音響起：又一個程式語言！我學的程式語言還不夠多嗎？其實從本書我對 Objective-C 的第一印象並不太好，對 API 函數的命名尤其反感，比如說 Foundation Framework 裡的字串的比對 &lt;code&gt;[str1 isEqualToString str2];&lt;&#x2F;code&gt; 見到這個方法我差點沒把口中的咖啡噴出來，哎喲，我真的得說服自己在寫程式語言而不是英文作文。&lt;&#x2F;p&gt;
+&lt;p&gt;扯遠了，吐槽 Objective-C 的話題就此打住。總之我認為本書並沒有寫出 Objective-C 的靈魂來。 圖靈獎得主 Alan Perlis 說:「如果一門語言不能影響你寫程式的思維，那它就不值得你去學。」 各種語言形形色色，總有它們優秀獨特的地方。從這本書我看不見 Objective-C 為什麼選擇這樣子的語言設計，或者說這樣的特性有什麼好處，比如書裡第九章標題是 Dynamic Typing、Dynamic Biding 書裡寫道『這使它成為很有威力的程式語言，以及辨別它與其他程式語言(如C++)不同之處』，但章節內容舉的例子有如玩具，完全感受不到威力何在。&lt;&#x2F;p&gt;
+&lt;p&gt;直到我讀了維基百科的 Objective-C 條目，才知道原來 objc 留著 Smalltalk 的血液，這個程式語言史上赫赫有名的老古董。 Objective-C 採用了 smalltalk 的訊息傳遞(message passing)模型，所以 Objective-C 帶著一些今日動態語言才有的特性。這樣來看，本書教會了我大部分 Objective-C 的語法，但維基百科才畫龍點睛般的讓我抓住 Objective-C 的風格。&lt;&#x2F;p&gt;
+&lt;p&gt;相關連結： &lt;a href=&quot;http:&#x2F;&#x2F;zh.wikipedia.org&#x2F;zh-tw&#x2F;Objective-C&quot;&gt;Wiki條目 Objective-C&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 專業 PHP 5 程式設計</title>
+        <published>2010-09-04T00:00:00+00:00</published>
+        <updated>2010-09-04T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/professional-php-5/"/>
+        <id>https://chchwy.github.io/posts/professional-php-5/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/professional-php-5/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;prof-php5.jpg#book&quot; alt=&quot;專業PHP5程式設計&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;原文書名：Professional PHP 5&lt;&#x2F;p&gt;
+&lt;p&gt;如果你受夠了一般坊間的書對PHP物件導向的膚淺介紹，喔，對，就像學生跟老師class、或者狗跟貓繼承了動物所以都會叫，這種看了好像有點道理，但是完全無法明白這跟網頁程式有什麼相關的屁話，那麼這本書鐵定會給你不一樣的感受。&lt;&#x2F;p&gt;
+&lt;p&gt;該怎麼說呢，我看過的書裡，這是第一本真的能「有效」利用物件導向來改善 PHP 網頁開發流程的書。&lt;&#x2F;p&gt;
+&lt;p&gt;PHP 的基本風格就是大雜燴，HTML 與程式碼夾雜一起。這也無可厚非，因為 PHP 的特色就是快速直覺。但是我以前很難想像，原來PHP也可以寫得有組織，有條理，很容易開發跟維護。&lt;&#x2F;p&gt;
+&lt;p&gt;本書的第一部份介紹 &lt;code&gt;PropertyObject&lt;&#x2F;code&gt;：將資料以物件封裝起來，切開資料庫跟網頁的關聯，於是乎網頁的程式變得很簡潔，很好讀，資料部份的程式也因為集中在一起，很容易維護。這種工具封裝再利用恰巧展現了物件導向的威力，傳統的PHP鐵定做不到的，給當時的我很大的震撼。&lt;&#x2F;p&gt;
+&lt;p&gt;於是我照著書本的想法自己寫了一個輕巧的資料存取模組，用在網路程式課程的期末專題。起頭碰到很多困難，花了很多時間在調校物件，但一旦工具準備好後，倒吃甘蔗的感覺就來了，最後一天晚上甚至一口氣衝完好多個頁面功能，這是我人生第一次嚐到物件導向的甜頭，原來物件導向真的有用，而且很有用。&lt;&#x2F;p&gt;
+&lt;p&gt;在今天 PHP Framework 滿天飛的狀況來看，這本書的內容有些過時了。比方說後來我發現我寫的資料存取小模組原來有個專有名詞叫做 ORM，而且網路上有很多高手寫了更好用、更強大的 ORM。一些知名框架像 CakePHP、 CodeIgniter 甚至提供了非常完善的解決方案來組織整個網站。&lt;&#x2F;p&gt;
+&lt;p&gt;回頭來看這本書的工具，是有些陽春了。不過畢竟那都是別人寫好的工具，光使用也不會有什麼長進。有基本的PHP知識，想要一窺這些超級工具開發的秘密，那我認為這本書是非常好、非常難得的敲門磚。程式師圈子裡有句話叫做「Eat Your Own Dog Food」，意思是程式員必須要使用自己開發的工具來改善自己的工作，那本書就是這句話最好的實踐。&lt;&#x2F;p&gt;
+&lt;p&gt;本書的內容其實不只這些小工具，還有很多內容像是 Design Pattern 、SOAP、MVC、 專案管理等等，簡直就是包山包海了，個人認為 Design Pattern 的部份沒什麼有用的例子，後面我則是沒有細看，不好評論。&lt;&#x2F;p&gt;
+&lt;p&gt;有些缺點不得不說：其一是 code 很長而解釋稍嫌不足，而且 code 實在寫得太醜了，閱讀來實在很痛苦。我想一本教學書把程式碼寫得簡潔清楚，可以大大地增進讀者的胃口。其二是本書讀來很明顯就是分成四塊，這也沒什麼，因為有四位作者嘛，但慘的是這四位顯然配合的不好，以致於書裡產生了 PropertyObject 與 GenericObject 這兩套明明目的差不多，但就是不同的兩套實做。我初讀還困惑了一下。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 學習的王道</title>
+        <published>2010-06-30T00:00:00+00:00</published>
+        <updated>2010-06-30T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/art-of-learning/"/>
+        <id>https://chchwy.github.io/posts/art-of-learning/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/art-of-learning/">&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;art-of-learning.jpg#book&quot; alt=&quot;學習的王道&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;本書的主人翁 Josh Waitzkin 是美國一位著名的天才少年棋手，曾拿下多次全美冠軍，Josh 長大後對西洋棋倦勤，轉行打太極拳，令人訝異的是他也拿下了一座太極拳世界冠軍。&lt;&#x2F;p&gt;
+&lt;p&gt;他自己發現兩個完全八竿子打不著邊的領域在學習過程中竟然有許多相似之處，於是寫下這本書紀錄他自己的學習方式與心得。&lt;&#x2F;p&gt;
+&lt;p&gt;書的前半段我還蠻有共鳴的，一些訣竅像「習數以忘數」、教育者應該扮演引導者的角色而不是權威人士、支持學習論而不是天份論等等，也都是我常用的學習撇步。&lt;&#x2F;p&gt;
+&lt;p&gt;不過讀到書的後半，我就發現我完全被 Josh 甩在後頭，連車尾燈都看不到。Josh 身段柔軟，非常擅長根據狀況微調自己的心裡，不斷地從失敗中吸取教訓，每次都可以把自己往上昇華一個層次，好像超級賽亞人一、二、三一直變強。我喜歡這本書的一點，就是他很寫實的把學習碰到的困境一五一十的寫下來，所以讀得時候常常可以這樣問自己，如果是我，我會怎麼辦呢？&lt;&#x2F;p&gt;
+&lt;p&gt;後半段花很多段落探討心的問題，許多一流選手不只是技藝精湛，而且都有一顆強韌的心，卡斯帕洛夫、麥可喬登都很擅長利用情緒來激發自己表現，高手過招時候心理上微妙的攻防戰，寫得實在精彩。&lt;&#x2F;p&gt;
+&lt;p&gt;我沒有很多這種必須跟對手一決死戰的經驗，不過每當我讀到西洋棋賽的時候，我腦子裡浮現的竟然是 ACM 題，或許是那種緊繃的氣氛吧，哈哈。還有本書最後 Josh 寫他參加台灣世界推手大賽的經歷，我一邊看一邊苦笑，台灣的愛國裁判完全不輸韓國人呀。&lt;&#x2F;p&gt;
+&lt;p&gt;其實書裡說，Josh 的每盤棋，每場太極拳，他老爸都會錄影起來，說不定充足的自省材料，才是他成功的關鍵？&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>讀書: 線性代數的世界</title>
+        <published>2010-02-11T00:00:00+00:00</published>
+        <updated>2010-02-11T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/introduction-to-linear-algebra/"/>
+        <id>https://chchwy.github.io/posts/introduction-to-linear-algebra/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/introduction-to-linear-algebra/">&lt;blockquote&gt;
+&lt;p&gt;「你不能把蘋果跟橘子加在一起」
+從某種觀點來說，就是為了想要做這種事，我們才需要向量。&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;book&#x2F;linear-algebra.jpg#book&quot; alt=&quot;線性代數的世界&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;這是本書第一章的第一句話，我一翻開書就噗呲笑了出來，心想我準會愛上這本書。Gilbert Strang 教授用幽默卻精準的語言貫穿全書，娓娓述說線性代數這門學科。&lt;&#x2F;p&gt;
+&lt;p&gt;以我個人學習線性代數的經驗，認為學習線性代數必須要從兩方面著手，一是證明，這是前後貫通這們學科的唯一方法，特別是線性代數這座層層相疊，環環相扣的高塔，這讓人學會嚴謹。另一方面則是直覺，你如何從大堆頭的數學式子中看出意義，直搗核心，這讓人思考靈活，學會應用。&lt;&#x2F;p&gt;
+&lt;p&gt;我在研究所補習班所學的線性代數的教學太過於偏重證明，我叫它金字塔教學法，從最底層一塊一塊磚慢慢往上蓋、慢慢往上證明。於是乎有這樣的現象：學生知道證明的東西，證明每一步都懂，但是就是無法在腦中成型，或者看不見這些式子的意義，這是因為數學證明的抽象性、嚴謹性犧牲了直覺性(例如線性獨立的證明)，若沒有良好的引導，學生往往在真正看清定理的意義之前就先被繁雜的證明打敗了。「我認為線性代數的教學已經變得太抽象了。」這是Strang教授在序裡說的另一句話，我舉雙手同意。&lt;&#x2F;p&gt;
+&lt;p&gt;Strang 教授說自己在寫書的時候努力做到：致力於解釋，而不是演繹。我研讀下來的感覺也是這樣，Strang教授會先像箭一樣射穿核心觀念，然後佐以例子慢慢的向旁邊擴張解釋，最後才用證明結尾。我舉個例子，固有向量(Ax=?x)，章節裡是這樣寫：『我們用A去乘時，幾乎所有的的向量都會改變方向，但是有些特殊的非零向量，它的方向仍然跟Ax相同，只是拉長、縮短、翻轉方向或絲毫未動。... 而固有值就是看進矩陣核心的新途徑。』於是乎學習者從一開始就有一個清楚的圖像浮在腦海中，以此作為往下學習的基礎，比抽象的數學式子好太多啦。我認為這是本書的魅力。&lt;&#x2F;p&gt;
+&lt;p&gt;優點同時也是缺點，Strang教授把線性代數處理的滑順可口，無可避免的本書的證明就顯得相對虛弱，偏偏證明是線性代數不可或缺的重要部份。書中大多是以歐式空間為基礎來講解，歐式空間容易學習，容易舉例，但是線性代數可以處理的範圍遠超過歐式空間。這種證明帶來的抽象性，正是線性代數的威力所在，但本書很少提到這部分。&lt;&#x2F;p&gt;
+&lt;p&gt;不管如何，這是一本少見的優秀又有趣的數學教科書，我在裡面找到了數學的樂趣，相信你也可以。:D&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;strang-jiao-shou-miao-yu-ji-jin&quot;&gt;Strang 教授妙語集錦&lt;&#x2F;h2&gt;
+&lt;p&gt;談為什麼需要向量&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&quot;You can&#x27;t add apples and oranges.&quot; &lt;br&gt;「你不能把蘋果和橘子加在一起」&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;線性代數的精神&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The central porblem of linear algebra is to solve a system of equations.&lt;&#x2F;p&gt;
+&lt;p&gt;線性代數的核心問題就是要解方程組！&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;談為何AB的反矩陣是 B&lt;sup&gt;-1&lt;&#x2F;sup&gt;A&lt;sup&gt;-1&lt;&#x2F;sup&gt;&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It is also common sense: If you put on socks and then shoes, the first to be taken off are the _____.&lt;br&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;常識也告訴我們：假如你先穿襪子再穿鞋，那麼脫的時候，首先該脫掉_____。&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;談為何(AB)&lt;sup&gt;T&lt;&#x2F;sup&gt; = B&lt;sup&gt;T&lt;&#x2F;sup&gt;A&lt;sup&gt;T&lt;&#x2F;sup&gt;&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Ax combines the columns of A while x&lt;sup&gt;T&lt;&#x2F;sup&gt;A&lt;sup&gt;T&lt;&#x2F;sup&gt; combines the rows of A&lt;sup&gt;T&lt;&#x2F;sup&gt;&lt;br&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Ax線性組合了A的諸行，而x&lt;sup&gt;T&lt;&#x2F;sup&gt;A&lt;sup&gt;T&lt;&#x2F;sup&gt;線性組合了A&lt;sup&gt;T&lt;&#x2F;sup&gt;的諸列。&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;不論是趣味的例子，或者是一句話直搗觀念核心，都常讓我拍案叫絕。比起補習班名師的講義，研讀起來樂趣大多了。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>十進位轉二進位</title>
+        <published>2007-11-24T00:00:00+00:00</published>
+        <updated>2007-11-24T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/decimal-to-binary/"/>
+        <id>https://chchwy.github.io/posts/decimal-to-binary/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/decimal-to-binary/">&lt;p&gt;目前為止寫過最簡短的版本&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;cpp&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-cpp &quot;&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;#include &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;iostream&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;#include &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;climits&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;using namespace&lt;&#x2F;span&gt;&lt;span&gt; std;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffb9d;&quot;&gt;int &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;main&lt;&#x2F;span&gt;&lt;span&gt;()
+&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffb9d;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span&gt; x &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#87d6d5;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffb9d;&quot;&gt;unsigned int&lt;&#x2F;span&gt;&lt;span&gt; y &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt; INT_MIN;
+&lt;&#x2F;span&gt;&lt;span&gt;    cout &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;lt;&amp;lt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;please enter a Integer:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    cin &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; x;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;while &lt;&#x2F;span&gt;&lt;span&gt;(y &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#87d6d5;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    {
+&lt;&#x2F;span&gt;&lt;span&gt;        (x &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;amp;&lt;&#x2F;span&gt;&lt;span&gt; y) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;? &lt;&#x2F;span&gt;&lt;span&gt;(cout &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;lt;&amp;lt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span&gt;(cout &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;lt;&amp;lt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;);
+&lt;&#x2F;span&gt;&lt;span&gt;        y &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt; y &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;lt;&amp;lt; &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#87d6d5;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;概念： INT_MIN 的二進位長這樣 10000000000000000000000000000000
+跟 x 做 bit AND，除了最左邊 bit，其他 bit 都會變 0。&lt;&#x2F;p&gt;
+&lt;p&gt;只有最左邊 bit 維持原樣，這時就可以單獨判斷該 bit 要印出 0 或 1。
+接下來將 INT_MIN 往右 shift 一個 bit。就可以判斷 x 第二個 bit 了，依此類推。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

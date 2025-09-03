@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-tw">
+    <title>調和的靈感 Matt - Python</title>
+    <subtitle>紀錄我的思考，讀書筆記，還有程式設計</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://chchwy.github.io/tags/python/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://chchwy.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2021-04-23T00:00:00+00:00</updated>
+    <id>https://chchwy.github.io/tags/python/atom.xml</id>
+    <entry xml:lang="zh-tw">
+        <title>Windows 電腦切換 Python 2&#x2F;3 版本</title>
+        <published>2021-04-23T00:00:00+00:00</published>
+        <updated>2021-04-23T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/python-on-windows/"/>
+        <id>https://chchwy.github.io/posts/python-on-windows/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/python-on-windows/">&lt;p&gt;目前看來，Python 2 和 3 應該還會共存相當長一段時間，所以電腦上免不了要同時安裝兩個版本。以下是我找到 Windows 作業系統下可以輕鬆切換版本的方法。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;py-launcher&quot;&gt;py Launcher&lt;&#x2F;h2&gt;
+&lt;p&gt;Python 3.3 開始內建 &lt;code&gt;py&lt;&#x2F;code&gt; 啟動器，可用參數選擇 Python 版本。&lt;&#x2F;p&gt;
+&lt;p&gt;py 指令使用方法如下:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;py -2 myscript2.py &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 指定 Python 2
+&lt;&#x2F;span&gt;&lt;span&gt;py -3 myscript3.py &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 指定 Python 3
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;列出所有已安裝的 Python 版本&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;py --list
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;安裝模組&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;py -2 -m pip install SomePackage  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 指定 Python 2
+&lt;&#x2F;span&gt;&lt;span&gt;py -3 -m pip install SomePackage  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 指定 Python 3
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;zai-dang-an-zhong-zhi-ding-ban-ben&quot;&gt;在檔案中指定版本&lt;&#x2F;h2&gt;
+&lt;p&gt;使用 py 啟動器的話，也可以在 Python 腳本檔案的第一行加入以下語句來指定版本&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;py&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-py &quot;&gt;&lt;code class=&quot;language-py&quot; data-lang=&quot;py&quot;&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt;! python2.7
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt;! python3
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;這樣 py 啟動器就不用下版本參數，會根據檔案第一行啟動對應的版本&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;py myScript.py &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 使用檔案裡指定的版本
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;yuan-shi-ma-zhen-ce-yu-yan-ban-ben&quot;&gt;原始碼偵測語言版本&lt;&#x2F;h2&gt;
+&lt;p&gt;在 Python 腳本裡面偵測目前語言版本的方法:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#393939;color:#dedede;&quot;&gt;&lt;code&gt;&lt;span&gt;&amp;gt;&amp;gt;&amp;gt; import sys
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;&amp;gt;&amp;gt; print(sys.version_info)
+&lt;&#x2F;span&gt;&lt;span&gt;sys.version_info(major=2, minor=7, micro=18, releaselevel=&amp;#39;final&amp;#39;, serial=0)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;can-kao-lian-jie&quot;&gt;參考連結&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3&#x2F;installing&#x2F;index.html#install-scientific-python-packages&quot;&gt;Python 官方文件&lt;&#x2F;a&gt;,&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.zhihu.com&#x2F;question&#x2F;22846291&#x2F;answer&#x2F;22928449&quot;&gt;知乎：在同一台电脑下如何进行 Python 2 与 3 的切换？&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>完成 Codecademy 的 Python 課程</title>
+        <published>2015-05-25T00:00:00+00:00</published>
+        <updated>2015-05-25T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/finish-python-course-of-codecademy/"/>
+        <id>https://chchwy.github.io/posts/finish-python-course-of-codecademy/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/finish-python-course-of-codecademy/">&lt;p&gt;其實已經完成一陣子了(茶)&lt;&#x2F;p&gt;
+&lt;p&gt;很久以前就想要學 Python 了，但是因為沒有明確的目標，所以雖然讀完了 &lt;a href=&quot;http:&#x2F;&#x2F;www.diveintopython3.net&#x2F;&quot;&gt;Dive into Python 3&lt;&#x2F;a&gt; ，學了一些語法，依然未脫離 Python 門外漢的狀態。後來發現 Codecademy 的 &lt;a href=&quot;http:&#x2F;&#x2F;www.codecademy.com&#x2F;en&#x2F;tracks&#x2F;python&quot;&gt;Python&lt;&#x2F;a&gt; 課程，一試之下覺得非常順手，就每天撥出半小時，用兩個月左右的時間把課程做完了。&lt;&#x2F;p&gt;
+&lt;p&gt;Codecademy 課程的優點就是強迫學習者動手敲代碼。Codecademy 的課程都有三個部份：一小段解說，一個小問題，然後要求你敲代碼解決它。第一課就是簡單介紹 datetime 的用法，然後要我打印出今天的年、月、日數值。每個課程段落都切分得很小，很容易進行，可以很快得到學習的反饋。每解掉一道習題，看見代表答案正確的綠色勾勾亮起，再按下「Start Next Lesson」，真的很像遊戲過關，很有學習成就感。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;Codecademy.png&quot; alt=&quot;Codecademy.png&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;我覺的 Codecademy 這種互動式的教學比書本、老師都還要有效，因為編程這項技藝的黑手性質很強，看懂了、聽懂了，往往只是虛幻的錯覺，一定要自己手敲代碼，親眼面對每個編譯錯誤，實現過每個步驟，才能說「我真的學會了」。而且這種習題為主的課程，恰好適合我目前沒有明確目標，想學 Python 但是還不知道 Python 可以拿來寫啥東西的學生。第一次學習 Python 失敗的經驗，就是腦袋裝了一卡車語法跟函數，但是沒地方應用，所以很快的就忘光光了。接下來想要嘗試看看用 Flask Framework 來寫 Web ，或者用 PyQt 來做點桌面小程式。&lt;&#x2F;p&gt;
+&lt;p&gt;順便推薦一篇老文章&lt;a href=&quot;https:&#x2F;&#x2F;www.evernote.com&#x2F;shard&#x2F;s15&#x2F;sh&#x2F;75622311-fa01-4184-8bd1-21a01216b5d9&#x2F;173cc5bf2b21effd4906fdcd048d7646&quot;&gt;「學會開放性思維」&lt;&#x2F;a&gt;，這是啟發我對 Python 關注的起點。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

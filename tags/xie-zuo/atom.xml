@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-tw">
+    <title>調和的靈感 Matt - 寫作</title>
+    <subtitle>紀錄我的思考，讀書筆記，還有程式設計</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://chchwy.github.io/tags/xie-zuo/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://chchwy.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2025-01-03T00:00:00+00:00</updated>
+    <id>https://chchwy.github.io/tags/xie-zuo/atom.xml</id>
+    <entry xml:lang="zh-tw">
+        <title>2023鐵人賽完賽心得: Qt6跨平台開發系列</title>
+        <published>2025-01-03T00:00:00+00:00</published>
+        <updated>2025-01-03T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/ironman-2023-complete/"/>
+        <id>https://chchwy.github.io/posts/ironman-2023-complete/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/ironman-2023-complete/">&lt;p&gt;鐵人賽系列文傳送門：&lt;a href=&quot;https:&#x2F;&#x2F;ithelp.ithome.com.tw&#x2F;users&#x2F;20084263&#x2F;ironman&#x2F;6778&quot;&gt;Qt 6 跨平台應用程式開發&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;人生有些事，做過了才發現沒那麼難：每天早上六點起床跑三千公尺。這是我大學時認為絕對不可能的事，真的到當兵時，卻發現沒有想像中那麼痛苦。&lt;&#x2F;p&gt;
+&lt;p&gt;人生也有另一種事，做完才知道它真的很難。像是今年的鐵人賽：二寶爸每天哄完小孩入睡、洗碗收拾廚房後，還要熬夜寫文章。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;shi-bai-hou-de-di-er-ci-chang-shi&quot;&gt;失敗後的第二次嘗試&lt;&#x2F;h3&gt;
+&lt;p&gt;回想我2020年第一次挑戰鐵人賽，只持續了五天。第五天晚上，午夜的截稿線前幾分鐘，我突然完美主義發作，開始糾結一些字句，導致晚了兩分鐘按下「送出」鍵，被判定挑戰失敗。隔天醒來，所有寫作動力瞬間歸零，直接放棄。&lt;&#x2F;p&gt;
+&lt;p&gt;過了兩年，2023年我捲土重來。這是我一開始寫的參賽宣言：&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Qt 是目前市面上最成熟的桌面跨平台開發函式庫。只要用同一份 C++ 程式碼，就可以寫出同時支援 Windows、Mac 和 Linux 三大作業系統的圖形界面程式。&lt;&#x2F;p&gt;
+&lt;p&gt;我在 2020 年曾經以相似題目挑戰鐵人賽，可惜寫了幾天就中斷了。這次以同樣主題捲土重來，Qt 版本由 Qt 5 升級至 Qt 6，希望能夠以全新的動力完賽！&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h3 id=&quot;xian-qiu-you-zai-qiu-hao&quot;&gt;先求有，再求好&lt;&#x2F;h3&gt;
+&lt;p&gt;這個系列，我沒有積搞，當天的文章當天寫，盡可能善用各種破碎時間：上班會議中的空檔、午休時間，但最主要的寫作，還是在小孩入睡後，那一點點珍貴的「爸媽私人時間」。&lt;&#x2F;p&gt;
+&lt;p&gt;後來我發現一個關鍵小技巧：即使文章沒有修飾到完美，也要先送出。&lt;&#x2F;p&gt;
+&lt;p&gt;像寫程式一樣，先能動，再優化。鐵人賽文章也雷同，先寫一個大概，馬上送出確保「三十天連續寫作」這個關鍵指標沒有中斷，語句通順等等都是小事，晚一點再慢慢修。&lt;&#x2F;p&gt;
+&lt;p&gt;我有好幾篇文章都是這樣：白天先寫個七八成就貼上去。等家人都進入夢鄉，午夜後的寧靜時分，我才開始細細修改當天的稿子。&lt;&#x2F;p&gt;
+&lt;p&gt;這個策略讓我雖然常常越過午夜截止線才「真的」完稿，但從未拖稿超過一天。心理壓力也小了很多。&lt;&#x2F;p&gt;
+&lt;p&gt;「等等，都2025年了才發2023年的完賽心得？」&lt;&#x2F;p&gt;
+&lt;p&gt;「呃...因為我把文章忘在草稿夾裡面了...」&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

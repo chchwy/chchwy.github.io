@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-tw">
+    <title>調和的靈感 Matt - C++</title>
+    <subtitle>紀錄我的思考，讀書筆記，還有程式設計</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://chchwy.github.io/tags/c/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://chchwy.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2021-08-10T00:00:00+00:00</updated>
+    <id>https://chchwy.github.io/tags/c/atom.xml</id>
+    <entry xml:lang="zh-tw">
+        <title>CMake 快速上手：跨平台 C++ 專案建置</title>
+        <published>2021-08-10T00:00:00+00:00</published>
+        <updated>2021-08-10T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/cmake-basics/"/>
+        <id>https://chchwy.github.io/posts/cmake-basics/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/cmake-basics/">&lt;p&gt;這篇文章紀錄我入門學習 CMake 的心得&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;wei-shen-mo-xu-yao-cmake&quot;&gt;為什麼需要 CMake?&lt;&#x2F;h3&gt;
+&lt;p&gt;簡單來說，因為 C++ 的跨平台編譯很麻煩。&lt;&#x2F;p&gt;
+&lt;p&gt;雖然 C++ 程式碼本身是可以跨平台的，但每個平台使用的編譯工具鏈卻大不相同。&lt;&#x2F;p&gt;
+&lt;p&gt;Linux 使用 Makefile，Windows 使用 Visual Studio 專案，而 macOS 則可以使用 Xcode 專案或 Makefile，這些格式彼此不兼容。因此，即使程式碼是通用的，跨平台編譯專案仍然困難重重。。&lt;&#x2F;p&gt;
+&lt;p&gt;針對這個問題，除了同時維護多個個專案之外，還可以考慮像 CMake 這類的工具。&lt;&#x2F;p&gt;
+&lt;p&gt;CMake 的賣點就是幫助我們處理不同平台的編譯工具鏈。我們只需撰寫一份與平台無關的 CMake 腳本，然後讓 CMake 充當中介，負責操作當前平台的編譯工具鏈。這樣，我們在 Windows 上編譯專案時，CMake 會生成 Visual Studio 專案；在 macOS 上編譯時，則會生成 Xcode 專案。&lt;&#x2F;p&gt;
+&lt;p&gt;我個人時常在 Windows 和 macOS 之間切換，偶爾需要在 Linux 上工作。使用 CMake 可以節省我的時間和精力，避免在每個平台都要再學習一次建構系統的成本。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;hello-cmake&quot;&gt;Hello CMake!&lt;&#x2F;h2&gt;
+&lt;p&gt;馬上開始寫第一個 CMake 專案。&lt;&#x2F;p&gt;
+&lt;p&gt;CMake 規定，專案腳本的入口一定是個叫做 &lt;code&gt;CMakeLists.txt&lt;&#x2F;code&gt; 的純文字檔。所以我們在專案目錄下創建兩個檔案：&lt;code&gt;CMakeLists.txt&lt;&#x2F;code&gt; 和 &lt;code&gt;main.cpp&lt;&#x2F;code&gt;。&lt;&#x2F;p&gt;
+&lt;p&gt;這是 &lt;code&gt;CMakeLists.txt&lt;&#x2F;code&gt; 的內容：&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#393939;color:#dedede;&quot;&gt;&lt;code&gt;&lt;span&gt;cmake_minimum_required(VERSION 3.21) # 設定最低版本要求
+&lt;&#x2F;span&gt;&lt;span&gt;project(HelloCMake)                  # 設定專案名稱
+&lt;&#x2F;span&gt;&lt;span&gt;add_executable(MyHomework main.cpp)  # 指定執行檔和原始碼
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;這就是最簡單的 CMake 專案，只需要三行。這三行滿足了專案最基本的需求: 編譯 main.cpp 並產出執行檔 MyHomework.exe。&lt;&#x2F;p&gt;
+&lt;p&gt;CMake 用的是自家的腳本語法，本文不會著墨太多在腳本語法上，一開始只要知道 &lt;code&gt;cmake_minimum_required()&lt;&#x2F;code&gt;、&lt;code&gt;project()&lt;&#x2F;code&gt;、&lt;code&gt;add_executable()&lt;&#x2F;code&gt; 這些是內建函數就行了，參數用空白分隔。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;add_executable()&lt;&#x2F;code&gt; 函數指定了執行檔和原始碼。在這個例子中，&lt;code&gt;MyHomework&lt;&#x2F;code&gt; 是執行檔名稱，&lt;code&gt;main.cpp&lt;&#x2F;code&gt; 是原始碼。可以有多個原始碼，檔名間用空白分隔。&lt;&#x2F;p&gt;
+&lt;p&gt;井字號可以寫註解，讓腳本更容易閱讀。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;main.cpp&lt;&#x2F;code&gt;的內容就不多說了：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;cpp&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-cpp &quot;&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;#include &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;iostream&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffb9d;&quot;&gt;int &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;main&lt;&#x2F;span&gt;&lt;span&gt;() { std::cout &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;lt;&amp;lt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;Hello CMake!&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;lt;&amp;lt;&lt;&#x2F;span&gt;&lt;span&gt; std::endl; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#87d6d5;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;; }
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;bian-yi-zhuan-an&quot;&gt;編譯專案&lt;&#x2F;h2&gt;
+&lt;p&gt;接著，用以下命令指示 CMake 來編譯專案：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;cmake -S . -B build &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 產生當前平台專案檔
+&lt;&#x2F;span&gt;&lt;span&gt;cmake --build build &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 編譯專案
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;我們剛剛提過，CMake 不會自己編譯專案，而是產生當前平台的專案檔，然後再呼叫對應的編譯工具編譯。這兩行命令就是這個過程的兩個步驟。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;-S&lt;&#x2F;code&gt; 和 &lt;code&gt;-B&lt;&#x2F;code&gt; 是 CMake 的兩個參數，&lt;code&gt;-S&lt;&#x2F;code&gt; 參數指定專案的來源目錄，&lt;code&gt;-B&lt;&#x2F;code&gt; 參數指定編譯目錄。這樣 CMake 會在 build 目錄下產生對應的專案檔，然後用 &lt;code&gt;--build&lt;&#x2F;code&gt; 編譯專案。&lt;&#x2F;p&gt;
+&lt;p&gt;這裡我們引入了一個新的概念，就是「來源目錄」和「編譯目錄」的區分。&lt;&#x2F;p&gt;
+&lt;p&gt;來源目錄是指程式源碼的所在(也是 &lt;code&gt;CMakeLists.txt&lt;&#x2F;code&gt; 所在的目錄)。而編譯目錄則是用來放編譯產生的副產品的目錄，包括 CMake 替我們產生的當前平台專案，編譯暫存檔，以及最終編譯完成的執行檔。這些檔案是 CMake 和編譯器產生的，不是原始專案的一部分。&lt;&#x2F;p&gt;
+&lt;p&gt;這樣做的好處是，分開編譯目錄和來源目錄，不會污染原始專案，比較好做版本控制。另外，也方便清理副產品。&lt;&#x2F;p&gt;
+&lt;p&gt;依照 CMake 的慣例，編譯目錄通常是名為 build 的子目錄。在本例中，我們看一眼 build 子目錄，可以看見 CMake 為我產生的 VS2019 專案:
+&lt;img src=&quot;&#x2F;img&#x2F;cmake-vs.png&quot; alt=&quot;CMake VS2019&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;最後 &lt;code&gt;cmake --build build&lt;&#x2F;code&gt; 命令，就會驅動當前平台的工具練，然後實際編譯專案。在本例中，這個命令會呼叫 MSBuild 編譯專案。&lt;&#x2F;p&gt;
+&lt;p&gt;當然，徑直打開 Visual Studio 來建構專案也可以，不一定要假手 CMake。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;zhi-ding-jian-gou-xi-tong&quot;&gt;指定建構系統&lt;&#x2F;h3&gt;
+&lt;p&gt;除了完全交由 CMake 決定之外，也可以用 &lt;code&gt;cmake -G&lt;&#x2F;code&gt; 直接指定建構系統，例如 Visual Studio 2019、Makefiles、Xcode 等等。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;-G&lt;&#x2F;code&gt; 參數後面接的是建構系統的名稱，例如 &lt;code&gt;Visual Studio 17 2022&lt;&#x2F;code&gt; 就是 Visual Studio 2022，&lt;code&gt;Unix Makefiles&lt;&#x2F;code&gt; 就是 Makefiles，&lt;code&gt;Xcode&lt;&#x2F;code&gt; 就是 Xcode。 當然，你的電腦上要有對應的建構系統才行。完整的建構系統支援清單，請參考&lt;a href=&quot;https:&#x2F;&#x2F;cmake.org&#x2F;cmake&#x2F;help&#x2F;latest&#x2F;manual&#x2F;cmake-generators.7.html#manual:cmake-generators(7)&quot;&gt;這個CMake官方文件連結&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 產生不同平台的專案的例子
+&lt;&#x2F;span&gt;&lt;span&gt;cmake -G &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;Visual Studio 16 2019&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt; -S &#x2F;source -B build
+&lt;&#x2F;span&gt;&lt;span&gt;cmake -G &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;Visual Studio 15 2017&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt; -S &#x2F;source -B build
+&lt;&#x2F;span&gt;&lt;span&gt;cmake -G &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;Unix Makefiles&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;   -S &#x2F;source -B build
+&lt;&#x2F;span&gt;&lt;span&gt;cmake -G Xcode              -S &#x2F;source -B build
+&lt;&#x2F;span&gt;&lt;span&gt;cmake -G Ninja              -S &#x2F;source -B build
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h3 id=&quot;zhi-ding-debug-release-bian-yi-zu-tai&quot;&gt;指定 Debug&#x2F;Release 編譯組態&lt;&#x2F;h3&gt;
+&lt;p&gt;開發時我們常常需要 Debug 和 Release 兩種編譯組態。&lt;&#x2F;p&gt;
+&lt;p&gt;可用 &lt;code&gt;--config&lt;&#x2F;code&gt; 指定編譯組態&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;cmake --build . --config Release
+&lt;&#x2F;span&gt;&lt;span&gt;cmake --build . --config Debug
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;注意，這個參數只對 Visual Studio 和 Xcode 這類可以切換 Debug&#x2F;Release 的專案有用，對 Makefiles 無效。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;bi-jiao-wan-zheng-de-c-zhuan-an-fan-li&quot;&gt;比較完整的 C++ 專案範例&lt;&#x2F;h2&gt;
+&lt;p&gt;看完了上面的極簡三行，接著是一個比較完整的 CMake C++ 專案範例。在剛剛的基礎上，加入 C++ 專案常見的標準備配置：標頭檔、多個原碼檔案、指定 C++11&#x2F;14&#x2F;17 版本標準、第三方程式庫的 include 路徑和 linker 路徑等等。有了這些，應該足以應付大多數開發需求。&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;cmake&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-cmake &quot;&gt;&lt;code class=&quot;language-cmake&quot; data-lang=&quot;cmake&quot;&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;cmake_minimum_required&lt;&#x2F;span&gt;&lt;span&gt;(VERSION 3.21)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;project&lt;&#x2F;span&gt;&lt;span&gt;(MyProject)
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 要求 C++17 標準
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;set&lt;&#x2F;span&gt;&lt;span&gt;(CMAKE_CXX_STANDARD 17)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 多個原始碼檔案和標頭檔
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;add_executable&lt;&#x2F;span&gt;&lt;span&gt;(MyApp main.cpp work.cpp header1.h header2.h)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 設定 include 目錄
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;target_include_directories&lt;&#x2F;span&gt;&lt;span&gt;(MyApp PRIVATE &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;C:&#x2F;path&#x2F;to&#x2F;include&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 設定 lib 目錄
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;target_link_libraries&lt;&#x2F;span&gt;&lt;span&gt;(MyApp PRIVATE &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;C:&#x2F;path&#x2F;to&#x2F;lib&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;藉由 &lt;code&gt;target_include_directories()&lt;&#x2F;code&gt; 和 &lt;code&gt;target_link_libraries()&lt;&#x2F;code&gt; 函數，我們可以告訴編譯器，要去哪裡找第三方標頭檔和函式庫，記得要給絕對路徑。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;win32-shi-chuang-cheng-shi&quot;&gt;Win32 視窗程式&lt;&#x2F;h2&gt;
+&lt;p&gt;如果要開發 Win32 視窗程式，可以添加以下 CMake 設定：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;cmake&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-cmake &quot;&gt;&lt;code class=&quot;language-cmake&quot; data-lang=&quot;cmake&quot;&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 關鍵字 WIN32 指明是 win32 視窗程式
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;add_executable&lt;&#x2F;span&gt;&lt;span&gt;(MyWin32App WIN32 main.cpp work.cpp header.h pch.h)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; 設定寬字元
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;target_compile_definitions&lt;&#x2F;span&gt;&lt;span&gt;(MyWin32App PRIVATE UNICOD _UNICODE)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;用 &lt;code&gt;WIN32&lt;&#x2F;code&gt; 關鍵字指明是 win32 視窗程式，這樣程式入口會從 &lt;code&gt;main()&lt;&#x2F;code&gt; 變成 &lt;code&gt;WinMain()&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;定義 &lt;code&gt;UNICODE&lt;&#x2F;code&gt; 和 &lt;code&gt;_UNICODE&lt;&#x2F;code&gt; 告訴 VC++ 怎麼處理寬字元&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;can-kao-lian-jie&quot;&gt;參考連結&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cmake.org&#x2F;cmake&#x2F;help&#x2F;latest&#x2F;guide&#x2F;tutorial&#x2F;&quot;&gt;CMake 官方教學&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.jetbrains.com&#x2F;help&#x2F;clion&#x2F;quick-cmake-tutorial.html&quot;&gt;CLion Quick CMake tutorial&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cliutils.gitlab.io&#x2F;modern-cmake&#x2F;&quot;&gt;An introduction to Modern CMake&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gist.github.com&#x2F;Rod-Persky&#x2F;e6b93e9ee31f9516261b&quot;&gt;Qt5 Projects with CMake&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;minecraftxwinp.github.io&#x2F;2017&#x2F;11&#x2F;27&#x2F;%E7%94%A8CMake%E5%9C%A8%E5%BB%BA%E7%BD%AE%E6%99%82%E8%A4%87%E8%A3%BD%E6%AA%94%E6%A1%88%E5%88%B0%E8%BC%B8%E5%87%BA%E5%9F%B7%E8%A1%8C%E6%AA%94%E7%9A%84%E7%9B%AE%E9%8C%84&#x2F;&quot;&gt;用CMake在建置時複製檔案到輸出執行檔的目錄 &lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>Side Project: Ogre3D v2.1 模型預覽器</title>
+        <published>2019-08-05T00:00:00+00:00</published>
+        <updated>2019-08-05T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/ogre-v2-model-viewer/"/>
+        <id>https://chchwy.github.io/posts/ogre-v2-model-viewer/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/ogre-v2-model-viewer/">&lt;p&gt;我寫了一個 Ogre v2.1 的 3D 模型預覽器。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;ogre-v2-mesh-viewer-screenshot.png&quot; alt=&quot;Ogre V2 Mesh Viewer Screenshot&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;chchwy&#x2F;ogre-v2-mesh-viewer&quot;&gt;這是 Github Repo 連結&lt;&#x2F;a&gt; ，所有的程式碼都是開源的。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;chchwy&#x2F;ogre-v2-mesh-viewer&#x2F;releases&quot;&gt;下載頁面&lt;&#x2F;a&gt;：zip 解壓之後直接執行 &lt;code&gt;ogre-v2-mesh-viewer.exe&lt;&#x2F;code&gt; 就行。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;gong-neng-jian-jie&quot;&gt;功能簡介&lt;&#x2F;h2&gt;
+&lt;p&gt;就是個簡單的 3D 模型預覽器，加上一些簡單的編輯功能：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;讀取 Ogre3D 原生 3D 模型格式 (包括 v1, v2, xml 三種形式)&lt;&#x2F;li&gt;
+&lt;li&gt;匯入 Wavefront obj 模型&lt;&#x2F;li&gt;
+&lt;li&gt;匯入 glTF 2.0 模型&lt;&#x2F;li&gt;
+&lt;li&gt;顯示場景樹狀結構&lt;&#x2F;li&gt;
+&lt;li&gt;基本的 HLMS 材質編輯
+&lt;ul&gt;
+&lt;li&gt;貼圖通道: diffuse, background diffuse, normal, roughness, metalness&lt;&#x2F;li&gt;
+&lt;li&gt;半透明&lt;&#x2F;li&gt;
+&lt;li&gt;網格 (wireframe)&lt;&#x2F;li&gt;
+&lt;li&gt;雙面材質 (Two-sided)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;調整場景節點位置，包括位置、旋轉、縮放等等&lt;&#x2F;li&gt;
+&lt;li&gt;顯示 Bounding box&lt;&#x2F;li&gt;
+&lt;li&gt;obj =&amp;gt; .mesh 批次轉換工具&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;kai-fa-yuan-you&quot;&gt;開發緣由&lt;&#x2F;h2&gt;
+&lt;p&gt;目前網路上大多數的既有資源都是針對 Ogre 第一版引擎。Ogre3D 第二版，包括 2.1 和 2.2 的文章及資源都像對較少，也找不到一個可靠的模型預覽器，所以我就自己寫了一個。&lt;&#x2F;p&gt;
+&lt;p&gt;開發環境是 Visual Studio 2019。UI 界面是我的老朋友 Qt。Ogre3D 後端採用 OpenGL3+ 渲染 (用 DirectX 11 渲染也可以，只是有些貼圖的縮圖會沒辦法正確顯示)。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>Boost 極簡編譯法</title>
+        <published>2017-09-22T00:00:00+00:00</published>
+        <updated>2017-09-22T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/boost-compile-guide/"/>
+        <id>https://chchwy.github.io/posts/boost-compile-guide/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/boost-compile-guide/">&lt;p&gt;最近因為工作的緣故需要編譯 &lt;code&gt;Boost&lt;&#x2F;code&gt;。Boost 這套大名鼎鼎的 C++ Library 中，大多數的模組都是 header-only，意思是模組裡只有標頭檔(&lt;code&gt;*.hpp&lt;&#x2F;code&gt;) 沒有實現檔(&lt;code&gt;*.cpp&lt;&#x2F;code&gt;)，所以不需要編譯，引入(#include)標頭檔就可以直接用了。只有少部份模組需要先編譯，這裡紀錄一下編譯 Boost 的方法。&lt;&#x2F;p&gt;
+&lt;p&gt;環境: Windows 10 編譯器: Visual Studio 2015&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;第一步，雙擊 Boost 根目錄下的 bootstrap.bat，產生 Boost 自帶的編譯工具 b2.exe 和 bjam.exe&lt;&#x2F;li&gt;
+&lt;li&gt;第二步，用 b2 來編譯 boost，指令如下：&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre style=&quot;background-color:#393939;color:#dedede;&quot;&gt;&lt;code&gt;&lt;span&gt;b2 toolset=msvc-14.0 address-model=64 --with-system
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;我並沒有深究 b2 和 bjam 到底有什麼差異，我用 b2&lt;&#x2F;li&gt;
+&lt;li&gt;編譯的參數中，&lt;code&gt;toolset&lt;&#x2F;code&gt; 指編譯器，msvc-14.0 就是 VS2015，msvc-11.0 就是 VS2012，gcc 就是 gcc。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;address-model&lt;&#x2F;code&gt; 指定 32 &#x2F; 64 bit&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;--with-xxx&lt;&#x2F;code&gt; 指定要編譯的模組名稱，例如要編譯 system 就打 &lt;code&gt;--with-system&lt;&#x2F;code&gt;，編譯 chrono 就是 &lt;code&gt;--with-chrono&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;或者用 &lt;code&gt;-a&lt;&#x2F;code&gt; 要求編譯全部模組。編譯全部模組需要不少時間，我編了 15 分鐘發現還沒完成就放棄了。&lt;&#x2F;li&gt;
+&lt;li&gt;產出的 lib 檔默認放在 &lt;strong&gt;stage&#x2F;lib&lt;&#x2F;strong&gt; 目錄下，瞄一眼裡面的檔案，如果看見 &lt;code&gt;libboost_chrono-vc140-mt-1_61.lib&lt;&#x2F;code&gt; 之類的檔案冒出來就是編譯成功了。以該檔名為例，可以得知我們成功編譯了 chrono 模組，適用編譯器 vc140，boost 版本 1.61。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;接著把把 boost 的根目錄加進 Include Path，把 &#x2F;stage&#x2F;lib 加進 Library Search Path，應該就可以順利使用我們自己編譯的 boost 了。不需要一一指名每個用到的 lib 檔，挺方便的。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>編譯 Ogre3D Next 引擎</title>
+        <published>2017-05-07T00:00:00+00:00</published>
+        <updated>2017-05-07T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/how-to-compile-ogre-windows/"/>
+        <id>https://chchwy.github.io/posts/how-to-compile-ogre-windows/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/how-to-compile-ogre-windows/">&lt;p&gt;本文紀錄我編譯 Ogre Next 引擎的方法跟步驟。&lt;&#x2F;p&gt;
+&lt;p&gt;Ogre3D 2.x 分支已經改名叫 Ogre-Next，跟原本的 Ogre3D 1.x 版本引擎做出區隔。這篇文章裡提到的 Ogre 都是指 Ogre-Next。&lt;a href=&quot;https:&#x2F;&#x2F;chchwy.github.io&#x2F;posts&#x2F;how-to-compile-ogre-windows&#x2F;(https:&#x2F;&#x2F;www.ogre3d.org&#x2F;about&#x2F;what-version-to-choose)&quot; title=&quot;Ogre What version to choose&quot;&gt;新舊版引擎的比較&lt;&#x2F;a&gt;。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;qu-de-yuan-shi-ma&quot;&gt;取得原始碼&lt;&#x2F;h2&gt;
+&lt;p&gt;目前 Ogre3D 原始碼放在 Github 上，需要下載兩份 source code:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;Ogre3D 引擎本體 &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;OGRECave&#x2F;ogre-next&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;OGRECave&#x2F;ogre-next&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;第三方依賴函式庫 &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;OGRECave&#x2F;ogre-next-deps&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;OGRECave&#x2F;ogre-next-deps&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;把兩個 repo 放在同一層目錄下，比如像這樣：&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#393939;color:#dedede;&quot;&gt;&lt;code&gt;&lt;span&gt;C:&#x2F;OgreSDK&#x2F;ogre
+&lt;&#x2F;span&gt;&lt;span&gt;C:&#x2F;OgreSDK&#x2F;ogredeps
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;an-zhuang-cmake-jian-gou-xi-tong&quot;&gt;安裝 CMake 建構系統&lt;&#x2F;h2&gt;
+&lt;p&gt;Ogre 用的建構系統是 &lt;a href=&quot;https:&#x2F;&#x2F;cmake.org&#x2F;&quot; title=&quot;CMake official site&quot;&gt;CMake&lt;&#x2F;a&gt;，這是我第一次用 CMake，花了一些時間才搞懂用法。&lt;&#x2F;p&gt;
+&lt;p&gt;CMake 本身並不直接編譯程式。它的主要用法讓開發者寫 CMake 腳本(通常叫CMakeLists.txt)，然後依據腳本生成適合各平台的專案檔案。例如在 Windows 上會生成 Visual Studio 專案，在 Mac 上則會生成 Xcode 專案。&lt;&#x2F;p&gt;
+&lt;p&gt;寫這篇文章的時候我安裝的是 CMake 3.17。到 &lt;a href=&quot;https:&#x2F;&#x2F;cmake.org&#x2F;&quot; title=&quot;CMake official site&quot;&gt;CMake&lt;&#x2F;a&gt; 官方網站下載安裝就好了。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;bian-yi-yi-lai-han-shi-ku&quot;&gt;編譯依賴函式庫&lt;&#x2F;h2&gt;
+&lt;p&gt;首先，我們需要先編譯 &lt;code&gt;ogre-next-deps&lt;&#x2F;code&gt;，這裡面都是 Ogre3D 用到的第三方函式庫。&lt;&#x2F;p&gt;
+&lt;p&gt;打開 &lt;strong&gt;CMake-GUI&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;cmake-ogredeps.png&quot; alt=&quot;ogredeps&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Where is the source code&lt;&#x2F;strong&gt; 這一欄填寫 Repo 的目錄位置&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Where to build the binaries&lt;&#x2F;strong&gt; 這一欄通常按照慣例，會在原始碼目錄下加一層 build&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;接著以下步驟&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;按 &lt;strong&gt;Configure&lt;&#x2F;strong&gt;，選擇編譯器版本 &lt;code&gt;Visual Studio 16 2019 Win64&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;再按 &lt;strong&gt;Generate&lt;&#x2F;strong&gt; ，產生 VS 專案檔&lt;&#x2F;li&gt;
+&lt;li&gt;按 &lt;strong&gt;Open Project&lt;&#x2F;strong&gt; 打開 Visual Studio solution&lt;&#x2F;li&gt;
+&lt;li&gt;開啟 Visual Studio 之後，編譯 &lt;code&gt;ALL_BUILD&lt;&#x2F;code&gt; 專案，Debug&#x2F;Release 都要&lt;&#x2F;li&gt;
+&lt;li&gt;接著單獨編譯 &lt;code&gt;INSTALL&lt;&#x2F;code&gt; 專案，在 INSTALL 上按右鍵 Build，同樣 Debug&#x2F;Release 都要&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;這樣子第三方函式庫就算編譯完成了&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;bian-yi-yin-qing-ben-ti&quot;&gt;編譯引擎本體&lt;&#x2F;h2&gt;
+&lt;p&gt;接著編譯 Ogre 引擎本體。跟前一步一樣，打開 CMake GUI&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Where is the source code&lt;&#x2F;strong&gt; 填 ogre 引擎的原始碼目錄&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Where to build the binaries&lt;&#x2F;strong&gt; 往下加一層子目錄 build&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;cmake-ogre3d.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;按下 Configure 按鈕之後呢，應該會跳出一些錯誤，別擔心，這是因為 CMake 無法定位前一步編譯的依賴庫的位置，藉由設定 &lt;strong&gt;OGRE_DEPENDENCIES_DIR&lt;&#x2F;strong&gt;  這個欄位告訴 CMake 依賴庫的位置：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;OGRE_DEPENDENCIES_DIR&lt;&#x2F;strong&gt; 欄位填入 &lt;code&gt;C:&#x2F;OgreSDK&#x2F;ogredeps&#x2F;build&#x2F;ogredeps&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;渲染引擎可選用 DirectX 或者 OpenGL3+，兩者都勾也行&lt;&#x2F;li&gt;
+&lt;li&gt;OGRE_BUILD_SAMPLES2 是 Ogre 2.1 版的官方範例集，勾起來&lt;&#x2F;li&gt;
+&lt;li&gt;勾選 SSE2 硬體指令集，加速數學運算&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;OGRE_UNITY_BUILD&lt;&#x2F;code&gt; 可以大大縮短編譯的時間，建議勾選&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;cmake-ogre3d-config.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;再 Congifure 一次，應該就沒有錯誤訊息了&lt;&#x2F;li&gt;
+&lt;li&gt;按下 Generate 產生 Ogre.sln&lt;&#x2F;li&gt;
+&lt;li&gt;Open Project 打開 Visual Studio&lt;&#x2F;li&gt;
+&lt;li&gt;編譯 &lt;code&gt;ALL_BUILD&lt;&#x2F;code&gt; 專案，Debug&#x2F;Release 都要&lt;&#x2F;li&gt;
+&lt;li&gt;編譯 &lt;code&gt;INSTALL&lt;&#x2F;code&gt; 專案，同樣 Debug&#x2F;Release 都要&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;到此為止全部完成，挑選任一 Sample 執行即可&lt;&#x2F;p&gt;
+&lt;p&gt;下圖是我成功執行 Ogre-Next 官方範例 Forwrad3D 的畫面：&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;ogre3d-forward.jpg&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;附註：&lt;&#x2F;p&gt;
+&lt;p&gt;我寫這篇文章時的開發環境&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;作業系統 Windows 10 Home&lt;&#x2F;li&gt;
+&lt;li&gt;編譯器 Visual Studio 2019 Community&lt;&#x2F;li&gt;
+&lt;li&gt;版本控制系統 git&lt;&#x2F;li&gt;
+&lt;li&gt;建構系統 CMake 3.17&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>UVa 解題自動輸入測資</title>
+        <published>2016-03-08T00:00:00+00:00</published>
+        <updated>2016-03-08T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/acm-io-redirection/"/>
+        <id>https://chchwy.github.io/posts/acm-io-redirection/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/acm-io-redirection/">&lt;p&gt;解 ACM 題目的時候，測試資料都是走標準輸入流 &lt;code&gt;cin&#x2F;scanf()&#x2F;gets()&lt;&#x2F;code&gt;。當測試資料量很大的時候，手動鍵入測試資料很慢又浪費時間。我後來發現了一個技巧叫做 I&#x2F;O 轉向 (I&#x2F;O redirection) ，可以重新定義標準輸入流，省去手動鍵入測資的步驟。&lt;&#x2F;p&gt;
+&lt;p&gt;先上例子：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;cpp&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-cpp &quot;&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span style=&quot;color:#fffb9d;&quot;&gt;int &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;main&lt;&#x2F;span&gt;&lt;span&gt;() {
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;#ifndef&lt;&#x2F;span&gt;&lt;span style=&quot;color:#e8bc92;&quot;&gt; ONLINE_JUDGE
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;freopen&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;input.txt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, stdin);
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;freopen&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;output.txt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;w&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, stdout);
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;#endif
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;&#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; do whatever you need to do
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;&#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; cin&#x2F;cout&#x2F;scanf&#x2F;printf as usual
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#87d6d5;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;關鍵是 &lt;code&gt;freopen()&lt;&#x2F;code&gt; 函數&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;cpp&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-cpp &quot;&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span&gt;freopen(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;input.txt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, stdin);
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;這一行的作用就是把 input.txt 當作 stdin 的來源。一旦呼叫過 &lt;code&gt;freopen()&lt;&#x2F;code&gt;，接下來所有的標準輸入函數 &lt;code&gt;cin&#x2F;scanf()&#x2F;getline()&lt;&#x2F;code&gt; 就變成從 input.txt 讀取資料。&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;cpp&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-cpp &quot;&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span&gt;freopen(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;output.txt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;w&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, stdout);
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;同樣的也可以把標準輸出導向檔案寫出，這樣所有的 &lt;code&gt;cout&#x2F;printf()&#x2F;puts()&lt;&#x2F;code&gt; 都會寫入 output.txt 這個檔案。&lt;&#x2F;p&gt;
+&lt;p&gt;因為 UVa online judge 在編譯的時候會下 &lt;code&gt;-DONLINE_JUDGE&lt;&#x2F;code&gt; 的編譯參數。所以我們把freopen() 用 &lt;code&gt;#ifndef&lt;&#x2F;code&gt; (if Not defined) 夾起來，這樣只有在本機測試的時候才做 I&#x2F;O 轉向，上傳程式碼的時候走回正常的標準輸入。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>客製化 Visual C++ clean project 的行為</title>
+        <published>2015-06-20T00:00:00+00:00</published>
+        <updated>2015-06-20T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/customize-vs2013-clean-project/"/>
+        <id>https://chchwy.github.io/posts/customize-vs2013-clean-project/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/customize-vs2013-clean-project/">&lt;p&gt;昨天花了一點時間研究一下，Visual C++ 該怎麼客製 Clean 的行為。&lt;&#x2F;p&gt;
+&lt;p&gt;簡單講，我想要在按下 Clean Project 的時候，請 Visual Studio 「順便」幫我刪掉幾個目錄。說是順便但是其實不太容易，因為像 Build Project 這個動作，在專案設定頁有 Pre-build Event 和 Post-build Event 可以掛上額外的工作，但是 Clean 在專案設定裡就沒有相關的掛勾。至少 Visual Studio 並沒有 UI 可以直接操作。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;yan-jiu-vcxproj&quot;&gt;研究 .vcxproj&lt;&#x2F;h2&gt;
+&lt;p&gt;我簡單研究了一下 vcxproj 的文件格式，我發現整個 C++ 專案的編譯流程，都是由 &lt;code&gt;Microsoft.Cpp.targets&lt;&#x2F;code&gt; 這個設定檔定義的。每個 .vcxproj 透過 &lt;code&gt;&amp;lt;Import&amp;gt;&lt;&#x2F;code&gt; 將 &lt;code&gt;Microsoft.Cpp.targets&lt;&#x2F;code&gt; 這個檔案引入，確立整個 C++ 專案的建構流程。&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;xml&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-xml &quot;&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Import &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;Project&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;$(VCTargetsPath)\Microsoft.Cpp.targets&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;&#x2F;&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;所以我打開 Microsoft.Cpp.target 文件，發現裡面又透過另一個檔案 &lt;code&gt;Microsoft.CppClean.targets&lt;&#x2F;code&gt; 來定義 Clean 的行為：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;xml&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-xml &quot;&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Import &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;Project&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;$(VCTargetsPath)\Microsoft.CppClean.targets&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;&#x2F;&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;感覺我離目標越來越近了，再打開 Microsoft.CppClean.targets 文件，我馬上看見了兩個空的 Target tag:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;xml&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-xml &quot;&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;&amp;lt;!--&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; BeforeCppClean: Redefine this target in your project in order to run tasks just before Clean. &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;--&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Target &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;Name&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;BeforeCppClean&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Target&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;&amp;lt;!--&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; AfterCppClean: Redefine this target in your project in order to run tasks just after Clean. &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;--&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Target &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;Name&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;AfterCppClean&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Target&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;OK，所以其實 Visual C++ 在 Clean 的流程中已經保留了 BeforeCppClean 和 AfterCppClean 兩個事件，分別會在 Clean 之前和之後觸發，我只要複寫這兩個事件就行了。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;fu-xie-beforecppclean&quot;&gt;複寫 BeforeCppClean&lt;&#x2F;h2&gt;
+&lt;p&gt;現在我需要把「刪除目錄」這件事掛上 BeforeCppClean 這個 Target。作法是寫一個自己的 .target 文件，然後再透過 &lt;code&gt;&amp;lt;Import&amp;gt;&lt;&#x2F;code&gt; 標籤引入 vcxproj。實際上要做的工作就寫在 Target 標籤裡。&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;xml&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-xml &quot;&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span&gt;&#x2F;&#x2F; 我自己定義的 MyCppClean.target
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Project &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;ToolsVersion&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;12.0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;xmlns&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;http:&#x2F;&#x2F;schemas.microsoft.com&#x2F;developer&#x2F;msbuild&#x2F;2003&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Target &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;Name&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;BeforeCppClean&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;            &#x2F;&#x2F; 複寫 BeforeCppClean
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Message &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;Text&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;Delete XXXX Folder!&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;&#x2F;&amp;gt;  &#x2F;&#x2F; 印出訊息
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;RemoveDir &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;Directories&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;XXXX&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;&#x2F;&amp;gt;        &#x2F;&#x2F; 刪除 XXXX 這個目錄
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Target&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Project&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;最後我們把自定義的 target 引入專案，在 .vcxproj 中加入一行：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;xml&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-xml &quot;&gt;&lt;code class=&quot;language-xml&quot; data-lang=&quot;xml&quot;&gt;&lt;span&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Project&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  ...
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Import &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;Project&lt;&#x2F;span&gt;&lt;span&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;MyCppClean.target&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;&#x2F;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;lt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d7af;&quot;&gt;Project&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;這樣子 Clean 專案時，就會刪除我指定的目錄了，可喜可賀。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;can-kao-lian-jie&quot;&gt;參考連結&lt;&#x2F;h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;msdn.microsoft.com&#x2F;zh-tw&#x2F;library&#x2F;dd393574.aspx&quot;&gt;MSBuild 基本觀念&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;msdn.microsoft.com&#x2F;zh-tw&#x2F;library&#x2F;ms171466.aspx&quot;&gt;MSBuild工作&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;msdn.microsoft.com&#x2F;zh-tw&#x2F;library&#x2F;xyfz6ddb.aspx&quot;&gt;RemoveDir標籤&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;msdn.microsoft.com&#x2F;en-us&#x2F;library&#x2F;6yy0yx8d.aspx&quot;&gt;Message標籤&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;msdn.microsoft.com&#x2F;en-us&#x2F;library&#x2F;5dy88c2e.aspx&quot;&gt;MSBuild Project File Schema&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>ACM 程式解題競賽： 一些有用的網站</title>
+        <published>2014-07-01T00:00:00+00:00</published>
+        <updated>2014-07-01T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/acm-useful-websites/"/>
+        <id>https://chchwy.github.io/posts/acm-useful-websites/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/acm-useful-websites/">&lt;p&gt;收錄一些解題過程中幫助我很多的網站，以 UVa Online Judge 為主。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;code-1839406_1280.jpg&quot; alt=&quot;Code&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;首先必推薦的站點是&lt;a href=&quot;http:&#x2F;&#x2F;acm.uva.es&#x2F;board&#x2F;&quot; title=&quot;UVa Official forum&quot;&gt;UVa官方論壇&lt;&#x2F;a&gt;，全世界 UVa 解題者的集散地。我解不出題目時，第一反應就是來這裡搜尋該題號，只要找到該題專屬的討論串，通常能找到很多好心人的測試數據和關鍵提示。&lt;&#x2F;p&gt;
+&lt;p&gt;再來是 &lt;a href=&quot;http:&#x2F;&#x2F;www.comp.nus.edu.sg&#x2F;~stevenha&#x2F;programming&#x2F;acmoj.html&quot; title=&quot;Methods to solve&quot;&gt;Methods to Solve&lt;&#x2F;a&gt;，大概是全世界最大的 UVa 解題提示網站了，收錄的題目數量很多，提示品質也不錯。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;http:&#x2F;&#x2F;uhunt.felix-halim.net&#x2F;&quot; title=&quot;uHunt&quot;&gt;uHunt&lt;&#x2F;a&gt; 是追蹤個人解題狀態的工具網頁，打上 UVa id 就可以看見自己的解題紀錄和統計數據，還有推薦的解題方向，題號快速搜尋題目等等，非常好用。&lt;&#x2F;p&gt;
+&lt;p&gt;再提供一個比對數據的工具網頁 &lt;a href=&quot;http:&#x2F;&#x2F;uvatoolkit.com&#x2F;problemssolve.php&quot;&gt;UVa Toolkit&lt;&#x2F;a&gt;，簡單講--餵它吃輸入數據，吐出對應輸出。通常可以有效釐清題意，彌補題目頁上的過份簡陋的示範數據。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;ti-mu-zhong-yi&quot;&gt;題目中譯&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;zerojudge.tw%E2%80%8E&#x2F;&quot;&gt;ZeroJudge.tw&lt;&#x2F;a&gt;: 優秀的國產程式解題網站，有一區專門收錄 UVa 中譯題目。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;luckycat.kshs.kh.edu.tw&#x2F;&quot;&gt;Lucky貓&lt;&#x2F;a&gt;: 著名的ACM題目中譯網站。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;suan-fa-jiao-xue&quot;&gt;算法教學&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.csie.ntnu.edu.tw&#x2F;~u91029&#x2F;&quot;&gt;DJWS的網路日誌&lt;&#x2F;a&gt;: 資源豐富的網站，整理了很多的算法教學，以及各種ACM競賽的資料。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.acmsolver.org&#x2F;?tag=art-of-programming-contest&#x2F;&quot;&gt;Art of Programming Contest for uva&lt;&#x2F;a&gt;: 淺顯的ACM入門書，英文，免費。作者是上面 Methods to Solve 網站站長。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;program-lover.blogspot.tw&#x2F;2008&#x2F;04&#x2F;acm-online-judge.html&quot;&gt;Infinite Loop&lt;&#x2F;a&gt;: 提供一些 ACM 教學及題目解答。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;api-reference&quot;&gt;API Reference&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.cplusplus.com&#x2F;reference&#x2F;&quot;&gt;Cplusplus.com&lt;&#x2F;a&gt;
+最好的 C&#x2F;C++ 標準函式庫參考手冊，範例碼簡潔清楚，值得常來，我自己是當後花園逛了。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;ti-mu-lie-biao&quot;&gt;題目列表&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.angelfire.com&#x2F;on4&#x2F;surbaniak&#x2F;acm_grading_score.htm&quot;&gt;ACM熱題排行榜&lt;&#x2F;a&gt;: 芭樂題排行榜，看看哪些熱門題你還沒解過吧 XD&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tao-lun-lun-tan&quot;&gt;討論論壇&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www3.tcgs.tc.edu.tw&#x2F;npsc&#x2F;index.php&quot;&gt;NPSC補完計畫&lt;&#x2F;a&gt;: 針對NPSC的解題網站&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.mail-archive.com&#x2F;algogeeks@googlegroups.com&#x2F;&quot;&gt;algogeeks &lt;&#x2F;a&gt;: Google group about algorithms.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;jie-ti-qiang-zhe&quot;&gt;解題強者&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;using-c.blogspot.com&#x2F;&quot;&gt;C語言考古題 &amp;amp; C的解題&lt;&#x2F;a&gt;: 大量題目解答。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.cppblog.com&#x2F;rakerichard&#x2F;&quot;&gt;心如止水&lt;&#x2F;a&gt;: 350+解答，有基本的題目分類。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;knightzone.org&#x2F;?cat=24&quot;&gt;翼世界夢想領域&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;yalin.tw&#x2F;acm.php&quot;&gt;Ya-Lin Huang&#x27;s ACM Problemset&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;morris821028.github.io&#x2F;categories&#x2F;%E8%A7%A3%E9%A1%8C%E5%8D%80&#x2F;%E8%A7%A3%E9%A1%8C%E5%8D%80-UVa&#x2F;&quot;&gt;Morris&#x27; Blog&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;new-acos.blogspot.com&#x2F;search&#x2F;label&#x2F;ACM&quot;&gt;Nothing is Everything&lt;&#x2F;a&gt;: 少量UVa解答，品質不錯。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;redbug0314.blogspot.tw&#x2F;search&#x2F;label&#x2F;ACM&quot;&gt;朱色虫居&lt;&#x2F;a&gt;: 少量UVa解答，品質不錯。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>十進位轉二進位</title>
+        <published>2007-11-24T00:00:00+00:00</published>
+        <updated>2007-11-24T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/decimal-to-binary/"/>
+        <id>https://chchwy.github.io/posts/decimal-to-binary/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/decimal-to-binary/">&lt;p&gt;目前為止寫過最簡短的版本&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;cpp&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-cpp &quot;&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;#include &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;iostream&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;#include &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;climits&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;using namespace&lt;&#x2F;span&gt;&lt;span&gt; std;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffb9d;&quot;&gt;int &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;main&lt;&#x2F;span&gt;&lt;span&gt;()
+&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffb9d;&quot;&gt;int&lt;&#x2F;span&gt;&lt;span&gt; x &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#87d6d5;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffb9d;&quot;&gt;unsigned int&lt;&#x2F;span&gt;&lt;span&gt; y &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt; INT_MIN;
+&lt;&#x2F;span&gt;&lt;span&gt;    cout &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;lt;&amp;lt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;please enter a Integer:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;    cin &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; x;
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;while &lt;&#x2F;span&gt;&lt;span&gt;(y &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#87d6d5;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;    {
+&lt;&#x2F;span&gt;&lt;span&gt;        (x &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;amp;&lt;&#x2F;span&gt;&lt;span&gt; y) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;? &lt;&#x2F;span&gt;&lt;span&gt;(cout &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;lt;&amp;lt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span&gt;(cout &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;lt;&amp;lt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;);
+&lt;&#x2F;span&gt;&lt;span&gt;        y &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt; y &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ececec;&quot;&gt;&amp;lt;&amp;lt; &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#87d6d5;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;    }
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;概念： INT_MIN 的二進位長這樣 10000000000000000000000000000000
+跟 x 做 bit AND，除了最左邊 bit，其他 bit 都會變 0。&lt;&#x2F;p&gt;
+&lt;p&gt;只有最左邊 bit 維持原樣，這時就可以單獨判斷該 bit 要印出 0 或 1。
+接下來將 INT_MIN 往右 shift 一個 bit。就可以判斷 x 第二個 bit 了，依此類推。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

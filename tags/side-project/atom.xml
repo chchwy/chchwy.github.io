@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-tw">
+    <title>調和的靈感 Matt - Side Project</title>
+    <subtitle>紀錄我的思考，讀書筆記，還有程式設計</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://chchwy.github.io/tags/side-project/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://chchwy.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2019-08-05T00:00:00+00:00</updated>
+    <id>https://chchwy.github.io/tags/side-project/atom.xml</id>
+    <entry xml:lang="zh-tw">
+        <title>Side Project: Ogre3D v2.1 模型預覽器</title>
+        <published>2019-08-05T00:00:00+00:00</published>
+        <updated>2019-08-05T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/ogre-v2-model-viewer/"/>
+        <id>https://chchwy.github.io/posts/ogre-v2-model-viewer/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/ogre-v2-model-viewer/">&lt;p&gt;我寫了一個 Ogre v2.1 的 3D 模型預覽器。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;ogre-v2-mesh-viewer-screenshot.png&quot; alt=&quot;Ogre V2 Mesh Viewer Screenshot&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;chchwy&#x2F;ogre-v2-mesh-viewer&quot;&gt;這是 Github Repo 連結&lt;&#x2F;a&gt; ，所有的程式碼都是開源的。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;chchwy&#x2F;ogre-v2-mesh-viewer&#x2F;releases&quot;&gt;下載頁面&lt;&#x2F;a&gt;：zip 解壓之後直接執行 &lt;code&gt;ogre-v2-mesh-viewer.exe&lt;&#x2F;code&gt; 就行。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;gong-neng-jian-jie&quot;&gt;功能簡介&lt;&#x2F;h2&gt;
+&lt;p&gt;就是個簡單的 3D 模型預覽器，加上一些簡單的編輯功能：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;讀取 Ogre3D 原生 3D 模型格式 (包括 v1, v2, xml 三種形式)&lt;&#x2F;li&gt;
+&lt;li&gt;匯入 Wavefront obj 模型&lt;&#x2F;li&gt;
+&lt;li&gt;匯入 glTF 2.0 模型&lt;&#x2F;li&gt;
+&lt;li&gt;顯示場景樹狀結構&lt;&#x2F;li&gt;
+&lt;li&gt;基本的 HLMS 材質編輯
+&lt;ul&gt;
+&lt;li&gt;貼圖通道: diffuse, background diffuse, normal, roughness, metalness&lt;&#x2F;li&gt;
+&lt;li&gt;半透明&lt;&#x2F;li&gt;
+&lt;li&gt;網格 (wireframe)&lt;&#x2F;li&gt;
+&lt;li&gt;雙面材質 (Two-sided)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;調整場景節點位置，包括位置、旋轉、縮放等等&lt;&#x2F;li&gt;
+&lt;li&gt;顯示 Bounding box&lt;&#x2F;li&gt;
+&lt;li&gt;obj =&amp;gt; .mesh 批次轉換工具&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;kai-fa-yuan-you&quot;&gt;開發緣由&lt;&#x2F;h2&gt;
+&lt;p&gt;目前網路上大多數的既有資源都是針對 Ogre 第一版引擎。Ogre3D 第二版，包括 2.1 和 2.2 的文章及資源都像對較少，也找不到一個可靠的模型預覽器，所以我就自己寫了一個。&lt;&#x2F;p&gt;
+&lt;p&gt;開發環境是 Visual Studio 2019。UI 界面是我的老朋友 Qt。Ogre3D 後端採用 OpenGL3+ 渲染 (用 DirectX 11 渲染也可以，只是有些貼圖的縮圖會沒辦法正確顯示)。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

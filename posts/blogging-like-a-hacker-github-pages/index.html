@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>博客當如駭客 - Github Pages &amp; Jekyll - 調和的靈感 Matt</title>
+    <meta name="description" content="紀錄我的思考，讀書筆記，還有程式設計">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="博客當如駭客 - Github Pages &amp; Jekyll">
+    <meta property="og:description" content="紀錄我的思考，讀書筆記，還有程式設計">
+    <meta property="og:url" content="https:&#x2F;&#x2F;chchwy.github.io&#x2F;posts&#x2F;blogging-like-a-hacker-github-pages&#x2F;">
+    <meta property="og:site_name" content="調和的靈感 Matt">
+    <meta property="og:type" content="article">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="博客當如駭客 - Github Pages &amp; Jekyll">
+    <meta name="twitter:description" content="紀錄我的思考，讀書筆記，還有程式設計">
+    
+    <!-- Font preload -->
+    <link rel="preload" href="https://chchwy.github.io/fonts/Inter-roman.latin.var.woff2" as="font" type="font/woff2" crossorigin="">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="https://chchwy.github.io/main.css">
+</head>
+<body>
+    <main>
+        <!-- Navigation -->
+        <aside>
+            <div>
+                <nav id="nav">
+                    <div>
+                        <a href="/">Matt</a>
+                        <a href="https://chchwy.github.io">首頁</a>
+                        <a href="https://chchwy.github.io/posts">文章列表</a>
+                        <a href="https://chchwy.github.io/projects">專案</a>
+                    </div>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Content -->
+        
+    <article>
+        <header>
+            <h1>博客當如駭客 - Github Pages &amp; Jekyll</h1>
+            <div class="post-meta">
+                
+                    <time datetime="2012-12-16">2012年12月16日</time>
+                
+                
+            </div>
+        </header>
+        
+        <div class="content">
+            <h2 id="wei-shen-mo-yong-github-pages">為什麼用 Github Pages?</h2>
+<p>遇見 Github Page 之前我定居在 <a href="http://chchwy.blogspot.tw/" title="Blogger 調和的靈感">Blogger</a> ，斷斷續續不是很認真的寫了四年左右的博客，除了一些小缺點，像貼程式碼時老是跟我抱怨<code>&lt;iostream&gt;</code>不是合法的 HTML 標籤外，還算滿意 Blogger 的服務。畢竟要找到比 Blogger 更好的平台也不容易。</p>
+<p>但是身為一個程式設計師，總想要對自己的 Blog 有更多、更多的控制權。我曾經試著自己架設伺服器，不過養機器實在太過麻煩，離開學校之後博客該何去何從也沒個底，就不了了之。</p>
+<p>所以當我看見 <a href="http://pages.github.com/" title="Github Pages">Github Pages</a> 時眼睛一亮，馬上就發覺這就是我想要的博客系統:</p>
+<p><img src="/img/kumamoto-542410_1280.jpg" alt="Dawn" /></p>
+<p>首先，Github Pages 給予我完全控制頁面的權力，省卻了管理主機的麻煩。
+Github本身作為全球性的代碼託管服務商，不需要擔心服務品質。</p>
+<p>不同於其他的博客系統，後端總要有一套 PHP+MySQL 之類的運行環境即時運算頁面，
+Github Pages 後端採用了一個叫作 <a href="http://jekyllrb.com/" title="Jekyll">Jekyll</a> 的靜態網站產生器。
+Jekyll 一開始就將整個網站編譯成靜態HTML頁面，所以不用資料庫，也不用後端語言，對於網路空間的要求極低。博客這類好幾天才會更新一篇的網站，靜態編譯再適合不過了。</p>
+<p>但是靜態網站的缺點就是訪客沒辦法回應文章，必須倚賴第三方服務，好在<a href="http://disqus.com" title="Disqus">Disqus</a> 和 <a href="http://developers.facebook.com/docs/reference/plugins/comments/" title="Facebook comments">Facebook</a> 都提供這類網站評論的服務，申請一個很容易，我現在就是用Disqus。</p>
+<h2 id="markdown">Markdown</h2>
+<p>另一個我喜歡的特性就是可以用 Markdown 語法寫文章，不知道什麼是 Markdown 的朋友可以<a href="http://markdown.tw" title="Markdown Syntax">看看語法說明</a> 。用 Markdown 來寫文章太省力了，可讀性也很好，我不再需要為了文章的樣式跟 HTML 標籤瞎攪和，回歸單純寫作的樂趣，而且可以用我最鍾愛的文字編輯器 <a href="http://www.sublimetext.com/" title="Sublime Text">Sublime Text 2</a> 。</p>
+<p>想當然爾，Github Pages 一定是用 git 版本控制系統來管理博客，整個博客就是一個版本庫，因此我不用上網，可以先在本地端寫文章，寫好再推送上 Github 就好了。用了 git ，基本上不必擔心內容遺失，文章都有完整的歷史紀錄，多台電腦同步也很方便。</p>
+<p>還有一點，Jekyll 的標語是 Blogging Like a Hacker，聽起來很帥。XD</p>
+<h2 id="ru-he-kai-shi">如何開始</h2>
+<p>我在網路上搜尋了很多Jekyll/Github Pages教學，大部分不是寫的雜亂無章，就是有所缺漏， 最後總算找到一篇條理清晰的教學
+「<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html">搭建一个免费的，无限流量的Blog----github Pages和Jekyll入门</a>」，只能說阮一峰，不意外。
+裡面有個小錯誤需要更正，就是單純的個人博客不需要特別建立 gh-pages 分支， 直接放在主分支 master裡就可以了。</p>
+<p>只要有基本的 HTML/CSS 知識，和折騰的精神，可以來試試看Jekyll :D</p>
+
+        </div>
+
+        
+            <div class="post-tags">
+                
+                    <a href="https://chchwy.github.io/tags/bu-luo-ge/" class="tag">部落格</a>
+                
+            </div>
+        
+    </article>
+
+
+        <!-- Footer -->
+        <footer>
+            <ul>
+                
+                <li>
+                    <a rel="noopener noreferrer" target="_blank" href="https://chchwy.github.io/rss.xml">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-rss" viewBox="0 0 16 16">
+                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                        <path d="M5.5 12a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m-3-8.5a1 1 0 0 1 1-1c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1-1-1m0 4a1 1 0 0 1 1-1 6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1-1-1"/>
+                        </svg>
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a rel="noopener noreferrer" target="_blank" href="https://github.com/chchwy">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                        </svg>
+                    </a>
+                </li>
+                
+                <li>
+                    <a rel="noopener noreferrer" target="_blank" href="https://www.threads.com/@chchwy">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-threads" viewBox="0 0 16 16">
+                        <path d="M6.321 6.016c-.27-.18-1.166-.802-1.166-.802.756-1.081 1.753-1.502 3.132-1.502.975 0 1.803.327 2.394.948s.928 1.509 1.005 2.644q.492.207.905.484c1.109.745 1.719 1.86 1.719 3.137 0 2.716-2.226 5.075-6.256 5.075C4.594 16 1 13.987 1 7.994 1 2.034 4.482 0 8.044 0 9.69 0 13.55.243 15 5.036l-1.36.353C12.516 1.974 10.163 1.43 8.006 1.43c-3.565 0-5.582 2.171-5.582 6.79 0 4.143 2.254 6.343 5.63 6.343 2.777 0 4.847-1.443 4.847-3.556 0-1.438-1.208-2.127-1.27-2.127-.236 1.234-.868 3.31-3.644 3.31-1.618 0-3.013-1.118-3.013-2.582 0-2.09 1.984-2.847 3.55-2.847.586 0 1.294.04 1.663.114 0-.637-.54-1.728-1.9-1.728-1.25 0-1.566.405-1.967.868ZM8.716 8.19c-2.04 0-2.304.87-2.304 1.416 0 .878 1.043 1.168 1.6 1.168 1.02 0 2.067-.282 2.232-2.423a6.2 6.2 0 0 0-1.528-.161"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>            
+            <p>© 2025 Matt Chang</p>
+        </footer>
+    </main>
+</body>
+</html>

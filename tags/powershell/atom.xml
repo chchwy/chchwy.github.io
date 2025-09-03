@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-tw">
+    <title>調和的靈感 Matt - PowerShell</title>
+    <subtitle>紀錄我的思考，讀書筆記，還有程式設計</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://chchwy.github.io/tags/powershell/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://chchwy.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2021-05-17T00:00:00+00:00</updated>
+    <id>https://chchwy.github.io/tags/powershell/atom.xml</id>
+    <entry xml:lang="zh-tw">
+        <title>寫 Powershell 解決 TortoiseGit 圖示消失問題</title>
+        <published>2021-05-17T00:00:00+00:00</published>
+        <updated>2021-05-17T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/tortoise-dropbox-overlay/"/>
+        <id>https://chchwy.github.io/posts/tortoise-dropbox-overlay/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/tortoise-dropbox-overlay/">&lt;p&gt;幾天前，小烏龜 TortoiseGit 圖示消失的問題又發生了，我在檔案總管上看不見 git 狀態，很不方便。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;icon-overlay.png&quot; alt=&quot;icon-overlay&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;上圖是正常狀態，有綠色小勾勾顯示 git 狀態。&lt;&#x2F;p&gt;
+&lt;p&gt;發生的原因，就是顯示綠色勾勾的那個機制: Windows Icon Overlay 有數量限制 16 個。這 16 個位置是所有應用程式共享的，包括 Dropbox、TortoiseGit、OneDrive 等等。&lt;&#x2F;p&gt;
+&lt;p&gt;如果超過了 16 個怎麼辦？名字排序，顯示前 16 個。&lt;&#x2F;p&gt;
+&lt;p&gt;我去打開 Windows Icon Overlay 的清單，發現 Dropbox 一隻程式就佔用了&lt;strong&gt;10 個位置&lt;&#x2F;strong&gt;，而且&lt;strong&gt;非常無恥&lt;&#x2F;strong&gt;的在名字前面插三個空格，確保他家的圖示一定會佔住最前面的位置。所以一旦電腦上同時裝了 Dropbox + TortoiseGit，小烏龜的圖示就有很大的機會被擠到 16 個有效位置以外，無法正確顯示。&lt;&#x2F;p&gt;
+&lt;p&gt;網路上已經很多人貼解法了，改註冊表，調整順序，都很詳細，我就不贅述了：&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dotblogs.com.tw&#x2F;kevinya&#x2F;2017&#x2F;07&#x2F;24&#x2F;180237&quot; title=&quot;TorsoieGit 跟 Dropbox 相衝&quot;&gt;Dropbox與小烏龜Tortorise的圖示icon相衝問題解決&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.garethjmsaunders.co.uk&#x2F;2015&#x2F;03&#x2F;22&#x2F;managing-overlay-icons-for-dropbox-and-tortoisesvn-and-tortoisegit&#x2F;&quot;&gt;Managing overlay icons for Dropbox and TortoiseSVN and TortoiseGit&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;但是註冊表改好後，這個問題仍然會不定時出現。因為 Dropbox 每次更新版本後會把註冊表改回去！&lt;&#x2F;p&gt;
+&lt;p&gt;所以我就在想能不能把解法自動化，寫成程式?&lt;&#x2F;p&gt;
+&lt;p&gt;研究了一下，發現 Powershell 可以修改註冊表。就花了一點時間寫 Powershell:&lt;&#x2F;p&gt;
+&lt;p&gt;我發現 PowerShell 操作註冊表，跟操作檔案非常相似。&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Get-ChildItem&lt;&#x2F;code&gt;：列出註冊表子項目&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Remove-Item&lt;&#x2F;code&gt;：刪除註冊表&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Rename-Item&lt;&#x2F;code&gt;：重新命名&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Split-Path -leaf $path&lt;&#x2F;code&gt;：從完整路徑快速取出檔名&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;註冊表路徑以 &lt;code&gt;HKLM:\&lt;&#x2F;code&gt; 或 &lt;code&gt;HKCU:\&lt;&#x2F;code&gt; 起頭。&lt;code&gt;HKLM:\&lt;&#x2F;code&gt; 表示 Local Machine， &lt;code&gt;HKCU:\&lt;&#x2F;code&gt; 表示 Current User。&lt;&#x2F;p&gt;
+&lt;p&gt;比如這個註冊表路徑&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#393939;color:#dedede;&quot;&gt;&lt;code&gt;&lt;span&gt;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;在 powershell 裡面就要寫成這樣：&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#393939;color:#dedede;&quot;&gt;&lt;code&gt;&lt;span&gt;HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellIconOverlayIdentifiers
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;以下是我的 PowerShell 腳本。砍掉比較少見的 Dropbox 圖示，留下必要的四個，再把無恥的三空格改成一個空格。確保他們的順序在 TortoiseGit 後面。&lt;&#x2F;p&gt;
+&lt;script src=&quot;https:&#x2F;&#x2F;gist.github.com&#x2F;chchwy&#x2F;5418022d47fa49481f71ba481f54c02a.js&quot;&gt;&lt;&#x2F;script&gt;
+&lt;h2 id=&quot;can-kao-wang-ye&quot;&gt;參考網頁&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dotblogs.com.tw&#x2F;kevinya&#x2F;2017&#x2F;07&#x2F;24&#x2F;180237&quot; title=&quot;TorsoieGit 跟 Dropbox 相衝&quot;&gt;Dropbox與小烏龜Tortorise的圖示icon相衝問題解決&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.garethjmsaunders.co.uk&#x2F;2015&#x2F;03&#x2F;22&#x2F;managing-overlay-icons-for-dropbox-and-tortoisesvn-and-tortoisegit&#x2F;&quot;&gt;Managing overlay icons for Dropbox and TortoiseSVN and TortoiseGit&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;blog.netwrix.com&#x2F;2018&#x2F;09&#x2F;11&#x2F;how-to-get-edit-create-and-delete-registry-keys-with-powershell&#x2F;&quot;&gt;How to Get, Edit, Create and Delete Registry Keys with PowerShell&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.microsoft.com&#x2F;zh-tw&#x2F;powershell&#x2F;scripting&#x2F;samples&#x2F;working-with-registry-keys?view=powershell-7.1&quot;&gt;PowerShell: 使用登錄機碼&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>「因為這個系統上已停用指令碼執行，所以無法載入」</title>
+        <published>2015-06-14T00:00:00+00:00</published>
+        <updated>2015-06-14T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/powershell-error/"/>
+        <id>https://chchwy.github.io/posts/powershell-error/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/powershell-error/">&lt;p&gt;每個學 PowerShell 的人必然碰到的錯誤。&lt;&#x2F;p&gt;
+&lt;p&gt;Windows 因為安全性考量，PowerShell 腳本(副檔名.ps1)預設是禁止執行的。所以同樣的命令，命令視窗直接打可以跑，但是存成檔案就會出現這個讓人摸不著頭腦的錯誤。&lt;&#x2F;p&gt;
+&lt;p&gt;手動打開權限的作法如下：&lt;&#x2F;p&gt;
+&lt;p&gt;用「系統管理員」身份打開 PowerShell，再輸入以下命令：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ps1&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-ps1 &quot;&gt;&lt;code class=&quot;language-ps1&quot; data-lang=&quot;ps1&quot;&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;Set-ExecutionPolicy&lt;&#x2F;span&gt;&lt;span&gt; RemoteSigned
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;就可以解鎖 PowerShell Script 了。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;Execution Policy&lt;&#x2F;code&gt; 是 PowerShell 的安全機制。&lt;code&gt;Remote Signed&lt;&#x2F;code&gt; 的意思是從網路上抓下來的 .ps1 要檢查數位簽章，但是本地的 PowerShell 檔案直接放行。&lt;&#x2F;p&gt;
+&lt;p&gt;更多 Execution Policy 等級可以參考&lt;a href=&quot;http:&#x2F;&#x2F;gelis-dotnet.blogspot.tw&#x2F;2010&#x2F;10&#x2F;win72008-server-powershell.html&quot;&gt;這裡&lt;&#x2F;a&gt;。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

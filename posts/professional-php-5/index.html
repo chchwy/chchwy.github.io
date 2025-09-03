@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>讀書: 專業 PHP 5 程式設計 - 調和的靈感 Matt</title>
+    <meta name="description" content="紀錄我的思考，讀書筆記，還有程式設計">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="讀書: 專業 PHP 5 程式設計">
+    <meta property="og:description" content="紀錄我的思考，讀書筆記，還有程式設計">
+    <meta property="og:url" content="https:&#x2F;&#x2F;chchwy.github.io&#x2F;posts&#x2F;professional-php-5&#x2F;">
+    <meta property="og:site_name" content="調和的靈感 Matt">
+    <meta property="og:type" content="article">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="讀書: 專業 PHP 5 程式設計">
+    <meta name="twitter:description" content="紀錄我的思考，讀書筆記，還有程式設計">
+    
+    <!-- Font preload -->
+    <link rel="preload" href="https://chchwy.github.io/fonts/Inter-roman.latin.var.woff2" as="font" type="font/woff2" crossorigin="">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="https://chchwy.github.io/main.css">
+</head>
+<body>
+    <main>
+        <!-- Navigation -->
+        <aside>
+            <div>
+                <nav id="nav">
+                    <div>
+                        <a href="/">Matt</a>
+                        <a href="https://chchwy.github.io">首頁</a>
+                        <a href="https://chchwy.github.io/posts">文章列表</a>
+                        <a href="https://chchwy.github.io/projects">專案</a>
+                    </div>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Content -->
+        
+    <article>
+        <header>
+            <h1>讀書: 專業 PHP 5 程式設計</h1>
+            <div class="post-meta">
+                
+                    <time datetime="2010-09-04">2010年09月04日</time>
+                
+                
+            </div>
+        </header>
+        
+        <div class="content">
+            <p><img src="/img/book/prof-php5.jpg#book" alt="專業PHP5程式設計" /></p>
+<p>原文書名：Professional PHP 5</p>
+<p>如果你受夠了一般坊間的書對PHP物件導向的膚淺介紹，喔，對，就像學生跟老師class、或者狗跟貓繼承了動物所以都會叫，這種看了好像有點道理，但是完全無法明白這跟網頁程式有什麼相關的屁話，那麼這本書鐵定會給你不一樣的感受。</p>
+<p>該怎麼說呢，我看過的書裡，這是第一本真的能「有效」利用物件導向來改善 PHP 網頁開發流程的書。</p>
+<p>PHP 的基本風格就是大雜燴，HTML 與程式碼夾雜一起。這也無可厚非，因為 PHP 的特色就是快速直覺。但是我以前很難想像，原來PHP也可以寫得有組織，有條理，很容易開發跟維護。</p>
+<p>本書的第一部份介紹 <code>PropertyObject</code>：將資料以物件封裝起來，切開資料庫跟網頁的關聯，於是乎網頁的程式變得很簡潔，很好讀，資料部份的程式也因為集中在一起，很容易維護。這種工具封裝再利用恰巧展現了物件導向的威力，傳統的PHP鐵定做不到的，給當時的我很大的震撼。</p>
+<p>於是我照著書本的想法自己寫了一個輕巧的資料存取模組，用在網路程式課程的期末專題。起頭碰到很多困難，花了很多時間在調校物件，但一旦工具準備好後，倒吃甘蔗的感覺就來了，最後一天晚上甚至一口氣衝完好多個頁面功能，這是我人生第一次嚐到物件導向的甜頭，原來物件導向真的有用，而且很有用。</p>
+<p>在今天 PHP Framework 滿天飛的狀況來看，這本書的內容有些過時了。比方說後來我發現我寫的資料存取小模組原來有個專有名詞叫做 ORM，而且網路上有很多高手寫了更好用、更強大的 ORM。一些知名框架像 CakePHP、 CodeIgniter 甚至提供了非常完善的解決方案來組織整個網站。</p>
+<p>回頭來看這本書的工具，是有些陽春了。不過畢竟那都是別人寫好的工具，光使用也不會有什麼長進。有基本的PHP知識，想要一窺這些超級工具開發的秘密，那我認為這本書是非常好、非常難得的敲門磚。程式師圈子裡有句話叫做「Eat Your Own Dog Food」，意思是程式員必須要使用自己開發的工具來改善自己的工作，那本書就是這句話最好的實踐。</p>
+<p>本書的內容其實不只這些小工具，還有很多內容像是 Design Pattern 、SOAP、MVC、 專案管理等等，簡直就是包山包海了，個人認為 Design Pattern 的部份沒什麼有用的例子，後面我則是沒有細看，不好評論。</p>
+<p>有些缺點不得不說：其一是 code 很長而解釋稍嫌不足，而且 code 實在寫得太醜了，閱讀來實在很痛苦。我想一本教學書把程式碼寫得簡潔清楚，可以大大地增進讀者的胃口。其二是本書讀來很明顯就是分成四塊，這也沒什麼，因為有四位作者嘛，但慘的是這四位顯然配合的不好，以致於書裡產生了 PropertyObject 與 GenericObject 這兩套明明目的差不多，但就是不同的兩套實做。我初讀還困惑了一下。</p>
+
+        </div>
+
+        
+            <div class="post-tags">
+                
+                    <a href="https://chchwy.github.io/tags/du-shu/" class="tag">讀書</a>
+                
+            </div>
+        
+    </article>
+
+
+        <!-- Footer -->
+        <footer>
+            <ul>
+                
+                <li>
+                    <a rel="noopener noreferrer" target="_blank" href="https://chchwy.github.io/rss.xml">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-rss" viewBox="0 0 16 16">
+                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                        <path d="M5.5 12a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m-3-8.5a1 1 0 0 1 1-1c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1-1-1m0 4a1 1 0 0 1 1-1 6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1-1-1"/>
+                        </svg>
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a rel="noopener noreferrer" target="_blank" href="https://github.com/chchwy">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                        </svg>
+                    </a>
+                </li>
+                
+                <li>
+                    <a rel="noopener noreferrer" target="_blank" href="https://www.threads.com/@chchwy">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-threads" viewBox="0 0 16 16">
+                        <path d="M6.321 6.016c-.27-.18-1.166-.802-1.166-.802.756-1.081 1.753-1.502 3.132-1.502.975 0 1.803.327 2.394.948s.928 1.509 1.005 2.644q.492.207.905.484c1.109.745 1.719 1.86 1.719 3.137 0 2.716-2.226 5.075-6.256 5.075C4.594 16 1 13.987 1 7.994 1 2.034 4.482 0 8.044 0 9.69 0 13.55.243 15 5.036l-1.36.353C12.516 1.974 10.163 1.43 8.006 1.43c-3.565 0-5.582 2.171-5.582 6.79 0 4.143 2.254 6.343 5.63 6.343 2.777 0 4.847-1.443 4.847-3.556 0-1.438-1.208-2.127-1.27-2.127-.236 1.234-.868 3.31-3.644 3.31-1.618 0-3.013-1.118-3.013-2.582 0-2.09 1.984-2.847 3.55-2.847.586 0 1.294.04 1.663.114 0-.637-.54-1.728-1.9-1.728-1.25 0-1.566.405-1.967.868ZM8.716 8.19c-2.04 0-2.304.87-2.304 1.416 0 .878 1.043 1.168 1.6 1.168 1.02 0 2.067-.282 2.232-2.423a6.2 6.2 0 0 0-1.528-.161"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>            
+            <p>© 2025 Matt Chang</p>
+        </footer>
+    </main>
+</body>
+</html>

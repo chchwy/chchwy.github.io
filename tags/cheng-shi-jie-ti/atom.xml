@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-tw">
+    <title>調和的靈感 Matt - 程式解題</title>
+    <subtitle>紀錄我的思考，讀書筆記，還有程式設計</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://chchwy.github.io/tags/cheng-shi-jie-ti/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://chchwy.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2016-03-08T00:00:00+00:00</updated>
+    <id>https://chchwy.github.io/tags/cheng-shi-jie-ti/atom.xml</id>
+    <entry xml:lang="zh-tw">
+        <title>UVa 解題自動輸入測資</title>
+        <published>2016-03-08T00:00:00+00:00</published>
+        <updated>2016-03-08T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/acm-io-redirection/"/>
+        <id>https://chchwy.github.io/posts/acm-io-redirection/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/acm-io-redirection/">&lt;p&gt;解 ACM 題目的時候，測試資料都是走標準輸入流 &lt;code&gt;cin&#x2F;scanf()&#x2F;gets()&lt;&#x2F;code&gt;。當測試資料量很大的時候，手動鍵入測試資料很慢又浪費時間。我後來發現了一個技巧叫做 I&#x2F;O 轉向 (I&#x2F;O redirection) ，可以重新定義標準輸入流，省去手動鍵入測資的步驟。&lt;&#x2F;p&gt;
+&lt;p&gt;先上例子：&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;cpp&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-cpp &quot;&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span style=&quot;color:#fffb9d;&quot;&gt;int &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;main&lt;&#x2F;span&gt;&lt;span&gt;() {
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;#ifndef&lt;&#x2F;span&gt;&lt;span style=&quot;color:#e8bc92;&quot;&gt; ONLINE_JUDGE
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;freopen&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;input.txt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, stdin);
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fffd87;&quot;&gt;freopen&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;output.txt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;w&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, stdout);
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;#endif
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;&#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; do whatever you need to do
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a0cfa1;&quot;&gt;&#x2F;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#87ae86;&quot;&gt; cin&#x2F;cout&#x2F;scanf&#x2F;printf as usual
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#fed6af;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;font-weight:bold;color:#87d6d5;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;;
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;關鍵是 &lt;code&gt;freopen()&lt;&#x2F;code&gt; 函數&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;cpp&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-cpp &quot;&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span&gt;freopen(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;input.txt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, stdin);
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;這一行的作用就是把 input.txt 當作 stdin 的來源。一旦呼叫過 &lt;code&gt;freopen()&lt;&#x2F;code&gt;，接下來所有的標準輸入函數 &lt;code&gt;cin&#x2F;scanf()&#x2F;getline()&lt;&#x2F;code&gt; 就變成從 input.txt 讀取資料。&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;cpp&quot; style=&quot;background-color:#393939;color:#dedede;&quot; class=&quot;language-cpp &quot;&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span&gt;freopen(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;output.txt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d68686;&quot;&gt;w&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d6d6d680;&quot;&gt;&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;, stdout);
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;同樣的也可以把標準輸出導向檔案寫出，這樣所有的 &lt;code&gt;cout&#x2F;printf()&#x2F;puts()&lt;&#x2F;code&gt; 都會寫入 output.txt 這個檔案。&lt;&#x2F;p&gt;
+&lt;p&gt;因為 UVa online judge 在編譯的時候會下 &lt;code&gt;-DONLINE_JUDGE&lt;&#x2F;code&gt; 的編譯參數。所以我們把freopen() 用 &lt;code&gt;#ifndef&lt;&#x2F;code&gt; (if Not defined) 夾起來，這樣只有在本機測試的時候才做 I&#x2F;O 轉向，上傳程式碼的時候走回正常的標準輸入。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="zh-tw">
+        <title>ACM 程式解題競賽： 一些有用的網站</title>
+        <published>2014-07-01T00:00:00+00:00</published>
+        <updated>2014-07-01T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://chchwy.github.io/posts/acm-useful-websites/"/>
+        <id>https://chchwy.github.io/posts/acm-useful-websites/</id>
+        
+        <content type="html" xml:base="https://chchwy.github.io/posts/acm-useful-websites/">&lt;p&gt;收錄一些解題過程中幫助我很多的網站，以 UVa Online Judge 為主。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;img&#x2F;code-1839406_1280.jpg&quot; alt=&quot;Code&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;首先必推薦的站點是&lt;a href=&quot;http:&#x2F;&#x2F;acm.uva.es&#x2F;board&#x2F;&quot; title=&quot;UVa Official forum&quot;&gt;UVa官方論壇&lt;&#x2F;a&gt;，全世界 UVa 解題者的集散地。我解不出題目時，第一反應就是來這裡搜尋該題號，只要找到該題專屬的討論串，通常能找到很多好心人的測試數據和關鍵提示。&lt;&#x2F;p&gt;
+&lt;p&gt;再來是 &lt;a href=&quot;http:&#x2F;&#x2F;www.comp.nus.edu.sg&#x2F;~stevenha&#x2F;programming&#x2F;acmoj.html&quot; title=&quot;Methods to solve&quot;&gt;Methods to Solve&lt;&#x2F;a&gt;，大概是全世界最大的 UVa 解題提示網站了，收錄的題目數量很多，提示品質也不錯。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;http:&#x2F;&#x2F;uhunt.felix-halim.net&#x2F;&quot; title=&quot;uHunt&quot;&gt;uHunt&lt;&#x2F;a&gt; 是追蹤個人解題狀態的工具網頁，打上 UVa id 就可以看見自己的解題紀錄和統計數據，還有推薦的解題方向，題號快速搜尋題目等等，非常好用。&lt;&#x2F;p&gt;
+&lt;p&gt;再提供一個比對數據的工具網頁 &lt;a href=&quot;http:&#x2F;&#x2F;uvatoolkit.com&#x2F;problemssolve.php&quot;&gt;UVa Toolkit&lt;&#x2F;a&gt;，簡單講--餵它吃輸入數據，吐出對應輸出。通常可以有效釐清題意，彌補題目頁上的過份簡陋的示範數據。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;ti-mu-zhong-yi&quot;&gt;題目中譯&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;zerojudge.tw%E2%80%8E&#x2F;&quot;&gt;ZeroJudge.tw&lt;&#x2F;a&gt;: 優秀的國產程式解題網站，有一區專門收錄 UVa 中譯題目。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;luckycat.kshs.kh.edu.tw&#x2F;&quot;&gt;Lucky貓&lt;&#x2F;a&gt;: 著名的ACM題目中譯網站。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;suan-fa-jiao-xue&quot;&gt;算法教學&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.csie.ntnu.edu.tw&#x2F;~u91029&#x2F;&quot;&gt;DJWS的網路日誌&lt;&#x2F;a&gt;: 資源豐富的網站，整理了很多的算法教學，以及各種ACM競賽的資料。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.acmsolver.org&#x2F;?tag=art-of-programming-contest&#x2F;&quot;&gt;Art of Programming Contest for uva&lt;&#x2F;a&gt;: 淺顯的ACM入門書，英文，免費。作者是上面 Methods to Solve 網站站長。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;program-lover.blogspot.tw&#x2F;2008&#x2F;04&#x2F;acm-online-judge.html&quot;&gt;Infinite Loop&lt;&#x2F;a&gt;: 提供一些 ACM 教學及題目解答。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;api-reference&quot;&gt;API Reference&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.cplusplus.com&#x2F;reference&#x2F;&quot;&gt;Cplusplus.com&lt;&#x2F;a&gt;
+最好的 C&#x2F;C++ 標準函式庫參考手冊，範例碼簡潔清楚，值得常來，我自己是當後花園逛了。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;ti-mu-lie-biao&quot;&gt;題目列表&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.angelfire.com&#x2F;on4&#x2F;surbaniak&#x2F;acm_grading_score.htm&quot;&gt;ACM熱題排行榜&lt;&#x2F;a&gt;: 芭樂題排行榜，看看哪些熱門題你還沒解過吧 XD&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;tao-lun-lun-tan&quot;&gt;討論論壇&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www3.tcgs.tc.edu.tw&#x2F;npsc&#x2F;index.php&quot;&gt;NPSC補完計畫&lt;&#x2F;a&gt;: 針對NPSC的解題網站&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.mail-archive.com&#x2F;algogeeks@googlegroups.com&#x2F;&quot;&gt;algogeeks &lt;&#x2F;a&gt;: Google group about algorithms.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;jie-ti-qiang-zhe&quot;&gt;解題強者&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;using-c.blogspot.com&#x2F;&quot;&gt;C語言考古題 &amp;amp; C的解題&lt;&#x2F;a&gt;: 大量題目解答。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.cppblog.com&#x2F;rakerichard&#x2F;&quot;&gt;心如止水&lt;&#x2F;a&gt;: 350+解答，有基本的題目分類。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;knightzone.org&#x2F;?cat=24&quot;&gt;翼世界夢想領域&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;yalin.tw&#x2F;acm.php&quot;&gt;Ya-Lin Huang&#x27;s ACM Problemset&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;morris821028.github.io&#x2F;categories&#x2F;%E8%A7%A3%E9%A1%8C%E5%8D%80&#x2F;%E8%A7%A3%E9%A1%8C%E5%8D%80-UVa&#x2F;&quot;&gt;Morris&#x27; Blog&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;new-acos.blogspot.com&#x2F;search&#x2F;label&#x2F;ACM&quot;&gt;Nothing is Everything&lt;&#x2F;a&gt;: 少量UVa解答，品質不錯。&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;redbug0314.blogspot.tw&#x2F;search&#x2F;label&#x2F;ACM&quot;&gt;朱色虫居&lt;&#x2F;a&gt;: 少量UVa解答，品質不錯。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

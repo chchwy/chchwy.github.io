@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>用 Github Actions 更新部落格 - 調和的靈感 Matt</title>
+    <meta name="description" content="紀錄我的思考，讀書筆記，還有程式設計">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="用 Github Actions 更新部落格">
+    <meta property="og:description" content="紀錄我的思考，讀書筆記，還有程式設計">
+    <meta property="og:url" content="https:&#x2F;&#x2F;chchwy.github.io&#x2F;posts&#x2F;github-actions-hugo-blog&#x2F;">
+    <meta property="og:site_name" content="調和的靈感 Matt">
+    <meta property="og:type" content="article">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="用 Github Actions 更新部落格">
+    <meta name="twitter:description" content="紀錄我的思考，讀書筆記，還有程式設計">
+    
+    <!-- Font preload -->
+    <link rel="preload" href="https://chchwy.github.io/fonts/Inter-roman.latin.var.woff2" as="font" type="font/woff2" crossorigin="">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="https://chchwy.github.io/main.css">
+</head>
+<body>
+    <main>
+        <!-- Navigation -->
+        <aside>
+            <div>
+                <nav id="nav">
+                    <div>
+                        <a href="/">Matt</a>
+                        <a href="https://chchwy.github.io">首頁</a>
+                        <a href="https://chchwy.github.io/posts">文章列表</a>
+                        <a href="https://chchwy.github.io/projects">專案</a>
+                    </div>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Content -->
+        
+    <article>
+        <header>
+            <h1>用 Github Actions 更新部落格</h1>
+            <div class="post-meta">
+                
+                    <time datetime="2020-09-01">2020年09月01日</time>
+                
+                
+            </div>
+        </header>
+        
+        <div class="content">
+            <p>現在我的部落格是 Hugo + Github Pages 的組合。</p>
+<p>跟一般的部落格平台不一樣，用 Hugo 這類靜態網站產生器，內容更新了需要全站重新編譯。所以更新部落格就變得稍微有點麻煩。</p>
+<p>我怎麼處理部落格更新，總分成三個時期：</p>
+<ol>
+<li>自己手動編譯。每次小修改都要打指令，麻煩，讓我變得不太愛寫部落格。</li>
+<li><a href="https://docs.travis-ci.com/user/deployment/pages/">Travis-CI 自動編譯</a>。只要 Git Repo 推送就會自動重新編譯，節省我很多力氣。缺點是需要兩個 Git Repo，這個 chchwy.github.io 只保存編譯後的結果，需要另一個 Git 倉庫保存原始 markdown 檔案。</li>
+<li>現在。採用 Github Actions 部署。直接在 Github 上一站搞定所有的事情。
+<ul>
+<li>只有一個 Git Repo，用 branch 區隔原檔和編譯結果。原檔放 <code>blog</code>，編譯結果放 <code>master</code>。</li>
+<li>任何 git push 都會觸發 Github Actions 自動全站編譯。</li>
+</ul>
+</li>
+</ol>
+<h2 id="she-ding-github-action">設定 Github Action</h2>
+<p>設定步驟如下：</p>
+<p>一、先到你的 Git Repo 點選 Action 分頁，然後點 <code>New workflow</code></p>
+<p><img src="/img/github-action-01.png" alt="" /></p>
+<p>二、接著點選 <code>set up a workflow yourself</code></p>
+<p>三、Github 會導引你創建一個 Workflow 設定檔，位於 <code>.github/workflows/main.xml</code>。</p>
+<p>在文字框填入以下設定 (依個人情況修改適合自己的設定)</p>
+<pre data-lang="yml" style="background-color:#393939;color:#dedede;" class="language-yml "><code class="language-yml" data-lang="yml"><span style="font-weight:bold;color:#fed6af;">name</span><span>: </span><span style="color:#d6d6d680;">&quot;</span><span style="color:#d68686;">Deploy my blog</span><span style="color:#d6d6d680;">&quot; </span><span style="color:#a0cfa1;">#</span><span style="color:#87ae86;"> 自己取一個喜歡的名字
+</span><span style="font-weight:bold;color:#d6d6ae;">on</span><span>:
+</span><span>  </span><span style="font-weight:bold;color:#fed6af;">push</span><span>:
+</span><span>    </span><span style="font-weight:bold;color:#fed6af;">branches</span><span>: [ </span><span style="color:#d68686;">blog </span><span>] </span><span style="color:#a0cfa1;">#</span><span style="color:#87ae86;"> 設定哪些 branch 會觸發 Action
+</span><span>
+</span><span style="font-weight:bold;color:#fed6af;">jobs</span><span>:
+</span><span>  </span><span style="font-weight:bold;color:#fed6af;">build</span><span>:
+</span><span>    </span><span style="font-weight:bold;color:#fed6af;">runs-on</span><span>: </span><span style="color:#d68686;">ubuntu-latest </span><span style="color:#a0cfa1;">#</span><span style="color:#87ae86;"> 執行環境
+</span><span>
+</span><span>    </span><span style="font-weight:bold;color:#fed6af;">steps</span><span>:
+</span><span>    - </span><span style="font-weight:bold;color:#fed6af;">name</span><span>: </span><span style="color:#d68686;">Checkout Repo
+</span><span>      </span><span style="font-weight:bold;color:#fed6af;">uses</span><span>: </span><span style="color:#d68686;">actions/checkout@v2
+</span><span>
+</span><span>    </span><span style="color:#a0cfa1;">#</span><span style="color:#87ae86;"> 直接引用其他人寫好的 Hugo to Github Pages Action
+</span><span>    - </span><span style="font-weight:bold;color:#fed6af;">name</span><span>: </span><span style="color:#d6d6d680;">&quot;</span><span style="color:#d68686;">Publish Hugo Site</span><span style="color:#d6d6d680;">&quot;
+</span><span>      </span><span style="font-weight:bold;color:#fed6af;">uses</span><span>: </span><span style="color:#d68686;">chabad360/hugo-gh-pages@master 
+</span><span>      </span><span style="font-weight:bold;color:#fed6af;">with</span><span>:
+</span><span>        </span><span style="font-weight:bold;color:#fed6af;">branch</span><span>: </span><span style="color:#d6d6d680;">&quot;</span><span style="color:#d68686;">master</span><span style="color:#d6d6d680;">&quot;
+</span><span>        </span><span style="font-weight:bold;color:#fed6af;">args</span><span>: </span><span style="color:#d68686;">--gc --minify --cleanDestinationDir
+</span><span>        </span><span style="font-weight:bold;color:#fed6af;">githubToken</span><span>: </span><span style="color:#d68686;">${{ secrets.PERSONAL_TOKEN }}
+</span></code></pre>
+<p>四、Github Action 需要 Access Token，它才可以讀寫你的 Git 倉庫。</p>
+<p>照著官方文件的指示 <a href="https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token">Creating a Personal Access Token</a> 建立 Access Token，記得要給予適當的讀寫權限。</p>
+<p>接著到 Github 倉庫的 Setting 分頁，選 Secrets -&gt; New Secrets。給這個 Secret 取名叫做 PERSONAL_TOKEN (基本上就是 workflow 設定檔的最後一行那個變數名)，貼上剛剛建立的 Access Token 字串。</p>
+<p>五、測試 Github Action</p>
+<p>推送修改到你的 Git 倉庫，到 Actions 分頁看看有沒有觸發 Workflow</p>
+<p><img src="/img/github-action-03.png" alt="" /></p>
+<p>看見 workflow 開始執行就表示大功告成，Github Action 設定完畢，可以射後不理盡情寫部落格了。</p>
+<p>參考連結: <a href="https://github.com/chabad360/hugo-gh-pages">https://github.com/chabad360/hugo-gh-pages</a></p>
+
+        </div>
+
+        
+            <div class="post-tags">
+                
+                    <a href="https://chchwy.github.io/tags/bu-luo-ge/" class="tag">部落格</a>
+                
+            </div>
+        
+    </article>
+
+
+        <!-- Footer -->
+        <footer>
+            <ul>
+                
+                <li>
+                    <a rel="noopener noreferrer" target="_blank" href="https://chchwy.github.io/rss.xml">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-rss" viewBox="0 0 16 16">
+                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                        <path d="M5.5 12a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m-3-8.5a1 1 0 0 1 1-1c5.523 0 10 4.477 10 10a1 1 0 1 1-2 0 8 8 0 0 0-8-8 1 1 0 0 1-1-1m0 4a1 1 0 0 1 1-1 6 6 0 0 1 6 6 1 1 0 1 1-2 0 4 4 0 0 0-4-4 1 1 0 0 1-1-1"/>
+                        </svg>
+                    </a>
+                </li>
+                
+                
+                <li>
+                    <a rel="noopener noreferrer" target="_blank" href="https://github.com/chchwy">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                        </svg>
+                    </a>
+                </li>
+                
+                <li>
+                    <a rel="noopener noreferrer" target="_blank" href="https://www.threads.com/@chchwy">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-threads" viewBox="0 0 16 16">
+                        <path d="M6.321 6.016c-.27-.18-1.166-.802-1.166-.802.756-1.081 1.753-1.502 3.132-1.502.975 0 1.803.327 2.394.948s.928 1.509 1.005 2.644q.492.207.905.484c1.109.745 1.719 1.86 1.719 3.137 0 2.716-2.226 5.075-6.256 5.075C4.594 16 1 13.987 1 7.994 1 2.034 4.482 0 8.044 0 9.69 0 13.55.243 15 5.036l-1.36.353C12.516 1.974 10.163 1.43 8.006 1.43c-3.565 0-5.582 2.171-5.582 6.79 0 4.143 2.254 6.343 5.63 6.343 2.777 0 4.847-1.443 4.847-3.556 0-1.438-1.208-2.127-1.27-2.127-.236 1.234-.868 3.31-3.644 3.31-1.618 0-3.013-1.118-3.013-2.582 0-2.09 1.984-2.847 3.55-2.847.586 0 1.294.04 1.663.114 0-.637-.54-1.728-1.9-1.728-1.25 0-1.566.405-1.967.868ZM8.716 8.19c-2.04 0-2.304.87-2.304 1.416 0 .878 1.043 1.168 1.6 1.168 1.02 0 2.067-.282 2.232-2.423a6.2 6.2 0 0 0-1.528-.161"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>            
+            <p>© 2025 Matt Chang</p>
+        </footer>
+    </main>
+</body>
+</html>
