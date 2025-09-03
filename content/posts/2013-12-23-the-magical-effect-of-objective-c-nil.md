@@ -2,7 +2,7 @@
 date: 2013-12-23
 title: 'Objective-C 好用的 nil 和變數類型的思考'
 taxonomies:
-  tags: ["程式設計"]
+  tags: ["開發日常"]
 ---
 
 Objective-C 裡有個我非常喜愛的特性，就是對空物件 nil 調用方法不會出錯。

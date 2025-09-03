@@ -3,6 +3,7 @@ date: 2015-03-18
 title: "翻譯: Nvidia 打算成為遊戲界的 Netflix"
 taxonomies:
   tags: [翻譯]
+draft: true
 ---
 
 ### 副標: Nvidia shield 遊戲主機採取一系列手段降低遊戲延遲
@@ -41,7 +42,7 @@ Grid 並不是第一家嘗試雲端遊戲的服務平台。一個名叫 OnLive �
 
 Previous efforts have suffered from excessive latency—the time between making an input on the controller and seeing the result on the screen. Players often grow frustrated when a game takes a fraction of a second too long to register their input. Techniques used to reduce latency for games could also improve other online services, such as videoconferencing and high-resolution movie streaming.
 
-先前的嘗試都苦於玩家按下按鈕到看見畫面結果之間差勁的時間延遲。玩家通常會覺得很挫折，遊戲花上幾分之一秒才能收到控制輸入太久了。降低延遲的技術也能改進其他的線上服務，像是視訊會議和高解析電影串流等等。
+先前的嘗試都苦於玩家按下按鈕到看見畫面結果之間差勁的時間延遲。玩家通常會很挫折，遊戲花上幾分之一秒才能收到控制輸入太久了。降低延遲的技術也能改進其他的線上服務，像是視訊會議和高解析電影串流等等。
 
 Grid’s games are powered by supercomputers built using Nvidia’s chips, located in its data centers. According to Huang, the hardware used to run each game is “twice as powerful as the most powerful games console in the world today.”
 

@@ -15,7 +15,9 @@
           <a class="blog-post" href="{{ page.permalink }}">
             <div class="post-content">
               {% if page.date %}
-                <p class="post-date">{{ page.date | date(format="%b %d, %Y") }}</p>
+                <p class="post-date" style="width:80px;">
+                  {{ page.date | date(format="%b %d") }}
+                </p>
               {% endif %}
             <p class="post-title">{{ page.title }}</p>
           </div>
