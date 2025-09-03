@@ -24,7 +24,7 @@ body {
   font-family: 'Inter var', system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
   /*-webkit-font-smoothing: antialiased;*/
-  max-width: 36rem;
+  max-width: 42rem;
   margin: 0 1rem;
   margin-top: 2rem;
 }
