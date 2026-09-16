@@ -1,12 +1,18 @@
 +++
-title = "Hermes（個人助理）"
-description = "Matt 自用的 Hermes 個人助理：透過 Google 授權存取日曆等資料，僅供本人使用。"
+title = "Hermes"
+description = "Hermes — Matt 自用的個人 AI 助理（Google Calendar / Drive）。僅供本人使用。"
 template = "page.html"
 +++
 
-Hermes 是我（Matt Chang）在本機與訊息管道上使用的**個人 AI 助理**。
+# Hermes
+
+**應用程式名稱：Hermes**
+
+Hermes 是我（Matt Chang，chchwy@gmail.com）在本機與訊息管道上使用的**個人 AI 助理**。
 
 這個 Google OAuth 應用程式**只給我自己的 Google 帳號使用**，不是對外公開產品，也沒有第三方使用者註冊或付費服務。
+
+Google Cloud 專案 ID：`hermes-family-507612`（僅供識別；對外顯示名稱為 **Hermes**）。
 
 ## 它做什麼
 
@@ -15,7 +21,7 @@ Hermes 是我（Matt Chang）在本機與訊息管道上使用的**個人 AI 助
 - 讀取與管理 **Google Calendar** 行程
 - 在需要時存取 **Google Drive / Docs** 中與助理任務相關的檔案（依實際授權範圍）
 
-典型用途：查今天行程、寫家庭／學校事件、整理待辦與簡報相關資料。
+典型用途：查今天行程、寫家庭／學校事件、整理待辦與相關文件。
 
 ## 資料如何處理
 
@@ -23,8 +29,9 @@ Hermes 是我（Matt Chang）在本機與訊息管道上使用的**個人 AI 助
 - **不會**把 Google 帳號資料賣給他人，也**不會**做成公開服務給其他人登入。
 - 詳細說明見 [隱私權政策](/hermes-privacy/)。
 
-## 聯絡
+## 連結
 
+- [隱私權政策](/hermes-privacy/)
 - 開發者：Matt Chang（chchwy）
-- Email：chchwy@gmail.com
+- 支援 Email：chchwy@gmail.com
 - 網站：https://chchwy.github.io

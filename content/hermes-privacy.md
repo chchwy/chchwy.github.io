@@ -1,12 +1,14 @@
 +++
 title = "Hermes 隱私權政策"
-description = "Hermes 個人助理（Google OAuth）隱私權政策 — 僅供開發者本人使用。"
+description = "Hermes（Google OAuth）隱私權政策 — 僅供開發者本人使用。"
 template = "page.html"
 +++
 
 **最後更新：2026-09-16**
 
-本政策適用於 Google Cloud 專案上、名稱為 **Hermes**（或 Hermes 個人助理）的 OAuth 應用程式，由 **Matt Chang**（聯絡：chchwy@gmail.com）維護。
+本政策適用於應用程式名稱 **Hermes** 的 Google OAuth 應用（Google Cloud 專案 `hermes-family-507612`），由 **Matt Chang**（聯絡：chchwy@gmail.com）維護。
+
+應用說明首頁：https://chchwy.github.io/hermes/
 
 此應用程式是**個人自用工具**，不是面向大眾的商業服務。
 
