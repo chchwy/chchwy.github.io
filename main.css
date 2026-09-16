@@ -1,0 +1,276 @@
+/* Font imports */
+@font-face {
+  font-family: 'Inter var';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: block;
+  src: url(/fonts/Inter-roman.latin.var.woff2) format('woff2');
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base styles */
+html {
+  color: #000;
+  background: #F5F3EF;
+}
+
+body {
+  font-family: 'Inter var', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  /*-webkit-font-smoothing: antialiased;*/
+  max-width: 42rem;
+  margin: 0 1rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 1024px) {
+  body {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Main content area */
+main {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0.5rem;
+}
+
+@media (min-width: 768px) {
+  main {
+    padding: 0;
+  }
+}
+
+/* Navigation */
+aside {
+  margin-left: -0.5rem;
+  margin-bottom: 4rem;
+  letter-spacing: -0.025em;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  position: relative;
+  padding: 0;
+}
+
+nav div {
+  display: flex;
+  flex-direction: row;
+  padding-right: 2.5rem;
+}
+
+nav a {
+  transition: all 0.2s ease;
+  color: #737373;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #262626;
+}
+
+/* Typography */
+h1 {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  letter-spacing: -0.05em;
+  line-height: 1.25;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin: 2rem 0 1rem 0;
+  letter-spacing: -0.025em;
+}
+
+p {
+  line-height: 1.7;
+  margin: 1rem 0;
+}
+
+/* Blog listing */
+.blog-post {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.6rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.blog-post:hover {
+  text-decoration: none;
+}
+
+
+.post-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .post-content {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+}
+
+.post-date {
+  color: #525252;
+  width: 120px;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.875rem;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  margin: 0;
+}
+
+.post-title {
+  color: #171717;
+  font-weight: 400;
+  margin: 0;
+}
+
+.blog-post:hover .post-title {
+  color: #404040;
+}
+
+.post-tags {
+  margin-top: 0.5rem;
+}
+
+.post-tags .tag {
+  display: inline-block;
+  background: #e0e0e0;
+  color: #666;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  text-decoration: none;
+}
+
+.post-meta {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+  margin-bottom: 4rem;
+}
+
+footer ul {
+  font-size: 0.875rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #525252;
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  footer ul {
+    flex-direction: row;
+    gap: 1rem;
+    padding: 0;
+  }
+}
+
+footer a {
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+  color: #525252;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #262626;
+}
+
+footer svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+}
+
+footer p {
+  margin-top: 2rem;
+  color: #525252;
+  font-size: 0.875rem;
+}
+
+/* Content styling */
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Code styling */
+code {
+  border-radius: 0.25rem;
+  font-size: 0.925em;
+}
+
+pre {
+  background: #f4f4f5;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  font-family: 'Iosevka Fixed', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+}
+
+blockquote {
+  border-left: 3px solid #28437a;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  color: #757371;
+  font-weight: 700;
+}
+
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+li {
+  margin: 0.5rem 0;
+}
+
+strong {
+  font-weight: 600;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
