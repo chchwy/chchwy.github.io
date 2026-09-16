@@ -1,22 +1,20 @@
 +++
-title = "Hermes"
-description = "Hermes — Matt 自用的個人 AI 助理（Google Calendar / Drive）。僅供本人使用。"
+title = "Hermes 個人助理"
+description = "Hermes 個人助理 — Matt 自用的個人 AI 助理（Google Calendar / Drive）。僅供本人使用。"
 template = "page.html"
 +++
 
-# Hermes
+**應用程式名稱：Hermes 個人助理**
 
-**應用程式名稱：Hermes**
-
-Hermes 是我（Matt Chang，chchwy@gmail.com）在本機與訊息管道上使用的**個人 AI 助理**。
+Hermes 個人助理是我（Matt Chang，chchwy@gmail.com）在本機與訊息管道上使用的**個人 AI 助理**。
 
 這個 Google OAuth 應用程式**只給我自己的 Google 帳號使用**，不是對外公開產品，也沒有第三方使用者註冊或付費服務。
 
-Google Cloud 專案 ID：`hermes-family-507612`（僅供識別；對外顯示名稱為 **Hermes**）。
+Google Cloud 專案 ID：`hermes-family-507612`（僅供識別；對外顯示名稱為 **Hermes 個人助理**）。
 
 ## 它做什麼
 
-在我明確指示時，Hermes 可以代我：
+在我明確指示時，Hermes 個人助理可以代我：
 
 - 讀取與管理 **Google Calendar** 行程
 - 在需要時存取 **Google Drive / Docs** 中與助理任務相關的檔案（依實際授權範圍）

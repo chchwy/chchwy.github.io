@@ -1,12 +1,12 @@
 +++
-title = "Hermes 隱私權政策"
-description = "Hermes（Google OAuth）隱私權政策 — 僅供開發者本人使用。"
+title = "Hermes 個人助理 隱私權政策"
+description = "Hermes 個人助理（Google OAuth）隱私權政策 — 僅供開發者本人使用。"
 template = "page.html"
 +++
 
 **最後更新：2026-09-16**
 
-本政策適用於應用程式名稱 **Hermes** 的 Google OAuth 應用（Google Cloud 專案 `hermes-family-507612`），由 **Matt Chang**（聯絡：chchwy@gmail.com）維護。
+本政策適用於應用程式名稱 **Hermes 個人助理** 的 Google OAuth 應用（Google Cloud 專案 `hermes-family-507612`），由 **Matt Chang**（聯絡：chchwy@gmail.com）維護。
 
 應用說明首頁：https://chchwy.github.io/hermes/
 
@@ -49,7 +49,7 @@ Google 使用者資料僅用於：
 
 ## 5. 資料保留與刪除
 
-- 可隨時到 [Google 帳號 → 第三方存取權](https://myaccount.google.com/permissions) 撤銷「Hermes」的存取；撤銷後應用程式無法再呼叫你的 Google API，本機 token 也會失效或應刪除。
+- 可隨時到 [Google 帳號 → 第三方存取權](https://myaccount.google.com/permissions) 撤銷「Hermes 個人助理」的存取；撤銷後應用程式無法再呼叫你的 Google API，本機 token 也會失效或應刪除。
 - 本機憑證檔可手動刪除（Hermes 設定目錄中的 Google token／client 檔）。
 - 撤銷授權後，Google 側的授權即終止；本機若仍留有舊檔，應一併刪除。
 
@@ -68,7 +68,7 @@ Google 使用者資料僅用於：
 
 ## 9. 聯絡方式
 
-關於本應用或 Google 資料處理：
+關於 **Hermes 個人助理** 或 Google 資料處理：
 
 - 姓名：Matt Chang
 - Email：chchwy@gmail.com
