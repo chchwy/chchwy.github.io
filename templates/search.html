@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} - {{ config.title }}{% endblock title %}
+
+{% block content %}
+    <h1>{{ page.title }}</h1>
+
+    <link rel="stylesheet" href="{{ get_url(path='pagefind/pagefind-component-ui.css', trailing_slash=false) }}">
+    <script type="module" src="{{ get_url(path='pagefind/pagefind-component-ui.js', trailing_slash=false) }}"></script>
+
+    <div class="search">
+        <pagefind-input placeholder="搜尋文章標題或內文" autofocus></pagefind-input>
+        <pagefind-summary></pagefind-summary>
+        <pagefind-results></pagefind-results>
+    </div>
+    <noscript>搜尋功能需要啟用 JavaScript。</noscript>
+{% endblock content %}

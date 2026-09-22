@@ -25,6 +25,7 @@ Zola uses these HTML templates to generate the final website:
 - **`posts.html`** - Template for individual blog post pages
 - **`taxonomy_list.html`** - Template for listing all tags
 - **`taxonomy_single.html`** - Template for individual tag pages showing related posts
+- **`search.html`** - Pagefind search page (`/search/`, content in `content/search.md`)
 
 ### Static Assets Directory (`static/`)
 
@@ -54,6 +55,24 @@ To build for production:
 zola build
 ```
 The generated site will be in the `public/` directory.
+
+> The templates currently require **Zola 0.22.x** (0.23 removed the `slice` filter used in `index.html`). CI pins `0.22.1`.
+
+## Search (Pagefind)
+
+Full-text search is provided by [Pagefind](https://pagefind.app/) at `/search/`. Only blog posts are indexed (the `<article data-pagefind-body>` in `templates/posts.html`); Chinese word segmentation is automatic because pages use `lang="zh-tw"`.
+
+Pagefind runs on the built output, so search does not work under `zola serve`. To test locally (needs Node.js for `npx`):
+
+```bash
+zola build
+npx -y pagefind@1.5.2 --site public --serve
+```
+Open `http://localhost:1414/search/`. The index is written to `public/pagefind/`.
+
+## Deployment (CI)
+
+`.github/workflows/main.yml` runs on every push to `blog`: install Zola → `zola build` → `npx pagefind --site public` → publish `public/` (including `pagefind/`) to the `master` branch, which GitHub Pages serves.
 
 ## Content Management
 

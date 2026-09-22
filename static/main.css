@@ -274,3 +274,10 @@ img {
   height: auto;
 }
 
+/* Pagefind search (/search/) */
+.search {
+  --pf-text: #262626;
+  --pf-background: #fff;
+  --pf-border: #e5e5e5;
+  --pf-border-radius: 6px;
+}

@@ -12,10 +12,10 @@
 {% block twitter_description %}{{ page.description | default(value=config.description) }}{% endblock twitter_description %}
 
 {% block content %}
-    <article>
+    <article data-pagefind-body>
         <header>
             <h1>{{ page.title }}</h1>
-            <div class="post-meta">
+            <div class="post-meta" data-pagefind-ignore>
                 {% if page.date %}
                     <time datetime="{{ page.date | date(format='%Y-%m-%d') }}">{{ page.date | date(format="%Y年%m月%d日") }}</time>
                 {% endif %}
