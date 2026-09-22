@@ -9,9 +9,10 @@
     
   {% if section.pages %}
     <div>
-      {% for year, pages in section.pages | group_by(attribute="year") %}
-        <h2>{{ year }}</h2>
-        {% for page in pages %}
+      {% for page in section.pages %}
+        {% if loop.first or page.year != section.pages[loop.index0 - 1].year %}
+          <h2>{{ page.year }}</h2>
+        {% endif %}
           <a class="blog-post" href="{{ page.permalink }}">
             <div class="post-content">
               {% if page.date %}
@@ -22,7 +23,6 @@
             <p class="post-title">{{ page.title }}</p>
           </div>
         </a>
-        {% endfor %}
       {% endfor %}
     </div>
   {% else %}

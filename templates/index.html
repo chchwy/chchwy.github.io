@@ -13,7 +13,7 @@
     <!-- 
     <h2>主題</h2>
     {% set categories = get_taxonomy(kind = "tags") %}
-    {% for category in categories.items | sort(attribute="pages") | reverse %}
+    {% for category in categories.items | sort(attribute="page_count") | reverse %}
         <a href="{{ category.permalink }}">[#{{ category.name }}]</a>
     {% endfor %}
     -->
@@ -21,7 +21,7 @@
     {% set blog_section = get_section(path="posts/_index.md") %}
     {% if blog_section.pages %}
         <div>
-            {% for page in blog_section.pages | slice(end=8) %}
+            {% for page in blog_section.pages[:8] %}
                 <a class="blog-post" href="{{ page.permalink }}">
                     <div class="post-content">
                         {% if page.date %}

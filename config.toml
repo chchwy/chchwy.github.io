@@ -8,6 +8,8 @@ description = "紀錄我的思考，讀書筆記，還有程式設計"
 default_language = "zh-tw"
 compile_sass = false
 build_search_index = false
+# Posts contain code samples with {{ }} (e.g. GitHub Actions); do not render them as Tera.
+skip_content_templating = ["posts/**"]
 generate_feeds = true
 
 # Taxonomies

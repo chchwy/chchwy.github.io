@@ -56,7 +56,7 @@ zola build
 ```
 The generated site will be in the `public/` directory.
 
-> The templates currently require **Zola 0.22.x** (0.23 removed the `slice` filter used in `index.html`). CI pins `0.22.1`.
+> Requires **Zola 0.23+** (Tera 2 templates). CI pins `0.23.6`. Content under `content/posts/` is not run through Tera (`skip_content_templating` in `config.toml`), so `{{ }}` in code samples is safe.
 
 ## Search (Pagefind)
 
