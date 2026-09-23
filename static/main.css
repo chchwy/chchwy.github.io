@@ -184,19 +184,13 @@ footer {
 footer ul {
   font-size: 0.875rem;
   margin-top: 2rem;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
   color: #525252;
   list-style: none;
-}
-
-@media (min-width: 768px) {
-  footer ul {
-    flex-direction: row;
-    gap: 1rem;
-    padding: 0;
-  }
 }
 
 footer a {
@@ -214,7 +208,6 @@ footer a:hover {
 footer svg {
   width: 20px;
   height: 20px;
-  margin-right: 0.5rem;
 }
 
 footer p {
