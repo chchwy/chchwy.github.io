@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Redirect</title>
+<link rel="canonical" href="{{ url }}">
+<meta name="robots" content="noindex">
+<meta http-equiv="refresh" content="0; url={{ url }}">
+<script>
+  window.location.replace("{{ url }}" + (window.location.hash || ""));
+</script>
+</head>
+<body>
+<p><a href="{{ url }}">Click here</a> to be redirected.</p>
+</body>
+</html>

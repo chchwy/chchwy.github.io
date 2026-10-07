@@ -2,6 +2,7 @@
 date=2024-07-05
 title="務實60分離式鍵盤 四個月使用心得"
 draft = false
+aliases = ["/pragmatic60-keyboard/"]
 [taxonomies]
 tags = ["開箱"]
 categories = ["開箱"]
