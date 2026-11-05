@@ -216,6 +216,137 @@ article header h1 {
   font-size: 15px;
 }
 
+/* Prose. Element-level because page.html renders content without a wrapper. */
+h1 {
+  margin-bottom: 48px;
+  font-size: clamp(30px, 6vw, 42px);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+h2,
+h3 {
+  margin: 48px 0 24px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* Many posts use h3 as their top section heading; demote it only when an h2 precedes it. */
+h2 ~ h3 {
+  margin-top: 40px;
+  font-size: 20px;
+}
+
+h4 {
+  margin: 32px 0 16px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+p,
+ul,
+ol,
+pre,
+table {
+  margin: 24px 0;
+}
+
+strong {
+  font-weight: 700;
+}
+
+ul,
+ol {
+  padding-left: 1.5em;
+}
+
+li {
+  margin: 8px 0;
+}
+
+li > ul,
+li > ol,
+li > p {
+  margin: 8px 0;
+}
+
+blockquote {
+  margin: 32px 0;
+  padding: 4px 0 4px 40px;
+  color: var(--ink-2);
+  font-size: 17px;
+}
+
+blockquote > :first-child {
+  margin-top: 0;
+}
+
+blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+hr {
+  margin: 48px 0;
+  border: 0;
+  border-top: 1px solid var(--rule);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+code {
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--rule) 50%, transparent);
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+/* Darker than Zola's inline #272822, which leaves monokai comments and keywords under 4.5:1. */
+pre {
+  overflow-x: auto;
+  padding: 16px 20px;
+  border-radius: 2px;
+  background-color: var(--code-ground) !important;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.7;
+  overflow-wrap: normal;
+}
+
+pre code {
+  padding: 0;
+  background: none;
+  font-size: inherit;
+}
+
+table {
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* The main prefix outranks the <style> block compression-compare.md carries in its body. */
+main th,
+main td {
+  padding: 8px 16px 8px 0;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  text-align: left;
+}
+
+main th {
+  border-bottom-color: var(--ink);
+  font-weight: 700;
+}
+
 /* Pagefind search (/search/) */
 .search {
   --pf-text: #262626;
