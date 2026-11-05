@@ -4,29 +4,14 @@
 {% block description %}Archive{% endblock description %}
 
 {% block content %}
-<section>
-  <h1>文章列表</h1>
-    
-  {% if section.pages %}
-    <div>
-      {% for page in section.pages %}
-        {% if loop.first or page.year != section.pages[loop.index0 - 1].year %}
-          <h2>{{ page.year }}</h2>
-        {% endif %}
-          <a class="blog-post" href="{{ page.permalink }}">
-            <div class="post-content">
-              {% if page.date %}
-                <p class="post-date" style="width:80px;">
-                  {{ page.date | date(format="%b %d") }}
-                </p>
-              {% endif %}
-            <p class="post-title">{{ page.title }}</p>
-          </div>
-        </a>
-      {% endfor %}
-    </div>
-  {% else %}
-    <p>No posts found.</p>
-  {% endif %}
-</section>
+<h1>文章列表</h1>
+
+{% if section.pages %}
+<div class="post-index">
+    {% set year_pages = section.pages %}
+    {% include "post_list.html" %}
+</div>
+{% else %}
+<p>No posts found.</p>
+{% endif %}
 {% endblock content %}

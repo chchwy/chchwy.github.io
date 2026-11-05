@@ -4,12 +4,13 @@
 {% block description %}{{ config.description }}{% endblock description %}
 
 {% block content %}
-<section>
+<header class="home-header">
     <h1>調和的靈感</h1>
     <p>
         👋 嗨，我是麥特 (aka chchwy)，軟體工程師，二寶爸。
         歡迎來到我部落格，這裡記錄著我的思考、讀書心得和技術筆記。
     </p>
+</header>
     <!-- 
     <h2>主題</h2>
     {% set categories = get_taxonomy(kind = "tags") %}
@@ -17,21 +18,10 @@
         <a href="{{ category.permalink }}">[#{{ category.name }}]</a>
     {% endfor %}
     -->
-    <h2>最新文章</h2>
-    {% set blog_section = get_section(path="posts/_index.md") %}
-    {% if blog_section.pages %}
-        <div>
-            {% for page in blog_section.pages[:8] %}
-                <a class="blog-post" href="{{ page.permalink }}">
-                    <div class="post-content">
-                        {% if page.date %}
-                            <p class="post-date">{{ page.date | date(format="%b %d, %Y") }}</p>
-                        {% endif %}
-                        <p class="post-title">{{ page.title }}</p>
-                    </div>
-                </a>
-            {% endfor %}
-        </div>
-    {% endif %}
-</section>
+{% set blog_section = get_section(path="posts/_index.md") %}
+<div class="post-index">
+    {% set year_pages = blog_section.pages[:8] %}
+    {% include "post_list.html" %}
+    <a class="all-posts" href="{{ get_url(path='/posts/', trailing_slash=true) }}">全部 {{ blog_section.pages | length }} 篇文章</a>
+</div>
 {% endblock content %}
