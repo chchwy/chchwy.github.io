@@ -248,13 +248,17 @@ code {
   font-size: 0.925em;
 }
 
+pre code {
+  font-family: inherit;
+}
+
 pre {
   background: #f4f4f5;
   padding: 1rem;
   border-radius: 0.5rem;
   overflow-x: auto;
   margin: 1.5rem 0;
-  font-family: 'Iosevka Fixed', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  font-family: 'Iosevka', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
 }
 
 blockquote {
