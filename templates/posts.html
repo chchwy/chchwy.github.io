@@ -16,7 +16,7 @@
         <header>
             <div class="post-meta" data-pagefind-ignore>
                 {% if page.date %}
-                    <time datetime="{{ page.date | date(format='%Y-%m-%d') }}">{{ page.date | date(format="%Y年%m月%d日") }}</time>
+                    <time datetime="{{ page.date | date(format='%Y-%m-%d') }}">{{ page.date | date(format="%Y-%m-%d") }}</time>
                 {% endif %}
                 {% if page.extra.author %} • by {{ page.extra.author }}{% endif %}
             </div>
@@ -32,6 +32,17 @@
                 {% for tag in page.taxonomies.tags %}
                     <a href="{{ get_taxonomy_url(kind='tags', name=tag) }}" class="tag">{{ tag }}</a>
                 {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if page.higher or page.lower %}
+            <div class="post-nav" data-pagefind-ignore>
+                {% if page.higher %}
+                    <a class="post-nav-prev" href="{{ page.higher.permalink }}"><span>上一篇</span>{{ page.higher.title }}</a>
+                {% endif %}
+                {% if page.lower %}
+                    <a class="post-nav-next" href="{{ page.lower.permalink }}"><span>下一篇</span>{{ page.lower.title }}</a>
+                {% endif %}
             </div>
         {% endif %}
     </article>

@@ -7,8 +7,7 @@
 <section>
     <h1>調和的靈感</h1>
     <p>
-        👋 嗨，我是麥特 (aka chchwy)，軟體工程師，二寶爸。
-        歡迎來到我部落格，這裡記錄著我的思考、讀書心得和技術筆記。
+        👋 嗨，我是麥特 (aka chchwy)，軟體工程師，二寶爸。歡迎來到我部落格，這裡記錄著我的思考、讀書心得和技術筆記。
     </p>
     <!-- 
     <h2>主題</h2>
@@ -25,7 +24,7 @@
                 <a class="blog-post" href="{{ page.permalink }}">
                     <div class="post-content">
                         {% if page.date %}
-                            <p class="post-date">{{ page.date | date(format="%b %d, %Y") }}</p>
+                            <p class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</p>
                         {% endif %}
                         <p class="post-title">{{ page.title }}</p>
                     </div>

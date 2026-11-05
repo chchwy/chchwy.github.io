@@ -1,32 +1,25 @@
 {% extends "base.html" %}
 
-{% block title %}Tag "{{ term.name }}" - {{ config.title }}{% endblock title %}
+{% block title %}{{ term.name }} - {{ config.title }}{% endblock title %}
 
 {% block content %}
-    <h1>分類："{{ term.name }}"</h1>
-    
+    {% if taxonomy.name == "categories" %}{% set label = "分類" %}{% else %}{% set label = "標籤" %}{% endif %}
+    <h1>{{ label }}：{{ term.name }}</h1>
+
     {% if term.pages %}
-        <div class="post-list">
+        <div>
             {% for page in term.pages %}
-                <article class="post-item">
-                    <a class="blog-post" href="{{ page.permalink }}">
-                      <div class="post-content">
+                <a class="blog-post" href="{{ page.permalink }}">
+                    <div class="post-content">
                         {% if page.date %}
-                            <p class="post-date" datetime="{{ page.date | date(format='%Y-%m-%d') }}">{{ page.date | date(format="%Y %b %d") }}</time>
+                            <p class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</p>
                         {% endif %}
                         <p class="post-title">{{ page.title }}</p>
-                      </div>
-                    </a>
-                    <div class="post-meta">
-
                     </div>
-                    {% if page.description %}
-                        <p class="post-description">{{ page.description }}</p>
-                    {% endif %}
-                </article>
+                </a>
             {% endfor %}
         </div>
     {% else %}
-        <p>No posts found with this tag.</p>
+        <p>這個{{ label }}還沒有文章。</p>
     {% endif %}
 {% endblock content %}

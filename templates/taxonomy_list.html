@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 
-{% block title %}All Tags - {{ config.title }}{% endblock title %}
+{% block title %}{% if taxonomy.name == "categories" %}所有分類{% else %}所有標籤{% endif %} - {{ config.title }}{% endblock title %}
 
 {% block content %}
-    <h1>All Tags</h1>
-    
+    {% if taxonomy.name == "categories" %}{% set label = "分類" %}{% else %}{% set label = "標籤" %}{% endif %}
+    <h1>所有{{ label }}</h1>
+
     {% if terms %}
         <div class="tag-list">
             {% for term in terms %}
@@ -12,6 +13,6 @@
             {% endfor %}
         </div>
     {% else %}
-        <p>No tags found.</p>
+        <p>目前沒有{{ label }}。</p>
     {% endif %}
 {% endblock content %}
