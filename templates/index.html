@@ -19,12 +19,15 @@
     {% endfor %}
     -->
 {% set blog_section = get_section(path="posts/_index.md") %}
-<div class="post-list">
-    {% for page in blog_section.pages %}
-        <a class="post-row" href="{{ page.permalink }}">
-            <span class="post-title">{{ page.title }}</span>
-            <time class="post-date" datetime="{{ page.date | date(format='%Y-%m-%d') }}">{{ page.date | date(format="%Y-%m-%d") }}</time>
-        </a>
-    {% endfor %}
+<div class="post-index">
+    <div class="post-list">
+        {% for page in blog_section.pages[:10] %}
+            <a class="post-row" href="{{ page.permalink }}">
+                <span class="post-title">{{ page.title }}</span>
+                <time class="post-date" datetime="{{ page.date | date(format='%Y-%m-%d') }}">{{ page.date | date(format="%Y-%m-%d") }}</time>
+            </a>
+        {% endfor %}
+    </div>
+    <a class="all-posts" href="{{ get_url(path='/posts/', trailing_slash=true) }}">全部 {{ blog_section.pages | length }} 篇文章</a>
 </div>
 {% endblock content %}
