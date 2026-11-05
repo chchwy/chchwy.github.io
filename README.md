@@ -33,8 +33,6 @@ Files served directly without processing:
 
 - **`main.css`** - Main stylesheet with typography, layout, and component styles
 - **`favicon.ico`** - Site favicon
-- **`fonts/`** - Web font files
-  - **`Inter-roman.latin.var.woff2`** - Inter font
 
 ### Additional Directories
 
@@ -93,7 +91,7 @@ zola/
 │       ├── _index.md   # Posts listing page
 │       ├── markdown.md # Sample post
 │       └── pages.md    # Sample post
-├── static/             # Static assets (images, fonts, etc.)
+├── static/             # Static assets (images, etc.)
 │   └── main.css       # Main stylesheet
 ├── templates/          # HTML templates
 │   ├── base.html       # Base template

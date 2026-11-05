@@ -21,9 +21,17 @@
     <meta name="twitter:title" content="{% block twitter_title %}{{ config.title }}{% endblock twitter_title %}">
     <meta name="twitter:description" content="{% block twitter_description %}{{ config.description }}{% endblock twitter_description %}">
     
-    <!-- Font preload -->
-    <link rel="preload" href="{{ get_url(path='fonts/Inter-roman.latin.var.woff2', trailing_slash=false) }}" as="font" type="font/woff2" crossorigin="">
-    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    {# The stylesheets and the CORS font files use separate connections. #}
+    <link rel="preconnect" href="https://changming.yblog.org">
+    <link rel="preconnect" href="https://changming.yblog.org" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap">
+    <link rel="stylesheet" href="https://changming.yblog.org/fonts/1.2.1/changming.css">
+    <link rel="stylesheet" href="https://changming.yblog.org/fonts/1.2.1/changming-tail.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://changming.yblog.org/fonts/1.2.1/changming-tail.css"></noscript>
+
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{{ get_url(path='main.css', trailing_slash=false) }}">
 </head>
