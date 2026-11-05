@@ -21,7 +21,7 @@
     {% set blog_section = get_section(path="posts/_index.md") %}
     {% if blog_section.pages %}
         <div>
-            {% for page in blog_section.pages[:8] %}
+            {% for page in blog_section.pages[:10] %}
                 <a class="blog-post" href="{{ page.permalink }}">
                     <div class="post-content">
                         {% if page.date %}
