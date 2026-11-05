@@ -8,15 +8,20 @@
     {% if term.pages %}
         <div class="post-list">
             {% for page in term.pages %}
-                <article>
-                    <a class="post-row" href="{{ page.permalink }}">
-                        <span class="post-title">{{ page.title }}</span>
+                <article class="post-item">
+                    <a class="blog-post" href="{{ page.permalink }}">
+                      <div class="post-content">
                         {% if page.date %}
-                            <time class="post-date" datetime="{{ page.date | date(format='%Y-%m-%d') }}">{{ page.date | date(format="%Y-%m-%d") }}</time>
+                            <p class="post-date" datetime="{{ page.date | date(format='%Y-%m-%d') }}">{{ page.date | date(format="%Y %b %d") }}</time>
                         {% endif %}
+                        <p class="post-title">{{ page.title }}</p>
+                      </div>
                     </a>
+                    <div class="post-meta">
+
+                    </div>
                     {% if page.description %}
-                        <p>{{ page.description }}</p>
+                        <p class="post-description">{{ page.description }}</p>
                     {% endif %}
                 </article>
             {% endfor %}

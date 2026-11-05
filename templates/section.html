@@ -4,24 +4,29 @@
 {% block description %}Archive{% endblock description %}
 
 {% block content %}
-<h1>文章列表</h1>
-
-{% if section.pages %}
-<div class="post-index">
-    {% for page in section.pages %}
+<section>
+  <h1>文章列表</h1>
+    
+  {% if section.pages %}
+    <div>
+      {% for page in section.pages %}
         {% if loop.first or page.year != section.pages[loop.index0 - 1].year %}
-            {% if not loop.first %}</section>{% endif %}
-            <section class="year-group">
-                <h2>{{ page.year }}</h2>
+          <h2>{{ page.year }}</h2>
         {% endif %}
-        <a class="post-row" href="{{ page.permalink }}">
-            <span class="post-title">{{ page.title }}</span>
-            <time class="post-date" datetime="{{ page.date | date(format='%Y-%m-%d') }}">{{ page.date | date(format="%m-%d") }}</time>
+          <a class="blog-post" href="{{ page.permalink }}">
+            <div class="post-content">
+              {% if page.date %}
+                <p class="post-date" style="width:80px;">
+                  {{ page.date | date(format="%b %d") }}
+                </p>
+              {% endif %}
+            <p class="post-title">{{ page.title }}</p>
+          </div>
         </a>
-        {% if loop.last %}</section>{% endif %}
-    {% endfor %}
-</div>
-{% else %}
-<p>No posts found.</p>
-{% endif %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No posts found.</p>
+  {% endif %}
+</section>
 {% endblock content %}
