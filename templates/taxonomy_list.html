@@ -8,7 +8,7 @@
     {% if terms %}
         <div class="tag-list">
             {% for term in terms %}
-                <a href="{{ term.permalink }}" class="tag">{{ term.name }} ({{ term.pages | length }})</a>
+                <a href="{{ term.permalink }}">{{ term.name }} ({{ term.pages | length }})</a>
             {% endfor %}
         </div>
     {% else %}

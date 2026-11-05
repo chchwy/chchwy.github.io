@@ -134,7 +134,8 @@ main {
   padding-bottom: 16px;
 }
 
-.year-group {
+.year-group,
+.post-list {
   display: flex;
   flex-direction: column;
   gap: 4px;
