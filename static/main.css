@@ -258,7 +258,7 @@ pre {
   border-radius: 0.5rem;
   overflow-x: auto;
   margin: 1.5rem 0;
-  font-family: 'Iosevka', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  font-family: 'Iosevka', 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'SF Mono', Menlo, Monaco, Consolas, 'Roboto Mono', 'DejaVu Sans Mono', 'Liberation Mono', 'Courier New', monospace;
 }
 
 blockquote {
