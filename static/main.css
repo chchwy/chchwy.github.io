@@ -292,12 +292,15 @@ footer ul {
 footer a {
   display: flex;
   align-items: center;
-  justify-content: center;
-  min-width: 44px;
-  min-height: 44px;
   transition: all 0.2s ease;
   color: #525252;
   text-decoration: none;
+}
+
+footer ul a {
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 footer a:hover {
