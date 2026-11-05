@@ -348,10 +348,27 @@ main th {
   font-weight: 700;
 }
 
-/* Pagefind search (/search/) */
+pagefind-summary {
+  display: block;
+  margin: 12px 0;
+}
+
 .search {
-  --pf-text: #262626;
-  --pf-background: #fff;
-  --pf-border: #e5e5e5;
-  --pf-border-radius: 6px;
+  --pf-text: var(--ink);
+  --pf-text-secondary: var(--ink-2);
+  --pf-text-muted: var(--muted);
+  --pf-background: var(--ground);
+  --pf-border: var(--rule);
+  --pf-border-focus: var(--accent);
+  --pf-outline-focus: var(--accent);
+  --pf-hover: var(--rule);
+  --pf-skeleton: var(--rule);
+  --pf-skeleton-shine: var(--ground);
+  --pf-mark: var(--ink);
+  --pf-font: var(--font-serif);
+  --pf-border-radius: 2px;
+  --pf-input-height: 44px;
+  --pf-summary-font-size: 14px;
+  --pf-result-title-font-size: 18px;
+  --pf-result-excerpt-font-size: 16px;
 }
